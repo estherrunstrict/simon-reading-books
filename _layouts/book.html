@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{% assign shelf = site.data.shelves | where: "key", page.status | first %}
+<article class="article">
+  <a class="back" href="{{ '/' | relative_url }}#shelf">내 책장으로 돌아가기</a>
+  <header class="book-head">
+    <div class="book-head-cover">{% include cover.html book=page %}</div>
+    <div class="book-head-text">
+      <h1>{{ page.title | escape }}</h1>
+      <p class="book-author">{{ page.author | escape }}</p>
+      <div class="card-meta">{% include status.html shelf=shelf %}{% include stars.html rating=page.rating %}</div>
+      <p class="book-summary">{{ page.summary | escape }}</p>
+    </div>
+  </header>
+  {% capture facts %}
+    {% if page.genre %}<div><dt>장르</dt><dd>{{ page.genre | escape }}</dd></div>{% endif %}
+    {% if page.pages %}<div><dt>쪽수</dt><dd>{{ page.pages }}쪽</dd></div>{% endif %}
+    {% if page.started %}<div><dt>읽기 시작한 날</dt><dd>{{ page.started | date: "%Y년 %-m월 %-d일" }}</dd></div>{% endif %}
+    {% if page.finished %}<div><dt>다 읽은 날</dt><dd>{{ page.finished | date: "%Y년 %-m월 %-d일" }}</dd></div>{% endif %}
+  {% endcapture %}
+  {% assign facts = facts | strip %}
+  {% if facts != "" %}<dl class="facts">{{ facts }}</dl>{% endif %}
+  {% if page.quote %}<blockquote class="book-quote">{{ page.quote | escape }}</blockquote>{% endif %}
+  {% assign notes = content | strip %}
+  {% if notes != "" %}<section class="reading" aria-label="시몬의 독서 노트">{{ content }}</section>{% endif %}
+  <a class="action outline" href="{{ '/' | relative_url }}#shelf">다른 책 보기</a>
+</article>
