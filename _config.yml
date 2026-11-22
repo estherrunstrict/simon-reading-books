@@ -1,23 +1,26 @@
-title: 시몬의 수학 작업실
-description: 시몬이 직접 쓴 개념 설명과 풀이 과정을 모으는 수학 블로그
-url: https://simon.itdo.work
-baseurl: ""
+title: 시몬의 책 읽기
+description: 시몬이 읽은 책을 모으고, 독서 확인 퀴즈로 진짜 읽었는지 확인하는 책장
+url: ""
+baseurl: "/simon-reading-books"
 lang: ko
 timezone: Asia/Seoul
 markdown: kramdown
 highlighter: rouge
-permalink: /stories/:title/
-future: false
-show_drafts: false
-repository: estherrunstrict/simon-math-blog-site
-write_url: https://itdo.work/wondo/math
+repository: estherrunstrict/simon-reading-books
+write_url: https://github.com/estherrunstrict/simon-reading-books/new/main/_books
+reading_goal: 30
+readcheck:
+  pass_percent: 80
+collections:
+  books:
+    output: true
+    permalink: /books/:name/
 defaults:
   - scope:
       path: ""
-      type: posts
+      type: books
     values:
-      layout: post
-      author: 시몬
+      layout: book
 exclude:
   - README.md
   - Gemfile
@@ -26,4 +29,3 @@ exclude:
   - tests
   - scripts
   - .gitignore
-
