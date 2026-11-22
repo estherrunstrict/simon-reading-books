@@ -90,8 +90,14 @@ def book_errors(data, shelf_keys)
   %w[genre quote].each do |k|
     errors << "#{k}: 글이어야 해요" if data.key?(k) && !text?(data[k])
   end
-  if data.key?('cover') && !(data['cover'].is_a?(String) && data['cover'].match?(%r{\Ahttps://\S+\z}))
-    errors << "cover: https://로 시작하는 그림 주소여야 해요 (지금 값 #{show(data['cover'])})"
+  if data.key?('cover')
+    cover = data['cover']
+    local = cover.is_a?(String) && cover.match?(%r{\A/assets/covers/[a-z0-9][a-z0-9-]*\.(webp|jpg|png)\z})
+    if local && !File.exist?(File.join(ROOT, cover))
+      errors << "cover: #{cover} 파일이 없어요. scripts/make_cover.py로 만들어 주세요"
+    elsif !local && !(cover.is_a?(String) && cover.match?(%r{\Ahttps://\S+\z}))
+      errors << "cover: https:// 주소나 /assets/covers/책주소.webp여야 해요 (지금 값 #{show(cover)})"
+    end
   end
   if data.key?('isbn') && !(data['isbn'].is_a?(String) && data['isbn'].match?(/\A[0-9X-]{10,17}\z/))
     errors << "isbn: 따옴표로 감싼 ISBN 숫자여야 해요 (지금 값 #{show(data['isbn'])})"

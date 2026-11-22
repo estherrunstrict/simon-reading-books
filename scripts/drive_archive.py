@@ -13,6 +13,7 @@ The site itself only keeps the small WebP copies in assets/img/.
 
 sweep collects:
   media/flow/*                         -> 시몬 책장/일러스트 원본/
+  media/covers/*                       -> 시몬 책장/표지 원본/
   media/pages/<slug>/*                 -> 시몬 책장/쪽 사진/<slug>/
   ~/Downloads/<slug>-structure-*.png   -> 시몬 책장/구조 그림/<slug>/
 
@@ -27,7 +28,7 @@ MEDIA = os.path.join(ROOT, "media")
 INDEX = os.path.join(MEDIA, ".drive-index.json")
 LOG = os.path.join(MEDIA, ".drive-log.txt")
 DRIVE_ROOT = "시몬 책장"
-KINDS = {"pages": "쪽 사진", "drawings": "구조 그림", "flow": "일러스트 원본"}
+KINDS = {"pages": "쪽 사진", "drawings": "구조 그림", "flow": "일러스트 원본", "covers": "표지 원본"}
 IMAGE = re.compile(r"\.(jpe?g|png|heic|heif|webp|gif)$", re.I)
 SLUG = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 
@@ -98,6 +99,9 @@ def collect_sweep():
     for p in sorted(glob.glob(os.path.join(MEDIA, "flow", "*"))):
         if os.path.isfile(p) and IMAGE.search(p):
             jobs.append((p, ["flow", None]))
+    for p in sorted(glob.glob(os.path.join(MEDIA, "covers", "*"))):
+        if os.path.isfile(p) and IMAGE.search(p):
+            jobs.append((p, ["covers", None]))
     for d in sorted(glob.glob(os.path.join(MEDIA, "pages", "*"))):
         slug = os.path.basename(d)
         if os.path.isdir(d) and SLUG.match(slug):
