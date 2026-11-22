@@ -2,6 +2,8 @@
   'use strict';
 
   var KEY_PREFIX = 'readcheck:v1:';
+  var MAX_ATTEMPTS = 20;
+  var SHOWN_ATTEMPTS = 5;
 
   // Boundary: turn the embedded JSON into a quiz, or null when anything is off.
   // "answer" arrives 1-based from the book file and leaves 0-based.
@@ -79,17 +81,31 @@
     return next.correct / next.total > prev.correct / prev.total;
   }
 
-  function isRecord(r) {
+  function isScore(r) {
     return !!r && Number.isInteger(r.correct) && Number.isInteger(r.total) && r.total > 0 &&
-      typeof r.passed === 'boolean' && typeof r.at === 'string';
+      r.correct >= 0 && r.correct <= r.total && typeof r.at === 'string';
+  }
+
+  function isRecord(r) { return isScore(r) && typeof r.passed === 'boolean'; }
+
+  function isAttempt(a) { return isScore(a) && !isNaN(Date.parse(a.at)); }
+
+  // The stored record is the best result plus the last attempts. Records saved before
+  // attempts existed have none, so attempts always leaves here as an array.
+  function parseRecord(rec) {
+    if (!isRecord(rec)) return null;
+    var attempts = Array.isArray(rec.attempts) ? rec.attempts.filter(isAttempt) : [];
+    return {
+      correct: rec.correct, total: rec.total, passed: rec.passed, at: rec.at,
+      attempts: attempts.slice(-MAX_ATTEMPTS).map(function (a) { return { correct: a.correct, total: a.total, at: a.at }; })
+    };
   }
 
   // localStorage can throw (private mode, blocked storage, quota), so every access is guarded.
   function readBest(id) {
     try {
       var text = window.localStorage.getItem(KEY_PREFIX + id);
-      var rec = text ? JSON.parse(text) : null;
-      return isRecord(rec) ? rec : null;
+      return text ? parseRecord(JSON.parse(text)) : null;
     } catch (e) {
       return null;
     }
@@ -97,6 +113,22 @@
 
   function writeBest(id, rec) {
     try { window.localStorage.setItem(KEY_PREFIX + id, JSON.stringify(rec)); } catch (e) { /* the quiz still works unsaved */ }
+  }
+
+  // The best fields only change when this attempt beats them; the attempt is always appended.
+  function addAttempt(prev, g, at) {
+    var attempt = { correct: g.correct, total: g.total, at: at };
+    var best = { correct: g.correct, total: g.total, passed: g.passed, at: at };
+    if (!isBetter(best, prev)) best = prev;
+    return {
+      correct: best.correct, total: best.total, passed: best.passed, at: best.at,
+      attempts: (prev ? prev.attempts : []).concat(attempt).slice(-MAX_ATTEMPTS)
+    };
+  }
+
+  function formatDate(iso) {
+    var d = new Date(iso);
+    return d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate();
   }
 
   function h(tag, props) {
@@ -127,13 +159,24 @@
     return h('button', { type: 'button', class: 'action outline', onclick: function () { window.print(); } }, '퀴즈 인쇄하기');
   }
 
+  function historyList(record) {
+    var attempts = record ? record.attempts.slice(-SHOWN_ATTEMPTS).reverse() : [];
+    if (attempts.length === 0) return null;
+    return h('div', { class: 'rc-history' },
+      h('h4', {}, '지난 기록'),
+      h('ul', {}, attempts.map(function (a) {
+        return h('li', {}, h('span', {}, formatDate(a.at)), h('span', {}, a.correct + ' / ' + a.total));
+      })));
+  }
+
   function render(state, ctx, dispatch) {
     var quiz = ctx.quiz;
     if (state.phase === 'intro') {
       return h('div', { class: 'rc-card' },
         h('p', {}, '이 책을 정말 읽었는지 ' + quiz.length + '문제로 확인해 봐요.'),
         h('p', { class: 'muted' }, ctx.passPercent + '% 이상 맞히면 통과예요.'),
-        bestLine(ctx.best),
+        bestLine(ctx.record),
+        historyList(ctx.record),
         h('div', { class: 'rc-actions' },
           h('button', { type: 'button', class: 'action', onclick: function () { dispatch({ type: 'start' }); } }, '시작하기'),
           printButton()));
@@ -167,7 +210,8 @@
       h('h3', { tabindex: '-1', 'data-rc-focus': true }, g.passed ? '통과 ✓' : '다시 도전'),
       h('p', { class: 'rc-score' }, g.correct + ' / ' + g.total),
       h('p', { class: 'muted' }, '통과 기준은 ' + ctx.passPercent + '%예요.'),
-      bestLine(ctx.best),
+      bestLine(ctx.record),
+      historyList(ctx.record),
       g.missed.length === 0
         ? h('p', {}, '모두 맞혔어요!')
         : h('div', { class: 'rc-missed' },
@@ -203,7 +247,7 @@
     root.append(stage, status);
 
     var state = INTRO;
-    var ctx = { quiz: quiz, passPercent: passPercent, best: readBest(id) };
+    var ctx = { quiz: quiz, passPercent: passPercent, record: readBest(id) };
 
     function paint(moveFocus) {
       stage.textContent = '';
@@ -218,11 +262,9 @@
       if (next === state) return;
       if (next.phase === 'result') {
         var g = grade(quiz, next.picks, passPercent);
-        var rec = { correct: g.correct, total: g.total, passed: g.passed, at: new Date().toISOString() };
-        if (isBetter(rec, ctx.best)) {
-          writeBest(id, rec);
-          ctx = { quiz: quiz, passPercent: passPercent, best: rec };
-        }
+        var rec = addAttempt(ctx.record, g, new Date().toISOString());
+        writeBest(id, rec);
+        ctx = { quiz: quiz, passPercent: passPercent, record: rec };
       }
       state = next;
       paint(true);
