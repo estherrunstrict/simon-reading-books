@@ -9,10 +9,20 @@ title: 내 책장
 {% for b in finished_books %}{% assign y = b.finished | date: "%Y" %}{% if y == this_year %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
 {% assign pct = done | times: 100 | divided_by: goal | at_most: 100 %}
 {% assign to_go = goal | minus: done | at_least: 0 %}
-<div class="shelf-head">
-  <h1>내 책장</h1>
-  <p>읽고 있는 책, 읽고 싶은 책, 다 읽은 책을 한곳에 모아요.<br>다 읽은 책은 독서 확인 퀴즈로 진짜 읽었는지 확인해요.</p>
-</div>
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">시몬의 독서 기록</p>
+    <h1>한 권씩 읽고,<br>확인하고, 기억해요.</h1>
+    <p class="lede">읽고 있는 책과 다 읽은 책을 한곳에 모아요. 다 읽은 책은 독서 확인 퀴즈를 풀고, 책의 구조를 직접 그려 봐요.</p>
+    <div class="hero-actions">
+      <a class="action" href="{{ '/add/' | relative_url }}">+ 새 책 추가하기</a>
+      <a class="action ghost" href="{{ '/add/' | relative_url }}#recommend">추천 책 보기</a>
+    </div>
+  </div>
+  <picture class="hero-art">
+    <img src="{{ '/assets/img/hero.webp' | relative_url }}" width="1376" height="768" alt="책을 읽고 있는 아이와 잠든 고양이가 있는 아늑한 독서 공간 그림" fetchpriority="high">
+  </picture>
+</section>
 <section class="summary" aria-label="올해 독서 현황">
   <div class="ring">
     <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="track" cx="60" cy="60" r="52"/>{% if pct > 0 %}<circle class="fill" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="{{ pct }} 100"/>{% endif %}</svg>
@@ -20,12 +30,12 @@ title: 내 책장
   </div>
   <div class="goal-text">
     <p class="muted">올해 다 읽은 책</p>
-    <p>{% if to_go > 0 %}{{ to_go }}권 남았어요. 한 쪽씩, 천천히.{% else %}올해 목표를 이뤘어요!{% endif %}</p>
+    <p class="goal-line">{% if to_go > 0 %}{{ to_go }}권 남았어요. 한 쪽씩, 천천히.{% else %}올해 목표를 이뤘어요!{% endif %}</p>
     <p class="muted" data-readcheck-passed hidden></p>
   </div>
   <ul class="counts">
     {% for shelf in site.data.shelves %}{% assign n = site.books | where: "status", shelf.key | size %}
-    <li><strong>{{ n }}</strong><span>{{ shelf.label | escape }}</span></li>
+    <li><a href="#shelf-{{ shelf.key }}"><strong>{{ n }}</strong><span><i class="dot" style="--dot:{{ shelf.color | escape }}" aria-hidden="true"></i>{{ shelf.label | escape }}</span></a></li>
     {% endfor %}
   </ul>
 </section>
@@ -57,12 +67,22 @@ title: 내 책장
     {% endif %}
     {% endfor %}
     {% if site.books.size == 0 %}
-    <div class="empty"><h3>책장이 아직 비어 있어요.</h3><p>지금 읽는 책 한 권, 읽고 싶은 책 한 권부터 꽂아 봐요.<br>책을 다 읽으면 독서 확인 퀴즈도 풀 수 있어요.</p><a class="action" href="{{ site.write_url | escape }}">첫 책 추가하기</a></div>
+    <div class="empty"><img src="{{ '/assets/img/add-book.webp' | relative_url }}" width="480" height="358" alt="" loading="lazy"><h3>책장이 아직 비어 있어요.</h3><p>지금 읽는 책 한 권, 읽고 싶은 책 한 권부터 꽂아 봐요.<br>책을 다 읽으면 독서 확인 퀴즈도 풀 수 있어요.</p><a class="action" href="{{ '/add/' | relative_url }}">첫 책 추가하기</a></div>
     {% endif %}
   </div>
   <aside class="aside">
-    <img src="{{ '/assets/wondo.png' | relative_url }}" width="96" height="96" alt="독서를 함께하는 원도">
-    <div><h3>읽고 나면 퀴즈로 확인해요.</h3><p>책을 덮고 나면 독서 확인 퀴즈를 풀어 봐요.<br>{{ site.readcheck.pass_percent }}% 이상 맞히면 통과예요.</p></div>
-    <div class="note"><h3>점수보다 기억에 남는 것</h3><p>틀려도 괜찮아요. 어떤 장면이 기억에 남았는지 함께 이야기해 주세요.</p></div>
+    <div class="aside-card">
+      <img src="{{ '/assets/img/owl.webp' | relative_url }}" width="120" height="120" alt="" loading="lazy">
+      <h3>책 한 권을 끝내는 세 걸음</h3>
+      <ol class="steps">
+        <li><strong>읽기</strong><span>책장에 꽂고 날마다 조금씩 읽어요.</span></li>
+        <li><strong>독서 확인</strong><span>{{ site.readcheck.pass_percent }}% 이상 맞히면 통과예요.</span></li>
+        <li><strong>구조 그리기</strong><span>처음, 가운데, 끝을 내 그림으로 정리해요.</span></li>
+      </ol>
+    </div>
+    <div class="aside-card note">
+      <img src="{{ '/assets/wondo.png' | relative_url }}" width="56" height="56" alt="독서를 함께하는 원도">
+      <div><h3>점수보다 기억에 남는 것</h3><p>틀려도 괜찮아요. 어떤 장면이 기억에 남았는지 함께 이야기해 주세요.</p></div>
+    </div>
   </aside>
 </div>

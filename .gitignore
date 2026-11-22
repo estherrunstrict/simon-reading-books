@@ -8,3 +8,7 @@ vendor/
 *.pem
 *.key
 
+# Local image staging. Originals go to Google Drive with scripts/drive_archive.py
+# and are removed here after their Drive copy is verified.
+media/
+

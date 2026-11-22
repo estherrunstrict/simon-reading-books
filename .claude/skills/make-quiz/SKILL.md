@@ -9,13 +9,14 @@ A guardian gives you photos of the pages Simon just read. You write multiple-cho
 
 ## Steps
 
-1. **Read every photo** with the Read tool. If a page is too blurry or cropped to read, say which one and ask for a retake. Never write a question about text you could not read.
+1. **Find and read every photo.** Photos arrive in the chat or in `media/inbox/` (gitignored; the book page and the add-book page tell the guardian to AirDrop them there). Read each with the Read tool. If a page is too blurry or cropped to read, say which one and ask for a retake. Never write a question about text you could not read.
 2. **Find the book file.** Match the title to a file in `_books/`. If none exists, copy `_templates/book.md` to `_books/<short-english-slug>.md`. The validator requires `title`, `author`, `status` and `summary`. Ask for the author and the status if you were not told. Write a one-sentence `summary` from what you read. For a finished book, set `finished` to the day the guardian says, or today when they say Simon read it today. Leave out `rating`, `genre` and `pages` unless the guardian gives them. Leave the body under the front matter empty, because that space is for Simon's own notes.
 3. **Write the questions** following the rules below.
 4. **Put them in the file's `quiz:` list.** If the book already has a quiz, ask whether to replace it or add to it. Keep one book at 10 questions or fewer, and drop the oldest when adding would pass that.
 5. **Validate.** Run `ruby scripts/check_books.rb`. Fix every error it prints and run it again until it passes.
 6. **Show the guardian the questions and answers** in your reply, and wait for their OK before publishing. They know the book and Simon. You only know the photos.
-7. **Publish when they agree.** Set `published: true` if they want the book on the shelf, commit only the book file by naming its path in `git add`, and push to `main`. The site rebuilds itself in about a minute.
+7. **Move the photos to Google Drive.** Once the guardian has approved the questions, move every photo you used into `media/pages/<slug>/` (create it) and run `python3 scripts/drive_archive.py sweep`. Show the dry run, then run it again with `--apply`: it uploads each photo to `시몬 책장/쪽 사진/<slug>/` on Drive, checks the md5 of the Drive copy, and deletes the local file only when it matches. Report any file it printed as `KEPT`. Photos the guardian shared from somewhere else (for example `~/Downloads`) go the same way with `python3 scripts/drive_archive.py push FILE... --to pages --book <slug> --apply`.
+8. **Publish when they agree.** Set `published: true` if they want the book on the shelf, commit only the book file by naming its path in `git add`, and push to `main`. The site rebuilds itself in about a minute.
 
 ## Question rules
 
@@ -47,6 +48,6 @@ Quote YAML strings with double quotes. A double quote inside a string is written
 
 The repository is public.
 
-- **The photos.** Never copy them into the repo or commit them.
+- **The photos.** Never commit them. `media/` is gitignored, and step 7 moves them to Drive and off this Mac.
 - **Long passages from the book.** Questions, choices and `why` paraphrase. A `quote` is one sentence at most.
 - **Personal details** visible in a photo, such as a name label, a school, or a library card.

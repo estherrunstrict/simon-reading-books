@@ -11,12 +11,30 @@ GitHub Pages가 Markdown 파일을 정적 페이지로 만들고 직접 제공�
 
 ## 새 책 추가하기
 
-1. [`_templates/book.md`](./_templates/book.md)의 내용을 복사합니다.
-2. **Add file → Create new file**을 눌러 `_books/my-book.md` 형식으로 파일을 만듭니다. `my-book`을 짧은 영문 이름으로 바꿉니다. 이 이름이 책 주소가 됩니다.
-3. 제목, 지은이, 상태, 짧은 소개를 넣습니다. 나머지 항목은 없어도 됩니다.
-4. 파일 아래쪽에 시몬이 직접 쓴 독서 노트를 Markdown으로 적습니다.
-5. 보호자가 공개할 내용을 확인한 뒤 `published: true`로 바꾸고 **Commit changes**로 `main`에 저장합니다.
-6. **Actions → pages build and deployment**가 초록색으로 끝나면 책장에서 확인합니다.
+책장 위쪽의 **+ 책 추가**(`/add/`)를 누르면 네 단계로 책을 등록합니다.
+
+1. **책 고르기**: 제목이나 지은이로 검색하거나(Google Books, 안 되면 Open Library) 아래 **추천 책**에서 고릅니다.
+   표지, 쪽수, ISBN이 자동으로 채워집니다. 없는 책은 **직접 입력하기**를 누릅니다.
+2. **정보 확인**: 상태(읽는 중, 읽고 싶은 책, 다 읽은 책, 잠시 멈춤), 날짜, 별점, 한두 문장 소개를 확인합니다.
+   책 주소는 제목에서 자동으로 만들어지며 **주소와 공개 설정**에서 바꿀 수 있습니다.
+3. **퀴즈 사진**: 읽은 쪽을 사진으로 찍어 퀴즈를 만드는 방법을 안내합니다. 건너뛰어도 됩니다.
+4. **저장**: **GitHub에 저장하기**를 누르면 책 파일이 채워진 GitHub 새 파일 화면이 열립니다.
+   **Commit changes**를 누르면 1분쯤 뒤 책장에 나옵니다.
+
+작성 중인 내용은 그 기기의 브라우저에 임시로 남습니다. 저장한 책이 책장에 나오면 다음 방문 때 지워집니다.
+손으로 쓰고 싶다면 예전처럼 [`_templates/book.md`](./_templates/book.md)를 복사해 `_books/my-book.md`로 만들어도 됩니다.
+
+### 추천 책
+
+추천 목록은 [`_data/recommendations.yml`](./_data/recommendations.yml)에 있습니다. 제목, 지은이, 장르,
+`level`(그림책, 저학년, 중학년), 추천 이유를 적습니다. 이미 책장에 있는 책은 추천에서 빠집니다.
+별점 4점 이상인 책이 있으면 그 지은이의 다른 책도 검색해서 함께 보여 줍니다.
+
+### 책 검색 키 (선택)
+
+Google Books는 키 없이 쓰면 하루 사용량이 금방 찰 수 있습니다. 그럴 때는 Open Library에서 찾습니다.
+더 안정적으로 쓰려면 Google Cloud에서 Books API 키를 만들고 **HTTP 리퍼러를 `simon.itdo.work/*`로 제한**한 뒤
+`_config.yml`의 `google_books_key`에 넣습니다. 이 값은 공개되므로 제한하지 않은 키는 넣지 않습니다.
 
 `status`는 `_data/shelves.yml`의 `key` 중 하나입니다.
 
@@ -28,6 +46,9 @@ GitHub Pages가 Markdown 파일을 정적 페이지로 만들고 직접 제공�
 | `paused` | 잠시 멈춤 | `started` |
 
 책장 이름, 순서, 색은 `_data/shelves.yml`에서 고칩니다. 템플릿은 바꾸지 않아도 됩니다.
+
+`cover`는 `https://`로 시작하는 표지 그림 주소이고, 없으면 색 표지를 그립니다. `isbn`은 따옴표로 감싼 숫자입니다.
+`structure`는 구조 그리기의 첫 모양이며 `mountain`(이야기 산), `three`(처음·가운데·끝), `map`(생각 지도) 중 하나입니다.
 
 올해 목표(`reading_goal`)에는 `status: finished`이면서 `finished` 날짜가 올해인 책만 셉니다.
 다 읽은 책에는 `finished`를 꼭 적습니다.
@@ -59,13 +80,16 @@ quiz:
 정답은 페이지 소스에 그대로 들어 있습니다. 독서 확인은 시험이 아니라 스스로 점검하는 도구입니다.
 
 사진으로 찍은 책 쪽에서 퀴즈를 만들고 싶다면 Claude Code의 `.claude/skills/make-quiz/SKILL.md` 스킬을 쓰세요.
-쪽 사진을 건네면 질문을 `quiz`에 적고 `ruby scripts/check_books.rb`로 확인해 줍니다.
+쪽 사진을 `media/inbox/`에 넣고(AirDrop) `"책 제목" 퀴즈 만들어`라고 보내면 질문을 `quiz`에 적고
+`ruby scripts/check_books.rb`로 확인한 뒤, 보호자가 확인하면 사진을 Drive로 옮기고 Mac에서 지웁니다.
+퀴즈가 없는 책 페이지에도 이 안내와 복사할 문장이 나옵니다.
 
 ### 문제지로 인쇄하기
 
 퀴즈가 있는 책 페이지에서 **퀴즈 인쇄하기**를 누르거나 브라우저의 인쇄(`Ctrl+P`, `⌘P`)를 쓰면
 제목, 이름·날짜 칸, 번호가 붙은 문제와 보기가 A4 종이에 나옵니다.
-정답과 설명은 다음 쪽에 따로 나오니 아이에게 건네기 전에 그 쪽은 빼고 인쇄합니다.
+그다음 쪽은 종이에 직접 그리는 **책의 구조 그리기**(이야기 산)이고, 정답과 설명은 마지막 쪽에 따로 나옵니다.
+아이에게 건네기 전에 마지막 쪽은 빼고 인쇄합니다.
 문제지는 자바스크립트 없이도 인쇄됩니다. 문제지에 필요한 값은 모두 책 파일의 `quiz`에서 옵니다.
 
 ### 점수는 어디에 저장되나요
@@ -86,16 +110,55 @@ ruby scripts/check_books.rb
 모든 `_books/*.md`의 항목을 확인하고 문제가 있으면 파일 이름과 함께 알려 준 뒤 실패로 끝납니다.
 파일 몇 개만 확인하려면 경로를 뒤에 적습니다.
 
-## 사진 넣기
+## 책의 구조 그리기
 
-보호자가 확인한 사진을 `assets/books/`에 업로드하고 독서 노트에서 다음처럼 연결합니다.
+`읽고 싶은 책`이 아닌 책 페이지에는 **책의 구조를 그려 봐요**가 있습니다. 퀴즈 결과 화면의
+**다음: 책의 구조 그리기**도 이곳으로 옵니다. 손가락, 펜, 마우스로 그리고, 모양은 세 가지입니다.
+
+- **이야기 산**: 처음 → 사건 → 절정 → 해결 → 끝
+- **처음 · 가운데 · 끝**: 세 칸
+- **생각 지도**: 책 제목을 가운데에 두고 인물, 장소, 사건, 느낌, 배운 점, 궁금한 점
+
+색, 굵기, 지우개, 되돌리기(`⌘Z`/`Ctrl+Z`)를 쓸 수 있습니다. 그림은 그 기기의 브라우저에 저절로 저장됩니다.
+**그림 저장하기**를 누르면 `<책 주소>-structure-<날짜>.png` 파일이 다운로드 폴더에 생깁니다.
+
+## 이미지와 Google Drive
+
+원본 이미지는 저장소에 넣지 않고 Google Drive의 `시몬 책장/` 폴더에 모읍니다. Mac에는 남기지 않습니다.
+
+| 이미지 | Mac에서 두는 곳 | Drive 폴더 |
+| --- | --- | --- |
+| 퀴즈용 쪽 사진 | `media/inbox/` → 퀴즈를 만든 뒤 `media/pages/<책 주소>/` | `시몬 책장/쪽 사진/<책 주소>/` |
+| 구조 그림 | `~/Downloads/<책 주소>-structure-*.png` | `시몬 책장/구조 그림/<책 주소>/` |
+| 사이트 일러스트 원본 | `media/flow/` | `시몬 책장/일러스트 원본/` |
+
+`media/`는 `.gitignore`에 들어 있어 커밋되지 않습니다. 정리할 때는 다음을 실행합니다.
+
+```sh
+python3 scripts/drive_archive.py sweep          # 무엇을 옮길지 보기만 해요
+python3 scripts/drive_archive.py sweep --apply  # Drive에 올리고, md5를 확인한 뒤 Mac에서 지워요
+python3 scripts/drive_archive.py verify         # Drive에 올린 파일이 그대로인지 확인해요
+```
+
+Drive 사본의 md5가 Mac의 파일과 같을 때만 지우고, 다르면 `KEPT`로 알려 주고 남겨 둡니다.
+휴지통으로 옮기고 싶다면 `--trash`를 붙입니다(공간은 휴지통을 비워야 돌아옵니다).
+다른 곳의 파일은 `push FILE... --to pages|drawings|flow --book <책 주소> --apply`로 올립니다.
+`gws` CLI가 `drive.file` 권한으로 로그인되어 있어야 합니다(`gws auth status`). Drive 파일 목록은 `media/.drive-index.json`에
+남으니 지우지 않습니다. 지우면 다음 정리 때 같은 파일이 Drive에 한 번 더 올라갑니다.
+
+사이트 일러스트(`assets/img/*.webp`)는 Google Flow(Nano Banana 2.1)로 만든 그림을 웹용 WebP로 줄인 것입니다.
+그림을 바꾸려면 Flow 프로젝트 **시몬 책장 일러스트**에서 새로 만들어 `media/flow/`에 받은 뒤
+`cwebp -q 82 -resize <폭> 0 원본.jpg -o assets/img/<이름>.webp`로 줄이고 `sweep --apply`로 원본을 Drive에 옮깁니다.
+
+### 독서 노트에 사진 넣기
+
+보호자가 확인한 사진만 `assets/books/`에 작게 줄여 올리고 독서 노트에서 다음처럼 연결합니다.
 
 ```markdown
 ![내가 그린 장면]({{ '/assets/books/my-drawing.jpg' | relative_url }})
 ```
 
 사진 속 이름, 학교 등 공개하지 않을 정보는 업로드 전에 제거합니다.
-다른 서버의 사진 주소를 연결할 필요가 없습니다.
 
 ## 수정하거나 내리기
 
@@ -108,7 +171,7 @@ ruby scripts/check_books.rb
 
 - Pages source: **Deploy from a branch → main → / (root)**.
 - Jekyll이 `_config.yml`, `_layouts/`, `_includes/`, `_data/`, `_books/`를 빌드합니다.
-- `_templates/`, `scripts/`와 README는 사이트에 배포하지 않습니다.
+- `_templates/`, `scripts/`, `media/`와 README는 사이트에 배포하지 않습니다.
 - 첫 배포의 책장은 비어 있습니다. `_books/example-book.md`는 `published: false`인 예시이며 시몬의 책으로 표시하지 않습니다.
 - 이 사이트는 `noindex`로 검색 엔진에 노출하지 않습니다.
 - 원본 사진, 개인 학습 기록, 인증 정보, 서버 코드는 이 저장소에 포함하지 않습니다.

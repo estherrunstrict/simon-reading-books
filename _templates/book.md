@@ -9,6 +9,8 @@ started: 2026-11-01    # 없어도 돼요
 finished: 2026-11-20   # 없어도 돼요. 다 읽은 책은 꼭 적어요
 summary: "어떤 책인지 한두 문장으로 적어요."
 quote: "기억에 남는 문장"   # 없어도 돼요
+# cover: "https://..."   # 표지 그림 주소. 없으면 색 표지를 그려요
+structure: mountain    # 구조 그리기 첫 모양: mountain(이야기 산), three(처음·가운데·끝), map(생각 지도)
 published: false
 quiz:                  # 독서 확인 퀴즈. 없어도 돼요
   - q: "질문을 적어요."
