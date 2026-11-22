@@ -170,8 +170,9 @@
     });
   }
 
+  var googleDown = false;
   function fetchBooks(q, lang) {
-    return googleBooks(q, lang).catch(function () { return []; }).then(function (list) {
+    return googleBooks(q, lang).then(function (list) { googleDown = false; return list; }, function () { googleDown = true; return []; }).then(function (list) {
       return list.length ? list : openLibrary(q);
     });
   }
@@ -182,11 +183,34 @@
     status.textContent = '찾고 있어요…';
     results.textContent = '';
     fetchBooks(q, 'ko').then(function (list) {
-      status.textContent = list.length ? '“' + q + '” 검색 결과 ' + list.length + '권이에요. 맞는 책을 골라요.' : '찾는 책이 없어요. 제목을 짧게 줄이거나 직접 입력해요.';
+      if (!list.length) { noResults(q); return; }
+      status.textContent = '“' + q + '” 검색 결과 ' + list.length + '권이에요. 맞는 책을 골라요.';
       list.forEach(function (b) { results.append(resultItem(b)); });
-    }).catch(function () {
-      status.textContent = '지금은 검색이 안 돼요. 직접 입력해 주세요.';
+    }).catch(function () { noResults(q); });
+  }
+
+  // No hit online: offer the recommendation that matches, the query as a manual entry, and the Claude Code route that finds covers.
+  function noResults(q) {
+    status.textContent = googleDown
+      ? 'Google Books가 오늘 쓸 수 있는 검색 횟수를 다 써서, Open Library에서만 찾아봤는데 없어요.'
+      : '“' + q + '”을 찾지 못했어요.';
+    var key = norm(q);
+    DATA.recommendations.filter(function (r) {
+      var t = norm(r.title), a = norm(r.author);
+      return key && (t.indexOf(key) !== -1 || key.indexOf(t) !== -1 || a.indexOf(key) !== -1);
+    }).forEach(function (r) {
+      results.append(resultItem({ title: r.title, author: r.author, genre: r.genre, status: 'reading', note: '추천 목록에 있는 책' }));
     });
+    var cmd = '"' + q + '" 책 추가해';
+    results.append(h('li', { class: 'no-result' },
+      h('div', {},
+        h('p', { class: 'result-title' }, '이렇게 해 보세요'),
+        h('p', { class: 'muted' }, '제목만으로 바로 등록하거나, Claude Code에 부탁하면 알라딘에서 표지와 ISBN, 쪽수까지 찾아 꽂아 줘요.'),
+        h('div', { class: 'copy-line' }, h('code', { id: 'cover-command' }, cmd),
+          h('button', { type: 'button', class: 'action ghost small', 'data-copy': '#cover-command' }, '복사'))),
+      h('button', { type: 'button', class: 'action small', onclick: function () {
+        book = Object.assign({}, EMPTY, { title: q }); book.slug = uniqueSlug(romanize(q)); showStep(2, true);
+      } }, '“' + q + '”(으)로 직접 입력')));
   }
 
   function resultItem(b) {
@@ -195,7 +219,7 @@
       b.cover ? h('img', { src: b.cover, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer' }) : h('div', { class: 'result-nocover', 'aria-hidden': 'true' }, '📖'),
       h('div', { class: 'result-text' },
         h('p', { class: 'result-title' }, b.title),
-        h('p', { class: 'muted' }, [b.author, b.publisher, b.year, b.pages ? b.pages + '쪽' : ''].filter(Boolean).join(' · '))),
+        h('p', { class: 'muted' }, [b.author, b.publisher, b.year, b.pages ? b.pages + '쪽' : '', b.note].filter(Boolean).join(' · '))),
       already ? h('span', { class: 'chip' }, '이미 책장에 있어요')
         : h('button', { type: 'button', class: 'action small', onclick: function () { pick(b); } }, '이 책 고르기'));
   }
