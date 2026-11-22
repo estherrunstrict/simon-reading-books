@@ -46,6 +46,7 @@ title: 내 책장
           <div class="card-meta">
             {% include status.html shelf=shelf %}
             {% include stars.html rating=book.rating %}
+            {% if book.quiz.size > 0 %}<span class="chip" data-readcheck-chip="{{ book.id | escape }}">독서 확인</span>{% endif %}
             {% if shelf.date_field != "" %}{% assign d = book[shelf.date_field] %}{% if d %}<span class="card-date">{{ d | date: "%-m월 %-d일" }} {{ shelf.date_label | escape }}</span>{% endif %}{% endif %}
           </div>
         </a></li>

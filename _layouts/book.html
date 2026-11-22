@@ -24,5 +24,14 @@ layout: default
   {% if page.quote %}<blockquote class="book-quote">{{ page.quote | escape }}</blockquote>{% endif %}
   {% assign notes = content | strip %}
   {% if notes != "" %}<section class="reading" aria-label="시몬의 독서 노트">{{ content }}</section>{% endif %}
+  {% if page.quiz.size > 0 %}
+  <section class="readcheck" aria-labelledby="readcheck-title">
+    <h2 id="readcheck-title">독서 확인</h2>
+    <script id="readcheck-data" type="application/json">{{ page.quiz | jsonify | replace: "</", "<\/" }}</script>
+    <div id="readcheck" data-book-id="{{ page.id | escape }}" data-pass-percent="{{ site.readcheck.pass_percent | default: 80 }}">
+      <noscript><p class="muted">독서 확인은 자바스크립트를 켜야 풀 수 있어요.</p></noscript>
+    </div>
+  </section>
+  {% endif %}
   <a class="action outline" href="{{ '/' | relative_url }}#shelf">다른 책 보기</a>
 </article>

@@ -123,3 +123,33 @@ nav{gap:18px}
 .book-head .cover-title{font-size:15px}
 .book-head .book-cover{padding:12px 10px 10px 18px}
 }
+
+/* readcheck */
+.chip{display:inline-block;margin:2px 0;padding:1px 10px;border:1px solid #2549c7;border-radius:999px;background:#fff;color:#2549c7;font-size:12px;font-weight:700;line-height:1.7}
+.chip.is-passed{border-color:#236c50;background:#236c50;color:#fff}
+.readcheck{margin:44px 0 36px}
+.readcheck h2{margin-bottom:16px;font-size:23px}
+.rc-card{padding:26px 28px;border-left:4px solid #2549c7;border-radius:3px 18px 18px 3px;background:#f8faff}
+.rc-card>*+*{margin-top:16px}
+.rc-progress{font-size:14px;font-weight:700;color:#2549c7}
+.rc-card h3{font-size:21px;line-height:1.5}
+.rc-card h3:focus{outline:none}
+.rc-card h3:focus-visible{outline:3px solid #236c50;outline-offset:4px}
+.rc-choices{display:grid;gap:10px;margin:16px 0 0;padding:0;list-style:none}
+.rc-choice{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:10px 16px;border:2px solid #c9d3ea;border-radius:10px;background:#fff;color:#182c52;font:inherit;font-size:16px;line-height:1.5;text-align:left;cursor:pointer}
+.rc-choice:hover{border-color:#2549c7}
+.rc-choice[aria-disabled="true"]{cursor:default}
+.rc-choice[aria-disabled="true"]:hover{border-color:#c9d3ea}
+.rc-choice.is-right,.rc-choice.is-right:hover{border-color:#236c50;background:#e8f5ee}
+.rc-choice.is-wrong,.rc-choice.is-wrong:hover{border-color:#b3261e;background:#fdeceb}
+.rc-num{flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8edf8;font-size:14px;font-weight:700}
+.rc-feedback{padding:12px 16px;border-radius:8px;background:#fff;border:1px solid #dce3f1}
+.rc-score{font-size:44px;font-weight:850;line-height:1.2;color:#2549c7}
+.rc-best{font-size:15px;color:#236c50;font-weight:700}
+.rc-missed h4{margin-bottom:10px;font-size:17px}
+.rc-missed ol{margin:0;padding-left:22px}
+.rc-missed li+li{margin-top:16px}
+.rc-q{font-weight:700}
+@media(max-width:760px){
+.rc-card{padding:20px 18px}
+}
