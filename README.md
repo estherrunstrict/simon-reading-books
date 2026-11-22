@@ -24,6 +24,15 @@ GitHub Pages가 Markdown 파일을 정적 페이지로 만들고 직접 제공�
 작성 중인 내용은 그 기기의 브라우저에 임시로 남습니다. 저장한 책이 책장에 나오면 다음 방문 때 지워집니다.
 손으로 쓰고 싶다면 예전처럼 [`_templates/book.md`](./_templates/book.md)를 복사해 `_books/my-book.md`로 만들어도 됩니다.
 
+### 표지까지 자동으로 넣기 (Claude Code)
+
+Claude Code에 `"책 제목" 책 추가해`라고 보내면 `add-book` 스킬이 ego lite 브라우저로 알라딘에서 책을 찾아
+앞표지, ISBN, 쪽수를 가져오고 `_books/<책 주소>.md`를 만듭니다. 판이 여러 개면 어느 것인지 물어봅니다.
+표지는 `scripts/make_cover.py`로 400px WebP(`assets/covers/<책 주소>.webp`)로 줄여 사이트에 넣고,
+원본은 `drive_archive.py sweep --apply`로 Drive의 `시몬 책장/표지 원본/`에 올린 뒤 Mac에서 지웁니다.
+이미 있는 책의 표지만 바꾸려면 `"책 제목" 표지 찾아 줘`라고 보냅니다.
+책 파일의 `cover`에는 `https://` 주소나 `/assets/covers/<책 주소>.webp`를 쓸 수 있습니다.
+
 ### 추천 책
 
 추천 목록은 [`_data/recommendations.yml`](./_data/recommendations.yml)에 있습니다. 제목, 지은이, 장르,
@@ -47,7 +56,7 @@ Google Books는 키 없이 쓰면 하루 사용량이 금방 찰 수 있습니�
 
 책장 이름, 순서, 색은 `_data/shelves.yml`에서 고칩니다. 템플릿은 바꾸지 않아도 됩니다.
 
-`cover`는 `https://`로 시작하는 표지 그림 주소이고, 없으면 색 표지를 그립니다. `isbn`은 따옴표로 감싼 숫자입니다.
+`cover`는 `https://`로 시작하는 표지 그림 주소나 `/assets/covers/<책 주소>.webp`이고, 없으면 색 표지를 그립니다. `isbn`은 따옴표로 감싼 숫자입니다.
 `structure`는 구조 그리기의 첫 모양이며 `mountain`(이야기 산), `three`(처음·가운데·끝), `map`(생각 지도) 중 하나입니다.
 
 올해 목표(`reading_goal`)에는 `status: finished`이면서 `finished` 날짜가 올해인 책만 셉니다.
@@ -131,6 +140,7 @@ ruby scripts/check_books.rb
 | 퀴즈용 쪽 사진 | `media/inbox/` → 퀴즈를 만든 뒤 `media/pages/<책 주소>/` | `시몬 책장/쪽 사진/<책 주소>/` |
 | 구조 그림 | `~/Downloads/<책 주소>-structure-*.png` | `시몬 책장/구조 그림/<책 주소>/` |
 | 사이트 일러스트 원본 | `media/flow/` | `시몬 책장/일러스트 원본/` |
+| 책 표지 원본 | `media/covers/` | `시몬 책장/표지 원본/` |
 
 `media/`는 `.gitignore`에 들어 있어 커밋되지 않습니다. 정리할 때는 다음을 실행합니다.
 

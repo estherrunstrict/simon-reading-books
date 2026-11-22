@@ -308,7 +308,8 @@
       box.append(h('div', { class: 'book-cover has-image' }, h('img', { src: book.cover, alt: '', referrerpolicy: 'no-referrer' })));
     } else {
       box.append(h('div', { class: 'book-cover cover-' + ((book.title || '').length % 5) },
-        h('span', { class: 'cover-title' }, book.title || '책 제목'), h('span', { class: 'cover-author' }, book.author || '지은이')));
+        h('span', { class: 'cover-title' }, book.title || '책 제목'), h('span', { class: 'cover-author' }, book.author || '지은이')),
+        h('p', { class: 'muted small cover-hint' }, '표지를 못 찾았어요. Claude Code에 "' + (book.title || '책 제목') + '" 책 추가해라고 보내면 표지를 찾아 줘요.'));
     }
   }
 
