@@ -226,6 +226,7 @@
             }))),
       h('div', { class: 'rc-actions' },
         h('button', { type: 'button', class: 'action', onclick: function () { dispatch({ type: 'restart' }); } }, '다시 풀기'),
+        document.getElementById('structure') ? h('a', { class: 'action ghost', href: '#structure' }, '다음: 책의 구조 그리기') : null,
         printButton()));
   }
 

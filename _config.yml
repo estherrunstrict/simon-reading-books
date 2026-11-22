@@ -9,6 +9,9 @@ highlighter: rouge
 repository: estherrunstrict/simon-reading-books
 write_url: https://github.com/estherrunstrict/simon-reading-books/new/main/_books
 reading_goal: 30
+# 책 추가 화면의 검색용 Google Books API 키 (없어도 돼요). 공개되는 값이니
+# Google Cloud에서 HTTP 리퍼러를 이 사이트 주소로 제한한 키만 넣어요.
+google_books_key: ""
 readcheck:
   pass_percent: 80
 collections:
@@ -29,3 +32,4 @@ exclude:
   - tests
   - scripts
   - .gitignore
+  - media

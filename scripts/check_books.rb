@@ -12,7 +12,8 @@ require 'date'
 
 ROOT = File.expand_path('..', __dir__)
 
-FIELDS = %w[title author status rating genre pages started finished summary quote published quiz layout].freeze
+FIELDS = %w[title author status rating genre pages started finished summary quote cover isbn structure published quiz layout].freeze
+STRUCTURES = %w[mountain three map].freeze
 REQUIRED = %w[title author status summary].freeze
 
 def load_yaml(text)
@@ -88,6 +89,15 @@ def book_errors(data, shelf_keys)
   end
   %w[genre quote].each do |k|
     errors << "#{k}: 글이어야 해요" if data.key?(k) && !text?(data[k])
+  end
+  if data.key?('cover') && !(data['cover'].is_a?(String) && data['cover'].match?(%r{\Ahttps://\S+\z}))
+    errors << "cover: https://로 시작하는 그림 주소여야 해요 (지금 값 #{show(data['cover'])})"
+  end
+  if data.key?('isbn') && !(data['isbn'].is_a?(String) && data['isbn'].match?(/\A[0-9X-]{10,17}\z/))
+    errors << "isbn: 따옴표로 감싼 ISBN 숫자여야 해요 (지금 값 #{show(data['isbn'])})"
+  end
+  if data.key?('structure') && !STRUCTURES.include?(data['structure'])
+    errors << "structure: #{STRUCTURES.join(', ')} 중 하나여야 해요 (지금 값 #{show(data['structure'])})"
   end
   %w[started finished].each do |k|
     errors << "#{k}: YYYY-MM-DD 날짜여야 해요 (지금 값 #{show(data[k])})" if data.key?(k) && !date?(data[k])

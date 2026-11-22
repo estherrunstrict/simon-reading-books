@@ -49,6 +49,22 @@ layout: default
         {% endfor %}
       </ol>
     </div>
+    <div class="ws-page ws-structure">
+      <p class="ws-site">{{ site.title | escape }}</p>
+      <h2 class="ws-title">책의 구조 그리기</h2>
+      <p class="ws-author">{{ page.title | escape }}</p>
+      <p class="ws-help">이야기가 어떻게 시작해서, 가장 긴장되는 순간을 지나, 어떻게 끝나는지 그림과 글씨로 채워요.</p>
+      <svg class="ws-mountain" viewBox="0 0 800 520" aria-hidden="true">
+        <path d="M30 470 C150 460 200 380 290 300 S420 70 470 60 S600 300 650 380 S740 465 780 470" fill="none" stroke="#000" stroke-width="3" stroke-dasharray="10 8"/>
+        <g font-size="22" font-weight="700" text-anchor="middle">
+          <circle cx="70" cy="466" r="8"/><text x="90" y="505">처음</text>
+          <circle cx="290" cy="300" r="8"/><text x="230" y="290">사건</text>
+          <circle cx="470" cy="60" r="8"/><text x="470" y="35">절정</text>
+          <circle cx="650" cy="380" r="8"/><text x="715" y="370">해결</text>
+          <circle cx="770" cy="470" r="8"/><text x="740" y="505">끝</text>
+        </g>
+      </svg>
+    </div>
     <div class="ws-page ws-key">
       <p class="ws-site">{{ site.title | escape }}</p>
       <h2 class="ws-title">정답</h2>
@@ -61,6 +77,31 @@ layout: default
         </li>
         {% endfor %}
       </ol>
+    </div>
+  </section>
+  {% endif %}
+  {% if page.status != "want" %}
+  {% unless page.quiz.size > 0 %}
+  <section class="photo-quiz" aria-labelledby="photo-quiz-title">
+    <img src="{{ '/assets/img/photo.webp' | relative_url }}" width="160" height="160" alt="" loading="lazy">
+    <div>
+      <h2 id="photo-quiz-title">사진으로 독서 확인 퀴즈 만들기</h2>
+      <p>시몬이 읽은 쪽을 한 장씩 찍어 Mac의 <code>readcheck/media/inbox</code> 폴더에 넣고, Claude Code에 이렇게 보내요.</p>
+      <div class="copy-line"><code id="quiz-command">"{{ page.title | escape }}" 퀴즈 만들어. 사진은 media/inbox에 있어.</code><button type="button" class="action ghost small" data-copy-target="quiz-command">복사</button></div>
+      <p class="muted">퀴즈를 만든 뒤 사진은 Google Drive로 옮기고 Mac에서는 지워요.</p>
+    </div>
+  </section>
+  {% endunless %}
+  <section class="structure" id="structure" aria-labelledby="structure-title">
+    <div class="section-head">
+      <img src="{{ '/assets/img/story-mountain.webp' | relative_url }}" width="240" height="179" alt="" loading="lazy">
+      <div>
+        <h2 id="structure-title">책의 구조를 그려 봐요</h2>
+        <p>책을 덮고, 이야기가 어떻게 시작해서 어디서 가장 긴장되고 어떻게 끝나는지 그림과 글씨로 정리해요. 그림은 이 기기에 저절로 저장돼요.</p>
+      </div>
+    </div>
+    <div id="structure-pad" data-book-id="{{ page.slug | escape }}" data-book-title="{{ page.title | escape }}" data-template="{{ page.structure | default: 'mountain' | escape }}">
+      <noscript><p class="muted">그림 그리기는 자바스크립트를 켜야 쓸 수 있어요. 퀴즈 인쇄하기를 누르면 종이에 그릴 수 있는 쪽이 함께 나와요.</p></noscript>
     </div>
   </section>
   {% endif %}
