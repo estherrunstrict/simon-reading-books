@@ -177,16 +177,21 @@
     });
   }
 
+  // Only the newest search may draw: an Enter and a click close together start two.
+  var searchSeq = 0;
   function search() {
     var q = $('#book-query').value.trim();
     if (!q) { $('#book-query').focus(); return; }
+    var mine = ++searchSeq;
     status.textContent = '찾고 있어요…';
     results.textContent = '';
     fetchBooks(q, 'ko').then(function (list) {
+      if (mine !== searchSeq) return;
+      results.textContent = '';
       if (!list.length) { noResults(q); return; }
       status.textContent = '“' + q + '” 검색 결과 ' + list.length + '권이에요. 맞는 책을 골라요.';
       list.forEach(function (b) { results.append(resultItem(b)); });
-    }).catch(function () { noResults(q); });
+    }).catch(function () { if (mine === searchSeq) { results.textContent = ''; noResults(q); } });
   }
 
   // No hit online: offer the recommendation that matches, the query as a manual entry, and the Claude Code route that finds covers.
@@ -439,7 +444,12 @@
       renderRecs();
     }
   });
-  $('#book-query').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); search(); } });
+  // e.isComposing: the Enter that ends Korean IME composition is not a search.
+  $('#book-query').addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
+    e.preventDefault();
+    search();
+  });
   $$('[data-step-tab]').forEach(function (tab) {
     tab.addEventListener('click', function () { var n = Number(tab.getAttribute('data-step-tab')); if (n < step) showStep(n, true); });
   });
