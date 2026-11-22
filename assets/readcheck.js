@@ -274,14 +274,21 @@
   }
 
   function upgradeChips() {
+    var passed = 0;
     var chips = document.querySelectorAll('[data-readcheck-chip]');
     Array.prototype.forEach.call(chips, function (chip) {
       var rec = readBest(chip.getAttribute('data-readcheck-chip'));
       if (rec && rec.passed) {
         chip.textContent = '독서 확인 통과 ✓';
         chip.classList.add('is-passed');
+        passed++;
       }
     });
+    var line = document.querySelector('[data-readcheck-passed]');
+    if (line && passed > 0) {
+      line.textContent = '독서 확인 통과 ' + passed + '권';
+      line.hidden = false;
+    }
   }
 
   var root = document.getElementById('readcheck');

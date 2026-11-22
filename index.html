@@ -21,6 +21,7 @@ title: 내 책장
   <div class="goal-text">
     <p class="muted">올해 다 읽은 책</p>
     <p>{% if to_go > 0 %}{{ to_go }}권 남았어요. 한 쪽씩, 천천히.{% else %}올해 목표를 이뤘어요!{% endif %}</p>
+    <p class="muted" data-readcheck-passed hidden></p>
   </div>
   <ul class="counts">
     {% for shelf in site.data.shelves %}{% assign n = site.books | where: "status", shelf.key | size %}
