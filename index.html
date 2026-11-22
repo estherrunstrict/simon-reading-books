@@ -1,47 +1,66 @@
 ---
 layout: default
-title: 내 말로 설명하는 수학
+title: 내 책장
 ---
-{% assign latest = site.posts.first %}
-<div class="hero">
-  <section class="cover">
-    <h1>내 말로 설명하는<br>수학.</h1>
-    <p>풀어 보고, 설명하고, 다시 생각해요.<br>여기는 시몬의 생각이 자라는 작업실이에요.</p>
-    <div class="signature"><strong>글쓴이 시몬</strong><span>나만의 수학 기록</span></div>
-  </section>
-  <section class="paper" aria-label="최근 공부 이야기">
-    {% if latest %}
-    <span class="tag">가장 최근에 쓴 이야기</span>
-    <h2>{{ latest.title | escape }}</h2>
-    <p>{{ latest.summary | default: latest.excerpt | strip_html | truncate: 160 | escape }}</p>
-    <a class="action" href="{{ latest.url | relative_url }}">시몬의 설명 읽기</a>
-    {% else %}
-    <span class="tag">첫 이야기를 기다리는 중</span>
-    <h2>“왜 이렇게 풀었냐면…”</h2>
-    <p>답을 적는 것에서 한 걸음 더.<br>내가 이해한 방법을 내 말로 설명해요.</p>
-    <a class="action" href="{{ site.write_url | escape }}">내 공부 이야기 쓰기</a>
-    {% endif %}
-  </section>
+{% assign goal = site.reading_goal | default: 30 %}
+{% assign this_year = site.time | date: "%Y" %}
+{% assign done = 0 %}
+{% assign finished_books = site.books | where: "status", "finished" %}
+{% for b in finished_books %}{% assign y = b.finished | date: "%Y" %}{% if y == this_year %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
+{% assign pct = done | times: 100 | divided_by: goal | at_most: 100 %}
+{% assign to_go = goal | minus: done | at_least: 0 %}
+<div class="shelf-head">
+  <h1>내 책장</h1>
+  <p>읽고 있는 책, 읽고 싶은 책, 다 읽은 책을 한곳에 모아요.<br>다 읽은 책은 독서 확인 퀴즈로 진짜 읽었는지 확인해요.</p>
 </div>
-<div class="body-grid">
-  <section id="stories">
-    <div class="section-heading"><h2>공부 이야기</h2>{% if site.posts.size > 0 %}<span class="muted">{{ site.posts.size }}편의 기록</span>{% endif %}</div>
-    <p class="muted">내가 이해한 개념과 답을 찾아간 과정을 나눠요.</p>
-    {% for post in site.posts %}
-    <article class="story"><a href="{{ post.url | relative_url }}">
-      <div class="story-meta"><span>{{ post.topic | escape }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y년 %m월 %d일' }}</time></div>
-      <h3>{{ post.title | escape }}</h3>
-      <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 180 | escape }}</p>
-      <span class="read">설명과 풀이 읽기</span>
-    </a></article>
-    {% else %}
-    <div class="empty"><h3>첫 페이지는 시몬의 이야기로.</h3><p>오늘 배운 개념 하나, 직접 쓴 풀이 한 장.<br>설명이 완벽하지 않아도 괜찮아요. 내가 어떻게 생각했는지부터 적어 봐요.</p><p class="muted">공개한 글이 생기면 이곳에서 읽을 수 있어요.</p></div>
+<section class="summary" aria-label="올해 독서 현황">
+  <div class="ring">
+    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="track" cx="60" cy="60" r="52"/>{% if pct > 0 %}<circle class="fill" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="{{ pct }} 100"/>{% endif %}</svg>
+    <div class="ring-label"><strong class="ring-num">{{ done }}</strong><span>올해 {{ goal }}권 중</span></div>
+  </div>
+  <div class="goal-text">
+    <p class="muted">올해 다 읽은 책</p>
+    <p>{% if to_go > 0 %}{{ to_go }}권 남았어요. 한 쪽씩, 천천히.{% else %}올해 목표를 이뤘어요!{% endif %}</p>
+  </div>
+  <ul class="counts">
+    {% for shelf in site.data.shelves %}{% assign n = site.books | where: "status", shelf.key | size %}
+    <li><strong>{{ n }}</strong><span>{{ shelf.label | escape }}</span></li>
     {% endfor %}
-  </section>
+  </ul>
+</section>
+<div class="body-grid" id="shelf">
+  <div>
+    {% for shelf in site.data.shelves %}
+    {% assign sort_field = shelf.date_field | default: "title" %}
+    {% assign books = site.books | where: "status", shelf.key | sort: sort_field %}
+    {% if shelf.date_field != "" %}{% assign books = books | reverse %}{% endif %}
+    {% if books.size > 0 %}
+    <section class="shelf" aria-labelledby="shelf-{{ shelf.key }}">
+      <h2 id="shelf-{{ shelf.key }}"><i class="dot" style="--dot:{{ shelf.color | escape }}" aria-hidden="true"></i>{{ shelf.label | escape }} <span class="count">{{ books.size }}</span></h2>
+      <ul class="cards">
+        {% for book in books %}
+        <li class="book-card"><a href="{{ book.url | relative_url }}">
+          {% include cover.html book=book %}
+          <h3 class="card-title">{{ book.title | escape }}</h3>
+          <p class="card-author">{{ book.author | escape }}</p>
+          <div class="card-meta">
+            {% include status.html shelf=shelf %}
+            {% include stars.html rating=book.rating %}
+            {% if shelf.date_field != "" %}{% assign d = book[shelf.date_field] %}{% if d %}<span class="card-date">{{ d | date: "%-m월 %-d일" }} {{ shelf.date_label | escape }}</span>{% endif %}{% endif %}
+          </div>
+        </a></li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+    {% endfor %}
+    {% if site.books.size == 0 %}
+    <div class="empty"><h3>책장이 아직 비어 있어요.</h3><p>지금 읽는 책 한 권, 읽고 싶은 책 한 권부터 꽂아 봐요.<br>책을 다 읽으면 독서 확인 퀴즈도 풀 수 있어요.</p><a class="action" href="{{ site.write_url | escape }}">첫 책 추가하기</a></div>
+    {% endif %}
+  </div>
   <aside class="aside">
-    <img src="{{ '/assets/wondo.png' | relative_url }}" width="96" height="96" alt="수학 공부를 함께하는 원도">
-    <div><h3>설명하면 더 잘 보여요.</h3><p>“왜 이 식을 썼을까?”<br>“다르게 풀 수도 있을까?”<br>내 생각을 글로 남겨 봐요.</p></div>
-    <div class="note"><h3>답보다 궁금한 것</h3><p>시몬이 어떤 생각을 했는지, 어디서 다시 생각했는지 함께 읽어 주세요.</p></div>
+    <img src="{{ '/assets/wondo.png' | relative_url }}" width="96" height="96" alt="독서를 함께하는 원도">
+    <div><h3>읽고 나면 퀴즈로 확인해요.</h3><p>책을 덮고 나면 독서 확인 퀴즈를 풀어 봐요.<br>{{ site.readcheck.pass_percent }}% 이상 맞히면 통과예요.</p></div>
+    <div class="note"><h3>점수보다 기억에 남는 것</h3><p>틀려도 괜찮아요. 어떤 장면이 기억에 남았는지 함께 이야기해 주세요.</p></div>
   </aside>
 </div>
-
