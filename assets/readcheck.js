@@ -122,6 +122,11 @@
     return h('p', { class: 'rc-best' }, '내 최고 기록 ' + best.correct + ' / ' + best.total + (best.passed ? ' (통과 ✓)' : ''));
   }
 
+  // Built here, not in the page, so it never shows when scripts are off and window.print() can't work.
+  function printButton() {
+    return h('button', { type: 'button', class: 'action outline', onclick: function () { window.print(); } }, '퀴즈 인쇄하기');
+  }
+
   function render(state, ctx, dispatch) {
     var quiz = ctx.quiz;
     if (state.phase === 'intro') {
@@ -129,7 +134,9 @@
         h('p', {}, '이 책을 정말 읽었는지 ' + quiz.length + '문제로 확인해 봐요.'),
         h('p', { class: 'muted' }, ctx.passPercent + '% 이상 맞히면 통과예요.'),
         bestLine(ctx.best),
-        h('button', { type: 'button', class: 'action', onclick: function () { dispatch({ type: 'start' }); } }, '시작하기'));
+        h('div', { class: 'rc-actions' },
+          h('button', { type: 'button', class: 'action', onclick: function () { dispatch({ type: 'start' }); } }, '시작하기'),
+          printButton()));
     }
 
     if (state.phase === 'question') {
@@ -173,7 +180,9 @@
                 h('p', {}, '정답: ' + it.choices[it.answer]),
                 it.why ? h('p', { class: 'muted' }, it.why) : null);
             }))),
-      h('button', { type: 'button', class: 'action', onclick: function () { dispatch({ type: 'restart' }); } }, '다시 풀기'));
+      h('div', { class: 'rc-actions' },
+        h('button', { type: 'button', class: 'action', onclick: function () { dispatch({ type: 'restart' }); } }, '다시 풀기'),
+        printButton()));
   }
 
   function mount(root) {

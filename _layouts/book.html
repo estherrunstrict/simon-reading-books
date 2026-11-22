@@ -32,6 +32,37 @@ layout: default
       <noscript><p class="muted">독서 확인은 자바스크립트를 켜야 풀 수 있어요.</p></noscript>
     </div>
   </section>
+  <section class="worksheet" aria-label="인쇄용 문제지">
+    <div class="ws-page">
+      <p class="ws-site">{{ site.title | escape }}</p>
+      <h2 class="ws-title">{{ page.title | escape }}</h2>
+      <p class="ws-author">{{ page.author | escape }}</p>
+      <p class="ws-name">이름 ________&nbsp;&nbsp;&nbsp;&nbsp;날짜 ________</p>
+      <ol class="ws-questions">
+        {% for item in page.quiz %}
+        <li class="ws-question">
+          <p class="ws-q"><span class="ws-no">{{ forloop.index }}.</span> {{ item.q | escape }}</p>
+          <ol class="ws-choices">
+            {% for choice in item.choices %}<li><span class="ws-no">{{ forloop.index }})</span> {{ choice | escape }}</li>{% endfor %}
+          </ol>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="ws-page ws-key">
+      <p class="ws-site">{{ site.title | escape }}</p>
+      <h2 class="ws-title">정답</h2>
+      <p class="ws-author">{{ page.title | escape }}</p>
+      <ol class="ws-answers">
+        {% for item in page.quiz %}{% assign pick = item.answer | minus: 1 %}
+        <li>
+          <p><span class="ws-no">{{ forloop.index }}번</span> {{ item.answer | escape }}) {{ item.choices[pick] | escape }}</p>
+          {% if item.why %}<p class="ws-why">{{ item.why | escape }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
   {% endif %}
   <a class="action outline" href="{{ '/' | relative_url }}#shelf">다른 책 보기</a>
 </article>

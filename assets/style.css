@@ -150,6 +150,33 @@ nav{gap:18px}
 .rc-missed ol{margin:0;padding-left:22px}
 .rc-missed li+li{margin-top:16px}
 .rc-q{font-weight:700}
+.rc-actions{display:flex;flex-wrap:wrap;gap:10px}
 @media(max-width:760px){
 .rc-card{padding:20px 18px}
+}
+
+/* worksheet: hidden on screen, the only thing printed */
+.worksheet{display:none}
+@media print{
+@page{size:A4;margin:20mm 18mm}
+html,body{background:#fff;color:#000}
+body{font-size:14pt;line-height:1.6}
+.skip,.mast,.foot,.article>:not(.worksheet){display:none!important}
+main{max-width:none;padding:0}
+.article{max-width:none;margin:0}
+.worksheet{display:block}
+.ws-site{font-size:10pt}
+.ws-title{margin-top:4pt;font-size:22pt}
+.ws-author{margin-top:2pt;font-size:12pt}
+.ws-name{margin:22pt 0 26pt;font-size:14pt;white-space:nowrap}
+.worksheet ol{margin:0;padding:0;list-style:none}
+.ws-question{margin-bottom:30pt;break-inside:avoid;page-break-inside:avoid}
+.ws-q{padding-left:1.8em;text-indent:-1.8em;font-weight:700}
+.ws-choices{margin-top:10pt!important;padding-left:1.8em!important}
+.ws-choices li{margin-top:8pt;padding-left:1.8em;text-indent:-1.8em}
+.ws-no{display:inline-block;min-width:1.8em;text-indent:0}
+.ws-answers li{margin-top:12pt;break-inside:avoid;page-break-inside:avoid}
+.ws-why{margin-top:2pt;padding-left:1.8em;font-size:12pt}
+/* page-break-* is for Safari, which ignores break-* on pages */
+.ws-key{break-before:page;page-break-before:always}
 }
