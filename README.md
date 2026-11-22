@@ -1,6 +1,6 @@
 # 시몬의 책 읽기
 
-**책장:** https://estherrunstrict.github.io/simon-reading-books/
+**책장:** https://simon.itdo.work/
 
 GitHub Pages가 Markdown 파일을 정적 페이지로 만들고 직접 제공합니다.
 독자에게 서버, 데이터베이스, 로그인, AI 호출은 필요하지 않습니다.
@@ -97,16 +97,10 @@ ruby scripts/check_books.rb
 - 이 사이트는 `noindex`로 검색 엔진에 노출하지 않습니다.
 - 원본 사진, 개인 학습 기록, 인증 정보, 서버 코드는 이 저장소에 포함하지 않습니다.
 
-### 처음 한 번만 하는 설정
+### 주소
 
-주소는 저장소 이름에서 나옵니다. 이 사이트는 `simon-reading-books`라는 이름을 기준으로 `_config.yml`을 설정했습니다.
-
-1. 저장소 이름을 `simon-reading-books`로 정합니다. 수학 블로그 저장소를 바꾸지 않고 새 저장소로 올리려면 새 저장소를 이 이름으로 만듭니다.
-2. 다른 이름을 쓰면 `_config.yml`의 `baseurl`, `repository`, `write_url`을 그 이름에 맞게 고칩니다.
-3. **Settings → Pages**에서 위의 Pages source를 선택합니다.
-
-기존 수학 블로그는 `simon.itdo.work` 주소를 쓰고 있었습니다. 이 저장소는 `CNAME` 파일이 없으므로,
-수학 블로그 저장소의 이름을 바꿔 이 사이트로 쓰면 수학 블로그가 그 주소에서 사라집니다.
-수학 블로그를 계속 열어 두려면 별도 저장소로 남겨 둡니다.
+- 이 사이트는 `CNAME` 파일로 `simon.itdo.work` 주소를 씁니다. 예전 수학 블로그 저장소의 이름을 바꿔 만든 저장소라서 같은 주소를 이어받았습니다.
+- 주소를 바꾸려면 `CNAME`과 `_config.yml`의 `url`을 함께 고칩니다. `CNAME`을 지우고 `github.io` 주소를 쓰려면 `baseurl`을 `/simon-reading-books`로 바꿉니다.
+- 저장소 이름을 바꾸면 `_config.yml`의 `repository`와 `write_url`도 고칩니다.
 
 참고: [GitHub의 Jekyll 글 작성 안내](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll).
