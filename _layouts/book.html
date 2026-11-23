@@ -5,7 +5,7 @@ layout: default
 <article class="article">
   <a class="back" href="{{ '/' | relative_url }}#shelf">내 책장으로 돌아가기</a>
   <header class="book-head">
-    <div class="book-head-cover">{% include cover.html book=page %}{% if page.buddy_art %}<img class="book-head-buddy" src="{{ page.buddy_art | relative_url }}" alt="{{ page.buddy | escape }}">{% endif %}</div>
+    <div class="book-head-cover">{% include cover.html book=page %}{% if page.card %}{% assign card_total = 0 %}{% for g in site.data.roadmap %}{% assign card_total = card_total | plus: g[1].must.size | plus: g[1].better.size %}{% endfor %}<div class="book-head-card">{% include book-card.html book=page total=card_total %}</div>{% elsif page.buddy_art %}<img class="book-head-buddy" src="{{ page.buddy_art | relative_url }}" alt="{{ page.buddy | escape }}">{% endif %}</div>
     <div class="book-head-text">
       <h1>{{ page.title | escape }}</h1>
       <p class="book-author">{{ page.author | escape }}</p>

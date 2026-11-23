@@ -4,9 +4,11 @@ title: 시몬의 책
 ---
 {% assign weekly = site.data.weekly %}
 {% assign finished_books = site.books | where: "status", "finished" | sort: "finished" %}
+{% assign card_total = 0 %}{% for g in site.data.roadmap %}{% assign card_total = card_total | plus: g[1].must.size | plus: g[1].better.size %}{% endfor %}
 <script id="quest-data" type="application/json">{
   "repo": {{ site.repository | jsonify }},
   "base": {{ site.baseurl | jsonify }},
+  "cardTotal": {{ card_total }},
   "weekly": {{ weekly | jsonify | replace: "</", "<\/" }},
   "shelf": [{% for b in finished_books %}{"slug": {{ b.slug | jsonify }}, "title": {{ b.title | jsonify }}, "finished": {{ b.finished | date: "%Y-%m-%d" | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
 }</script>
@@ -77,7 +79,16 @@ title: 시몬의 책
     </div>
   </div>
 
+  <div class="q-pack" data-view="pack" hidden>
+    <h1 data-pack-title>책을 다 읽은 선물이 왔어요!</h1>
+    <p class="q-sub" data-pack-sub>팩 윗부분을 손가락으로 쭉 밀어서 뜯어요.</p>
+    <div class="pack-stage" data-pack-stage></div>
+    <p class="pack-hint" data-pack-hint aria-live="polite"></p>
+    <div class="row-actions center"><button type="button" class="action spark" data-collect hidden>카드 도감에 넣기</button></div>
+  </div>
+
   <div class="q-done" data-view="done" hidden>
+    <div class="done-card" data-done-card hidden></div>
     <img class="buddy-big" data-done-buddy alt="">
     <h1 data-done-title></h1>
     <p class="q-sub" data-done-sub></p>
@@ -93,8 +104,8 @@ title: 시몬의 책
   <p class="lock" data-lock hidden>독후감을 넣으면 책장이 열려요</p>
   <ol class="dex" data-dex>
     {% for b in finished_books %}
-    <li data-slug="{{ b.slug | escape }}"><a href="{{ b.url | relative_url }}">
-      <span class="slot">{% if b.cover %}{% assign cs = b.cover %}{% unless cs contains "://" %}{% assign cs = cs | relative_url %}{% endunless %}<img class="mini-cover" src="{{ cs | escape }}" alt="" loading="lazy">{% endif %}{% if b.buddy_art %}<img class="mini-buddy" src="{{ b.buddy_art | relative_url }}" alt="" loading="lazy">{% endif %}</span>
+    <li data-slug="{{ b.slug | escape }}"{% if b.card %} class="has-card"{% endif %}><a href="{{ b.url | relative_url }}">
+      {% if b.card %}<span class="slot card-slot">{% include book-card.html book=b total=card_total mini=true %}</span>{% else %}<span class="slot">{% if b.cover %}{% assign cs = b.cover %}{% unless cs contains "://" %}{% assign cs = cs | relative_url %}{% endunless %}<img class="mini-cover" src="{{ cs | escape }}" alt="" loading="lazy">{% endif %}{% if b.buddy_art %}<img class="mini-buddy" src="{{ b.buddy_art | relative_url }}" alt="" loading="lazy">{% endif %}</span>{% endif %}
       <span class="no">No.{{ forloop.index }}</span>
       <span class="name">{{ b.title | escape }}</span>
     </a></li>

@@ -172,13 +172,14 @@
   }
 
   // ---------- views ----------
-  var views = { choose: $('[data-view=choose]'), read: $('[data-view=read]'), done: $('[data-view=done]') };
+  var views = { choose: $('[data-view=choose]'), read: $('[data-view=read]'), pack: $('[data-view=pack]'), done: $('[data-view=done]') };
   function show(name) {
     Object.keys(views).forEach(function (k) { views[k].hidden = k !== name; });
     var zone = document.getElementById('shelf');
-    var locked = name === 'read';
+    var locked = name === 'read' || name === 'pack';
     zone.classList.toggle('is-locked', locked);
     $('[data-lock]', zone).hidden = !locked;
+    $('[data-lock]', zone).textContent = name === 'pack' ? '카드를 받으면 책장이 열려요' : '독후감을 넣으면 책장이 열려요';
   }
 
   function bookBy(slug) { return books.filter(function (b) { return b.slug === slug; })[0]; }
@@ -213,6 +214,10 @@
     if (b.buddy_art) lines.push('buddy_art: ' + q(b.buddy_art));
     if (b.book_type) lines.push('book_type: ' + b.book_type);
     if (b.size_mm) lines.push('size_mm: [' + b.size_mm.join(', ') + ']');
+    if (b.power) lines.push('power: ' + q(b.power));
+    if (b.card && b.card.art) {
+      lines.push('card:', '  art: ' + q(b.card.art), '  number: ' + Number(b.card.number || 0), '  rarity: ' + (b.card.rarity === 'SR' ? 'SR' : 'R'), '  move: ' + q(b.card.move));
+    }
     lines.push('published: true', '---', '');
     return lines.join('\n') + '\n';
   }
@@ -279,14 +284,159 @@
     var last = state.history[state.history.length - 1];
     if (!last) { show('choose'); return; }
     var nextDay = weekly.proposed && weekly.proposed > last.doneAt ? weekly.proposed : nextSaturday(last.doneAt);
-    var img = $('[data-done-buddy]');
-    if (last.buddy_art) { img.src = DATA.base + last.buddy_art; img.alt = last.buddy || ''; img.hidden = false; } else img.hidden = true;
-    $('[data-done-title]').textContent = iga(last.buddy || '책콩') + ' 책장에 왔어요!';
+    var img = $('[data-done-buddy]'), holder = $('[data-done-card]');
+    holder.textContent = '';
+    if (last.card && window.BookCard) {
+      var dc = BookCard.make(last, DATA.cardTotal, DATA.base, false);
+      dc.setAttribute('data-gyro', '');
+      holder.append(dc); holder.hidden = false; img.hidden = true;
+    } else {
+      holder.hidden = true;
+      if (last.buddy_art) { img.src = DATA.base + last.buddy_art; img.alt = last.buddy || ''; img.hidden = false; } else img.hidden = true;
+    }
+    $('[data-done-title]').textContent = last.card ? iga(last.buddy || '책콩') + ' 카드 도감에 들어갔어요!' : iga(last.buddy || '책콩') + ' 책장에 왔어요!';
     $('[data-done-sub]').textContent = '다음 책 두 권은 ' + korDate(nextDay) + '에 와요.';
     var onServer = (DATA.shelf || []).some(function (s) { return s.slug === last.slug || s.title === last.title; });
     $('[data-guardian]').hidden = onServer;
     var md = markdownFor(last, last.pickedAt, last.doneAt);
     $('[data-github]').href = 'https://github.com/' + DATA.repo + '/new/main/_books?filename=' + encodeURIComponent(last.slug + '.md') + '&value=' + encodeURIComponent(md);
+  }
+
+  // ---------- the card pack: tear the top strip, the card slides out face down, tap to flip ----------
+  var audio = null;
+  function sound(kind) {
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      var t = audio.currentTime, g = audio.createGain();
+      g.connect(audio.destination);
+      if (kind === 'rip') {
+        var len = Math.floor(audio.sampleRate * 0.32), buf = audio.createBuffer(1, len, audio.sampleRate), d = buf.getChannelData(0);
+        for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 1.6) * (0.6 + 0.4 * Math.sin(i / 90));
+        var src = audio.createBufferSource(), f = audio.createBiquadFilter();
+        f.type = 'bandpass'; f.frequency.value = 2600; f.Q.value = 0.7;
+        src.buffer = buf; src.connect(f); f.connect(g); g.gain.value = 0.5; src.start(t);
+      } else {
+        [880, 1320, 1760].forEach(function (hz, k) {
+          var o = audio.createOscillator(), og = audio.createGain();
+          o.type = 'triangle'; o.frequency.value = hz; o.connect(og); og.connect(g);
+          og.gain.setValueAtTime(0, t + k * 0.09); og.gain.linearRampToValueAtTime(0.18, t + k * 0.09 + 0.02); og.gain.exponentialRampToValueAtTime(0.001, t + k * 0.09 + 0.6);
+          o.start(t + k * 0.09); o.stop(t + k * 0.09 + 0.65);
+        });
+      }
+    } catch (e) { /* no sound is fine */ }
+  }
+
+  function renderPack() {
+    var last = state.history[state.history.length - 1];
+    var c = last.card || {};
+    var stage = $('[data-pack-stage]');
+    var hint = $('[data-pack-hint]'), collect = $('[data-collect]');
+    stage.textContent = '';
+    stage.className = 'pack-stage type-' + (last.book_type || '') + ' rarity-' + (c.rarity === 'SR' ? 'SR' : 'R');
+    stage.style.setProperty('--p', 0);
+    collect.hidden = true;
+    $('[data-pack-title]').textContent = '책을 다 읽은 선물이 왔어요!';
+    $('[data-pack-sub]').textContent = '팩 윗부분을 손가락으로 쭉 밀어서 뜯어요.';
+    hint.textContent = '';
+
+    var back = document.createElement('div'); back.className = 'pack-back';
+    var card = BookCard.make(last, DATA.cardTotal, DATA.base, false);
+    card.classList.add('pack-card', 'is-face-down');
+    card.setAttribute('data-gyro', '');
+    var front = document.createElement('div'); front.className = 'pack-front';
+    front.innerHTML = '<span class="pack-shine"></span><span class="pack-logo">책콩<br>카드</span><img class="pack-buddy" alt="" draggable="false"><span class="pack-note">레어 카드 1장</span><span class="pack-book"></span>';
+    if (last.buddy_art) $('.pack-buddy', front).src = DATA.base + last.buddy_art; else $('.pack-buddy', front).remove();
+    $('.pack-book', front).textContent = '「' + last.title + '」 다 읽은 기념';
+    var top = document.createElement('div'); top.className = 'pack-top';
+    top.tabIndex = 0; top.setAttribute('role', 'button'); top.setAttribute('aria-label', '카드 팩 뜯기');
+    top.innerHTML = '<span class="rip"></span>';
+    var line = document.createElement('div'); line.className = 'tear-line';
+    stage.append(back, card, front, top, line);
+
+    var p = 0, drag = null, opened = false, revealed = false;
+    function setP(v) { p = clamp(v, 0, 1); stage.style.setProperty('--p', p.toFixed(3)); }
+    function open() {
+      if (opened) return;
+      opened = true; setP(1);
+      stage.classList.remove('is-dragging');
+      stage.classList.add('is-torn');
+      sound('rip');
+      $('[data-pack-sub]').textContent = '와, 카드가 나와요!';
+      var wait = reduce ? 0 : 1;
+      setTimeout(function () { stage.classList.add('is-rising'); }, 380 * wait);
+      setTimeout(function () {
+        stage.classList.add('is-out');
+        hint.textContent = '카드를 톡 눌러서 뒤집어요';
+      }, 1700 * wait);
+    }
+    function reveal() {
+      if (revealed || !stage.classList.contains('is-out')) return;
+      revealed = true;
+      card.classList.remove('is-face-down');
+      stage.classList.add('is-revealed');
+      sound('chime');
+      var flash = document.createElement('div'); flash.className = 'flash';
+      var burst = document.createElement('div'); burst.className = 'burst';
+      var colors = ['#ffc83d', '#ff7aa8', '#1fb5c4', '#4f7dff', '#fff'];
+      for (var i = 0; i < 16; i++) {
+        var s = document.createElement('i'), a = (i / 16) * Math.PI * 2 + Math.random() * 0.3, d = 120 + Math.random() * 110;
+        s.style.setProperty('--x', Math.round(Math.cos(a) * d) + 'px');
+        s.style.setProperty('--y', Math.round(Math.sin(a) * d) + 'px');
+        s.style.setProperty('--r', Math.round(Math.random() * 360) + 'deg');
+        s.style.setProperty('--c', colors[i % colors.length]);
+        burst.append(s);
+      }
+      var banner = document.createElement('div'); banner.className = 'rare-banner';
+      banner.textContent = c.rarity === 'SR' ? '슈퍼 레어!' : '레어!';
+      stage.append(flash, burst, banner);
+      setTimeout(function () { flash.remove(); burst.remove(); }, 1200);
+      $('[data-pack-title]').textContent = (last.buddy || '책콩') + ' 카드를 받았어요!';
+      $('[data-pack-sub]').textContent = '「' + last.title + '」 카드 No.' + ('00' + (c.number || 0)).slice(-3) + ' · ' + (c.move || '');
+      hint.textContent = '카드를 손가락으로 기울이면 반짝여요';
+      collect.hidden = false;
+      BookCard.recenter();
+    }
+
+    stage.addEventListener('pointerdown', function (e) {
+      if (opened) return;
+      var r = stage.getBoundingClientRect();
+      if (e.clientY - r.top > r.height * 0.3) return; // only the top of the pack tears
+      drag = { x: e.clientX, w: r.width, id: e.pointerId, from: p, moved: false };
+    });
+    stage.addEventListener('pointermove', function (e) {
+      if (!drag || opened) return;
+      var dx = Math.abs(e.clientX - drag.x);
+      if (dx > 6 && !drag.moved) {
+        drag.moved = true;
+        stage.classList.add('is-dragging');
+        try { stage.setPointerCapture(drag.id); } catch (err) { /* ignore */ }
+      }
+      if (!drag.moved) return;
+      setP(drag.from + dx / (drag.w * 0.75));
+      if (p >= 1) { drag = null; open(); }
+    });
+    function letGo() {
+      if (!drag || opened) return;
+      var moved = drag.moved, from = drag.from;
+      drag = null;
+      stage.classList.remove('is-dragging');
+      if (!moved) return; // a tap: the click handler tears a bit
+      if (p > 0.6) open(); else setP(from);
+      stage.dataset.dragged = '1';
+    }
+    stage.addEventListener('pointerup', letGo);
+    stage.addEventListener('pointercancel', letGo);
+    // A tap is a user gesture: ask for the iPad's tilt here, and let taps on the strip tear it bit by bit.
+    stage.addEventListener('click', function (e) {
+      BookCard.enableGyro();
+      if (stage.dataset.dragged) { delete stage.dataset.dragged; return; }
+      if (!opened && e.target.closest('.pack-top') && p < 0.05) { setP(0.34); hint.textContent = '조금만 더! 쭉 밀어 봐요'; return; }
+      if (!opened && e.target.closest('.pack-top') && p < 1) { setP(p + 0.34); if (p >= 1) open(); return; }
+      if (opened) reveal();
+    });
+    top.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); } });
+    card.tabIndex = 0;
   }
 
   // ---------- shelf: server books plus ones finished on this iPad but not saved yet ----------
@@ -297,6 +447,14 @@
     state.history.forEach(function (h) {
       if (server.some(function (s) { return s.slug === h.slug || s.title === h.title; })) return;
       var li = document.createElement('li'); li.className = 'local';
+      if (h.card && window.BookCard) {
+        li.classList.add('has-card');
+        li.innerHTML = '<span class="slot card-slot"></span><span class="no"></span><span class="name"></span>';
+        $('.card-slot', li).append(BookCard.make(h, DATA.cardTotal, DATA.base, true));
+        $('.name', li).textContent = h.title;
+        dex.append(li);
+        return;
+      }
       li.innerHTML = '<span class="slot"><img class="mini-cover" alt=""><img class="mini-buddy" alt=""></span><span class="no"></span><span class="name"></span>';
       $('.mini-cover', li).src = DATA.base + h.cover;
       if (h.buddy_art) $('.mini-buddy', li).src = DATA.base + h.buddy_art; else $('.mini-buddy', li).remove();
@@ -316,6 +474,7 @@
   function decide() {
     if (state.pick && !state.doneAt && state.pickBook) { show('read'); renderRead(); return; }
     var last = state.history[state.history.length - 1];
+    if (last && last.card && !last.opened && window.BookCard) { show('pack'); renderPack(); return; }
     var waiting = last && (!weekly.proposed || last.week === weekly.proposed || today < weekly.proposed);
     if (waiting) { show('done'); renderDone(); return; }
     if (!books.length) { quest.hidden = true; return; }
@@ -338,6 +497,14 @@
       card.classList.add('is-chosen');
       setTimeout(function () { show('read'); renderRead(); renderShelf(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }, reduce ? 0 : 450);
     }
+    if (t.hasAttribute('data-collect')) {
+      var lh = state.history[state.history.length - 1];
+      if (lh) lh.opened = true;
+      save();
+      show('done'); renderDone(); renderShelf();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      return;
+    }
     if (t.hasAttribute('data-mark-written')) { state.written = true; save(); syncSteps(); }
     if (t.hasAttribute('data-repick')) {
       state = { history: state.history, week: weekly.proposed }; save();
@@ -352,10 +519,11 @@
       var pb = state.pickBook;
       state.history.push({ slug: pb.slug, title: pb.title, author: pb.author, genre: pb.genre, pages: pb.pages, about: pb.about, isbn: pb.isbn,
         cover: pb.cover, buddy: pb.buddy, buddy_art: pb.buddy_art, book_type: pb.book_type, size_mm: pb.size_mm,
+        power: pb.power, card: pb.card, opened: !pb.card,
         week: state.week, pickedAt: state.pickedAt, doneAt: today });
       state.doneAt = today;
       save();
-      show('done'); renderDone(); renderShelf();
+      if (pb.card && window.BookCard) { show('pack'); renderPack(); } else { show('done'); renderDone(); renderShelf(); }
       window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
     }
   });

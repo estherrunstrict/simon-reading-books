@@ -74,6 +74,11 @@ queue.concat((roadmap.dig(grade, 'better') || []).map { |b| b.merge('tier' => "#
 # When everything for this grade is read, keep going with the later grades' better lists.
 GRADES[(idx + 1)..-1].each { |g| queue.concat((roadmap.dig(g, 'better') || []).map { |b| b.merge('tier' => "#{g} Better") }) }
 
+# Card numbers: each book's place in the whole roadmap, 1-based, in file order (grade, then must, then better).
+numbers = {}
+roadmap.each_value { |tiers| %w[must better].each { |t| (tiers[t] || []).each { |b| numbers[norm(b['title'])] ||= numbers.size + 1 } } }
+total = numbers.size
+
 taken = shelf_titles.dup
 picks = []
 other = pair.find { |p| norm(p['title']) != norm(done['title']) }
@@ -84,7 +89,7 @@ end
 queue.each do |b|
   break if picks.size == 2
   next if taken.include?(norm(b['title']))
-  picks << b.merge('keep' => false)
+  picks << b.merge('keep' => false, 'card_number' => numbers[norm(b['title'])], 'card_rarity' => b['tier'].end_with?('Must') ? 'SR' : 'R')
   taken << norm(b['title'])
 end
 
@@ -94,4 +99,4 @@ saturday += 1 until saturday.saturday?
 saturday += 7 while saturday < today
 
 puts JSON.pretty_generate(ready: true, finished: done['title'], finished_on: finished_on.to_s, grade: grade,
-                          proposed: saturday.to_s, books: picks)
+                          proposed: saturday.to_s, card_total: total, books: picks)
