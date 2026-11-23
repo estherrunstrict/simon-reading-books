@@ -81,7 +81,30 @@
   }
   function recenter() { zero = null; }
 
-  window.BookCard = { make: make, wire: wire, enableGyro: enableGyro, recenter: recenter };
+  // ---------- booster packs: one series per book type, printed with the book's card art ----------
+  var SERIES = { 이야기: '이야기 숲', 생각: '생각 퍼즐', 과학: '과학 별빛', 역사: '역사 시간여행', 마음: '마음 무지개' };
+  function series(type) { return (SERIES[type] || '책콩') + ' 시리즈'; }
+  function makePack(b, base) {
+    var c = b.card || {};
+    var r = c.rarity === 'SR' ? 'SR' : 'R';
+    var el = document.createElement('div');
+    el.className = 'bpack type-' + (b.book_type || '') + ' rarity-' + r;
+    el.setAttribute('data-tilt', '');
+    el.innerHTML =
+      '<div class="bp-peek" aria-hidden="true"></div>' +
+      '<div class="bp-body">' +
+      (c.art ? '<img class="bp-art" src="' + esc((base || '') + c.art) + '" alt="" draggable="false">' : '') +
+      '<span class="bp-rays"></span>' +
+      '<span class="bp-logo">책콩<br>카드</span>' +
+      '<span class="bp-series">' + esc(series(b.book_type)) + '</span>' +
+      '<span class="bp-rare">' + (r === 'SR' ? '★★ 슈퍼 레어' : '★ 레어') + ' 1장</span>' +
+      '<span class="bp-shine"></span>' +
+      '</div>';
+    wire(el);
+    return el;
+  }
+
+  window.BookCard = { make: make, makePack: makePack, series: series, wire: wire, enableGyro: enableGyro, recenter: recenter };
   function init() { Array.prototype.forEach.call(document.querySelectorAll('.tcard[data-tilt]'), wire); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
