@@ -1,0 +1,25 @@
+{%- comment -%}
+  One collectible card for a finished book. assets/quest.js builds the same markup in makeCard().
+  include.book needs buddy, pages, book_type, power, title, author and card {art, number, rarity, move}.
+  include.total is the number of cards in the set (every book in _data/roadmap.yml).
+{%- endcomment -%}
+{%- assign b = include.book -%}{%- assign c = b.card -%}
+{%- assign rarity = c.rarity | default: "R" -%}
+<div class="tcard rarity-{{ rarity | escape }} type-{{ b.book_type | escape }}{% if include.mini %} is-mini{% endif %}" data-tilt role="img" aria-label="{{ b.buddy | escape }} 카드, {{ b.title | escape }}">
+  <div class="tc-inner">
+    <div class="tc-face tc-front">
+      <div class="tc-window">
+        <img class="tc-art" src="{{ c.art | relative_url }}" alt="" loading="lazy" draggable="false">
+        <div class="tc-top"><span class="tc-name">{{ b.buddy | escape }}</span><span class="tc-stat"><b>{{ b.pages }}</b>쪽</span></div>
+        <span class="tc-type">{{ b.book_type | escape }}</span>
+        <div class="tc-panel">
+          <p class="tc-move">{{ c.move | escape }}</p>
+          <p class="tc-text">{{ b.power | escape }}</p>
+          <p class="tc-foot"><span class="tc-book">「{{ b.title | escape }}」 {{ b.author | escape }}</span><span>No.{{ c.number | prepend: "00" | slice: -3, 3 }}/{{ include.total }}</span><span class="tc-rare">{% if rarity == "SR" %}★★ SR{% else %}★ R{% endif %}</span></p>
+        </div>
+      </div>
+      <div class="tc-holo"></div><div class="tc-glare"></div>
+    </div>
+    <div class="tc-face tc-back" aria-hidden="true"><span class="tc-emblem">책콩<br>카드</span></div>
+  </div>
+</div>

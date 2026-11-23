@@ -12,7 +12,8 @@ require 'date'
 
 ROOT = File.expand_path('..', __dir__)
 
-FIELDS = %w[title author status rating genre pages started finished summary quote cover isbn structure published quiz layout buddy buddy_art book_type size_mm].freeze
+FIELDS = %w[title author status rating genre pages started finished summary quote cover isbn structure published quiz layout buddy buddy_art book_type size_mm power card].freeze
+RARITIES = %w[SR R].freeze
 BOOK_TYPES = %w[이야기 생각 과학 역사 마음].freeze
 STRUCTURES = %w[mountain three map].freeze
 REQUIRED = %w[title author status summary].freeze
@@ -74,6 +75,24 @@ def quiz_errors(quiz)
   end
 end
 
+def card_errors(card)
+  return ['card: art, number, rarity, move가 있는 항목이어야 해요'] unless card.is_a?(Hash)
+
+  errors = []
+  art = card['art']
+  if !(art.is_a?(String) && art.match?(%r{\A/assets/cards/[a-z0-9][a-z0-9-]*\.webp\z}))
+    errors << "card.art: /assets/cards/책주소.webp여야 해요 (지금 값 #{show(art)})"
+  elsif !File.exist?(File.join(ROOT, art))
+    errors << "card.art: #{art} 파일이 없어요"
+  end
+  errors << "card.number: 1보다 크거나 같은 정수여야 해요 (지금 값 #{show(card['number'])})" unless card['number'].is_a?(Integer) && card['number'].positive?
+  errors << "card.rarity: #{RARITIES.join(', ')} 중 하나여야 해요 (지금 값 #{show(card['rarity'])})" unless RARITIES.include?(card['rarity'])
+  errors << 'card.move: 글이어야 해요' unless text?(card['move'])
+  unknown = card.keys - %w[art number rarity move]
+  errors << "card: 모르는 항목이에요 (#{unknown.join(', ')})" unless unknown.empty?
+  errors
+end
+
 def book_errors(data, shelf_keys)
   errors = []
   (data.keys - FIELDS).each { |k| errors << "#{k}: 모르는 항목이에요. 철자를 확인해 주세요" }
@@ -125,6 +144,8 @@ def book_errors(data, shelf_keys)
   if data.key?('size_mm') && !(data['size_mm'].is_a?(Array) && data['size_mm'].size == 3 && data['size_mm'].all? { |n| n.is_a?(Integer) && n.positive? })
     errors << "size_mm: [가로, 세로, 두께] mm 정수 세 개여야 해요 (지금 값 #{show(data['size_mm'])})"
   end
+  errors << 'power: 글이어야 해요' if data.key?('power') && !text?(data['power'])
+  errors.concat(card_errors(data['card'])) if data.key?('card')
   errors.concat(quiz_errors(data['quiz'])) if data.key?('quiz')
   errors
 end
