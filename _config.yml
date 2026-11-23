@@ -12,6 +12,8 @@ reading_goal: 30
 # 책 추가 화면의 검색용 Google Books API 키 (없어도 돼요). 공개되는 값이니
 # Google Cloud에서 HTTP 리퍼러를 이 사이트 주소로 제한한 키만 넣어요.
 google_books_key: ""
+# 한국 책 검색용 도서관 정보나루(data4library.kr) 인증키 (없어도 돼요). 이 값도 페이지에 공개돼요.
+data4library_key: ""
 readcheck:
   pass_percent: 80
 collections:
@@ -33,3 +35,4 @@ exclude:
   - scripts
   - .gitignore
   - media
+  - docs

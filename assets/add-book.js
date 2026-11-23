@@ -154,13 +154,21 @@
       .then(function (j) { return (j.items || []).map(volumeToBook).filter(function (b) { return b.title; }); });
   }
 
+  // Korean queries search Korean books; anything else (English titles) searches every language.
+  function langFor(text) { return /[가-힣]/.test(text || '') ? 'ko' : ''; }
+
+  // A real ISBN-13 starts with 978 or 979; Open Library's isbn list also holds ISBN-10s and odd ids.
+  function isbn13(list) { return (list || []).filter(function (x) { return /^97[89]\d{10}$/.test(x); })[0] || ''; }
+
   // Open Library has fewer Korean books but no daily quota, so it backs up Google Books.
-  function openLibrary(q) {
+  // lang= only prefers that language's editions for the returned fields; it never drops a book.
+  function openLibrary(q, lang) {
     var clean = q.replace(/(intitle|inauthor):/g, ' ').replace(/"/g, '').trim();
-    var url = 'https://openlibrary.org/search.json?limit=12&fields=title,author_name,cover_i,number_of_pages_median,isbn,first_publish_year,publisher&q=' + encodeURIComponent(clean);
+    var url = 'https://openlibrary.org/search.json?limit=12&fields=title,author_name,cover_i,number_of_pages_median,isbn,first_publish_year,publisher' +
+      '&lang=' + (lang === 'ko' ? 'ko' : 'en') + '&q=' + encodeURIComponent(clean);
     return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
       return (j.docs || []).filter(function (d) { return d.title; }).map(function (d) {
-        var isbn = (d.isbn || []).filter(function (x) { return x.length === 13; })[0] || '';
+        var isbn = isbn13(d.isbn);
         return {
           title: d.title, author: (d.author_name || []).join(', '), pages: d.number_of_pages_median || '', genre: '',
           cover: d.cover_i ? 'https://covers.openlibrary.org/b/id/' + d.cover_i + '-M.jpg' : '',
@@ -170,10 +178,41 @@
     });
   }
 
+  // 도서관 정보나루 (Data4Library) knows almost every Korean book in public libraries. It needs a free key
+  // (data4library_key in _config.yml); without one the search starts at Google Books as before.
+  // Authors arrive as "글·그림: 백희나;빛그림: 김향수": drop the role labels.
+  function data4library(q) {
+    var clean = q.replace(/(intitle|inauthor):/g, ' ').replace(/"/g, '').trim();
+    var url = 'https://data4library.kr/api/srchBooks?format=json&pageNo=1&pageSize=12&authKey=' + encodeURIComponent(DATA.libraryKey) +
+      '&keyword=' + encodeURIComponent(clean);
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
+      var res = j.response || {};
+      if (res.error) throw new Error(res.error);
+      // Results come in loan-count order, so the author's best-loved book can outrank the one asked for.
+      var key = norm(clean);
+      var docs = (res.docs || []).map(function (x) { return x.doc || {}; }).filter(function (d) { return d.bookname; });
+      var hit = function (d) { var t = norm(d.bookname); return key !== '' && (t.indexOf(key) !== -1 || key.indexOf(t) !== -1) ? 0 : 1; };
+      docs = docs.map(function (d, i) { return { d: d, i: i }; })
+        .sort(function (a, b) { return hit(a.d) - hit(b.d) || a.i - b.i; }).map(function (x) { return x.d; });
+      return docs.map(function (d) {
+        var authors = String(d.authors || '').split(';').map(function (a) { return a.replace(/^[^:]*:/, '').trim(); }).filter(Boolean);
+        return {
+          title: d.bookname.trim(), author: authors.join(', '), pages: '', genre: '',
+          cover: httpsCover(d.bookImageURL || ''), isbn: /^97[89]\d{10}$/.test(d.isbn13 || '') ? d.isbn13 : '',
+          summaryHint: '', publisher: d.publisher || '', year: d.publication_year || ''
+        };
+      });
+    });
+  }
+
   var googleDown = false;
   function fetchBooks(q, lang) {
-    return googleBooks(q, lang).then(function (list) { googleDown = false; return list; }, function () { googleDown = true; return []; }).then(function (list) {
-      return list.length ? list : openLibrary(q);
+    var first = lang === 'ko' && DATA.libraryKey ? data4library(q).catch(function () { return []; }) : Promise.resolve([]);
+    return first.then(function (list) {
+      if (list.length) return list;
+      return googleBooks(q, lang).then(function (l) { googleDown = false; return l; }, function () { googleDown = true; return []; }).then(function (l) {
+        return l.length ? l : openLibrary(q, lang);
+      });
     });
   }
 
@@ -185,7 +224,7 @@
     var mine = ++searchSeq;
     status.textContent = '찾고 있어요…';
     results.textContent = '';
-    fetchBooks(q, 'ko').then(function (list) {
+    fetchBooks(q, langFor(q)).then(function (list) {
       if (mine !== searchSeq) return;
       results.textContent = '';
       if (!list.length) { noResults(q); return; }
@@ -243,7 +282,7 @@
   // Recommendations carry title and author only; fill the cover and pages in the background.
   function lookupCover() {
     var want = book.title;
-    fetchBooks('intitle:' + book.title + (book.author ? ' inauthor:' + book.author.split(',')[0] : ''), 'ko').then(function (list) {
+    fetchBooks('intitle:' + book.title + (book.author ? ' inauthor:' + book.author.split(',')[0] : ''), langFor(book.title)).then(function (list) {
       var hit = list.filter(function (x) { return x.cover; })[0];
       if (!hit || book.title !== want) return;
       book.cover = book.cover || hit.cover;
@@ -282,7 +321,7 @@
     liked.forEach(function (b) { var a = b.author.split(',')[0].trim(); if (authors.indexOf(a) === -1) authors.push(a); });
     authors = authors.slice(0, 2);
     if (!authors.length) return;
-    Promise.all(authors.map(function (a) { return fetchBooks('inauthor:"' + a + '"', 'ko').catch(function () { return []; }); }))
+    Promise.all(authors.map(function (a) { return fetchBooks('inauthor:"' + a + '"', langFor(a)).catch(function () { return []; }); }))
       .then(function (lists) {
         var seen = {};
         var picks = [].concat.apply([], lists).filter(function (b) {
