@@ -215,8 +215,10 @@
     if (b.book_type) lines.push('book_type: ' + b.book_type);
     if (b.size_mm) lines.push('size_mm: [' + b.size_mm.join(', ') + ']');
     if (b.power) lines.push('power: ' + q(b.power));
-    if (b.card && b.card.art) {
-      lines.push('card:', '  art: ' + q(b.card.art), '  number: ' + Number(b.card.number || 0), '  rarity: ' + (b.card.rarity === 'SR' ? 'SR' : 'R'), '  move: ' + q(b.card.move));
+    if (b.card && (b.card.art || b.card.image)) {
+      lines.push('card:');
+      ['tcg_id', 'name', 'name_ko', 'rarity_label', 'set', 'image', 'image_small', 'pack', 'art', 'move'].forEach(function (k) { if (b.card[k]) lines.push('  ' + k + ': ' + q(b.card[k])); });
+      lines.push('  number: ' + Number(b.card.number || 0), '  rarity: ' + (b.card.rarity === 'SR' ? 'SR' : 'R'));
     }
     lines.push('published: true', '---', '');
     return lines.join('\n') + '\n';
@@ -250,10 +252,10 @@
       wireBook(stageWrap);
     }
     $('[data-read-title]').textContent = b.title + ' 읽는 중';
-    $('[data-read-sub]').textContent = b.card ? '퀘스트 네 개를 깨면 「' + b.title + '」 팩을 뜯어 ' + (b.buddy || '책콩') + ' 카드를 받아요.' : '다 읽고 독후감을 쓰면 책장으로 가요.';
+    $('[data-read-sub]').textContent = b.card ? '퀘스트 네 개를 깨면 ' + BookCard.series(b) + ' 팩을 뜯어 ' + BookCard.cardName(b) + ' 카드를 받아요.' : '다 읽고 독후감을 쓰면 책장으로 가요.';
     var goal = $('[data-read-pack]');
     goal.parentNode.hidden = !b.card;
-    if (b.card) fillPack(goal, b, ['아직 못 열어요!', '독후감을 쓰면 열려요!', (b.card.rarity === 'SR' ? '슈퍼 레어' : '레어') + ' 카드가 들어 있어요!']);
+    if (b.card) fillPack(goal, b, ['아직 못 열어요!', '독후감을 쓰면 열려요!', (b.card.rarity_label || (b.card.rarity === 'SR' ? '슈퍼 레어' : '레어')) + ' 카드가 들어 있어요!']);
     $('[data-prompt]').textContent = promptFor(b);
     syncSteps();
     if (state.photo) getPhoto(b.slug).then(function (blob) { if (blob) showPhoto(blob); });
@@ -299,7 +301,7 @@
       holder.hidden = true;
       if (last.buddy_art) { img.src = DATA.base + last.buddy_art; img.alt = last.buddy || ''; img.hidden = false; } else img.hidden = true;
     }
-    $('[data-done-title]').textContent = last.card ? iga(last.buddy || '책콩') + ' 카드 도감에 들어갔어요!' : iga(last.buddy || '책콩') + ' 책장에 왔어요!';
+    $('[data-done-title]').textContent = last.card ? iga(BookCard.cardName(last)) + ' 카드 도감에 들어갔어요!' : iga(last.buddy || '책콩') + ' 책장에 왔어요!';
     $('[data-done-sub]').textContent = '다음 책 두 권은 ' + korDate(nextDay) + '에 와요.';
     var onServer = (DATA.shelf || []).some(function (s) { return s.slug === last.slug || s.title === last.title; });
     $('[data-guardian]').hidden = onServer;
@@ -355,9 +357,15 @@
     card.setAttribute('data-gyro', '');
     var front = document.createElement('div'); front.className = 'pack-front';
     front.innerHTML = '<img class="pack-art" alt="" draggable="false"><span class="bp-rays"></span><span class="pack-shine"></span><span class="pack-logo">책콩<br>카드</span><span class="bp-series"></span><span class="pack-note">' + (c.rarity === 'SR' ? '★★ 슈퍼 레어' : '★ 레어') + ' 1장</span><span class="pack-book"></span>';
-    $('.pack-art', front).src = DATA.base + c.art;
-    $('.bp-series', front).textContent = BookCard.series(last.book_type);
-    $('.pack-book', front).textContent = '「' + last.title + '」 다 읽은 기념';
+    if (c.pack) {
+      stage.classList.add('is-real');
+      stage.style.setProperty('--pack', 'url("' + c.pack.replace(/"/g, '') + '")');
+      front.innerHTML = '<span class="pack-shine"></span>';
+    } else {
+      $('.pack-art', front).src = DATA.base + c.art;
+      $('.bp-series', front).textContent = BookCard.series(last);
+    }
+    if ($('.pack-book', front)) $('.pack-book', front).textContent = '「' + last.title + '」 다 읽은 기념';
     var top = document.createElement('div'); top.className = 'pack-top';
     top.tabIndex = 0; top.setAttribute('role', 'button'); top.setAttribute('aria-label', '카드 팩 뜯기');
     top.innerHTML = '<span class="rip"></span>';
@@ -398,11 +406,11 @@
         burst.append(s);
       }
       var banner = document.createElement('div'); banner.className = 'rare-banner';
-      banner.textContent = c.rarity === 'SR' ? '슈퍼 레어!' : '레어!';
+      banner.textContent = (c.rarity_label || (c.rarity === 'SR' ? '슈퍼 레어' : '레어')) + '!';
       stage.append(flash, burst, banner);
       setTimeout(function () { flash.remove(); burst.remove(); }, 1200);
-      $('[data-pack-title]').textContent = (last.buddy || '책콩') + ' 카드를 받았어요!';
-      $('[data-pack-sub]').textContent = '「' + last.title + '」 카드 No.' + ('00' + (c.number || 0)).slice(-3) + ' · ' + (c.move || '');
+      $('[data-pack-title]').textContent = BookCard.cardName(last) + ' 카드를 받았어요!';
+      $('[data-pack-sub]').textContent = '「' + last.title + '」 · ' + (c.set ? c.set + ' · ' + (c.rarity_label || '') : 'No.' + ('00' + (c.number || 0)).slice(-3) + ' · ' + (c.move || ''));
       hint.textContent = '카드를 손가락으로 기울이면 반짝여요';
       collect.hidden = false;
       BookCard.recenter();
@@ -523,7 +531,7 @@
     var p = BookCard.makePack(b, DATA.base);
     p.setAttribute('data-gyro', '');
     p.tabIndex = 0; p.setAttribute('role', 'button');
-    p.setAttribute('aria-label', BookCard.series(b.book_type) + ' 팩 살펴보기');
+    p.setAttribute('aria-label', BookCard.series(b) + ' 팩 살펴보기');
     slot.append(p);
     var k = 0;
     function poke() {
@@ -538,7 +546,8 @@
   $$('.pick .pack-slot[data-pack-for]').forEach(function (slot) {
     var b = bookBy(slot.getAttribute('data-pack-for'));
     if (!b || !b.card) return;
-    fillPack(slot, b, [(b.card.rarity === 'SR' ? '슈퍼 레어 확정!' : '레어 확정!'), '다 읽으면 열 수 있어요!', iga(b.buddy || '책콩') + ' 기다려요!']);
+    var nm = BookCard.cardName(b);
+    fillPack(slot, b, [(b.card.rarity_label || (b.card.rarity === 'SR' ? '슈퍼 레어' : '레어')) + ' 확정!', '다 읽으면 열 수 있어요!', iga(nm) + ' 기다려요!']);
   });
 
   function trainer() {

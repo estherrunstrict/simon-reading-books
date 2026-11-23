@@ -1,6 +1,6 @@
 ---
 name: weekly-books
-description: Prepare the next two books Simon chooses between on the home page - real covers and sizes from Aladin in ego lite, a cute original creature sticker and a rare collectible card illustration for each from Google Flow, written into _data/weekly.yml. Use on the Friday before a Saturday proposal, when asked "다음 주 책 준비해", "토요일 책 두 권 만들어", or when the scheduled weekly run starts.
+description: Prepare the next two books Simon chooses between on the home page - real covers and sizes from Aladin in ego lite, a cute original creature sticker from Google Flow, and a real Pokémon card with its series booster pack for each, written into _data/weekly.yml. Use on the Friday before a Saturday proposal, when asked "다음 주 책 준비해", "토요일 책 두 권 만들어", or when the scheduled weekly run starts.
 ---
 
 # Prepare the next two books
@@ -40,28 +40,24 @@ cwebp -q 86 -alpha_q 90 -resize 480 0 <out.png> -o assets/weekly/<slug>.webp
 
 Look at the webp with Read. Name the creature with a short original name ending in 콩 (잎콩, 퍼즐콩) that is not already used in `_data/weekly.yml` or `_books/`.
 
-## 3b. The card illustration (Google Flow)
+## 3b. The real Pokémon card and its booster pack
 
-Each book has one collectible card (책콩 카드) that Simon gets by tearing open a pack after the report photo. Its art is a full-bleed scene with the same creature.
+Each book has one real Pokémon card that Simon gets by tearing open that card's booster pack after the report photo. Nothing is copied into the repo: the site loads the pictures straight from where they live.
 
-1. In Flow's settings set the ratio to **3:4** (keep Nano Banana 2.1, x2), then set it back to 1:1 afterwards.
-2. Attach the creature sticker you just picked with "+" ("프롬프트 상자에 소재 추가" → the image → "프롬프트에 추가"), then use:
-
-> Using the attached character exactly as it looks (same body shape, colours, face and accessories), create a full-art collectible card illustration: the character <a lively action from the book>, in <a scene from the book, with 2-3 motifs and a palette>. Joyful dynamic pose, slightly low camera angle, rich painterly background with depth, soft glowing light and tiny sparkles in the air. Keep the character in the same flat cel-shaded style with a thick dark navy outline. Vertical composition, the character fills the middle and lower two thirds, the background reaches every edge. No text, no letters, no numbers, no card frame, no border. Completely original artwork, not based on any existing game, anime or franchise.
-
-3. Pick the result where the creature matches its sticker and sits in the middle (the card's text panel covers the bottom quarter). Download it the same way as the sticker (896 × 1200), keep the original in `media/cards/<slug>.jpg`, and
-   `cwebp -q 82 -resize 720 0 media/cards/<slug>.jpg -o assets/cards/<slug>.webp`. Look at it with Read.
-4. Name the card's move: 2-6 Korean words that fit the book and the creature (마당 박차기, 엉터리 돋보기).
+1. Pick a card that fits the book's story or idea (a duck/swan family for 「마당을 나온 암탉」, Alakazam for 「논리야, 놀자」). Prefer an Illustration Rare or Special Illustration Rare for Must books and a Rare or holo rare for Better books. Use a different set from the other book of the pair, so the two packs look different.
+2. Find it with the Pokémon TCG API: `curl -s "https://api.pokemontcg.io/v2/cards?q=name:<name>&orderBy=-set.releaseDate&select=id,name,rarity,set,images"`. Take `id` (tcg_id), `images.large` (image), `images.small` (image_small) and `set.name`. Look at the large image with Read.
+3. Find that set's single booster pack on TCGplayer in ego lite (`https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=<set> booster pack`), open the "<set> Booster Pack" product (not a bundle or box) and use `https://tcgplayer-cdn.tcgplayer.com/product/<product id>_in_1000x1000.jpg`. Check it with curl and Read: one pack, front side.
+4. Write the card's Korean name (스완나, 후딘 ex) and its rarity in Korean (일러스트 레어, 스페셜 일러스트 레어, 레어 ...).
 
 ## 4. Write _data/weekly.yml
 
 Keep the comment header, `grade` and `grade_year`. Set `proposed` to the JSON's `proposed`. For each book write: `slug`, `title`, `author`, `publisher`, `isbn` (quoted), `pages`, `size_mm: [w, h, d]`, `cover`, `buddy`, `buddy_art`, `book_type` (이야기, 생각, 과학, 역사 or 마음), `genre` (동화, 그림책, 지식 책 ...), `tier`, `power` (from the roadmap), and `about`: one sentence in your own words, in the site's 요 tone. Never copy the publisher's description.
 
-Then the card, nested under `card:`: `art` (`/assets/cards/<slug>.webp`), `number` (the JSON's `card_number`: the book's place in the whole roadmap), `rarity` (the JSON's `card_rarity`: SR for Must, R for Better) and `move`. Write `number`, never `no`: YAML reads `no` as false. A `keep: true` book keeps its card as it is.
+Then the card, nested under `card:`: `tcg_id`, `name`, `name_ko`, `rarity_label`, `set`, `image`, `image_small`, `pack` (all quoted), `number` (the JSON's `card_number`: the book's place in the whole roadmap) and `rarity` (the JSON's `card_rarity`: SR for Must, R for Better). Write `number`, never `no`: YAML reads `no` as false. A `keep: true` book keeps its card as it is.
 
 ## 5. Check and publish
 
 1. `ruby scripts/check_books.rb` must pass. Build with Jekyll if it is installed and look at the home page at 820×1180.
-2. Commit only `_data/weekly.yml`, `assets/covers/<slug>.webp`, `assets/weekly/<slug>.webp` and `assets/cards/<slug>.webp`.
+2. Commit only `_data/weekly.yml`, `assets/covers/<slug>.webp` and `assets/weekly/<slug>.webp`. The card and pack pictures stay on pokemontcg.io and TCGplayer.
 3. Push to the branch GitHub Pages builds from only if the user turned on unattended weekly runs; otherwise report and wait for them to say so.
-4. Run `python3 scripts/drive_archive.py sweep`, then with `--apply`, to move the cover and card originals to Drive.
+4. Run `python3 scripts/drive_archive.py sweep`, then with `--apply`, to move the cover originals to Drive.
