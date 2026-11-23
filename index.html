@@ -1,88 +1,111 @@
 ---
 layout: default
-title: 내 책장
+title: 시몬의 책
 ---
-{% assign goal = site.reading_goal | default: 30 %}
-{% assign this_year = site.time | date: "%Y" %}
-{% assign done = 0 %}
-{% assign finished_books = site.books | where: "status", "finished" %}
-{% for b in finished_books %}{% assign y = b.finished | date: "%Y" %}{% if y == this_year %}{% assign done = done | plus: 1 %}{% endif %}{% endfor %}
-{% assign pct = done | times: 100 | divided_by: goal | at_most: 100 %}
-{% assign to_go = goal | minus: done | at_least: 0 %}
-<section class="hero">
-  <div class="hero-text">
-    <p class="eyebrow">시몬의 독서 기록</p>
-    <h1>한 권씩 읽고,<br>확인하고, 기억해요.</h1>
-    <p class="lede">읽고 있는 책과 다 읽은 책을 한곳에 모아요. 다 읽은 책은 독서 확인 퀴즈를 풀고, 책의 구조를 직접 그려 봐요.</p>
-    <div class="hero-actions">
-      <a class="action" href="{{ '/add/' | relative_url }}">+ 새 책 추가하기</a>
-      <a class="action ghost" href="{{ '/add/' | relative_url }}#recommend">추천 책 보기</a>
-    </div>
-  </div>
-  <picture class="hero-art">
-    <img src="{{ '/assets/img/hero.webp' | relative_url }}" width="1376" height="768" alt="책을 읽고 있는 아이와 잠든 고양이가 있는 아늑한 독서 공간 그림" fetchpriority="high">
-  </picture>
-</section>
-<section class="summary" aria-label="올해 독서 현황">
-  <div class="ring">
-    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="track" cx="60" cy="60" r="52"/>{% if pct > 0 %}<circle class="fill" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="{{ pct }} 100"/>{% endif %}</svg>
-    <div class="ring-label"><strong class="ring-num">{{ done }}</strong><span>올해 {{ goal }}권 중</span></div>
-  </div>
-  <div class="goal-text">
-    <p class="muted">올해 다 읽은 책</p>
-    <p class="goal-line">{% if to_go > 0 %}{{ to_go }}권 남았어요. 한 쪽씩, 천천히.{% else %}올해 목표를 이뤘어요!{% endif %}</p>
-    <p class="muted" data-readcheck-passed hidden></p>
-  </div>
-  <ul class="counts">
-    {% for shelf in site.data.shelves %}{% assign n = site.books | where: "status", shelf.key | size %}
-    <li><a href="#shelf-{{ shelf.key }}"><strong>{{ n }}</strong><span><i class="dot" style="--dot:{{ shelf.color | escape }}" aria-hidden="true"></i>{{ shelf.label | escape }}</span></a></li>
-    {% endfor %}
-  </ul>
-</section>
-<div class="body-grid" id="shelf">
-  <div>
-    {% for shelf in site.data.shelves %}
-    {% assign sort_field = shelf.date_field | default: "title" %}
-    {% assign books = site.books | where: "status", shelf.key | sort: sort_field %}
-    {% if shelf.date_field != "" %}{% assign books = books | reverse %}{% endif %}
-    {% if books.size > 0 %}
-    <section class="shelf" aria-labelledby="shelf-{{ shelf.key }}">
-      <h2 id="shelf-{{ shelf.key }}"><i class="dot" style="--dot:{{ shelf.color | escape }}" aria-hidden="true"></i>{{ shelf.label | escape }} <span class="count">{{ books.size }}</span></h2>
-      <ul class="cards">
-        {% for book in books %}
-        <li class="book-card"><a href="{{ book.url | relative_url }}">
-          {% include cover.html book=book %}
-          <h3 class="card-title">{{ book.title | escape }}</h3>
-          <p class="card-author">{{ book.author | escape }}</p>
-          <div class="card-meta">
-            {% include status.html shelf=shelf %}
-            {% include stars.html rating=book.rating %}
-            {% if book.quiz.size > 0 %}<span class="chip" data-readcheck-chip="{{ book.id | escape }}">독서 확인</span>{% endif %}
-            {% if shelf.date_field != "" %}{% assign d = book[shelf.date_field] %}{% if d %}<span class="card-date">{{ d | date: "%-m월 %-d일" }} {{ shelf.date_label | escape }}</span>{% endif %}{% endif %}
+{% assign weekly = site.data.weekly %}
+{% assign finished_books = site.books | where: "status", "finished" | sort: "finished" %}
+<script id="quest-data" type="application/json">{
+  "repo": {{ site.repository | jsonify }},
+  "base": {{ site.baseurl | jsonify }},
+  "weekly": {{ weekly | jsonify | replace: "</", "<\/" }},
+  "shelf": [{% for b in finished_books %}{"slug": {{ b.slug | jsonify }}, "title": {{ b.title | jsonify }}, "finished": {{ b.finished | date: "%Y-%m-%d" | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+}</script>
+
+<section class="quest" id="quest" aria-live="polite">
+  <div class="q-choose" data-view="choose">
+    <h1 class="q-title">이번 주에 읽을 책을 골라요</h1>
+    <p class="q-sub">두 권 중에 한 권만 골라요. 책을 손가락으로 돌려 보고, 톡 누르면 뒤표지가 보여요.</p>
+    <div class="duel">
+      {% for b in weekly.books %}
+      <article class="pick" data-slug="{{ b.slug | escape }}">
+        <div class="stage" style="--w:{{ b.size_mm[0] }};--h:{{ b.size_mm[1] }};--d:{{ b.size_mm[2] }}">
+          {% if b.buddy_art %}<img class="buddy" src="{{ b.buddy_art | relative_url }}" alt="{{ b.buddy | escape }}">{% endif %}
+          <div class="book3d drop" tabindex="0" role="button" aria-pressed="false" aria-label="{{ b.title | escape }} 뒤집어 보기">
+            <div class="b3">
+              <div class="face front"><img src="{{ b.cover | relative_url }}" alt="" draggable="false"></div>
+              <div class="face back"><p class="back-power">{{ b.power | escape }}</p><p>{{ b.about | escape }}</p></div>
+              <div class="face spine"><span>{{ b.title | escape }}</span></div>
+              <div class="face edge"></div><div class="face top"></div><div class="face bottom"></div>
+            </div>
           </div>
-        </a></li>
-        {% endfor %}
-      </ul>
-    </section>
-    {% endif %}
-    {% endfor %}
-    {% if site.books.size == 0 %}
-    <div class="empty"><img src="{{ '/assets/img/add-book.webp' | relative_url }}" width="480" height="358" alt="" loading="lazy"><h3>책장이 아직 비어 있어요.</h3><p>지금 읽는 책 한 권, 읽고 싶은 책 한 권부터 꽂아 봐요.<br>책을 다 읽으면 독서 확인 퀴즈도 풀 수 있어요.</p><a class="action" href="{{ '/add/' | relative_url }}">첫 책 추가하기</a></div>
-    {% endif %}
+        </div>
+        <span class="type type-{{ b.book_type | escape }}">{{ b.book_type | escape }} 책</span>
+        <h2>{{ b.title | escape }}</h2>
+        <p class="pick-meta"><span>{{ b.author | escape }}</span><span>{{ b.pages }}쪽</span><span>{{ b.size_mm[0] | divided_by: 10.0 }} × {{ b.size_mm[1] | divided_by: 10.0 }} cm</span></p>
+        <button type="button" class="action spark" data-choose="{{ b.slug | escape }}">이 책 읽을래요</button>
+      </article>
+      {% if forloop.first %}<div class="or" aria-hidden="true">또는</div>{% endif %}
+      {% endfor %}
+    </div>
   </div>
-  <aside class="aside">
-    <div class="aside-card">
-      <img src="{{ '/assets/img/owl.webp' | relative_url }}" width="120" height="120" alt="" loading="lazy">
-      <h3>책 한 권을 끝내는 세 걸음</h3>
-      <ol class="steps">
-        <li><strong>읽기</strong><span>책장에 꽂고 날마다 조금씩 읽어요.</span></li>
-        <li><strong>독서 확인</strong><span>{{ site.readcheck.pass_percent }}% 이상 맞히면 통과예요.</span></li>
-        <li><strong>구조 그리기</strong><span>처음, 가운데, 끝을 내 그림으로 정리해요.</span></li>
+
+  <div class="q-read" data-view="read" hidden>
+    <div class="stage" data-read-stage></div>
+    <div class="text">
+      <h1 data-read-title></h1>
+      <p class="q-sub" data-read-sub></p>
+      <ol class="mission">
+        <li data-step="write">
+          <h3>종이에 독후감 쓰기</h3>
+          <p>가장 하고 싶은 말 한 가지와 그렇게 생각한 까닭 세 가지를 적어요. 기억에 남는 장면도 하나 넣어요.</p>
+          <div class="row-actions"><button type="button" class="action ghost small" data-mark-written>다 썼어요</button></div>
+        </li>
+        <li data-step="photo">
+          <h3>독후감 사진 찍기</h3>
+          <p>글씨가 잘 보이게 밝은 곳에서 한 장 찍어요. 사진은 이 iPad에만 저장돼요.</p>
+          <div class="row-actions">
+            <label class="action spark small file-btn">사진 찍기<input type="file" accept="image/*" capture="environment" data-photo-input></label>
+          </div>
+          <img class="report-photo" data-photo-preview alt="찍은 독후감 사진" hidden>
+        </li>
+        <li data-step="talk">
+          <h3>AI와 이야기하기</h3>
+          <p>아래 글을 복사해서 Claude나 ChatGPT에 붙여 넣고, 독후감 사진도 함께 올려요. 내 생각을 더 단단하게 만드는 질문을 해 줘요.</p>
+          <div class="row-actions">
+            <button type="button" class="action small" data-copy-prompt>프롬프트 복사</button>
+            <button type="button" class="action ghost small" data-share hidden>사진이랑 같이 보내기</button>
+          </div>
+          <pre class="prompt-box" data-prompt></pre>
+        </li>
+        <li data-step="shelve">
+          <h3>책장에 꽂기</h3>
+          <p>독후감 사진을 넣으면 책이 내 책장으로 가요.</p>
+          <div class="row-actions"><button type="button" class="action spark" data-shelve disabled>책장에 꽂기</button></div>
+        </li>
       </ol>
+      <p class="repick" data-repick-wrap><button type="button" class="linkish" data-repick>다른 책으로 바꿀래요</button></p>
     </div>
-    <div class="aside-card note">
-      <img src="{{ '/assets/wondo.png' | relative_url }}" width="56" height="56" alt="독서를 함께하는 원도">
-      <div><h3>점수보다 기억에 남는 것</h3><p>틀려도 괜찮아요. 어떤 장면이 기억에 남았는지 함께 이야기해 주세요.</p></div>
-    </div>
-  </aside>
-</div>
+  </div>
+
+  <div class="q-done" data-view="done" hidden>
+    <img class="buddy-big" data-done-buddy alt="">
+    <h1 data-done-title></h1>
+    <p class="q-sub" data-done-sub></p>
+    <p class="guardian" data-guardian>보호자 확인: <a class="linkish" data-github target="_blank" rel="noopener">GitHub에 기록하기</a>를 눌러 저장해 주세요. 저장해야 다음 토요일에 새 책 두 권이 준비돼요.</p>
+  </div>
+</section>
+
+<section class="shelf-zone" id="shelf" aria-labelledby="shelf-title">
+  <div class="shelf-head">
+    <h2 id="shelf-title">나만의 책장</h2>
+    <p data-shelf-count></p>
+  </div>
+  <p class="lock" data-lock hidden>독후감을 넣으면 책장이 열려요</p>
+  <ol class="dex" data-dex>
+    {% for b in finished_books %}
+    <li data-slug="{{ b.slug | escape }}"><a href="{{ b.url | relative_url }}">
+      <span class="slot">{% if b.cover %}{% assign cs = b.cover %}{% unless cs contains "://" %}{% assign cs = cs | relative_url %}{% endunless %}<img class="mini-cover" src="{{ cs | escape }}" alt="" loading="lazy">{% endif %}{% if b.buddy_art %}<img class="mini-buddy" src="{{ b.buddy_art | relative_url }}" alt="" loading="lazy">{% endif %}</span>
+      <span class="no">No.{{ forloop.index }}</span>
+      <span class="name">{{ b.title | escape }}</span>
+    </a></li>
+    {% endfor %}
+  </ol>
+  {% assign others = site.books | where_exp: "b", "b.status != 'finished'" %}
+  {% if others.size > 0 %}
+  <div class="other-books">
+    <h3>다른 책</h3>
+    <ul>{% for b in others %}{% assign shelf = site.data.shelves | where: "key", b.status | first %}<li><a href="{{ b.url | relative_url }}">{% if b.cover %}{% assign cs = b.cover %}{% unless cs contains "://" %}{% assign cs = cs | relative_url %}{% endunless %}<img src="{{ cs | escape }}" alt="" loading="lazy">{% endif %}{{ b.title | escape }}<span class="muted">{{ shelf.label | escape }}</span></a></li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+  <p class="add-link"><a class="action ghost small" href="{{ '/add/' | relative_url }}">다른 책 직접 추가하기</a></p>
+</section>

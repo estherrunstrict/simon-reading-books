@@ -1,0 +1,150 @@
+# 주마다 제안할 책의 순서예요. docs/reading-roadmap.md와 같은 목록이에요.
+# scripts/next_pair.rb가 이 순서로 다음 두 권을 골라요.
+# 학년마다 must를 먼저, better를 나중에 읽어요. 순서 규칙은 docs/reading-roadmap.md에 있어요.
+초5:
+  must:
+    - {slug: madangeul-naon-amtal, title: "마당을 나온 암탉", author: "황선미", publisher: "사계절", power: "인물의 선택과 결과를 따라가며 이야기의 인과를 읽어요"}
+    - {slug: nonriya-nolja, title: "논리야, 놀자", author: "위기철", publisher: "사계절", power: "오류 찾기로 '주장–근거'를 처음 구분해요"}
+    - {slug: suhak-gwisin, title: "수학 귀신", author: "H.M. 엔첸스베르거", publisher: "비룡소", power: "규칙을 찾고 증명하는 생각의 순서를 이야기로 익혀요"}
+    - {slug: syalrotui-geomijul, title: "샬롯의 거미줄", author: "E.B. 화이트", publisher: "시공주니어", power: "설득(글자 거미줄)이 어떻게 생각을 바꾸는지 봐요"}
+    - {slug: chaekgwa-nonineun-jip, title: "책과 노니는 집", author: "이영서", publisher: "문학동네", power: "시대 배경과 사건이 이어지는 역사 동화의 흐름"}
+    - {slug: haenguni-gureuneun-sokdo, title: "행운이 구르는 속도", author: "김성운", publisher: "사계절", power: "교과서 수록 작품. 장면 전환과 인물 마음의 변화"}
+    - {slug: matilda, title: "마틸다", author: "로알드 달", publisher: "시공주니어", power: "부당한 어른에 맞서는 근거 있는 꾀, 반전 구조"}
+    - {slug: yeoldu-sale-bujaga-doen-kira, title: "열두 살에 부자가 된 키라", author: "보도 섀퍼", publisher: "을파소", power: "목표–계획–결과로 이어지는 경제적 사고"}
+  better:
+    - {slug: chojeongri-pyeonji, title: "초정리 편지", author: "배유안", publisher: "창비", power: "한글 창제를 배경으로 한 사건의 원인과 결과"}
+    - {slug: maeumui-ondoneun-myeot-doilkkayo, title: "마음의 온도는 몇 도일까요?", author: "정여민", publisher: "주니어김영사", power: "짧은 글에 생각을 담는 방법(교과서 수록)"}
+    - {slug: dongmuldeului-ginagin-yeohaeng, title: "동물들의 기나긴 여행", author: "마이크 언윈", publisher: "보림", power: "설명문 읽기: 현상–이유–예시 구조"}
+    - {slug: ppalgan-byeok, title: "빨간 벽", author: "브리타 테큰트럽", publisher: "봄봄", power: "상징을 읽고 '왜 벽일까' 질문하기"}
+    - {slug: pureun-saja-wanini, title: "푸른 사자 와니니", author: "이현", publisher: "창비", power: "공동체와 선택의 갈등을 따라가는 긴 호흡"}
+    - {slug: sigan-gage, title: "시간 가게", author: "이나영", publisher: "문학동네", power: "'만약 ~라면'의 대가를 따지는 사고 실험"}
+    - {slug: hanbamjung-dalbit-sikdang, title: "한밤중 달빛 식당", author: "이분희", publisher: "비룡소", power: "기억과 선택의 의미를 생각하는 짧은 장편"}
+    - {slug: eorini-gwahak-hyeongsadae-csi, title: "어린이 과학 형사대 CSI", author: "고희정", publisher: "가나출판사", power: "단서–추론–결론, 과학적 추리의 기본"}
+    - {slug: namureul-simeun-saram, title: "나무를 심은 사람", author: "장 지오노", publisher: "두레", power: "한 사람의 행동이 만든 긴 시간의 변화"}
+    - {slug: uri-ban-geokjeong-tamjeong-chawonhui, title: "우리 반 걱정 탐정 차원희", author: "송아주", publisher: "보리", power: "감정을 말로 정리하고 관계 문제를 풀어 가기"}
+초6:
+  must:
+    - {slug: eorin-wangja, title: "어린 왕자", author: "생텍쥐페리", publisher: "번역본 다수", power: "상징과 비유 뒤에 있는 주장을 찾아요"}
+    - {slug: naui-raim-orenjinamu, title: "나의 라임 오렌지나무", author: "J.M. 바스콘셀로스", publisher: "동녘주니어", power: "성장 서사: 사건이 인물을 어떻게 바꾸는가"}
+    - {slug: 5beon-rein, title: "5번 레인", author: "은소홀", publisher: "문학동네", power: "교과서 수록. 갈등–위기–해결의 구조가 선명해요"}
+    - {slug: chaek-kkakneun-sonyeon, title: "책 깎는 소년", author: "장은영", publisher: "파란자전거", power: "교과서 수록. 시대 배경 속 인물의 동기"}
+    - {slug: bangapda-nonriya, title: "반갑다 논리야", author: "위기철", publisher: "사계절", power: "귀납·연역, 개념 정의를 이야기로 익혀요"}
+    - {slug: saenggakhandaneun-geot, title: "생각한다는 것", author: "고병권", publisher: "너머학교", power: "'생각한다'는 게 무엇인지 묻는 첫 철학 책"}
+    - {slug: hanguksa-pyeonji, title: "한국사 편지", author: "박은봉", publisher: "책과함께", power: "역사를 원인–결과의 흐름으로 꿰어 읽어요"}
+    - {slug: galmaegiege-naneun-beopeul-gareuchyeo-jun-goyangi, title: "갈매기에게 나는 법을 가르쳐 준 고양이", author: "루이스 세풀베다", publisher: "바다출판사", power: "약속과 책임, 다름을 이해하는 우화"}
+  better:
+    - {slug: momo, title: "모모", author: "미하엘 엔데", publisher: "비룡소", power: "'시간'이라는 추상 개념을 이야기로 이해해요"}
+    - {slug: geuraetdamyeon-eottaeteulkka, title: "그랬다면 어땠을까", author: "올리비에 탈레크", publisher: "이숲아이", power: "가정과 결과를 따져 보는 그림책(교과서 수록)"}
+    - {slug: uibyeongjang-yunhuisun, title: "의병장 윤희순", author: "정종숙", publisher: "한솔수북", power: "인물 이야기로 역사적 선택의 이유를 읽어요"}
+    - {slug: modeun-sungani-byeol, title: "모든 순간이 별", author: "장세정", publisher: "상상", power: "동시: 짧은 글의 압축과 비유"}
+    - {slug: dangyeonhan-geoteun-eopeo, title: "당연한 것은 없어", author: "이고은", publisher: "창비", power: "상식을 의심하고 근거를 다시 묻는 생명과학"}
+    - {slug: jigu-jeongbokeul-wihan-goronggorong-ingan-gwanchal, title: "지구 정복을 위한 고롱고롱 인간 관찰기", author: "블랙캣", publisher: "다림", power: "낯선 시선으로 익숙한 것을 다시 보기(진화)"}
+    - {slug: hyumeon-2-0, title: "휴먼 2.0", author: "패트릭 케인", publisher: "라임", power: "기술 발전의 득실을 따져 보는 비문학"}
+    - {slug: peurindeul-juseyo, title: "프린들 주세요", author: "앤드루 클레먼츠", publisher: "사계절", power: "말(단어)은 누가 정하나: 규칙과 합의"}
+    - {slug: mongsil-eonni, title: "몽실 언니", author: "권정생", publisher: "창비", power: "전쟁 뒤 삶을 통해 사회와 개인을 함께 보기"}
+    - {slug: kkotdeulege-huimangeul, title: "꽃들에게 희망을", author: "트리나 폴러스", publisher: "시공주니어", power: "경쟁과 변화를 묻는 짧은 우화"}
+    - {slug: eorinireul-wihan-yeoksaui-sseulmo, title: "어린이를 위한 역사의 쓸모", author: "최태성", publisher: "다산어린이", power: "역사에서 지금의 판단 근거를 찾기"}
+중1:
+  must:
+    - {slug: amondeu, title: "아몬드", author: "손원평", publisher: "창비", power: "감정을 '설명'하려는 화자의 시선, 1인칭 서술 읽기"}
+    - {slug: gieok-jeondalja, title: "기억 전달자", author: "로이스 로리", publisher: "비룡소", power: "완벽한 사회의 전제를 의심하는 디스토피아 입문"}
+    - {slug: dongmulnongjang, title: "동물농장", author: "조지 오웰", publisher: "민음사", power: "우화 속 권력의 논리와 말 바꾸기(선전)"}
+    - {slug: uahan-geojitmal, title: "우아한 거짓말", author: "김려령", publisher: "창비", power: "여러 인물의 시점으로 하나의 사건을 재구성"}
+    - {slug: sopiui-segye, title: "소피의 세계", author: "요슈타인 가아더", publisher: "현암사", power: "철학사의 질문과 답을 흐름으로 잡아요"}
+    - {slug: gombeurichi-segyesa, title: "곰브리치 세계사", author: "E.H. 곰브리치", publisher: "비룡소", power: "세계사를 하나의 이야기로 꿰는 큰 그림"}
+    - {slug: gomapda-nonriya, title: "고맙다 논리야", author: "위기철", publisher: "사계절", power: "논리 3부작 마지막: 토론과 반박의 틀"}
+    - {slug: hariharaui-gwahakbeulrogeu, title: "하리하라의 과학블로그", author: "이은희", publisher: "살림", power: "과학 상식 속 진실과 거짓을 근거로 가르기"}
+  better:
+    - {slug: wandeuki, title: "완득이", author: "김려령", publisher: "창비", power: "유머 속 사회 문제: 겉 이야기와 속 주제"}
+    - {slug: yujingwa-yujin, title: "유진과 유진", author: "이금이", publisher: "푸른책들", power: "같은 사건, 다른 기억: 비교·대조 읽기"}
+    - {slug: cherisaeu-bimilgeulipnida, title: "체리새우: 비밀글입니다", author: "황영미", publisher: "문학동네", power: "또래 관계의 갈등과 선택"}
+    - {slug: nae-ireumeun-manggo, title: "내 이름은 망고", author: "추정경", publisher: "창비", power: "낯선 공간에서의 성장과 자립"}
+    - {slug: 10daereul-wihan-jeonguiran-mueotinga, title: "10대를 위한 정의란 무엇인가", author: "마이클 샌델 원저", publisher: "미래엔", power: "딜레마 사례로 정의의 기준을 비교해요"}
+    - {slug: dodeokeul-wihan-cheolhak-tongjorim, title: "도덕을 위한 철학 통조림", author: "김용규", publisher: "주니어김영사", power: "도덕 문제를 철학자의 논증으로 풀어요"}
+    - {slug: eorinireul-wihan-sapienseu, title: "어린이를 위한 사피엔스", author: "마이클 브라이트", publisher: "한겨레아이들", power: "인류사를 '왜 이렇게 됐나'로 읽기"}
+    - {slug: galmaegiui-kkum, title: "갈매기의 꿈", author: "리처드 바크", publisher: "현문미디어", power: "상징으로 말하는 짧은 철학 우화"}
+    - {slug: honggildongjeon, title: "홍길동전", author: "허균", publisher: "민음사", power: "고전 소설의 구조와 사회 비판"}
+    - {slug: siganeul-paneun-sangjeom, title: "시간을 파는 상점", author: "김선영", publisher: "자음과모음", power: "선택의 윤리를 묻는 청소년 소설"}
+중2:
+  must:
+    - {slug: aengmusae-jukigi, title: "앵무새 죽이기", author: "하퍼 리", publisher: "열린책들", power: "편견과 증거: 재판 장면으로 논증을 읽어요"}
+    - {slug: peinteu, title: "페인트", author: "이희영", publisher: "창비", power: "'부모를 고른다'는 설정으로 전제를 따져 보기"}
+    - {slug: demian, title: "데미안", author: "헤르만 헤세", publisher: "민음사", power: "내면 성장의 상징 구조를 읽어요"}
+    - {slug: jeongjaeseungui-gwahakkonseoteu, title: "정재승의 과학콘서트", author: "정재승", publisher: "어크로스", power: "복잡한 현상을 과학적 모델로 설명하는 글"}
+    - {slug: bakgyeongmiui-suhakbitamin-peulreoseu, title: "박경미의 수학비타민 플러스", author: "박경미", publisher: "김영사", power: "생활 속 수학으로 추론의 즐거움"}
+    - {slug: nanjungilgi, title: "난중일기", author: "이순신", publisher: "파란자전거", power: "기록(1차 사료)을 읽고 상황을 판단하기"}
+    - {slug: choejaecheonui-gongbu, title: "최재천의 공부", author: "최재천·안희경", publisher: "김영사", power: "대담 형식으로 질문–답의 흐름을 따라가요"}
+    - {slug: junieo-saenggakui-tansaeng, title: "주니어 생각의 탄생", author: "김재헌 (원저 루트번스타인)", publisher: "에코의서재", power: "관찰·유추·패턴 등 생각의 도구 13가지"}
+  better:
+    - {slug: homilbatui-pasukkun, title: "호밀밭의 파수꾼", author: "J.D. 샐린저", publisher: "민음사", power: "믿을 수 없는 화자: 화자의 말을 의심하며 읽기"}
+    - {slug: unsu-joteun-nal, title: "운수 좋은 날", author: "현진건", publisher: "단편집", power: "반어(아이러니)의 구조, 교과 단골 단편"}
+    - {slug: sonagi, title: "소나기", author: "황순원", publisher: "다림", power: "절제된 묘사와 복선 읽기"}
+    - {slug: gwahakjaui-seojae, title: "과학자의 서재", author: "최재천", publisher: "명진출판", power: "한 과학자의 독서와 질문의 역사"}
+    - {slug: noingwa-bada, title: "노인과 바다", author: "어니스트 헤밍웨이", publisher: "민음사", power: "짧은 문장 속 상징과 주제"}
+    - {slug: wonmidong-saramdeul, title: "원미동 사람들", author: "양귀자", publisher: "쓰다", power: "연작 소설: 여러 이야기를 하나로 묶어 읽기"}
+    - {slug: wijeodeu-beikeori, title: "위저드 베이커리", author: "구병모", publisher: "창비", power: "판타지 장치로 현실 문제를 비추기"}
+    - {slug: du-dosi-iyagi, title: "두 도시 이야기", author: "찰스 디킨스", publisher: "웅진씽크빅", power: "두 공간의 대비로 시대를 읽는 장편"}
+중3:
+  must:
+    - {slug: 1984, title: "1984", author: "조지 오웰", publisher: "민음사", power: "언어와 사고의 관계, 감시 사회의 논리"}
+    - {slug: cheolhakkapeeseo-munhak-ilgi, title: "철학카페에서 문학 읽기", author: "김용규", publisher: "웅진지식하우스", power: "문학 작품을 철학 개념으로 분석하는 법"}
+    - {slug: yeoldu-baljaguk, title: "열두 발자국", author: "정재승", publisher: "어크로스", power: "뇌과학으로 '선택과 판단'을 설명하는 강연"}
+    - {slug: chimmukui-bom, title: "침묵의 봄", author: "레이첼 카슨", publisher: "에코리브르", power: "증거를 쌓아 사회를 설득한 논증의 고전"}
+    - {slug: nanjangiga-ssoaolrin-jakeun-gong, title: "난장이가 쏘아올린 작은 공", author: "조세희", publisher: "이성과힘", power: "연작 구조와 시점 이동, 사회 비판"}
+    - {slug: yusiminui-geulsseugi-teukgang, title: "유시민의 글쓰기 특강", author: "유시민", publisher: "생각의길", power: "논리적 글의 원리를 직접 써 보며 익혀요"}
+    - {slug: pereumaui-majimak-jeongri, title: "페르마의 마지막 정리", author: "사이먼 싱", publisher: "영림카디널", power: "증명의 역사로 보는 수학적 사고"}
+    - {slug: byeonsin, title: "변신", author: "프란츠 카프카", publisher: "문학동네", power: "부조리한 설정 뒤의 의미 해석"}
+  better:
+    - {slug: widaehan-gaecheubi, title: "위대한 개츠비", author: "F. 스콧 피츠제럴드", publisher: "민음사", power: "관찰자 화자와 상징(초록 불빛)"}
+    - {slug: haiking-geoljeu, title: "하이킹 걸즈", author: "김혜정", publisher: "비룡소", power: "여정 구조의 성장 소설"}
+    - {slug: oettanbang, title: "외딴방", author: "신경숙", publisher: "문학동네", power: "현재와 과거가 교차하는 서술"}
+    - {slug: urineun-eonjenga-mannanda, title: "우리는 언젠가 만난다", author: "채사장", publisher: "웨일북", power: "나–타인–세계로 넓어지는 생각의 지도"}
+    - {slug: jijeok-daehwareul-wihan-neolgo-yateun-jisik, title: "지적 대화를 위한 넓고 얕은 지식", author: "채사장", publisher: "한빛비즈", power: "역사·경제·정치를 한 틀로 정리"}
+    - {slug: koseumoseu, title: "코스모스", author: "칼 세이건", publisher: "사이언스북스", power: "과학적 세계관과 회의하는 태도"}
+    - {slug: gukgaran-mueotinga, title: "국가란 무엇인가", author: "유시민", publisher: "돌베개", power: "국가에 대한 여러 이론을 비교해요"}
+    - {slug: saenggakui-tansaeng, title: "생각의 탄생", author: "로버트·미셸 루트번스타인", publisher: "에코의서재", power: "창의적 사고의 도구를 사례로 익히기"}
+    - {slug: suhakui-sseulmo, title: "수학의 쓸모", author: "닉 폴슨 외", publisher: "길벗", power: "확률과 데이터로 판단하는 법"}
+    - {slug: paekteupulniseu, title: "팩트풀니스", author: "한스 로슬링 외", publisher: "김영사", power: "데이터로 편견을 바로잡는 사고 습관"}
+고1:
+  must:
+    - {slug: ibangin, title: "이방인", author: "알베르 카뮈", publisher: "민음사", power: "부조리와 서술 방식: 화자의 거리감 읽기"}
+    - {slug: meotjin-sinsegye, title: "멋진 신세계", author: "올더스 헉슬리", publisher: "문예출판사", power: "행복과 자유의 교환 조건을 따져요"}
+    - {slug: jeonguiran-mueotinga, title: "정의란 무엇인가", author: "마이클 샌델", publisher: "미래엔", power: "공리주의·자유주의·공동체주의 논증 비교"}
+    - {slug: sapienseu, title: "사피엔스", author: "유발 하라리", publisher: "김영사", power: "거대한 주장을 근거로 밀고 가는 논증 구조"}
+    - {slug: gwangjang, title: "광장", author: "최인훈", publisher: "문학과지성사", power: "이념의 선택을 다룬 관념 소설"}
+    - {slug: igijeok-yujeonja, title: "이기적 유전자", author: "리처드 도킨스", publisher: "을유문화사", power: "관점을 바꾸는 설명(유전자 중심)"}
+    - {slug: saenggake-gwanhan-saenggak, title: "생각에 관한 생각", author: "대니얼 카너먼", publisher: "김영사", power: "직관과 추론의 오류: 내 생각을 점검하는 틀"}
+    - {slug: noneo, title: "논어", author: "공자 (김원중 옮김)", publisher: "휴머니스트", power: "짧은 문답 속 개념(인·예)을 정리"}
+  better:
+    - {slug: samdae, title: "삼대", author: "염상섭", publisher: "문학과지성사", power: "세대 갈등으로 읽는 근대 사회"}
+    - {slug: cheonbyeonpunggyeong, title: "천변풍경", author: "박태원", publisher: "문학과지성사", power: "여러 장면을 엮는 모자이크 구성"}
+    - {slug: kainui-huye, title: "카인의 후예", author: "황순원", publisher: "문학과지성사", power: "해방 직후 이념 갈등과 인물"}
+    - {slug: heokeulberi-pinui-moheom, title: "허클베리 핀의 모험", author: "마크 트웨인", publisher: "민음사", power: "양심과 사회 규범의 충돌"}
+    - {slug: neotji, title: "넛지", author: "리처드 탈러 외", publisher: "웅진지식하우스", power: "선택 설계: 행동경제학의 논리"}
+    - {slug: chong-gyun-soe, title: "총, 균, 쇠", author: "재레드 다이아몬드", publisher: "문학사상", power: "'왜 대륙마다 달랐나'를 증거로 답하는 책"}
+    - {slug: bubungwa-jeonche, title: "부분과 전체", author: "베르너 하이젠베르크", publisher: "서커스", power: "대화로 이어지는 과학 철학"}
+    - {slug: sonyeoni-onda, title: "소년이 온다", author: "한강", publisher: "창비", power: "시점이 바뀌는 구성과 역사의 증언"}
+    - {slug: gongjeonghadaneun-chakgak, title: "공정하다는 착각", author: "마이클 샌델", publisher: "와이즈베리", power: "능력주의의 전제를 반박하는 논증"}
+    - {slug: enteuropi, title: "엔트로피", author: "제러미 리프킨", publisher: "세종", power: "과학 개념으로 사회를 해석하기"}
+    - {slug: yubaejieseo-bonaen-pyeonji, title: "유배지에서 보낸 편지", author: "정약용 (박석무 편역)", publisher: "창비", power: "편지글 속 주장과 근거, 공부론"}
+고2:
+  must:
+    - {slug: yeoksaran-mueotinga, title: "역사란 무엇인가", author: "E.H. 카", publisher: "까치", power: "사실과 해석: 역사 서술의 논리"}
+    - {slug: jayuron, title: "자유론", author: "존 스튜어트 밀", publisher: "책세상", power: "자유의 한계를 논증으로 세우는 고전"}
+    - {slug: gunjuron, title: "군주론", author: "니콜로 마키아벨리", publisher: "까치", power: "목적과 수단: 현실 정치의 논리"}
+    - {slug: gwahakhyeokmyeongui-gujo, title: "과학혁명의 구조", author: "토머스 쿤", publisher: "까치", power: "패러다임 개념으로 지식의 변화를 설명"}
+    - {slug: bangbeopseoseol, title: "방법서설", author: "르네 데카르트", publisher: "문예출판사", power: "의심에서 확실성으로: 방법적 사고"}
+    - {slug: sagiyeoljeon, title: "사기열전", author: "사마천 (김원중 옮김)", publisher: "민음사", power: "인물 평가와 서술 관점 비교"}
+    - {slug: guunmong, title: "구운몽", author: "김만중", publisher: "민음사", power: "꿈–현실의 액자 구조"}
+    - {slug: gukga, title: "국가", author: "플라톤 (천병희 옮김)", publisher: "숲", power: "정의를 묻는 대화(문답법)의 원형"}
+  better:
+    - {slug: maeum, title: "마음", author: "나쓰메 소세키", publisher: "현암사", power: "고백 형식과 시대의 윤리"}
+    - {slug: toji, title: "토지", author: "박경리", publisher: "마로니에북스", power: "대하소설: 긴 흐름을 붙잡는 독서 체력"}
+    - {slug: karamajopeu-gaui-hyeongjedeul, title: "카라마조프 가의 형제들", author: "도스토예프스키", publisher: "민음사", power: "신·자유·책임을 둘러싼 논쟁"}
+    - {slug: gamsiwa-cheobeol, title: "감시와 처벌", author: "미셸 푸코", publisher: "나남", power: "권력을 설명하는 새로운 틀"}
+    - {slug: peuroteseutantijeumui-yunriwa-jabonjuui-jeongsin, title: "프로테스탄티즘의 윤리와 자본주의 정신", author: "막스 베버", publisher: "문예출판사", power: "문화가 경제를 바꾼다는 인과 가설"}
+    - {slug: jongui-giwon, title: "종의 기원", author: "찰스 다윈 (장대익 옮김)", publisher: "사이언스북스", power: "관찰을 쌓아 이론을 세우는 과학적 논증"}
+    - {slug: goedel-esyeo-baheu, title: "괴델, 에셔, 바흐", author: "더글러스 호프스태터", publisher: "까치", power: "자기 지시와 형식 체계: 논리의 끝판"}
+    - {slug: segye-choegoui-yeohaenggi-yeolhailgi, title: "세계 최고의 여행기, 열하일기", author: "박지원 (김풍기 엮고 옮김)", publisher: "북드라망", power: "관찰과 비판을 담은 조선의 논평"}
+    - {slug: nikomakoseu-yunrihak, title: "니코마코스 윤리학", author: "아리스토텔레스 (천병희 옮김)", publisher: "숲", power: "행복과 덕을 정의하고 분류하기"}
+    - {slug: cheongsonyeoneul-wihan-gukburon, title: "청소년을 위한 국부론", author: "애덤 스미스 원저, 김수행", publisher: "두리미디어", power: "분업과 시장의 논리를 쉽게"}

@@ -12,7 +12,8 @@ require 'date'
 
 ROOT = File.expand_path('..', __dir__)
 
-FIELDS = %w[title author status rating genre pages started finished summary quote cover isbn structure published quiz layout].freeze
+FIELDS = %w[title author status rating genre pages started finished summary quote cover isbn structure published quiz layout buddy buddy_art book_type size_mm].freeze
+BOOK_TYPES = %w[이야기 생각 과학 역사 마음].freeze
 STRUCTURES = %w[mountain three map].freeze
 REQUIRED = %w[title author status summary].freeze
 
@@ -109,6 +110,21 @@ def book_errors(data, shelf_keys)
     errors << "#{k}: YYYY-MM-DD 날짜여야 해요 (지금 값 #{show(data[k])})" if data.key?(k) && !date?(data[k])
   end
   errors << 'published: true 또는 false여야 해요' if data.key?('published') && ![true, false].include?(data['published'])
+  errors << "buddy: 글이어야 해요" if data.key?('buddy') && !text?(data['buddy'])
+  if data.key?('buddy_art')
+    art = data['buddy_art']
+    if !(art.is_a?(String) && art.match?(%r{\A/assets/weekly/[a-z0-9][a-z0-9-]*\.webp\z}))
+      errors << "buddy_art: /assets/weekly/책주소.webp여야 해요 (지금 값 #{show(art)})"
+    elsif !File.exist?(File.join(ROOT, art))
+      errors << "buddy_art: #{art} 파일이 없어요"
+    end
+  end
+  if data.key?('book_type') && !BOOK_TYPES.include?(data['book_type'])
+    errors << "book_type: #{BOOK_TYPES.join(', ')} 중 하나여야 해요 (지금 값 #{show(data['book_type'])})"
+  end
+  if data.key?('size_mm') && !(data['size_mm'].is_a?(Array) && data['size_mm'].size == 3 && data['size_mm'].all? { |n| n.is_a?(Integer) && n.positive? })
+    errors << "size_mm: [가로, 세로, 두께] mm 정수 세 개여야 해요 (지금 값 #{show(data['size_mm'])})"
+  end
   errors.concat(quiz_errors(data['quiz'])) if data.key?('quiz')
   errors
 end

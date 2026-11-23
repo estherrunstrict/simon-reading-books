@@ -1,0 +1,37 @@
+# 이번 주에 제안하는 두 권이에요. 주마다 .claude/skills/weekly-books가 새로 써요.
+# proposed: 이 날짜(보통 토요일)부터 첫 화면에 나와요.
+# grade, grade_year: 그 해 3월 기준 학년. 다음 해 3월부터는 한 학년씩 올라가요.
+proposed: 2026-11-23
+grade: 초5
+grade_year: 2026
+books:
+  - slug: madangeul-naon-amtak
+    title: "마당을 나온 암탉"
+    author: "황선미"
+    publisher: "사계절"
+    isbn: "9788971968710"
+    pages: 200
+    size_mm: [152, 223, 14]
+    cover: "/assets/covers/madangeul-naon-amtak.webp"
+    buddy: "잎콩"
+    buddy_art: "/assets/weekly/madangeul-naon-amtak.webp"
+    book_type: 이야기
+    genre: "동화"
+    tier: "초5 Must"
+    power: "인물의 선택과 결과를 따라가며 이야기의 인과를 읽어요"
+    about: "알만 낳던 암탉 잎싹이 마당을 나와 버려진 알을 품고, 태어난 아기 청둥오리 초록머리를 키워요."
+  - slug: nonriya-nolja
+    title: "논리야, 놀자"
+    author: "위기철"
+    publisher: "사계절"
+    isbn: "9791169811149"
+    pages: 168
+    size_mm: [163, 225, 12]
+    cover: "/assets/covers/nonriya-nolja.webp"
+    buddy: "퍼즐콩"
+    buddy_art: "/assets/weekly/nonriya-nolja.webp"
+    book_type: 생각
+    genre: "지식 책"
+    tier: "초5 Must"
+    power: "엉터리 주장을 찾아내며 주장과 근거를 가려내요"
+    about: "짧고 웃긴 이야기마다 숨은 엉터리 생각을 찾아내며 논리의 기초를 익혀요."
