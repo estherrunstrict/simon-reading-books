@@ -35,3 +35,4 @@ exclude:
   - scripts
   - .gitignore
   - media
+  - docs
