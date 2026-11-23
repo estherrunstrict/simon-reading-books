@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="{{ page.summary | default: site.description | escape }}">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#3d5bd9">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="시몬의 책">
   <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
@@ -23,6 +23,7 @@
     <div class="mast-inner">
       <a class="brand" href="{{ '/' | relative_url }}"><span class="mark" aria-hidden="true"></span>{{ site.title | escape }}</a>
       <nav aria-label="주 메뉴">
+        <span class="trainer" data-trainer hidden></span>
         <a href="{{ '/' | relative_url }}#shelf"{% if page.url == '/' %} aria-current="page"{% endif %}>내 책장</a>
         <a class="nav-cta" href="{{ '/add/' | relative_url }}"{% if page.url == '/add/' %} aria-current="page"{% endif %}>책 추가</a>
       </nav>

@@ -239,11 +239,9 @@
       // The week moved on before this book was finished: draw it from what was saved.
       stageWrap.className = 'stage';
       stageWrap.style.cssText = '--w:' + b.size_mm[0] + ';--h:' + b.size_mm[1] + ';--d:' + b.size_mm[2];
-      stageWrap.innerHTML = (b.buddy_art ? '<img class="buddy" alt="">' : '') +
-        '<div class="book3d" tabindex="0" role="button" aria-pressed="false"><div class="b3"><div class="face front"><img alt="" draggable="false"></div>' +
+      stageWrap.innerHTML = '<div class="book3d" tabindex="0" role="button" aria-pressed="false"><div class="b3"><div class="face front"><img alt="" draggable="false"></div>' +
         '<div class="face back"><p class="back-power"></p><p class="back-about"></p></div><div class="face spine"><span></span></div>' +
         '<div class="face edge"></div><div class="face top"></div><div class="face bottom"></div></div></div>';
-      if (b.buddy_art) $('.buddy', stageWrap).src = DATA.base + b.buddy_art;
       $('.front img', stageWrap).src = DATA.base + b.cover;
       $('.back-power', stageWrap).textContent = b.power || '';
       $('.back-about', stageWrap).textContent = b.about || '';
@@ -252,7 +250,10 @@
       wireBook(stageWrap);
     }
     $('[data-read-title]').textContent = b.title + ' 읽는 중';
-    $('[data-read-sub]').textContent = iga(b.buddy || '책콩') + ' 책 위에서 기다려요. 다 읽고 독후감을 쓰면 함께 책장으로 가요.';
+    $('[data-read-sub]').textContent = b.card ? '퀘스트 네 개를 깨면 「' + b.title + '」 팩을 뜯어 ' + (b.buddy || '책콩') + ' 카드를 받아요.' : '다 읽고 독후감을 쓰면 책장으로 가요.';
+    var goal = $('[data-read-pack]');
+    goal.parentNode.hidden = !b.card;
+    if (b.card) fillPack(goal, b, ['아직 못 열어요!', '독후감을 쓰면 열려요!', (b.card.rarity === 'SR' ? '슈퍼 레어' : '레어') + ' 카드가 들어 있어요!']);
     $('[data-prompt]').textContent = promptFor(b);
     syncSteps();
     if (state.photo) getPhoto(b.slug).then(function (blob) { if (blob) showPhoto(blob); });
@@ -266,6 +267,10 @@
     $('[data-copy-prompt]').disabled = !state.photo;
     $('[data-shelve]').disabled = !state.photo;
     $('[data-repick-wrap]').hidden = !!state.photo;
+    li('talk').classList.toggle('is-done', !!state.photo && !!state.talked);
+    var n = (state.written || state.photo ? 1 : 0) + (state.photo ? 1 : 0) + (state.photo && state.talked ? 1 : 0);
+    $('[data-xp-fill]').style.width = (n / 4 * 100) + '%';
+    $('[data-xp-text]').textContent = n + '/4';
   }
 
   var photoBlob = null;
@@ -309,7 +314,12 @@
       audio = audio || new (window.AudioContext || window.webkitAudioContext)();
       var t = audio.currentTime, g = audio.createGain();
       g.connect(audio.destination);
-      if (kind === 'rip') {
+      if (kind === 'blip') {
+        var bo = audio.createOscillator();
+        bo.type = 'square'; bo.frequency.setValueAtTime(660, t); bo.frequency.exponentialRampToValueAtTime(1320, t + 0.08);
+        bo.connect(g); g.gain.setValueAtTime(0.06, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.14);
+        bo.start(t); bo.stop(t + 0.15);
+      } else if (kind === 'rip') {
         var len = Math.floor(audio.sampleRate * 0.32), buf = audio.createBuffer(1, len, audio.sampleRate), d = buf.getChannelData(0);
         for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 1.6) * (0.6 + 0.4 * Math.sin(i / 90));
         var src = audio.createBufferSource(), f = audio.createBiquadFilter();
@@ -344,8 +354,9 @@
     card.classList.add('pack-card', 'is-face-down');
     card.setAttribute('data-gyro', '');
     var front = document.createElement('div'); front.className = 'pack-front';
-    front.innerHTML = '<span class="pack-shine"></span><span class="pack-logo">책콩<br>카드</span><img class="pack-buddy" alt="" draggable="false"><span class="pack-note">레어 카드 1장</span><span class="pack-book"></span>';
-    if (last.buddy_art) $('.pack-buddy', front).src = DATA.base + last.buddy_art; else $('.pack-buddy', front).remove();
+    front.innerHTML = '<img class="pack-art" alt="" draggable="false"><span class="bp-rays"></span><span class="pack-shine"></span><span class="pack-logo">책콩<br>카드</span><span class="bp-series"></span><span class="pack-note">' + (c.rarity === 'SR' ? '★★ 슈퍼 레어' : '★ 레어') + ' 1장</span><span class="pack-book"></span>';
+    $('.pack-art', front).src = DATA.base + c.art;
+    $('.bp-series', front).textContent = BookCard.series(last.book_type);
     $('.pack-book', front).textContent = '「' + last.title + '」 다 읽은 기념';
     var top = document.createElement('div'); top.className = 'pack-top';
     top.tabIndex = 0; top.setAttribute('role', 'button'); top.setAttribute('aria-label', '카드 팩 뜯기');
@@ -485,6 +496,64 @@
   // ---------- actions ----------
   $$('.pick .stage').forEach(wireBook);
 
+  // ---------- the choose screen: each book's own series pack, with its card peeking out ----------
+  function sparkle(host) {
+    var burst = document.createElement('div'); burst.className = 'burst small-burst';
+    var colors = ['#ffc83d', '#ff7aa8', '#1fb5c4', '#fff'];
+    for (var i = 0; i < 9; i++) {
+      var s = document.createElement('i'), a = (i / 9) * Math.PI * 2 + Math.random() * 0.4, d = 60 + Math.random() * 50;
+      s.style.setProperty('--x', Math.round(Math.cos(a) * d) + 'px');
+      s.style.setProperty('--y', Math.round(Math.sin(a) * d) + 'px');
+      s.style.setProperty('--r', Math.round(Math.random() * 360) + 'deg');
+      s.style.setProperty('--c', colors[i % colors.length]);
+      burst.append(s);
+    }
+    host.append(burst);
+    setTimeout(function () { burst.remove(); }, 1000);
+  }
+  function bubble(host, text) {
+    var old = $('.bubble', host); if (old) old.remove();
+    var el = document.createElement('span'); el.className = 'bubble'; el.textContent = text;
+    host.append(el);
+    setTimeout(function () { el.remove(); }, 1800);
+  }
+  function fillPack(slot, b, lines) {
+    if (!window.BookCard || !b || !b.card) return;
+    slot.textContent = '';
+    var p = BookCard.makePack(b, DATA.base);
+    p.setAttribute('data-gyro', '');
+    p.tabIndex = 0; p.setAttribute('role', 'button');
+    p.setAttribute('aria-label', BookCard.series(b.book_type) + ' 팩 살펴보기');
+    slot.append(p);
+    var k = 0;
+    function poke() {
+      BookCard.enableGyro();
+      p.classList.remove('is-peek'); void p.offsetWidth; p.classList.add('is-peek');
+      sound('blip'); sparkle(slot); bubble(slot, lines[k++ % lines.length]);
+    }
+    p.addEventListener('click', poke);
+    p.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); } });
+    p.addEventListener('animationend', function (e) { if (e.animationName === 'peek') p.classList.remove('is-peek'); });
+  }
+  $$('.pick .pack-slot[data-pack-for]').forEach(function (slot) {
+    var b = bookBy(slot.getAttribute('data-pack-for'));
+    if (!b || !b.card) return;
+    fillPack(slot, b, [(b.card.rarity === 'SR' ? '슈퍼 레어 확정!' : '레어 확정!'), '다 읽으면 열 수 있어요!', iga(b.buddy || '책콩') + ' 기다려요!']);
+  });
+
+  function trainer() {
+    var el = $('[data-trainer]');
+    if (!el) return;
+    var server = DATA.shelf || [];
+    var n = server.filter(function (s) { return s.card; }).length;
+    state.history.forEach(function (h) {
+      if (h.card && h.opened && !server.some(function (s) { return s.slug === h.slug || s.title === h.title; })) n++;
+    });
+    el.textContent = '카드 ' + n + '/' + (DATA.cardTotal || 0);
+    el.hidden = false;
+    return n;
+  }
+
   quest.addEventListener('click', function (e) {
     var t = e.target.closest('button');
     if (!t) return;
@@ -495,13 +564,15 @@
       save();
       var card = t.closest('.pick');
       card.classList.add('is-chosen');
-      setTimeout(function () { show('read'); renderRead(); renderShelf(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }, reduce ? 0 : 450);
+      card.parentNode.classList.add('is-decided');
+      sound('chime');
+      setTimeout(function () { show('read'); renderRead(); renderShelf(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }, reduce ? 0 : 900);
     }
     if (t.hasAttribute('data-collect')) {
       var lh = state.history[state.history.length - 1];
       if (lh) lh.opened = true;
       save();
-      show('done'); renderDone(); renderShelf();
+      show('done'); renderDone(); renderShelf(); trainer();
       window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
       return;
     }
@@ -510,10 +581,11 @@
       state = { history: state.history, week: weekly.proposed }; save();
       location.reload();
     }
-    if (t.hasAttribute('data-copy-prompt')) copy($('[data-prompt]').textContent, t);
+    if (t.hasAttribute('data-copy-prompt')) { copy($('[data-prompt]').textContent, t); state.talked = true; save(); syncSteps(); }
     if (t.hasAttribute('data-share') && photoBlob) {
       var file = new File([photoBlob], (state.pick || 'report') + '-독후감.jpg', { type: 'image/jpeg' });
       navigator.share({ files: [file], text: $('[data-prompt]').textContent, title: state.pickBook.title + ' 독후감' }).catch(function () { /* closed */ });
+      state.talked = true; save(); syncSteps();
     }
     if (t.hasAttribute('data-shelve') && state.photo) {
       var pb = state.pickBook;
@@ -553,4 +625,5 @@
 
   decide();
   renderShelf();
+  trainer();
 })();
