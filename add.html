@@ -7,6 +7,7 @@ permalink: /add/
 <script id="add-data" type="application/json">{
   "repo": {{ site.repository | jsonify }},
   "booksKey": {{ site.google_books_key | default: "" | jsonify }},
+  "libraryKey": {{ site.data4library_key | default: "" | jsonify }},
   "today": {{ today | jsonify }},
   "shelves": [{% for s in site.data.shelves %}{"key": {{ s.key | jsonify }}, "label": {{ s.label | jsonify }}, "color": {{ s.color | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
   "books": [{% for b in site.books %}{"title": {{ b.title | jsonify }}, "author": {{ b.author | jsonify }}, "rating": {{ b.rating | default: 0 | jsonify }}, "genre": {{ b.genre | jsonify }}, "slug": {{ b.slug | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
@@ -39,7 +40,7 @@ permalink: /add/
       <button class="action" type="button" data-action="search">찾기</button>
     </div>
     <p class="tip">표지까지 정확하게 넣고 싶다면 Claude Code에 <code>"책 제목" 책 추가해</code>라고 보내요. ego lite로 알라딘에서 표지와 ISBN, 쪽수를 찾아 책장에 꽂아 줘요.</p>
-    <p class="muted search-note">검색은 Google Books와 Open Library에서 해요. 찾는 책이 없으면 <button type="button" class="linkish" data-action="manual">직접 입력하기</button>를 눌러요.</p>
+    <p class="muted search-note">검색은 도서관 정보나루(한국 책), Google Books, Open Library에서 해요. 찾는 책이 없으면 <button type="button" class="linkish" data-action="manual">직접 입력하기</button>를 눌러요.</p>
     <div id="search-status" class="muted" aria-live="polite"></div>
     <ul id="search-results" class="results"></ul>
 
