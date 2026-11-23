@@ -76,19 +76,28 @@ def quiz_errors(quiz)
 end
 
 def card_errors(card)
-  return ['card: art, number, rarity, move가 있는 항목이어야 해요'] unless card.is_a?(Hash)
+  return ['card: number, rarity와 image(또는 art)가 있는 항목이어야 해요'] unless card.is_a?(Hash)
 
   errors = []
-  art = card['art']
-  if !(art.is_a?(String) && art.match?(%r{\A/assets/cards/[a-z0-9][a-z0-9-]*\.webp\z}))
-    errors << "card.art: /assets/cards/책주소.webp여야 해요 (지금 값 #{show(art)})"
-  elsif !File.exist?(File.join(ROOT, art))
-    errors << "card.art: #{art} 파일이 없어요"
+  errors << 'card: image(실제 카드 그림 주소)나 art(직접 그린 카드 그림)가 있어야 해요' unless card.key?('image') || card.key?('art')
+  if card.key?('art')
+    art = card['art']
+    if !(art.is_a?(String) && art.match?(%r{\A/assets/cards/[a-z0-9][a-z0-9-]*\.webp\z}))
+      errors << "card.art: /assets/cards/책주소.webp여야 해요 (지금 값 #{show(art)})"
+    elsif !File.exist?(File.join(ROOT, art))
+      errors << "card.art: #{art} 파일이 없어요"
+    end
+  end
+  %w[image image_small pack].each do |k|
+    errors << "card.#{k}: https:// 주소여야 해요 (지금 값 #{show(card[k])})" if card.key?(k) && !(card[k].is_a?(String) && card[k].match?(%r{\Ahttps://\S+\z}))
+  end
+  %w[tcg_id name name_ko rarity_label set].each do |k|
+    errors << "card.#{k}: 글이어야 해요" if card.key?(k) && !text?(card[k])
   end
   errors << "card.number: 1보다 크거나 같은 정수여야 해요 (지금 값 #{show(card['number'])})" unless card['number'].is_a?(Integer) && card['number'].positive?
   errors << "card.rarity: #{RARITIES.join(', ')} 중 하나여야 해요 (지금 값 #{show(card['rarity'])})" unless RARITIES.include?(card['rarity'])
-  errors << 'card.move: 글이어야 해요' unless text?(card['move'])
-  unknown = card.keys - %w[art number rarity move]
+  errors << 'card.move: 글이어야 해요' if card.key?('art') && !text?(card['move'])
+  unknown = card.keys - %w[art number rarity move image image_small pack tcg_id name name_ko rarity_label set]
   errors << "card: 모르는 항목이에요 (#{unknown.join(', ')})" unless unknown.empty?
   errors
 end

@@ -648,6 +648,34 @@ nav .nav-cta{color:rgba(255,255,255,.85)}
 .shelf-head h2 small{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:8px;background:var(--royal);color:#fff;font-size:15px;vertical-align:middle}
 .q-done .guardian{background:#fff;box-shadow:inset 0 0 0 3px var(--line)}
 
+/* real cards and real booster packs (pictures load straight from pokemontcg.io and TCGplayer) */
+.tc-real{background:#d9dde6}
+.tc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tc-real .tc-holo{opacity:calc(.05 + var(--hyp)*.32)}
+.tc-real .tc-glare{opacity:calc(.2 + var(--hyp)*.5)}
+.bp-real{background:none;-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/calc(var(--z)*2) var(--z) repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/calc(var(--z)*2) var(--z) repeat-x,linear-gradient(#000 0 0) center/100% calc(100% - var(--z)*2) no-repeat;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/calc(var(--z)*2) var(--z) repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/calc(var(--z)*2) var(--z) repeat-x,linear-gradient(#000 0 0) center/100% calc(100% - var(--z)*2) no-repeat;border-radius:3px}
+.bp-real::before,.bp-real::after{display:none}
+.bp-photo{position:absolute;inset:-1.2% -1.5%;width:103%;height:102.4%;object-fit:fill}
+.bpack.is-real{height:calc(var(--pw)*1.82)}
+.bpack.is-real .bp-peek{top:-24%;left:9%;right:9%;height:auto;aspect-ratio:63/88;border:0;border-radius:calc(var(--pw)*.04);overflow:hidden;background:#ccc}
+.bp-peek-real img{display:block;width:100%;height:100%;object-fit:cover}
+.bpack.is-real .bp-peek::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 45%,transparent 60%) 0 0/300% 100%;mix-blend-mode:screen;animation:sheen 2.8s ease-in-out infinite}
+.rarity-SR.is-real .bp-peek{box-shadow:0 0 0 2px #fff,0 0 18px 4px rgba(255,200,61,.8)}
+@keyframes peekreal{0%{transform:none}35%{transform:translateY(-34%) rotate(-3deg)}70%{transform:translateY(-28%) rotate(1deg)}100%{transform:none}}
+.bpack.is-real.is-peek .bp-peek{animation:peekreal 1.6s cubic-bezier(.3,1.4,.5,1)}
+.arena:has(.is-real){padding-top:72px}
+.pick-set{margin-top:-4px;color:var(--muted);font-size:14px;font-weight:700}
+.q-pack:has(.is-real){--cw:min(300px,62vw,calc((100vh - 300px)/2.15))}
+.pack-stage.is-real{height:calc(var(--cw)*2.15)}
+.pack-stage.is-real .pack-front,.pack-stage.is-real .pack-back,.pack-stage.is-real .tear-line{top:7%}
+.pack-stage.is-real .pack-top{height:7.5%;background:var(--pack) center top/101% 1333% no-repeat}
+.pack-stage.is-real .pack-top::after,.pack-stage.is-real .pack-front::after{display:none}
+.pack-stage.is-real .pack-front{background:var(--pack) center bottom/101% 107.5% no-repeat}
+.pack-stage.is-real .pack-back{background:#cfd4de;filter:none}
+.pack-stage.is-real .pack-card{top:calc(var(--cw)*.36)}
+.pack-stage.is-real.is-rising .pack-card{transform:translate(-50%,-42%)}
+.pack-stage.is-real.is-out .pack-card{transform:translate(-50%,-8%)}
+
 @media (orientation:landscape) and (max-height:900px){
   .quest{padding-top:18px}
   .q-kicker{display:none}
@@ -656,6 +684,9 @@ nav .nav-cta{color:rgba(255,255,255,.85)}
   .duel{margin-top:18px}
   .arena{padding-top:30px;padding-bottom:18px}
   .arena .pack-slot{--pw:min(164px,16.5vw,19vh)}
+  .arena:has(.is-real) .pack-slot{--pw:min(140px,15vw,16vh)}
+  .arena:has(.is-real){padding-top:60px}
+  .pick-set{display:none}
   .pick h2{margin-top:6px}
   .pick{gap:6px;padding-bottom:18px}
 }

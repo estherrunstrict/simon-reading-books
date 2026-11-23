@@ -37,7 +37,7 @@ title: 시몬의 책
         <span class="type type-{{ b.book_type | escape }}">{{ b.book_type | escape }} 책</span>
         <h2>{{ b.title | escape }}</h2>
         <p class="pick-meta"><span>{{ b.author | escape }}</span><span>{{ b.pages }}쪽</span><span>{{ b.size_mm[0] | divided_by: 10.0 }} × {{ b.size_mm[1] | divided_by: 10.0 }} cm</span></p>
-        {% if b.card %}<p class="pick-reward">다 읽으면 <b>{{ b.buddy | escape }}</b> 카드 <span class="rare-tag rarity-{{ b.card.rarity | escape }}">{% if b.card.rarity == "SR" %}★★ SR{% else %}★ R{% endif %}</span></p>{% endif %}
+        {% if b.card %}<p class="pick-reward">다 읽으면 <b>{{ b.card.name_ko | default: b.buddy | escape }}</b> 카드 <span class="rare-tag rarity-{{ b.card.rarity | escape }}">{% if b.card.rarity_label %}{{ b.card.rarity_label | escape }}{% elsif b.card.rarity == "SR" %}★★ SR{% else %}★ R{% endif %}</span></p>{% if b.card.set %}<p class="pick-set">{{ b.card.set | escape }} 팩</p>{% endif %}{% endif %}
         <button type="button" class="action spark big" data-choose="{{ b.slug | escape }}">이 책 읽을래요</button>
       </article>
       {% if forloop.first %}<div class="vs" aria-hidden="true"><span>VS</span></div>{% endif %}

@@ -6,6 +6,7 @@
 
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function cardName(b) { return (b.card && b.card.name_ko) || b.buddy || '책콩'; }
   function pad3(n) { return ('00' + (n || 0)).slice(-3); }
 
   function make(b, total, base, mini) {
@@ -15,7 +16,16 @@
     el.className = 'tcard rarity-' + r + ' type-' + (b.book_type || '') + (mini ? ' is-mini' : '');
     el.setAttribute('data-tilt', '');
     el.setAttribute('role', 'img');
-    el.setAttribute('aria-label', (b.buddy || '책콩') + ' 카드, ' + (b.title || ''));
+    el.setAttribute('aria-label', cardName(b) + ' 카드, ' + (b.title || ''));
+    var back = '<div class="tc-face tc-back" aria-hidden="true"><span class="tc-emblem">책콩<br>카드</span></div>';
+    if (c.image) {
+      // A real card: the picture is the card.
+      el.innerHTML = '<div class="tc-inner"><div class="tc-face tc-front tc-real">' +
+        '<img class="tc-photo" src="' + esc(mini ? (c.image_small || c.image) : c.image) + '" alt="" draggable="false" referrerpolicy="no-referrer">' +
+        '<div class="tc-holo"></div><div class="tc-glare"></div></div>' + back + '</div>';
+      if (!mini) wire(el);
+      return el;
+    }
     el.innerHTML =
       '<div class="tc-inner"><div class="tc-face tc-front"><div class="tc-window">' +
       '<img class="tc-art" src="' + esc((base || '') + c.art) + '" alt="" draggable="false">' +
@@ -83,20 +93,31 @@
 
   // ---------- booster packs: one series per book type, printed with the book's card art ----------
   var SERIES = { 이야기: '이야기 숲', 생각: '생각 퍼즐', 과학: '과학 별빛', 역사: '역사 시간여행', 마음: '마음 무지개' };
-  function series(type) { return (SERIES[type] || '책콩') + ' 시리즈'; }
+  function series(b) {
+    if (b && b.card && b.card.set) return b.card.set;
+    var type = typeof b === 'string' ? b : b && b.book_type;
+    return (SERIES[type] || '책콩') + ' 시리즈';
+  }
   function makePack(b, base) {
     var c = b.card || {};
     var r = c.rarity === 'SR' ? 'SR' : 'R';
     var el = document.createElement('div');
-    el.className = 'bpack type-' + (b.book_type || '') + ' rarity-' + r;
+    el.className = 'bpack type-' + (b.book_type || '') + ' rarity-' + r + (c.pack ? ' is-real' : '');
     el.setAttribute('data-tilt', '');
+    if (c.pack) {
+      // The real booster pack of the card's series.
+      el.innerHTML = '<div class="bp-peek bp-peek-real" aria-hidden="true"><img src="' + esc(c.image_small || c.image) + '" alt="" draggable="false" referrerpolicy="no-referrer"></div><div class="bp-body bp-real">' +
+        '<img class="bp-photo" src="' + esc(c.pack) + '" alt="" draggable="false" referrerpolicy="no-referrer"><span class="bp-shine"></span></div>';
+      wire(el);
+      return el;
+    }
     el.innerHTML =
       '<div class="bp-peek" aria-hidden="true"></div>' +
       '<div class="bp-body">' +
       (c.art ? '<img class="bp-art" src="' + esc((base || '') + c.art) + '" alt="" draggable="false">' : '') +
       '<span class="bp-rays"></span>' +
       '<span class="bp-logo">책콩<br>카드</span>' +
-      '<span class="bp-series">' + esc(series(b.book_type)) + '</span>' +
+      '<span class="bp-series">' + esc(series(b)) + '</span>' +
       '<span class="bp-rare">' + (r === 'SR' ? '★★ 슈퍼 레어' : '★ 레어') + ' 1장</span>' +
       '<span class="bp-shine"></span>' +
       '</div>';
@@ -104,7 +125,7 @@
     return el;
   }
 
-  window.BookCard = { make: make, makePack: makePack, series: series, wire: wire, enableGyro: enableGyro, recenter: recenter };
+  window.BookCard = { make: make, makePack: makePack, series: series, cardName: cardName, wire: wire, enableGyro: enableGyro, recenter: recenter };
   function init() { Array.prototype.forEach.call(document.querySelectorAll('.tcard[data-tilt]'), wire); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

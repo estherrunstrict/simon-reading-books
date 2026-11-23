@@ -1,12 +1,19 @@
 {%- comment -%}
-  One collectible card for a finished book. assets/quest.js builds the same markup in makeCard().
-  include.book needs buddy, pages, book_type, power, title, author and card {art, number, rarity, move}.
+  One collectible card for a finished book. assets/quest.js builds the same markup with BookCard.make() in assets/card.js.
+  A real card (card.image) shows the card picture itself; otherwise the card is drawn from card.art, card.move and the book's power.
   include.total is the number of cards in the set (every book in _data/roadmap.yml).
 {%- endcomment -%}
 {%- assign b = include.book -%}{%- assign c = b.card -%}
 {%- assign rarity = c.rarity | default: "R" -%}
-<div class="tcard rarity-{{ rarity | escape }} type-{{ b.book_type | escape }}{% if include.mini %} is-mini{% endif %}" data-tilt role="img" aria-label="{{ b.buddy | escape }} 카드, {{ b.title | escape }}">
+{%- assign cname = c.name_ko | default: b.buddy -%}
+<div class="tcard rarity-{{ rarity | escape }} type-{{ b.book_type | escape }}{% if include.mini %} is-mini{% endif %}" data-tilt role="img" aria-label="{{ cname | escape }} 카드, {{ b.title | escape }}">
   <div class="tc-inner">
+    {%- if c.image %}
+    <div class="tc-face tc-front tc-real">
+      <img class="tc-photo" src="{% if include.mini %}{{ c.image_small | default: c.image | escape }}{% else %}{{ c.image | escape }}{% endif %}" alt="" loading="lazy" draggable="false" referrerpolicy="no-referrer">
+      <div class="tc-holo"></div><div class="tc-glare"></div>
+    </div>
+    {%- else %}
     <div class="tc-face tc-front">
       <div class="tc-window">
         <img class="tc-art" src="{{ c.art | relative_url }}" alt="" loading="lazy" draggable="false">
@@ -20,6 +27,7 @@
       </div>
       <div class="tc-holo"></div><div class="tc-glare"></div>
     </div>
+    {%- endif %}
     <div class="tc-face tc-back" aria-hidden="true"><span class="tc-emblem">책콩<br>카드</span></div>
   </div>
 </div>
