@@ -7,31 +7,29 @@ proposed: 2026-11-23
 grade: 초5
 grade_year: 2026
 books:
-  - slug: madangeul-naon-amtak
-    title: "마당을 나온 암탉"
-    author: "황선미"
-    publisher: "사계절"
-    isbn: "9788971968710"
-    pages: 200
-    size_mm: [152, 223, 14]
-    cover: "/assets/covers/madangeul-naon-amtak.webp"
-    buddy: "잎콩"
-    buddy_art: "/assets/weekly/madangeul-naon-amtak.webp"
+  - slug: syalrotui-geomijul
+    title: "샬롯의 거미줄"
+    author: "E.B. 화이트"
+    publisher: "시공주니어"
+    isbn: "9788952787590"
+    pages: 264
+    size_mm: [150, 210, 18]
+    cover: "/assets/covers/syalrotui-geomijul.webp"
     book_type: 이야기
     genre: "동화"
     tier: "초5 Must"
-    power: "인물의 선택과 결과를 따라가며 이야기의 인과를 읽어요"
-    about: "알만 낳던 암탉 잎싹이 마당을 나와 버려진 알을 품고, 태어난 아기 청둥오리 초록머리를 키워요."
+    power: "설득(글자 거미줄)이 어떻게 생각을 바꾸는지 봐요"
+    about: "작고 약한 돼지 윌버를 구하려고 거미 샬롯이 거미줄에 글자를 써서 농장 사람들의 생각을 바꿔요."
     card:
-      tcg_id: "rsv10pt5-110"
-      name: "Swanna"
-      name_ko: "스완나"
-      rarity_label: "일러스트 레어"
-      set: "Scarlet & Violet—White Flare"
-      image: "https://images.pokemontcg.io/rsv10pt5/110_hires.png"
-      image_small: "https://images.pokemontcg.io/rsv10pt5/110.png"
-      pack: "https://tcgplayer-cdn.tcgplayer.com/product/630699_in_1000x1000.jpg"
-      number: 1
+      tcg_id: "sv1-243"
+      name: "Spidops ex"
+      name_ko: "트래피더 ex"
+      rarity_label: "스페셜 일러스트 레어"
+      set: "Scarlet & Violet"
+      image: "https://images.pokemontcg.io/sv1/243_hires.png"
+      image_small: "https://images.pokemontcg.io/sv1/243.png"
+      pack: "https://tcgplayer-cdn.tcgplayer.com/product/476451_in_1000x1000.jpg"
+      number: 4
       rarity: SR
   - slug: nonriya-nolja
     title: "논리야, 놀자"
