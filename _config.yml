@@ -19,7 +19,7 @@ readcheck:
 collections:
   books:
     output: true
-    permalink: /books/:name/
+    permalink: /reading/books/:name/
 defaults:
   - scope:
       path: ""
@@ -28,6 +28,7 @@ defaults:
       layout: book
 exclude:
   - README.md
+  - kids-blog
   - Gemfile
   - Gemfile.lock
   - vendor
