@@ -137,9 +137,20 @@
     return { open };
   }
 
+  // ---- Stage parallax: each card follows the pointer on its own X and Y springs, from wherever it is.
+  function parallax() {
+    const stage = $('.stage'); if (!stage || reduced() || !matchMedia('(pointer: fine)').matches) return;
+    const items = [...stage.querySelectorAll('[data-depth]')].map((el) => {
+      const d = +el.dataset.depth, o = { x: 0, y: 0 }, set = () => { el.style.transform = `translate3d(${o.x}px,${o.y}px,0)`; };
+      return { d, x: new Spring((v) => { o.x = v; set(); }, 1, 0.55), y: new Spring((v) => { o.y = v; set(); }, 1, 0.55) };
+    });
+    stage.addEventListener('pointermove', (e) => { const r = stage.getBoundingClientRect(), nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5; for (const it of items) { it.x.to(-nx * it.d); it.y.to(-ny * it.d * 0.6); } });
+    stage.addEventListener('pointerleave', () => { for (const it of items) { it.x.to(0); it.y.to(0); } });
+  }
+
   // ---- Pages
   function home() {
-    const sheet = Sheet(); reflect();
+    const sheet = Sheet(); reflect(); parallax();
     document.querySelectorAll('[data-go]').forEach((tile) => tile.addEventListener('click', (e) => {
       e.preventDefault(); const go = tile.dataset.go;
       if (savedKey()) location.href = go; else sheet.open(go, tile);
@@ -172,5 +183,6 @@
     }
   }
   const lockPill = $('[data-lock-page]'); if (lockPill) lockPill.addEventListener('click', () => { forget(); location.href = '/'; });
+  if (B.page !== 'home') { const p = $('[data-lock-pill]'); if (p) { p.hidden = false; p.addEventListener('click', () => { forget(); location.href = '/'; }); } document.querySelectorAll('.nav [data-go]').forEach((a) => a.removeAttribute('data-go')); }
   if (B.page === 'home') home(); else if (B.page === 'diary') diary();
 })();
