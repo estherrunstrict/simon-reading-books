@@ -16,16 +16,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  {% unless page.url == '/404.html' %}<script src="{{ '/assets/blog/gate.js' | relative_url }}"></script>{% endunless %}
 </head>
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
   <header class="mast">
     <div class="mast-inner">
-      <a class="brand" href="{{ '/' | relative_url }}"><span class="mark" aria-hidden="true"></span>{{ site.title | escape }}</a>
+      <a class="brand" href="{{ '/reading/' | relative_url }}"><span class="mark" aria-hidden="true"></span>{{ site.title | escape }}</a>
       <nav aria-label="주 메뉴">
         <span class="trainer" data-trainer hidden></span>
-        <a href="{{ '/' | relative_url }}#shelf"{% if page.url == '/' %} aria-current="page"{% endif %}>내 책장</a>
-        <a class="nav-cta" href="{{ '/add/' | relative_url }}"{% if page.url == '/add/' %} aria-current="page"{% endif %}>책 추가</a>
+        <a href="{{ '/' | relative_url }}">시몬 블로그</a>
+        <a href="{{ '/reading/' | relative_url }}#shelf"{% if page.url == '/reading/' %} aria-current="page"{% endif %}>내 책장</a>
+        <a class="nav-cta" href="{{ '/reading/add/' | relative_url }}"{% if page.url == '/reading/add/' %} aria-current="page"{% endif %}>책 추가</a>
       </nav>
     </div>
   </header>
@@ -34,7 +36,7 @@
   <script src="{{ '/assets/readcheck.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/structure.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/card.js' | relative_url }}" defer></script>
-  {% if page.url == '/' %}<script src="{{ '/assets/quest.js' | relative_url }}" defer></script>{% endif %}
-  {% if page.url == '/add/' %}<script src="{{ '/assets/add-book.js' | relative_url }}" defer></script>{% endif %}
+  {% if page.url == '/reading/' %}<script src="{{ '/assets/quest.js' | relative_url }}" defer></script>{% endif %}
+  {% if page.url == '/reading/add/' %}<script src="{{ '/assets/add-book.js' | relative_url }}" defer></script>{% endif %}
 </body>
 </html>

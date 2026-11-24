@@ -448,7 +448,7 @@
       h('p', { class: 'save-title' }, book.title),
       h('p', { class: 'muted' }, book.author),
       h('p', {}, h('i', { class: 'dot', style: '--dot:' + (shelf.color || '#999'), 'aria-hidden': 'true' }), ' ', shelf.label || ''),
-      h('p', { class: 'muted' }, '주소: /books/' + book.slug + '/')));
+      h('p', { class: 'muted' }, '주소: /reading/books/' + book.slug + '/')));
   }
 
   $('#github-save').addEventListener('click', function () {
