@@ -73,7 +73,7 @@
     if (e.beta == null || e.gamma == null) return;
     if (!zero) zero = { b: e.beta, g: e.gamma };
     var dx = clamp((e.gamma - zero.g) / 25, -1, 1), dy = clamp((e.beta - zero.b) / 25, -1, 1);
-    Array.prototype.forEach.call(document.querySelectorAll('.tcard[data-gyro]'), function (c) {
+    Array.prototype.forEach.call(document.querySelectorAll('.tcard[data-gyro], .rcard[data-gyro]'), function (c) {
       if (c.classList.contains('is-tilting')) return;
       c.classList.add('has-gyro');
       light(c, 0.5 + dx / 2, 0.5 + dy / 2);
@@ -107,7 +107,7 @@
     if (c.pack) {
       // The real booster pack of the card's series.
       el.innerHTML = '<div class="bp-peek bp-peek-real" aria-hidden="true"><img src="' + esc(c.image_small || c.image) + '" alt="" draggable="false" referrerpolicy="no-referrer"></div><div class="bp-body bp-real">' +
-        '<img class="bp-photo" src="' + esc(c.pack) + '" alt="" draggable="false" referrerpolicy="no-referrer"><span class="bp-shine"></span></div>';
+        '<img class="bp-photo" src="' + esc(c.pack) + '" alt="" draggable="false" referrerpolicy="no-referrer"><span class="bp-crinkle"></span><span class="bp-shine"></span></div>';
       wire(el);
       return el;
     }

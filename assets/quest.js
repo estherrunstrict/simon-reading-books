@@ -352,15 +352,41 @@
     hint.textContent = '';
 
     var back = document.createElement('div'); back.className = 'pack-back';
-    var card = BookCard.make(last, DATA.cardTotal, DATA.base, false);
-    card.classList.add('pack-card', 'is-face-down');
-    card.setAttribute('data-gyro', '');
+    var tray = $('[data-pack-tray]');
+    if (tray) tray.textContent = '';
+    // A real card: the pack holds 10 real cards from the same set, the book's card last. The draw is kept, so
+    // reloading the page does not deal a new pack.
+    var deck = !!(c.image && window.BoosterPack), pulls = null, card;
+    if (deck) {
+      if (!last.pulls) {
+        var sid = String(c.tcg_id || '').split('-')[0];
+        last.pulls = BoosterPack.draw((DATA.pools || {})[sid], c);
+        save();
+      }
+      pulls = last.pulls;
+      BoosterPack.preload(pulls);
+      card = document.createElement('div'); card.className = 'pack-card pack-deck';
+      pulls.forEach(function (e, i) {
+        var rc = BoosterPack.make(e, true);
+        rc.classList.add('is-down');
+        rc.style.setProperty('--sx', (i * 0.8).toFixed(1) + 'px');
+        rc.style.setProperty('--sy', (i * 1.1).toFixed(1) + 'px');
+        rc.style.zIndex = String(pulls.length - i);
+        rc.setAttribute('data-gyro', '');
+        BookCard.wire(rc);
+        card.append(rc);
+      });
+    } else {
+      card = BookCard.make(last, DATA.cardTotal, DATA.base, false);
+      card.classList.add('pack-card', 'is-face-down');
+      card.setAttribute('data-gyro', '');
+    }
     var front = document.createElement('div'); front.className = 'pack-front';
     front.innerHTML = '<img class="pack-art" alt="" draggable="false"><span class="bp-rays"></span><span class="pack-shine"></span><span class="pack-logo">책콩<br>카드</span><span class="bp-series"></span><span class="pack-note">' + (c.rarity === 'SR' ? '★★ 슈퍼 레어' : '★ 레어') + ' 1장</span><span class="pack-book"></span>';
     if (c.pack) {
       stage.classList.add('is-real');
       stage.style.setProperty('--pack', 'url("' + c.pack.replace(/"/g, '') + '")');
-      front.innerHTML = '<span class="pack-shine"></span>';
+      front.innerHTML = '<span class="pack-crinkle"></span><span class="pack-shine"></span>';
     } else {
       $('.pack-art', front).src = DATA.base + c.art;
       $('.bp-series', front).textContent = BookCard.series(last);
@@ -385,8 +411,55 @@
       setTimeout(function () { stage.classList.add('is-rising'); }, 380 * wait);
       setTimeout(function () {
         stage.classList.add('is-out');
-        hint.textContent = '카드를 톡 눌러서 뒤집어요';
+        if (deck) { $('[data-pack-title]').textContent = '카드 ' + pulls.length + '장이 나왔어요!'; markTop(); }
+        else hint.textContent = '카드를 톡 눌러서 뒤집어요';
       }, 1700 * wait);
+    }
+    // ---------- one card at a time: tap to turn it over, tap again to put it in the tray ----------
+    var at = 0, faceUp = false, good = 0;
+    function topCard() { return card.children[at]; }
+    function markTop() {
+      var t = topCard(); if (!t) return;
+      t.classList.add('is-top');
+      hint.textContent = '톡 눌러서 카드를 뒤집어요 (' + (at + 1) + '/' + pulls.length + ')';
+    }
+    function cheer(text, big) {
+      var flash = document.createElement('div'); flash.className = 'flash';
+      var burst = document.createElement('div'); burst.className = 'burst';
+      var colors = ['#ffc83d', '#ff7aa8', '#1fb5c4', '#4f7dff', '#fff'];
+      for (var i = 0; i < (big ? 16 : 10); i++) {
+        var s = document.createElement('i'), a = (i / (big ? 16 : 10)) * Math.PI * 2 + Math.random() * 0.3, d = (big ? 120 : 90) + Math.random() * 100;
+        s.style.setProperty('--x', Math.round(Math.cos(a) * d) + 'px');
+        s.style.setProperty('--y', Math.round(Math.sin(a) * d) + 'px');
+        s.style.setProperty('--r', Math.round(Math.random() * 360) + 'deg');
+        s.style.setProperty('--c', colors[i % colors.length]);
+        burst.append(s);
+      }
+      $$('.rare-banner', stage).forEach(function (n) { n.remove(); });
+      var banner = document.createElement('div'); banner.className = 'rare-banner'; banner.textContent = text;
+      stage.append(flash, burst, banner);
+      setTimeout(function () { flash.remove(); burst.remove(); }, 1200);
+      if (!big) setTimeout(function () { banner.remove(); }, 1900);
+    }
+    function deckTap() {
+      if (!stage.classList.contains('is-out') || revealed) return;
+      var t = topCard(), e = pulls[at];
+      if (!t) return;
+      if (!faceUp) {
+        faceUp = true;
+        t.classList.remove('is-down');
+        BookCard.recenter();
+        if (e.book) { reveal(); return; }
+        if (BoosterPack.isHit(e)) { good++; sound('chime'); cheer(BoosterPack.label(e) + '!', false); }
+        else sound('blip');
+        hint.textContent = BoosterPack.label(e) + ' · ' + e.name + ' — 톡 누르면 다음 카드';
+        return;
+      }
+      faceUp = false;
+      t.classList.remove('is-top'); t.classList.add('is-gone');
+      if (tray) tray.append(BoosterPack.mini(e));
+      at++;
+      markTop();
     }
     function reveal() {
       if (revealed || !stage.classList.contains('is-out')) return;
@@ -394,6 +467,15 @@
       card.classList.remove('is-face-down');
       stage.classList.add('is-revealed');
       sound('chime');
+      if (deck) {
+        cheer((c.rarity_label || BoosterPack.label(pulls[at])) + '!', true);
+        var extra = good ? ' · 좋은 카드 ' + good + '장 더!' : '';
+        $('[data-pack-title]').textContent = BookCard.cardName(last) + ' 카드를 받았어요!';
+        $('[data-pack-sub]').textContent = '「' + last.title + '」 · ' + (c.set || '') + ' 팩 ' + pulls.length + '장' + extra;
+        hint.textContent = '카드를 손가락으로 기울이면 반짝여요';
+        collect.hidden = false;
+        return;
+      }
       var flash = document.createElement('div'); flash.className = 'flash';
       var burst = document.createElement('div'); burst.className = 'burst';
       var colors = ['#ffc83d', '#ff7aa8', '#1fb5c4', '#4f7dff', '#fff'];
@@ -451,10 +533,10 @@
       if (stage.dataset.dragged) { delete stage.dataset.dragged; return; }
       if (!opened && e.target.closest('.pack-top') && p < 0.05) { setP(0.34); hint.textContent = '조금만 더! 쭉 밀어 봐요'; return; }
       if (!opened && e.target.closest('.pack-top') && p < 1) { setP(p + 0.34); if (p >= 1) open(); return; }
-      if (opened) reveal();
+      if (opened) { if (deck) deckTap(); else reveal(); }
     });
     top.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-    card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); } });
+    card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (deck) deckTap(); else reveal(); } });
     card.tabIndex = 0;
   }
 
@@ -483,11 +565,25 @@
     var items = $$('li', dex);
     items.forEach(function (li, i) { var no = $('.no', li); if (no) no.textContent = 'No.' + (i + 1); });
     $('[data-shelf-count]').textContent = items.length ? '모은 책 ' + items.length + '권' : '다 읽은 책이 여기에 모여요';
+    renderBinder();
     for (var k = items.length; k < Math.max(4, items.length + 1); k++) {
       var ph = document.createElement('li'); ph.className = 'placeholder'; ph.setAttribute('aria-hidden', 'true');
       ph.innerHTML = '<span class="slot empty-slot">?</span>';
       dex.append(ph);
     }
+  }
+
+  // ---------- the binder: every card from every pack, best first ----------
+  function renderBinder() {
+    var zone = $('[data-binder-zone]'), list = $('[data-binder]');
+    if (!zone || !list || !window.BoosterPack) return;
+    var all = Object.keys(state.binder || {}).map(function (k) { return state.binder[k]; });
+    zone.hidden = !all.length;
+    list.textContent = '';
+    all.sort(function (a, b) { return BoosterPack.rank(b) - BoosterPack.rank(a) || a.name.localeCompare(b.name); });
+    var total = 0;
+    all.forEach(function (e) { total += e.n; var li = document.createElement('li'); li.append(BoosterPack.mini(e, e.n)); list.append(li); });
+    $('[data-binder-count]').textContent = '카드 ' + total + '장 · ' + all.length + '종류';
   }
 
   function decide() {
@@ -579,7 +675,16 @@
     }
     if (t.hasAttribute('data-collect')) {
       var lh = state.history[state.history.length - 1];
-      if (lh) lh.opened = true;
+      if (lh) {
+        lh.opened = true;
+        // Every card from the pack goes into the binder; the same card again only adds to its count.
+        (lh.pulls || []).forEach(function (e) {
+          state.binder = state.binder || {};
+          var k = e.id + (e.rev ? ':r' : '');
+          var b = state.binder[k] || (state.binder[k] = { id: e.id, name: e.name, code: e.code, rev: !!e.rev, book: !!e.book, label: e.label, img: e.img, n: 0 });
+          b.n++;
+        });
+      }
       save();
       show('done'); renderDone(); renderShelf(); trainer();
       window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
