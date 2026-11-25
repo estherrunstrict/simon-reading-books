@@ -1,0 +1,62 @@
+---
+layout: default
+title: 내 카드
+summary: 이 iPad에서 뜯은 팩의 카드
+---
+{%- comment -%}
+메뉴에 없는 숨은 주소예요. 이 iPad에 저장된 팩 기록(localStorage)을 읽어서, 뜯은 10장을 3D로 보여 줘요.
+카드 그림은 책장과 같이 공식 이미지 주소에서 불러와요. 다른 기기에서 열면 그 기기의 기록이 보여요.
+{%- endcomment -%}
+<section class="showcase" data-showcase>
+  <h1 class="q-title">내 카드 <span data-sc-count>10</span>장</h1>
+  <p class="q-sub" data-sc-sub>카드를 톡 누르면 뒤집혀요. 손가락이나 iPad를 기울이면 반짝여요.</p>
+  <div class="sc-tabs" data-sc-tabs hidden></div>
+  <div class="sc-grid" data-sc-grid></div>
+  <p class="sc-empty" data-sc-empty hidden>이 iPad에서 아직 뜯은 팩이 없어요. 책을 다 읽고 팩을 뜯으면 여기에 나와요.</p>
+</section>
+<script>
+(function () {
+  'use strict';
+  var state = null;
+  try { state = JSON.parse(localStorage.getItem('readcheck:quest:v1') || 'null'); } catch (e) { state = null; }
+  var packs = ((state && state.history) || []).filter(function (h) { return h.pulls && h.pulls.length; });
+  var grid = document.querySelector('[data-sc-grid]'), tabs = document.querySelector('[data-sc-tabs]');
+  function start() {
+    if (!window.BoosterPack || !window.BookCard) return setTimeout(start, 50);
+    if (!packs.length) { document.querySelector('[data-sc-empty]').hidden = false; document.querySelector('[data-sc-count]').textContent = '0'; return; }
+    if (packs.length > 1) {
+      tabs.hidden = false;
+      packs.forEach(function (p, i) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'sc-tab';
+        b.textContent = '「' + p.title + '」 팩';
+        b.addEventListener('click', function () { show(i); });
+        tabs.append(b);
+      });
+    }
+    show(packs.length - 1);
+  }
+  function show(i) {
+    var p = packs[i];
+    Array.prototype.forEach.call(tabs.children, function (b, k) { b.setAttribute('aria-pressed', String(k === i)); });
+    document.querySelector('[data-sc-count]').textContent = p.pulls.length;
+    document.querySelector('[data-sc-sub]').textContent = '「' + p.title + '」 팩 · 카드를 톡 누르면 뒤집혀요. 손가락이나 iPad를 기울이면 반짝여요.';
+    grid.textContent = '';
+    p.pulls.forEach(function (e) {
+      var fig = document.createElement('figure'); fig.className = 'sc-item';
+      var c = BoosterPack.make(e, true);
+      c.setAttribute('data-gyro', ''); c.tabIndex = 0;
+      BookCard.wire(c);
+      function flip() { BookCard.enableGyro(); c.classList.toggle('is-down'); }
+      c.addEventListener('click', flip);
+      c.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); flip(); } });
+      var cap = document.createElement('figcaption');
+      cap.innerHTML = '<b></b><span></span>';
+      cap.querySelector('b').textContent = e.name;
+      cap.querySelector('span').textContent = BoosterPack.label(e);
+      if (BoosterPack.isHit(e)) fig.classList.add('is-hit');
+      fig.append(c, cap); grid.append(fig);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>
