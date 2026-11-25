@@ -43,7 +43,20 @@
   try { state = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { state = null; }
   state = state || { history: [] };
   state.history = state.history || [];
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode: works until reload */ } }
+  // 체험 모드 (?try=책주소): 그 책을 다 읽은 것처럼 팩 뜯기를 해 봐요. 메모리에서만 돌고 iPad 기록은 건드리지 않아요.
+  var TRIAL = (function () {
+    var m = location.search.match(/[?&]try=([^&]+)/);
+    if (!m) return null;
+    var slug = decodeURIComponent(m[1]);
+    return books.filter(function (b) { return b.slug === slug; })[0] || null;
+  })();
+  if (TRIAL) {
+    var tb = TRIAL;
+    state = { week: weekly.proposed, binder: {}, history: [{ slug: tb.slug, title: tb.title, author: tb.author, genre: tb.genre, pages: tb.pages, about: tb.about, isbn: tb.isbn,
+      cover: tb.cover, book_type: tb.book_type, size_mm: tb.size_mm, power: tb.power, card: tb.card, opened: !tb.card,
+      week: weekly.proposed, pickedAt: today, doneAt: today, trial: true }] };
+  }
+  function save() { if (TRIAL) return; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode: works until reload */ } }
 
   // ---------- report photo in IndexedDB ----------
   function db() {
@@ -737,6 +750,13 @@
     }
   }
 
+  if (TRIAL) {
+    var note = document.createElement('p'); note.className = 'trial-note';
+    note.innerHTML = '<b>체험 모드</b> 「<span></span>」을 다 읽은 것처럼 팩을 뜯어 봐요. 기록은 남지 않아요. ' +
+      '<a class="linkish" href="?try=' + encodeURIComponent(TRIAL.slug) + '">다시 뜯기</a> · <a class="linkish" href="' + DATA.base + '/reading/">체험 끝내기</a>';
+    $('span', note).textContent = TRIAL.title;
+    quest.prepend(note);
+  }
   decide();
   renderShelf();
   trainer();
