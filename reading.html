@@ -11,6 +11,7 @@ permalink: /reading/
   "base": {{ site.baseurl | jsonify }},
   "cardTotal": {{ card_total }},
   "weekly": {{ weekly | jsonify | replace: "</", "<\/" }},
+  "pools": { {% for b in weekly.books %}{% assign sid = b.card.tcg_id | split: "-" | first %}{{ sid | jsonify }}: {{ site.data.card_pools[sid] | jsonify | replace: "</", "<\/" }}{% unless forloop.last %}, {% endunless %}{% endfor %} },
   "shelf": [{% for b in finished_books %}{"slug": {{ b.slug | jsonify }}, "title": {{ b.title | jsonify }}, "finished": {{ b.finished | date: "%Y-%m-%d" | jsonify }}, "card": {% if b.card %}true{% else %}false{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]
 }</script>
 
@@ -18,7 +19,7 @@ permalink: /reading/
   <div class="q-choose" data-view="choose">
     <p class="q-kicker">이번 주 도전</p>
     <h1 class="q-title">어떤 카드를 모을까?</h1>
-    <p class="q-sub">책 한 권을 골라 다 읽으면, 그 책의 팩을 뜯어 레어 카드를 받아요. 팩을 톡 눌러 보세요!</p>
+    <p class="q-sub">책 한 권을 골라 다 읽으면, 그 책의 진짜 팩을 뜯어 카드 10장을 받아요. 마지막 장은 꼭 소중한 카드! 팩을 톡 눌러 보세요!</p>
     <div class="duel">
       {% for b in weekly.books %}
       <article class="pick type-{{ b.book_type | escape }}" data-slug="{{ b.slug | escape }}">
@@ -38,7 +39,7 @@ permalink: /reading/
         <span class="type type-{{ b.book_type | escape }}">{{ b.book_type | escape }} 책</span>
         <h2>{{ b.title | escape }}</h2>
         <p class="pick-meta"><span>{{ b.author | escape }}</span><span>{{ b.pages }}쪽</span><span>{{ b.size_mm[0] | divided_by: 10.0 }} × {{ b.size_mm[1] | divided_by: 10.0 }} cm</span></p>
-        {% if b.card %}<p class="pick-reward">다 읽으면 <b>{{ b.card.name_ko | default: b.buddy | escape }}</b> 카드 <span class="rare-tag rarity-{{ b.card.rarity | escape }}">{% if b.card.rarity_label %}{{ b.card.rarity_label | escape }}{% elsif b.card.rarity == "SR" %}★★ SR{% else %}★ R{% endif %}</span></p>{% if b.card.set %}<p class="pick-set">{{ b.card.set | escape }} 팩</p>{% endif %}{% endif %}
+        {% if b.card %}<p class="pick-reward">10장 중 확정 <b>{{ b.card.name_ko | default: b.buddy | escape }}</b> 카드 <span class="rare-tag rarity-{{ b.card.rarity | escape }}">{% if b.card.rarity_label %}{{ b.card.rarity_label | escape }}{% elsif b.card.rarity == "SR" %}★★ SR{% else %}★ R{% endif %}</span></p>{% if b.card.set %}<p class="pick-set">{{ b.card.set | escape }} 팩</p>{% endif %}{% endif %}
         <button type="button" class="action spark big" data-choose="{{ b.slug | escape }}">이 책 읽을래요</button>
       </article>
       {% if forloop.first %}<div class="vs" aria-hidden="true"><span>VS</span></div>{% endif %}
@@ -92,6 +93,7 @@ permalink: /reading/
     <h1 data-pack-title>책을 다 읽은 선물이 왔어요!</h1>
     <p class="q-sub" data-pack-sub>팩 윗부분을 손가락으로 쭉 밀어서 뜯어요.</p>
     <div class="pack-stage" data-pack-stage></div>
+    <div class="pack-tray" data-pack-tray aria-label="뜯은 카드"></div>
     <p class="pack-hint" data-pack-hint aria-live="polite"></p>
     <div class="row-actions center"><button type="button" class="action spark" data-collect hidden>카드 도감에 넣기</button></div>
   </div>
@@ -120,6 +122,10 @@ permalink: /reading/
     </a></li>
     {% endfor %}
   </ol>
+  <div class="binder-zone" data-binder-zone hidden>
+    <h3>카드 바인더 <small data-binder-count></small></h3>
+    <ol class="binder" data-binder></ol>
+  </div>
   {% assign others = site.books | where_exp: "b", "b.status != 'finished'" %}
   {% if others.size > 0 %}
   <div class="other-books">

@@ -48,6 +48,7 @@ Each book has one real Pokémon card that Simon gets by tearing open that card's
 2. Find it with the Pokémon TCG API: `curl -s "https://api.pokemontcg.io/v2/cards?q=name:<name>&orderBy=-set.releaseDate&select=id,name,rarity,set,images"`. Take `id` (tcg_id), `images.large` (image), `images.small` (image_small) and `set.name`. Look at the large image with Read.
 3. Find that set's single booster pack on TCGplayer in ego lite (`https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&q=<set> booster pack`), open the "<set> Booster Pack" product (not a bundle or box) and use `https://tcgplayer-cdn.tcgplayer.com/product/<product id>_in_1000x1000.jpg`. Check it with curl and Read: one pack, front side.
 4. Write the card's Korean name (스완나, 후딘 ex) and its rarity in Korean (일러스트 레어, 스페셜 일러스트 레어, 레어 ...).
+5. The pack holds 10 cards: 9 drawn at random from the card's set, then the book's card. Make sure the set's card list exists: `ruby scripts/card_pool.rb <set id>` (the part of `tcg_id` before the dash, e.g. `sv1`) writes `_data/card_pools/<set id>.json`. Commit that file with the pair.
 
 ## 4. Write _data/weekly.yml
 
@@ -58,6 +59,6 @@ Then the card, nested under `card:`: `tcg_id`, `name`, `name_ko`, `rarity_label`
 ## 5. Check and publish
 
 1. `ruby scripts/check_books.rb` must pass. Build with Jekyll if it is installed and look at the home page at 820×1180.
-2. Commit only `_data/weekly.yml`, `assets/covers/<slug>.webp` and `assets/weekly/<slug>.webp`. The card and pack pictures stay on pokemontcg.io and TCGplayer.
+2. Commit only `_data/weekly.yml`, `assets/covers/<slug>.webp`, `assets/weekly/<slug>.webp` and any new `_data/card_pools/<set id>.json`. The card and pack pictures stay on pokemontcg.io and TCGplayer.
 3. Push to the branch GitHub Pages builds from only if the user turned on unattended weekly runs; otherwise report and wait for them to say so.
 4. Run `python3 scripts/drive_archive.py sweep`, then with `--apply`, to move the cover originals to Drive.
