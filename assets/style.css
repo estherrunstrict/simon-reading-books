@@ -770,6 +770,8 @@ nav .nav-cta{color:rgba(255,255,255,.85)}
 .sc-item figcaption span{opacity:.7}
 .sc-item.is-hit figcaption span{opacity:1;font-weight:700;color:#d6336c}
 .sc-empty{margin-top:32px;opacity:.75}
+.trial-note{max-width:640px;margin:0 auto 12px;padding:.6em 1em;border-radius:14px;background:#fff6d6;border:2px dashed #e0a800;text-align:center;font-size:15px;line-height:1.5}
+.sc-try{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
 @media print{
 @page{size:A4;margin:20mm 18mm}
 html,body{background:#fff;color:#000}

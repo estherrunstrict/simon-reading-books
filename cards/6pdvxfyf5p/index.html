@@ -13,6 +13,10 @@ summary: 이 iPad에서 뜯은 팩의 카드
   <div class="sc-tabs" data-sc-tabs hidden></div>
   <div class="sc-grid" data-sc-grid></div>
   <p class="sc-empty" data-sc-empty hidden>이 iPad에서 아직 뜯은 팩이 없어요. 책을 다 읽고 팩을 뜯으면 여기에 나와요.</p>
+  <div class="sc-try">
+    {% for b in site.data.weekly.books %}<a class="action spark" href="{{ '/reading/' | relative_url }}?try={{ b.slug | uri_escape }}">「{{ b.title | escape }}」 다 읽은 것처럼 팩 뜯어 보기</a>
+    {% endfor %}
+  </div>
 </section>
 <script>
 (function () {
