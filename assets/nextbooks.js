@@ -1,4 +1,4 @@
-// The two books Simon picks ahead of time for "next" (책 추가 page), kept on this iPad.
+// The two books the reader picks ahead of time for "next" (책 추가 page), kept on this iPad.
 // Each picked book gets its own real booster pack: the book's first pack, or its second one when the other
 // picked book already has that pack, so the two packs he chooses between are never the same.
 // The reading page reads the same list: when a book is finished, Simon chooses one of these two.
@@ -34,13 +34,15 @@
   function shape(b, card) {
     if (!b) return null;
     var sid = setOf(card), num = String(card.tcg_id).split('-')[1];
+    // Pokémon cards are found by set and number on pokemontcg.io; other games give their pictures in the data.
+    var big = card.image || IMG + sid + '/' + num + '_hires.png', small = card.image_small || IMG + sid + '/' + num + '.png';
     return {
       slug: b.slug, title: b.title, author: b.author, publisher: b.publisher, isbn: b.isbn || '', pages: b.pages || 0,
       size_mm: b.size || [150, 215, 14], cover: b.cover || '', book_type: '', genre: '', tier: b.tier, power: b.power,
       about: b.power, n: b.n, fromNext: true,
       card: {
-        tcg_id: card.tcg_id, name: card.name, name_ko: card.name_ko, rarity_label: '스페셜 일러스트 레어', set: card.set,
-        image: IMG + sid + '/' + num + '_hires.png', image_small: IMG + sid + '/' + num + '.png', pack: card.pack,
+        tcg_id: card.tcg_id, name: card.name, name_ko: card.name_ko, rarity_label: card.rarity_label || '스페셜 일러스트 레어', set: card.set,
+        image: big, image_small: small, pack: card.pack,
         number: b.n, rarity: 'SR'
       }
     };

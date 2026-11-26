@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 시몬의 책
+title: 책 읽기
 permalink: /reading/
 ---
 {% assign weekly = site.data.weekly %}
@@ -8,6 +8,7 @@ permalink: /reading/
 {% assign card_total = 0 %}{% for g in site.data.roadmap %}{% assign card_total = card_total | plus: g[1].must.size | plus: g[1].better.size %}{% endfor %}
 <script id="quest-data" type="application/json">{
   "repo": {{ site.repository | jsonify }},
+  "booksDir": {{ site.kid.books_dir | default: "_books" | jsonify }},
   "base": {{ site.baseurl | jsonify }},
   "cardTotal": {{ card_total }},
   "weekly": {{ weekly | jsonify | replace: "</", "<\/" }},
@@ -60,8 +61,9 @@ permalink: /reading/
       <div class="xp" aria-hidden="true"><span class="xp-label">퀘스트</span><span class="xp-bar"><i data-xp-fill></i></span><b data-xp-text>0/4</b></div>
       <ol class="mission">
         <li data-step="write">
-          <h3>종이에 독후감 쓰기</h3>
-          <p>가장 하고 싶은 말 한 가지와 그렇게 생각한 까닭 세 가지를 적어요. 기억에 남는 장면도 하나 넣어요.</p>
+          {% if site.kid.young %}<h3>종이에 그림 독후감 그리기</h3>
+          <p>가장 좋았던 장면을 그리고, 왜 좋았는지 한 줄로 써요. 글씨가 어려우면 보호자가 받아 적어도 돼요.</p>{% else %}<h3>종이에 독후감 쓰기</h3>
+          <p>가장 하고 싶은 말 한 가지와 그렇게 생각한 까닭 세 가지를 적어요. 기억에 남는 장면도 하나 넣어요.</p>{% endif %}
           <div class="row-actions"><button type="button" class="action ghost small" data-mark-written>다 썼어요</button></div>
         </li>
         <li data-step="photo">

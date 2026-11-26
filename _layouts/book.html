@@ -23,7 +23,7 @@ layout: default
   {% if facts != "" %}<dl class="facts">{{ facts }}</dl>{% endif %}
   {% if page.quote %}<blockquote class="book-quote">{{ page.quote | escape }}</blockquote>{% endif %}
   {% assign notes = content | strip %}
-  {% if notes != "" %}<section class="reading" aria-label="시몬의 독서 노트">{{ content }}</section>{% endif %}
+  {% if notes != "" %}<section class="reading" aria-label="{{ site.kid.name }}의 독서 노트">{{ content }}</section>{% endif %}
   {% if page.quiz.size > 0 %}
   <section class="readcheck" aria-labelledby="readcheck-title">
     <h2 id="readcheck-title">독서 확인</h2>
@@ -86,7 +86,7 @@ layout: default
     <img src="{{ '/assets/img/photo.webp' | relative_url }}" width="160" height="160" alt="" loading="lazy">
     <div>
       <h2 id="photo-quiz-title">사진으로 독서 확인 퀴즈 만들기</h2>
-      <p>시몬이 읽은 쪽을 한 장씩 찍어 Mac의 <code>readcheck/media/inbox</code> 폴더에 넣고, Claude Code에 이렇게 보내요.</p>
+      <p>{{ site.kid.ni }} 읽은 쪽을 한 장씩 찍어 Mac의 <code>readcheck/media/inbox</code> 폴더에 넣고, Claude Code에 이렇게 보내요.</p>
       <div class="copy-line"><code id="quiz-command">"{{ page.title | escape }}" 퀴즈 만들어. 사진은 media/inbox에 있어.</code><button type="button" class="action ghost small" data-copy-target="quiz-command">복사</button></div>
       <p class="muted">퀴즈를 만든 뒤 사진은 Google Drive로 옮기고 Mac에서는 지워요.</p>
     </div>

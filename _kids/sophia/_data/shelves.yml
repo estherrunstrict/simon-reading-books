@@ -1,0 +1,22 @@
+# 책장의 순서와 모양을 정해요. 책 파일의 status는 아래 key 중 하나여야 해요.
+# date_field가 비어 있으면 카드에 날짜를 보여주지 않아요.
+- key: reading
+  label: 읽는 중
+  color: "#d98e04"
+  date_field: started
+  date_label: 시작
+- key: want
+  label: 읽고 싶은 책
+  color: "#2549c7"
+  date_field: ""
+  date_label: ""
+- key: finished
+  label: 다 읽은 책
+  color: "#236c50"
+  date_field: finished
+  date_label: 완독
+- key: paused
+  label: 잠시 멈춤
+  color: "#7a869c"
+  date_field: started
+  date_label: 시작

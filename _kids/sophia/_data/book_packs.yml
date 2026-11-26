@@ -1,0 +1,1802 @@
+# 소피아의 책마다 짝지은 디즈니 프린세스 카드 두 장과 그 팩이에요(scripts/lorcana_cards.rb가 써요). 첫째를 쓰고,
+# 다음 책으로 같이 고른 책이 같은 팩이면 둘째를 써요. Must는 아이코닉·인챈티드·에픽, Better는 레전더리·슈퍼 레어·레어예요.
+gangajittong:
+- tcg_id: lor10-241
+  name: Ariel - Ethereal Voice
+  name_ko: 아리엘
+  set: Whispers in the Well
+  rarity_label: 아이코닉
+  image: https://cards.lorcast.io/card/digital/large/crd_5b53a4c5b3854ab0ba71dd388aaa0d9f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5b53a4c5b3854ab0ba71dd388aaa0d9f.avif
+- tcg_id: lor14-236
+  name: Ariel - Collector of Oddities
+  name_ko: 아리엘
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_86d5ec9aed56412294093be47d5dd44e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_86d5ec9aed56412294093be47d5dd44e.avif
+alsatang:
+- tcg_id: lor11-241
+  name: Pocahontas - Peacekeeper
+  name_ko: 포카혼타스
+  set: Winterspell
+  rarity_label: 아이코닉
+  image: https://cards.lorcast.io/card/digital/large/crd_40a3f6d8de604ff085fa5629597780a3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_40a3f6d8de604ff085fa5629597780a3.avif
+- tcg_id: lor13-227
+  name: Pocahontas & Meeko - Adventurous Friends
+  name_ko: 포카혼타스와 미코
+  set: Attack of the Vine!
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_1337332b5317428c95c1129cf645924f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1337332b5317428c95c1129cf645924f.avif
+subak-suyeongjang:
+- tcg_id: lor12-242
+  name: Merida - Formidable Archer
+  name_ko: 메리다
+  set: Wilds Unknown
+  rarity_label: 아이코닉
+  image: https://cards.lorcast.io/card/digital/large/crd_4811e7317e3149db966bab69151147cc.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4811e7317e3149db966bab69151147cc.avif
+- tcg_id: lor13-231
+  name: Merida - Wisp Conjurer
+  name_ko: 메리다
+  set: Attack of the Vine!
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_19d100267c654ec9af67ccb264c3bcbe.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_19d100267c654ec9af67ccb264c3bcbe.avif
+jangsutang-seonnyeonim:
+- tcg_id: lor13-245
+  name: Belle & Beast - Certain as the Sun
+  name_ko: 벨과 야수
+  set: Attack of the Vine!
+  rarity_label: 아이코닉
+  image: https://cards.lorcast.io/card/digital/large/crd_063394f93893493ab04808e6d7247926.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_063394f93893493ab04808e6d7247926.avif
+- tcg_id: lor1-214
+  name: Belle - Strange but Special
+  name_ko: 벨
+  set: The First Chapter
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_021c1d57c42d4fb7836097cbe9eacfb7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_021c1d57c42d4fb7836097cbe9eacfb7.avif
+noran-usan:
+- tcg_id: lor14-242
+  name: Cinderella - Unintentional Icon
+  name_ko: 신데렐라
+  set: Hyperia City
+  rarity_label: 아이코닉
+  image: https://cards.lorcast.io/card/digital/large/crd_53e52ad2780c40559d8ee63fe8e47192.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_53e52ad2780c40559d8ee63fe8e47192.avif
+- tcg_id: lor10-236
+  name: Cinderella - Dream Come True
+  name_ko: 신데렐라
+  set: Whispers in the Well
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_3c235410b79145c080fa8e3b000a2c60.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3c235410b79145c080fa8e3b000a2c60.avif
+gamjakkot:
+- tcg_id: lor1-213
+  name: Aurora - Dreaming Guardian
+  name_ko: 오로라
+  set: The First Chapter
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_72fe56f4aa85484284d8e3632d06ad9b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_72fe56f4aa85484284d8e3632d06ad9b.avif
+- tcg_id: lor14-223
+  name: Aurora - Delightful Musician
+  name_ko: 오로라
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_005aa953b56d427ebc078976dde6cb49.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_005aa953b56d427ebc078976dde6cb49.avif
+daedanhan-chamoessi:
+- tcg_id: lor2-206
+  name: Snow White - Well Wisher
+  name_ko: 백설공주
+  set: Rise of the Floodborn
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_e97e4b9894fe4c9798b0d925092d3eea.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e97e4b9894fe4c9798b0d925092d3eea.avif
+- tcg_id: lor5-220
+  name: Snow White - Fair-Hearted
+  name_ko: 백설공주
+  set: Shimmering Skies
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_222e3894d8c04d2899b047a97912b5c6.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_222e3894d8c04d2899b047a97912b5c6.avif
+naneun-annaegyeoniya:
+- tcg_id: lor4-212
+  name: Jasmine - Desert Warrior
+  name_ko: 자스민
+  set: Ursula's Return
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_54e413e671dc4fa3872b3481db960d47.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_54e413e671dc4fa3872b3481db960d47.avif
+- tcg_id: lor8-221
+  name: Jasmine - Steady Strategist
+  name_ko: 자스민
+  set: Reign of Jafar
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_a8b66e0b4abe48f58f9c47dc25593197.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_a8b66e0b4abe48f58f9c47dc25593197.avif
+beurokolrijiman-sarangbatgo-sipeo:
+- tcg_id: lor6-206
+  name: Tiana - Restaurant Owner
+  name_ko: 티아나
+  set: Azurite Sea
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_4dfb12a1e5844317a783074a548bc8c7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4dfb12a1e5844317a783074a548bc8c7.avif
+- tcg_id: lor14-239
+  name: Tiana - Party Hostess
+  name_ko: 티아나
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_ebb681079e1b42cbb3a0281a1561a5be.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ebb681079e1b42cbb3a0281a1561a5be.avif
+gwaenchanha-ajeossi:
+- tcg_id: lor7-205
+  name: Aurora - Waking Beauty
+  name_ko: 오로라
+  set: Archazia's Island
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_54102dba80604a609eed679b7f33fad3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_54102dba80604a609eed679b7f33fad3.avif
+- tcg_id: lor9-206
+  name: Aurora - Holding Court
+  name_ko: 오로라
+  set: Fabled
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_d292fcaa144d4f739bda2c14948da2ce.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d292fcaa144d4f739bda2c14948da2ce.avif
+gwaenchanha-uri-modu-cheoeumiya:
+- tcg_id: lor8-100
+  name: Raya - Infiltration Expert
+  name_ko: 라야
+  set: Reign of Jafar
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_0a97dde4f01045ccb29a9f61ac3c36d8.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_0a97dde4f01045ccb29a9f61ac3c36d8.avif
+- tcg_id: lor2-123
+  name: Raya - Leader of Heart
+  name_ko: 라야
+  set: Rise of the Floodborn
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_5b613c1368aa4c94a43c012f9a73394e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5b613c1368aa4c94a43c012f9a73394e.avif
+gogumaguma:
+- tcg_id: lor3-103
+  name: Ariel - Adventurous Collector
+  name_ko: 아리엘
+  set: Into the Inklands
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_341f45661be2402b86ec54dd9e402bd3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_341f45661be2402b86ec54dd9e402bd3.avif
+- tcg_id: lor1-2
+  name: Ariel - Spectacular Singer
+  name_ko: 아리엘
+  set: The First Chapter
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_be92bba983424f2f9546f237e65ce357.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_be92bba983424f2f9546f237e65ce357.avif
+100cheungjjari-jip:
+- tcg_id: lor5-183
+  name: Snow White - Fair-Hearted
+  name_ko: 백설공주
+  set: Shimmering Skies
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_8d0e59a2afe64a538efd96c2270336ca.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_8d0e59a2afe64a538efd96c2270336ca.avif
+- tcg_id: lor12-37
+  name: Snow White - Merry as the Morning
+  name_ko: 백설공주
+  set: Wilds Unknown
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_6253282cb5e14ec384482907b1b1aaa3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6253282cb5e14ec384482907b1b1aaa3.avif
+nunmulbada:
+- tcg_id: lor9-126
+  name: Mulan - Elite Archer
+  name_ko: 뮬란
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_44fe3bead4bf40f79163468a4fd647e5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_44fe3bead4bf40f79163468a4fd647e5.avif
+- tcg_id: lor1-118
+  name: Mulan - Imperial Soldier
+  name_ko: 뮬란
+  set: The First Chapter
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_45037644be034dad9ec46ffdabcde550.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_45037644be034dad9ec46ffdabcde550.avif
+dalsyabeteu:
+- tcg_id: lor1-142
+  name: Belle - Strange but Special
+  name_ko: 벨
+  set: The First Chapter
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_63c2ca66eeea417b9079d833e0fd88d4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_63c2ca66eeea417b9079d833e0fd88d4.avif
+- tcg_id: lor14-90
+  name: Belle - Exceptional Writer
+  name_ko: 벨
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_d61e937489bc4d479704f570a72b6f90.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d61e937489bc4d479704f570a72b6f90.avif
+jigakdaejang-jon:
+- tcg_id: lor10-155
+  name: Cinderella - Dream Come True
+  name_ko: 신데렐라
+  set: Whispers in the Well
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_31e94039c2494d31b8966443911b0fb2.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_31e94039c2494d31b8966443911b0fb2.avif
+- tcg_id: lor4-4
+  name: Cinderella - Melody Weaver
+  name_ko: 신데렐라
+  set: Ursula's Return
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_4dcd2225913d4c7b8ff2527a2b1b3fb7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4dcd2225913d4c7b8ff2527a2b1b3fb7.avif
+patjuk-halmeomgwa-horangi:
+- tcg_id: lor11-155
+  name: Moana - Curious Explorer
+  name_ko: 모아나
+  set: Winterspell
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_d598d22b1dbf4566bede003c3af9e0a8.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d598d22b1dbf4566bede003c3af9e0a8.avif
+- tcg_id: lor1-14
+  name: Moana - Of Motunui
+  name_ko: 모아나
+  set: The First Chapter
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6c18714222c749b8b16800630a5d26cf.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6c18714222c749b8b16800630a5d26cf.avif
+jongi-bongji-gongju:
+- tcg_id: lor12-191
+  name: Merida - Formidable Archer
+  name_ko: 메리다
+  set: Wilds Unknown
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_9a930ad30367469f8e497f561beee663.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_9a930ad30367469f8e497f561beee663.avif
+- tcg_id: lor13-50
+  name: Merida - Wisp Conjurer
+  name_ko: 메리다
+  set: Attack of the Vine!
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_418bbf00ceac49df9dd203b62d63803f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_418bbf00ceac49df9dd203b62d63803f.avif
+doseogwane-gan-saja:
+- tcg_id: lor13-100
+  name: Rapunzel & Flynn Rider - Unlikely Pair
+  name_ko: 라푼젤과 플린 라이더
+  set: Attack of the Vine!
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_96c13d549e86443982376fd82092e179.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_96c13d549e86443982376fd82092e179.avif
+- tcg_id: lor1-18
+  name: Rapunzel - Gifted with Healing
+  name_ko: 라푼젤
+  set: The First Chapter
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_63a9a93217614c00a186fe10b8791073.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_63a9a93217614c00a186fe10b8791073.avif
+doseogwan-goyangi:
+- tcg_id: lor14-127
+  name: Mulan - Martial Arts Master
+  name_ko: 뮬란
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_01a558477dc44f9fb291170d2ae83b60.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_01a558477dc44f9fb291170d2ae83b60.avif
+- tcg_id: lor4-114
+  name: Mulan - Elite Archer
+  name_ko: 뮬란
+  set: Ursula's Return
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_d716dab053a54d448c9544db720aa77c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d716dab053a54d448c9544db720aa77c.avif
+masitneun-geon-masisseo:
+- tcg_id: lor2-25
+  name: Snow White - Well Wisher
+  name_ko: 백설공주
+  set: Rise of the Floodborn
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_d93d338ebe6c4e2dbbfb72a3059dcbc3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d93d338ebe6c4e2dbbfb72a3059dcbc3.avif
+- tcg_id: lor7-33
+  name: Snow White - Fairest in the Land
+  name_ko: 백설공주
+  set: Archazia's Island
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_2f6b2d82972a4c47aca9ebf61a664045.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2f6b2d82972a4c47aca9ebf61a664045.avif
+choeseungho-siinui-malnori-dongsijip-1:
+- tcg_id: lor4-4
+  name: Cinderella - Melody Weaver
+  name_ko: 신데렐라
+  set: Ursula's Return
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_4dcd2225913d4c7b8ff2527a2b1b3fb7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4dcd2225913d4c7b8ff2527a2b1b3fb7.avif
+- tcg_id: lor14-157
+  name: Cinderella - Unintentional Icon
+  name_ko: 신데렐라
+  set: Hyperia City
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6a6e3f2df2d448bc99d1492d3d6585e6.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6a6e3f2df2d448bc99d1492d3d6585e6.avif
+gasi-sonyeon:
+- tcg_id: lor6-16
+  name: Tiana - Restaurant Owner
+  name_ko: 티아나
+  set: Azurite Sea
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_c01f3a4124be48dbb77aaa45281e74ba.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c01f3a4124be48dbb77aaa45281e74ba.avif
+- tcg_id: lor14-196
+  name: Tiana - Party Hostess
+  name_ko: 티아나
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_181b597fbbc3457384a3b4d545807df3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_181b597fbbc3457384a3b4d545807df3.avif
+maeumi-geuraesseo:
+- tcg_id: lor7-14
+  name: Aurora - Waking Beauty
+  name_ko: 오로라
+  set: Archazia's Island
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_96ad341f42564869a246b51582b51031.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_96ad341f42564869a246b51582b51031.avif
+- tcg_id: lor14-19
+  name: Aurora - Delightful Musician
+  name_ko: 오로라
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_cf9e33084f684d58a059e96bd7c83c09.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_cf9e33084f684d58a059e96bd7c83c09.avif
+jjak-bakkuneun-nal:
+- tcg_id: lor8-101
+  name: Rapunzel - High Climber
+  name_ko: 라푼젤
+  set: Reign of Jafar
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_963d4566252a47b2ae12307309ab2022.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_963d4566252a47b2ae12307309ab2022.avif
+- tcg_id: lor10-3
+  name: Rapunzel - Ready for Adventure
+  name_ko: 라푼젤
+  set: Whispers in the Well
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_70ae5f21fa1347b49ee910683e34d90e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_70ae5f21fa1347b49ee910683e34d90e.avif
+soriui-chuseok-iyagi:
+- tcg_id: lor9-107
+  name: Ariel - Adventurous Collector
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_d46b2630aeaf4f42b5bba4e29bee58df.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d46b2630aeaf4f42b5bba4e29bee58df.avif
+- tcg_id: lor4-139
+  name: Ariel - Treasure Collector
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_268651d4999a481faa22b6598a4dea0c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_268651d4999a481faa22b6598a4dea0c.avif
+peuredeurik:
+- tcg_id: lor3-116
+  name: Moana - Born Leader
+  name_ko: 모아나
+  set: Into the Inklands
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_d506a2271c444d7f9c2becae74535475.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d506a2271c444d7f9c2becae74535475.avif
+- tcg_id: lor5-18
+  name: Moana - Determined Explorer
+  name_ko: 모아나
+  set: Shimmering Skies
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_da584233ea5149dd814bd6b372e015d5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_da584233ea5149dd814bd6b372e015d5.avif
+jireongiga-heuk-ttongeul-nueosseo:
+- tcg_id: lor5-158
+  name: Belle - Of the Ball
+  name_ko: 벨
+  set: Shimmering Skies
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_d5087e3422e74e3585a2a323b4a06ee7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d5087e3422e74e3585a2a323b4a06ee7.avif
+- tcg_id: lor1-141
+  name: Belle - Inventive Engineer
+  name_ko: 벨
+  set: The First Chapter
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_2a6cd27f6ba44515827ed800f377cdbd.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2a6cd27f6ba44515827ed800f377cdbd.avif
+baechuhuinnabi-al-100gaeneun-eodiro-gasseulkka:
+- tcg_id: lor1-18
+  name: Rapunzel - Gifted with Healing
+  name_ko: 라푼젤
+  set: The First Chapter
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_63a9a93217614c00a186fe10b8791073.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_63a9a93217614c00a186fe10b8791073.avif
+- tcg_id: lor14-55
+  name: Rapunzel - Outgoing Artist
+  name_ko: 라푼젤
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_e111f3608b5e470d862124795daa01ba.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e111f3608b5e470d862124795daa01ba.avif
+yeodeol-sarui-sigan-gwanri:
+- tcg_id: lor11-22
+  name: Pocahontas - Peacekeeper
+  name_ko: 포카혼타스
+  set: Winterspell
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_7d2a989b37854bd5ac05ab0ee4bf086e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_7d2a989b37854bd5ac05ab0ee4bf086e.avif
+- tcg_id: lor13-27
+  name: Pocahontas & Meeko - Adventurous Friends
+  name_ko: 포카혼타스와 미코
+  set: Attack of the Vine!
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_2d7345f0bdb249708ef511c1fe289bc7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2d7345f0bdb249708ef511c1fe289bc7.avif
+gaeguriwa-dukkeobineun-chingu:
+- tcg_id: lor10-236
+  name: Cinderella - Dream Come True
+  name_ko: 신데렐라
+  set: Whispers in the Well
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_3c235410b79145c080fa8e3b000a2c60.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3c235410b79145c080fa8e3b000a2c60.avif
+- tcg_id: lor2-205
+  name: Cinderella - Ballroom Sensation
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_4cf391db31ba468f948bad5a20b0bc16.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4cf391db31ba468f948bad5a20b0bc16.avif
+yonggireul-nae-biniljanggap:
+- tcg_id: lor13-231
+  name: Merida - Wisp Conjurer
+  name_ko: 메리다
+  set: Attack of the Vine!
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_19d100267c654ec9af67ccb264c3bcbe.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_19d100267c654ec9af67ccb264c3bcbe.avif
+- tcg_id: lor12-213
+  name: Merida - Gifted Archer
+  name_ko: 메리다
+  set: Wilds Unknown
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_52404c741d6e424e8a8f901408ccb11a.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_52404c741d6e424e8a8f901408ccb11a.avif
+swineun-sigane-ttong-ssagi-silheo:
+- tcg_id: lor14-223
+  name: Aurora - Delightful Musician
+  name_ko: 오로라
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_005aa953b56d427ebc078976dde6cb49.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_005aa953b56d427ebc078976dde6cb49.avif
+- tcg_id: lor1-139
+  name: Aurora - Dreaming Guardian
+  name_ko: 오로라
+  set: The First Chapter
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1a45dd7bd500476991afd5bb75f173b2.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1a45dd7bd500476991afd5bb75f173b2.avif
+ahop-sal-maeum-sajeon:
+- tcg_id: lor4-220
+  name: Ariel - Sonic Warrior
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_94501fb9ecad49e9a81cd51f7c31dac7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_94501fb9ecad49e9a81cd51f7c31dac7.avif
+- tcg_id: lor9-232
+  name: Ariel - Adventurous Collector
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_e6a1d03334964fb78033020d86a5f502.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e6a1d03334964fb78033020d86a5f502.avif
+gieogui-pungseon:
+- tcg_id: lor2-205
+  name: Cinderella - Ballroom Sensation
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_4cf391db31ba468f948bad5a20b0bc16.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4cf391db31ba468f948bad5a20b0bc16.avif
+- tcg_id: lor4-205
+  name: Cinderella - Melody Weaver
+  name_ko: 신데렐라
+  set: Ursula's Return
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_eaf7db4a652b47939bddb0db4c9030e9.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_eaf7db4a652b47939bddb0db4c9030e9.avif
+eongttunghan-surijeom:
+- tcg_id: lor5-220
+  name: Snow White - Fair-Hearted
+  name_ko: 백설공주
+  set: Shimmering Skies
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_222e3894d8c04d2899b047a97912b5c6.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_222e3894d8c04d2899b047a97912b5c6.avif
+- tcg_id: lor2-24
+  name: Snow White - Unexpected Houseguest
+  name_ko: 백설공주
+  set: Rise of the Floodborn
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_a40dcfcf0f944762a1b3f31d9a322c9a.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_a40dcfcf0f944762a1b3f31d9a322c9a.avif
+kungpu-anigo-ttongpu:
+- tcg_id: lor6-214
+  name: Raya - Kumandran Rider
+  name_ko: 라야
+  set: Azurite Sea
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_b1ea1c67fc224e968a4906149590585c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b1ea1c67fc224e968a4906149590585c.avif
+- tcg_id: lor14-240
+  name: Raya - Determined Explorer
+  name_ko: 라야
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_6627b31f9682430a9765f027abe0922f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6627b31f9682430a9765f027abe0922f.avif
+tteugo-jigo:
+- tcg_id: lor7-217
+  name: Belle - Mechanic Extraordinaire
+  name_ko: 벨
+  set: Archazia's Island
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_0d38ed42e8f14a299f6efefb250350d3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_0d38ed42e8f14a299f6efefb250350d3.avif
+- tcg_id: lor11-236
+  name: Belle - Snowfield Strategist
+  name_ko: 벨
+  set: Winterspell
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_9652fdf2822645ee91302352c74c9d6a.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_9652fdf2822645ee91302352c74c9d6a.avif
+hwayoirui-dukkeobi:
+- tcg_id: lor8-214
+  name: Rapunzel - High Climber
+  name_ko: 라푼젤
+  set: Reign of Jafar
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_cf079ada81bd48cdb9290647f227982c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_cf079ada81bd48cdb9290647f227982c.avif
+- tcg_id: lor13-239
+  name: Rapunzel & Flynn Rider - Unlikely Pair
+  name_ko: 라푼젤과 플린 라이더
+  set: Attack of the Vine!
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_c9705013eab04705818153d8e3419f5b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c9705013eab04705818153d8e3419f5b.avif
+mabeobui-seoltang-du-jogak:
+- tcg_id: lor9-232
+  name: Ariel - Adventurous Collector
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_e6a1d03334964fb78033020d86a5f502.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e6a1d03334964fb78033020d86a5f502.avif
+- tcg_id: lor14-156
+  name: Ariel - Collector of Oddities
+  name_ko: 아리엘
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_5f0de7933f2d434097be4c11bbd80828.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5f0de7933f2d434097be4c11bbd80828.avif
+napjagiga-doen-seutaenri:
+- tcg_id: lor12-37
+  name: Snow White - Merry as the Morning
+  name_ko: 백설공주
+  set: Wilds Unknown
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_6253282cb5e14ec384482907b1b1aaa3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6253282cb5e14ec384482907b1b1aaa3.avif
+- tcg_id: lor2-23
+  name: Snow White - Lost in the Forest
+  name_ko: 백설공주
+  set: Rise of the Floodborn
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_abb29b66e814454ab886f18985102a9d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_abb29b66e814454ab886f18985102a9d.avif
+dareum:
+- tcg_id: lor13-27
+  name: Pocahontas & Meeko - Adventurous Friends
+  name_ko: 포카혼타스와 미코
+  set: Attack of the Vine!
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_2d7345f0bdb249708ef511c1fe289bc7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2d7345f0bdb249708ef511c1fe289bc7.avif
+- tcg_id: lor11-42
+  name: Pocahontas - Following the Wind
+  name_ko: 포카혼타스
+  set: Winterspell
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_044b499eebfa487ea9fb1a43e8d5fcdb.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_044b499eebfa487ea9fb1a43e8d5fcdb.avif
+sangchussi:
+- tcg_id: lor10-3
+  name: Rapunzel - Ready for Adventure
+  name_ko: 라푼젤
+  set: Whispers in the Well
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_70ae5f21fa1347b49ee910683e34d90e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_70ae5f21fa1347b49ee910683e34d90e.avif
+- tcg_id: lor11-222
+  name: Rapunzel - Ethereal Protector
+  name_ko: 라푼젤
+  set: Winterspell
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_b3924beae9a04927adc0e542f5656aa0.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b3924beae9a04927adc0e542f5656aa0.avif
+sagyejeol-mogyoktang:
+- tcg_id: lor14-156
+  name: Ariel - Collector of Oddities
+  name_ko: 아리엘
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_5f0de7933f2d434097be4c11bbd80828.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5f0de7933f2d434097be4c11bbd80828.avif
+- tcg_id: lor4-175
+  name: Ariel - Sonic Warrior
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_fd34f98e6230426fb411e1fd8528a7dc.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_fd34f98e6230426fb411e1fd8528a7dc.avif
+halmeoniwa-hayan-jip:
+- tcg_id: lor2-72
+  name: Belle - Hidden Archer
+  name_ko: 벨
+  set: Rise of the Floodborn
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_db68b32c197d4f808a46afc957338877.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_db68b32c197d4f808a46afc957338877.avif
+- tcg_id: lor11-158
+  name: Belle - Snowfield Strategist
+  name_ko: 벨
+  set: Winterspell
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_c38c857e2cbd433699e354e085a4625c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c38c857e2cbd433699e354e085a4625c.avif
+geurineun-daero:
+- tcg_id: lor4-114
+  name: Mulan - Elite Archer
+  name_ko: 뮬란
+  set: Ursula's Return
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_d716dab053a54d448c9544db720aa77c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d716dab053a54d448c9544db720aa77c.avif
+- tcg_id: lor10-215
+  name: Mulan - Standing Her Ground
+  name_ko: 뮬란
+  set: Whispers in the Well
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_082177dd6df34573a455c5f1b2ddad31.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_082177dd6df34573a455c5f1b2ddad31.avif
+nuga-nuga-jamjana:
+- tcg_id: lor6-84
+  name: Jasmine - Royal Commodore
+  name_ko: 자스민
+  set: Azurite Sea
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_ad218b44923244058918299a897f9e4c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ad218b44923244058918299a897f9e4c.avif
+- tcg_id: lor13-208
+  name: Jasmine - Vine Expert
+  name_ko: 자스민
+  set: Attack of the Vine!
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_c6b467dc278f49959393348e55a5c991.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c6b467dc278f49959393348e55a5c991.avif
+agi-tokkiwa-chaesonghwa-kkot:
+- tcg_id: lor1-139
+  name: Aurora - Dreaming Guardian
+  name_ko: 오로라
+  set: The First Chapter
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1a45dd7bd500476991afd5bb75f173b2.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1a45dd7bd500476991afd5bb75f173b2.avif
+- tcg_id: lor4-140
+  name: Aurora - Lore Guardian
+  name_ko: 오로라
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_f6e236483db94d5cbd74ec3d0c69f685.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_f6e236483db94d5cbd74ec3d0c69f685.avif
+nae-maeum:
+- tcg_id: lor11-158
+  name: Belle - Snowfield Strategist
+  name_ko: 벨
+  set: Winterspell
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_c38c857e2cbd433699e354e085a4625c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c38c857e2cbd433699e354e085a4625c.avif
+- tcg_id: lor13-132
+  name: Belle & Beast - Certain as the Sun
+  name_ko: 벨과 야수
+  set: Attack of the Vine!
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_200d65c5231b44cf854c8a0901c3c720.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_200d65c5231b44cf854c8a0901c3c720.avif
+hwaga-hororok-pulrineun-chaek:
+- tcg_id: lor7-141
+  name: Mulan - Imperial General
+  name_ko: 뮬란
+  set: Archazia's Island
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_5d754111355845818b81e2a9a506bab4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5d754111355845818b81e2a9a506bab4.avif
+- tcg_id: lor11-69
+  name: Mulan - Resourceful Recruit
+  name_ko: 뮬란
+  set: Winterspell
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_3825929341ca42099c98d099ed40d2ac.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3825929341ca42099c98d099ed40d2ac.avif
+batchimgujodae:
+- tcg_id: lor8-171
+  name: Jasmine - Steady Strategist
+  name_ko: 자스민
+  set: Reign of Jafar
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_e7e7a32216674ff5b5928592a8236ffd.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e7e7a32216674ff5b5928592a8236ffd.avif
+- tcg_id: lor1-149
+  name: Jasmine - Queen of Agrabah
+  name_ko: 자스민
+  set: The First Chapter
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6b26bc2dda6e49bba695529a039dcaee.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6b26bc2dda6e49bba695529a039dcaee.avif
+sejongdaewangeul-chajara:
+- tcg_id: lor9-153
+  name: Aurora - Dreaming Guardian
+  name_ko: 오로라
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_81f418041acd4fd98990e02403938de4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_81f418041acd4fd98990e02403938de4.avif
+- tcg_id: lor1-140
+  name: Aurora - Regal Princess
+  name_ko: 오로라
+  set: The First Chapter
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_f6c70da42b524965bcd4f7d6d86e8437.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_f6c70da42b524965bcd4f7d6d86e8437.avif
+nae-aneneun-sajaga-isseo-neoneun:
+- tcg_id: lor12-155
+  name: Cinderella - Resourceful Traveler
+  name_ko: 신데렐라
+  set: Wilds Unknown
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_f4e355fa31614d7885933e92a5d0c821.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_f4e355fa31614d7885933e92a5d0c821.avif
+- tcg_id: lor2-3
+  name: Cinderella - Ballroom Sensation
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_853c5c99d28f4304ba79004c91379057.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_853c5c99d28f4304ba79004c91379057.avif
+appareul-guhara:
+- tcg_id: lor5-18
+  name: Moana - Determined Explorer
+  name_ko: 모아나
+  set: Shimmering Skies
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_da584233ea5149dd814bd6b372e015d5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_da584233ea5149dd814bd6b372e015d5.avif
+- tcg_id: lor6-121
+  name: Moana - Kakamora Leader
+  name_ko: 모아나
+  set: Azurite Sea
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_ea56665b30604ff0977e95ad7442f5f5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ea56665b30604ff0977e95ad7442f5f5.avif
+bin-jibe-on-sonnim:
+- tcg_id: lor13-50
+  name: Merida - Wisp Conjurer
+  name_ko: 메리다
+  set: Attack of the Vine!
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_418bbf00ceac49df9dd203b62d63803f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_418bbf00ceac49df9dd203b62d63803f.avif
+- tcg_id: lor12-89
+  name: Merida - Gifted Archer
+  name_ko: 메리다
+  set: Wilds Unknown
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_2ba24a02308b4a9196bbe2cef9546e6b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2ba24a02308b4a9196bbe2cef9546e6b.avif
+geopbo-manbo:
+- tcg_id: lor14-19
+  name: Aurora - Delightful Musician
+  name_ko: 오로라
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_cf9e33084f684d58a059e96bd7c83c09.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_cf9e33084f684d58a059e96bd7c83c09.avif
+- tcg_id: lor9-161
+  name: Aurora - Regal Princess
+  name_ko: 오로라
+  set: Fabled
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_3935700ef8a04122935f3a9289dfa4af.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3935700ef8a04122935f3a9289dfa4af.avif
+goyangi-haegyeolsa-kkamnyang-1:
+- tcg_id: lor4-224
+  name: Mulan - Elite Archer
+  name_ko: 뮬란
+  set: Ursula's Return
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_40af5ff824594a7a899021662e0210ca.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_40af5ff824594a7a899021662e0210ca.avif
+- tcg_id: lor13-224
+  name: Mulan - Created by the Vine
+  name_ko: 뮬란
+  set: Attack of the Vine!
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_e31cf106ef9248fe963d706ecc7411d3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e31cf106ef9248fe963d706ecc7411d3.avif
+oreunbal-oenbal:
+- tcg_id: lor1-2
+  name: Ariel - Spectacular Singer
+  name_ko: 아리엘
+  set: The First Chapter
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_be92bba983424f2f9546f237e65ce357.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_be92bba983424f2f9546f237e65ce357.avif
+- tcg_id: lor10-17
+  name: Ariel - Ethereal Voice
+  name_ko: 아리엘
+  set: Whispers in the Well
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_43c967fc98154d6f86b8ac05b8953c10.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_43c967fc98154d6f86b8ac05b8953c10.avif
+haprijeogin-uisim:
+- tcg_id: lor11-42
+  name: Pocahontas - Following the Wind
+  name_ko: 포카혼타스
+  set: Winterspell
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_044b499eebfa487ea9fb1a43e8d5fcdb.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_044b499eebfa487ea9fb1a43e8d5fcdb.avif
+- tcg_id: lor12-171
+  name: Pocahontas - Steadfast Traveler
+  name_ko: 포카혼타스
+  set: Wilds Unknown
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_65471535e336408d9a1f465798307df2.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_65471535e336408d9a1f465798307df2.avif
+sseuregineun-ujuedo-itda:
+- tcg_id: lor2-123
+  name: Raya - Leader of Heart
+  name_ko: 라야
+  set: Rise of the Floodborn
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_5b613c1368aa4c94a43c012f9a73394e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5b613c1368aa4c94a43c012f9a73394e.avif
+- tcg_id: lor4-121
+  name: Raya - Fierce Protector
+  name_ko: 라야
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_e79d0ba09f4342b5a7a3ffe96ebef508.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e79d0ba09f4342b5a7a3ffe96ebef508.avif
+gipeun-bam-piltong-aneseo:
+- tcg_id: lor8-221
+  name: Jasmine - Steady Strategist
+  name_ko: 자스민
+  set: Reign of Jafar
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_a8b66e0b4abe48f58f9c47dc25593197.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_a8b66e0b4abe48f58f9c47dc25593197.avif
+- tcg_id: lor9-240
+  name: Jasmine - Fearless Princess
+  name_ko: 자스민
+  set: Fabled
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_7e0b8f2e97fc4d6ca8badbb552024f58.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_7e0b8f2e97fc4d6ca8badbb552024f58.avif
+kkameogeodo-doelkkayo:
+- tcg_id: lor9-226
+  name: Belle - Accomplished Mystic
+  name_ko: 벨
+  set: Fabled
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_c51b6a26015b45f298d1664787f37234.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c51b6a26015b45f298d1664787f37234.avif
+- tcg_id: lor14-230
+  name: Belle - Exceptional Writer
+  name_ko: 벨
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_df6bdad57f7747a1a41b27b296ba8465.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_df6bdad57f7747a1a41b27b296ba8465.avif
+papkon-gyosil:
+- tcg_id: lor10-215
+  name: Mulan - Standing Her Ground
+  name_ko: 뮬란
+  set: Whispers in the Well
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_082177dd6df34573a455c5f1b2ddad31.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_082177dd6df34573a455c5f1b2ddad31.avif
+- tcg_id: lor11-229
+  name: Mulan - Resourceful Recruit
+  name_ko: 뮬란
+  set: Winterspell
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_5eb205c36e0b4038a8a46aa47dd50b0f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5eb205c36e0b4038a8a46aa47dd50b0f.avif
+halmeoni-jibeseo:
+- tcg_id: lor12-213
+  name: Merida - Gifted Archer
+  name_ko: 메리다
+  set: Wilds Unknown
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_52404c741d6e424e8a8f901408ccb11a.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_52404c741d6e424e8a8f901408ccb11a.avif
+- tcg_id: lor11-205
+  name: Tiana - Warm and Happy
+  name_ko: 티아나
+  set: Winterspell
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_801cd6ba9a3048499af41d6186fa4100.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_801cd6ba9a3048499af41d6186fa4100.avif
+jageun-jip-iyagi:
+- tcg_id: lor11-242
+  name: Moana - Curious Explorer
+  name_ko: 모아나
+  set: Winterspell
+  rarity_label: 아이코닉
+  image: https://cards.lorcast.io/card/digital/large/crd_b73d08030c9646ab8a227158b8e453d4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b73d08030c9646ab8a227158b8e453d4.avif
+- tcg_id: lor9-20
+  name: Moana - Of Motunui
+  name_ko: 모아나
+  set: Fabled
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_612c000e0f7047659edee1e275069811.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_612c000e0f7047659edee1e275069811.avif
+dwaejichaek:
+- tcg_id: lor1-214
+  name: Belle - Strange but Special
+  name_ko: 벨
+  set: The First Chapter
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_021c1d57c42d4fb7836097cbe9eacfb7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_021c1d57c42d4fb7836097cbe9eacfb7.avif
+- tcg_id: lor14-212
+  name: Belle - Reflective Writer
+  name_ko: 벨
+  set: Hyperia City
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_b4671626a9e7404dbda5dbace12e7ffd.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b4671626a9e7404dbda5dbace12e7ffd.avif
+ilgwa-dogu:
+- tcg_id: lor13-227
+  name: Pocahontas & Meeko - Adventurous Friends
+  name_ko: 포카혼타스와 미코
+  set: Attack of the Vine!
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_1337332b5317428c95c1129cf645924f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1337332b5317428c95c1129cf645924f.avif
+- tcg_id: lor12-220
+  name: Pocahontas - Steadfast Traveler
+  name_ko: 포카혼타스
+  set: Wilds Unknown
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_5b512fbc3a31425eb70175752010d69c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5b512fbc3a31425eb70175752010d69c.avif
+geonjeonji-eomma:
+- tcg_id: lor14-226
+  name: Rapunzel - Outgoing Artist
+  name_ko: 라푼젤
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_802b1db2bf2348139101864a026b3ea0.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_802b1db2bf2348139101864a026b3ea0.avif
+- tcg_id: lor13-95
+  name: Rapunzel - Escaping the Tower
+  name_ko: 라푼젤
+  set: Attack of the Vine!
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6afa057b946845d1b46725c7603c50bf.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6afa057b946845d1b46725c7603c50bf.avif
+daewanggoraeui-majimak-norae:
+- tcg_id: lor4-205
+  name: Cinderella - Melody Weaver
+  name_ko: 신데렐라
+  set: Ursula's Return
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_eaf7db4a652b47939bddb0db4c9030e9.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_eaf7db4a652b47939bddb0db4c9030e9.avif
+- tcg_id: lor2-177
+  name: Cinderella - Stouthearted
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_ac32bfe50af84f459d9cc9d4c0d659ef.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ac32bfe50af84f459d9cc9d4c0d659ef.avif
+nae-ireumeun-ppippi-rongseutaking:
+- tcg_id: lor9-235
+  name: Mulan - Considerate Diplomat
+  name_ko: 뮬란
+  set: Fabled
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_08b670dabf3b4ff0a56cb4525b0b57db.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_08b670dabf3b4ff0a56cb4525b0b57db.avif
+- tcg_id: lor14-234
+  name: Mulan - Martial Arts Master
+  name_ko: 뮬란
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_b8b6cab2a6ff45d987bbe6d2389547a4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b8b6cab2a6ff45d987bbe6d2389547a4.avif
+assibang-ilgop-dongmu:
+- tcg_id: lor7-126
+  name: Belle - Mechanic Extraordinaire
+  name_ko: 벨
+  set: Archazia's Island
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_2b0915e50c1b41d1aea0dce6be43a6d9.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2b0915e50c1b41d1aea0dce6be43a6d9.avif
+- tcg_id: lor4-36
+  name: Belle - Accomplished Mystic
+  name_ko: 벨
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_28b38ef0a82544318f15540b4351041e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_28b38ef0a82544318f15540b4351041e.avif
+heoheo-harabeoji:
+- tcg_id: lor6-107
+  name: Raya - Kumandran Rider
+  name_ko: 라야
+  set: Azurite Sea
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_8ca524116c8e486f99597ca9a67b803b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_8ca524116c8e486f99597ca9a67b803b.avif
+- tcg_id: lor14-177
+  name: Raya - Determined Explorer
+  name_ko: 라야
+  set: Hyperia City
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_92e00c466ec541b2b3e15cf0c0604d93.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_92e00c466ec541b2b3e15cf0c0604d93.avif
+bawinariwa-agibyeol:
+- tcg_id: lor2-177
+  name: Cinderella - Stouthearted
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_ac32bfe50af84f459d9cc9d4c0d659ef.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ac32bfe50af84f459d9cc9d4c0d659ef.avif
+- tcg_id: lor7-15
+  name: Cinderella - The Right One
+  name_ko: 신데렐라
+  set: Archazia's Island
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_7c8e2317de8840ecaa50bffbff20c87d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_7c8e2317de8840ecaa50bffbff20c87d.avif
+guseulbi:
+- tcg_id: lor8-141
+  name: Mulan - Charging Ahead
+  name_ko: 뮬란
+  set: Reign of Jafar
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_460e1f2d54244710902cf898533beaa8.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_460e1f2d54244710902cf898533beaa8.avif
+- tcg_id: lor9-142
+  name: Mulan - Considerate Diplomat
+  name_ko: 뮬란
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1a90e72da27d4638ad9aed26776feee5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1a90e72da27d4638ad9aed26776feee5.avif
+usan-sseun-jireongi:
+- tcg_id: lor10-17
+  name: Ariel - Ethereal Voice
+  name_ko: 아리엘
+  set: Whispers in the Well
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_43c967fc98154d6f86b8ac05b8953c10.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_43c967fc98154d6f86b8ac05b8953c10.avif
+- tcg_id: lor1-137
+  name: Ariel - Whoseit Collector
+  name_ko: 아리엘
+  set: The First Chapter
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_a23c99ed9f3243969466fb000bd139dc.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_a23c99ed9f3243969466fb000bd139dc.avif
+geureieom-harabeojikke:
+- tcg_id: lor12-171
+  name: Pocahontas - Steadfast Traveler
+  name_ko: 포카혼타스
+  set: Wilds Unknown
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_65471535e336408d9a1f465798307df2.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_65471535e336408d9a1f465798307df2.avif
+- tcg_id: lor13-12
+  name: Pocahontas - Guiding the Tribe
+  name_ko: 포카혼타스
+  set: Attack of the Vine!
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_cc621d8465484cf8a35ac05f444d3f50.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_cc621d8465484cf8a35ac05f444d3f50.avif
+susanghan-seongeulraseu:
+- tcg_id: lor6-121
+  name: Moana - Kakamora Leader
+  name_ko: 모아나
+  set: Azurite Sea
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_ea56665b30604ff0977e95ad7442f5f5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ea56665b30604ff0977e95ad7442f5f5.avif
+- tcg_id: lor1-117
+  name: Moana - Chosen by the Ocean
+  name_ko: 모아나
+  set: The First Chapter
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_49b96ca319434f588d5d36b30597c832.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_49b96ca319434f588d5d36b30597c832.avif
+nae-jjakkkungeuro-malhal-geot-gateumyeon:
+- tcg_id: lor7-15
+  name: Cinderella - The Right One
+  name_ko: 신데렐라
+  set: Archazia's Island
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_7c8e2317de8840ecaa50bffbff20c87d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_7c8e2317de8840ecaa50bffbff20c87d.avif
+- tcg_id: lor1-3
+  name: Cinderella - Gentle and Kind
+  name_ko: 신데렐라
+  set: The First Chapter
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_5a280549e94f43c09ef0bcdf8ce4fa31.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5a280549e94f43c09ef0bcdf8ce4fa31.avif
+hwajangsire-saneun-dukkeobi:
+- tcg_id: lor14-196
+  name: Tiana - Party Hostess
+  name_ko: 티아나
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_181b597fbbc3457384a3b4d545807df3.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_181b597fbbc3457384a3b4d545807df3.avif
+- tcg_id: lor2-196
+  name: Tiana - Celebrating Princess
+  name_ko: 티아나
+  set: Rise of the Floodborn
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_5879c143b9484d898408440f80e8531e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5879c143b9484d898408440f80e8531e.avif
+jinjja-doduk:
+- tcg_id: lor1-118
+  name: Mulan - Imperial Soldier
+  name_ko: 뮬란
+  set: The First Chapter
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_45037644be034dad9ec46ffdabcde550.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_45037644be034dad9ec46ffdabcde550.avif
+- tcg_id: lor2-16
+  name: Mulan - Reflecting
+  name_ko: 뮬란
+  set: Rise of the Floodborn
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_f04fa097a7234ecb95ea7eeea70c9c39.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_f04fa097a7234ecb95ea7eeea70c9c39.avif
+meotjin-yeou-ssi:
+- tcg_id: lor13-132
+  name: Belle & Beast - Certain as the Sun
+  name_ko: 벨과 야수
+  set: Attack of the Vine!
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_200d65c5231b44cf854c8a0901c3c720.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_200d65c5231b44cf854c8a0901c3c720.avif
+- tcg_id: lor9-40
+  name: Belle - Accomplished Mystic
+  name_ko: 벨
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6a3e78bd46b74dbe81da78b2d64cc75f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6a3e78bd46b74dbe81da78b2d64cc75f.avif
+ireol-ttaen-eotteotge-malhalkka:
+- tcg_id: lor4-121
+  name: Raya - Fierce Protector
+  name_ko: 라야
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_e79d0ba09f4342b5a7a3ffe96ebef508.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e79d0ba09f4342b5a7a3ffe96ebef508.avif
+- tcg_id: lor7-186
+  name: Raya - Guidance Seeker
+  name_ko: 라야
+  set: Archazia's Island
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_0ab7da34efae4501b26ae156eb69755c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_0ab7da34efae4501b26ae156eb69755c.avif
+daetgeurwang-gomson-seonsaengnim:
+- tcg_id: lor2-196
+  name: Tiana - Celebrating Princess
+  name_ko: 티아나
+  set: Rise of the Floodborn
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_5879c143b9484d898408440f80e8531e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5879c143b9484d898408440f80e8531e.avif
+- tcg_id: lor8-9
+  name: Tiana - Natural Talent
+  name_ko: 티아나
+  set: Reign of Jafar
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_e1412fbad88c459a989f3738fb678789.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e1412fbad88c459a989f3738fb678789.avif
+dalbit-jogak:
+- tcg_id: lor11-69
+  name: Mulan - Resourceful Recruit
+  name_ko: 뮬란
+  set: Winterspell
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_3825929341ca42099c98d099ed40d2ac.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3825929341ca42099c98d099ed40d2ac.avif
+- tcg_id: lor10-126
+  name: Mulan - Standing Her Ground
+  name_ko: 뮬란
+  set: Whispers in the Well
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_775c04f987c24e39bcd8cda88d20d2ab.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_775c04f987c24e39bcd8cda88d20d2ab.avif
+natmareul-meokneun-ai:
+- tcg_id: lor9-40
+  name: Belle - Accomplished Mystic
+  name_ko: 벨
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6a3e78bd46b74dbe81da78b2d64cc75f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6a3e78bd46b74dbe81da78b2d64cc75f.avif
+- tcg_id: lor14-75
+  name: Belle - Reflective Writer
+  name_ko: 벨
+  set: Hyperia City
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_602ea44401b44af8a92b674bdbbe48ff.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_602ea44401b44af8a92b674bdbbe48ff.avif
+yeol-sarui-pawo:
+- tcg_id: lor12-18
+  name: Ariel - Curious Traveler
+  name_ko: 아리엘
+  set: Wilds Unknown
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1a1e041109e6448c889803fb5be588d9.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1a1e041109e6448c889803fb5be588d9.avif
+- tcg_id: lor4-3
+  name: Ariel - Singing Mermaid
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_edb9044de69d43319f8a3eabb7111333.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_edb9044de69d43319f8a3eabb7111333.avif
+suwon-hwaseong:
+- tcg_id: lor6-70
+  name: Jasmine - Royal Seafarer
+  name_ko: 자스민
+  set: Azurite Sea
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_3aa1cf07954647c89708b98355e6c976.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3aa1cf07954647c89708b98355e6c976.avif
+- tcg_id: lor4-78
+  name: Jasmine - Desert Warrior
+  name_ko: 자스민
+  set: Ursula's Return
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_762ed07f53ea4ca6a4cf7ae20ed53535.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_762ed07f53ea4ca6a4cf7ae20ed53535.avif
+jongi-han-jangui-mabeop-jido:
+- tcg_id: lor7-186
+  name: Raya - Guidance Seeker
+  name_ko: 라야
+  set: Archazia's Island
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_0ab7da34efae4501b26ae156eb69755c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_0ab7da34efae4501b26ae156eb69755c.avif
+- tcg_id: lor2-124
+  name: Raya - Warrior of Kumandra
+  name_ko: 라야
+  set: Rise of the Floodborn
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_13f1e523e8454e648cda03bba3603643.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_13f1e523e8454e648cda03bba3603643.avif
+uri-dongne-syupeomaen:
+- tcg_id: lor8-9
+  name: Tiana - Natural Talent
+  name_ko: 티아나
+  set: Reign of Jafar
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_e1412fbad88c459a989f3738fb678789.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e1412fbad88c459a989f3738fb678789.avif
+- tcg_id: lor2-94
+  name: Tiana - True Princess
+  name_ko: 티아나
+  set: Rise of the Floodborn
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_5403ff921bce4bbc90468b0f860dc23c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5403ff921bce4bbc90468b0f860dc23c.avif
+woneun-goemuriya:
+- tcg_id: lor14-55
+  name: Rapunzel - Outgoing Artist
+  name_ko: 라푼젤
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_e111f3608b5e470d862124795daa01ba.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e111f3608b5e470d862124795daa01ba.avif
+- tcg_id: lor11-171
+  name: Rapunzel - Ethereal Protector
+  name_ko: 라푼젤
+  set: Winterspell
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1416db548e594c8baff2fab420ae3c59.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1416db548e594c8baff2fab420ae3c59.avif
+heeomi:
+- tcg_id: lor11-229
+  name: Mulan - Resourceful Recruit
+  name_ko: 뮬란
+  set: Winterspell
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_5eb205c36e0b4038a8a46aa47dd50b0f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5eb205c36e0b4038a8a46aa47dd50b0f.avif
+- tcg_id: lor4-115
+  name: Mulan - Enemy of Entanglement
+  name_ko: 뮬란
+  set: Ursula's Return
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_263c69baf83347208e5cd76863a4afd9.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_263c69baf83347208e5cd76863a4afd9.avif
+dangnagwi-silbeseuteowa-yosul-joyakdol:
+- tcg_id: lor9-240
+  name: Jasmine - Fearless Princess
+  name_ko: 자스민
+  set: Fabled
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_7e0b8f2e97fc4d6ca8badbb552024f58.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_7e0b8f2e97fc4d6ca8badbb552024f58.avif
+- tcg_id: lor7-173
+  name: Jasmine - Inspired Researcher
+  name_ko: 자스민
+  set: Archazia's Island
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_62c3a4d3b2234f26b7d63be72faf93a4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_62c3a4d3b2234f26b7d63be72faf93a4.avif
+sintongbangtong-homsyoping:
+- tcg_id: lor12-220
+  name: Pocahontas - Steadfast Traveler
+  name_ko: 포카혼타스
+  set: Wilds Unknown
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_5b512fbc3a31425eb70175752010d69c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_5b512fbc3a31425eb70175752010d69c.avif
+- tcg_id: lor11-8
+  name: Pocahontas - Finding the Way
+  name_ko: 포카혼타스
+  set: Winterspell
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_aa9b3ea05aa64ee9aa09783eb6ca425c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_aa9b3ea05aa64ee9aa09783eb6ca425c.avif
+gajeong-tongsinmun-si-sseugi-sodong:
+- tcg_id: lor13-239
+  name: Rapunzel & Flynn Rider - Unlikely Pair
+  name_ko: 라푼젤과 플린 라이더
+  set: Attack of the Vine!
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_c9705013eab04705818153d8e3419f5b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c9705013eab04705818153d8e3419f5b.avif
+- tcg_id: lor4-153
+  name: Rapunzel - Appreciative Artist
+  name_ko: 라푼젤
+  set: Ursula's Return
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_7cfbdaa5c45f4ee9a73d3359c2f206c7.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_7cfbdaa5c45f4ee9a73d3359c2f206c7.avif
+rangrangbyeol-ttaettaerong:
+- tcg_id: lor11-236
+  name: Belle - Snowfield Strategist
+  name_ko: 벨
+  set: Winterspell
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_9652fdf2822645ee91302352c74c9d6a.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_9652fdf2822645ee91302352c74c9d6a.avif
+- tcg_id: lor2-71
+  name: Belle - Bookworm
+  name_ko: 벨
+  set: Rise of the Floodborn
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_1379d064484a4269bc01c74fd935c221.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1379d064484a4269bc01c74fd935c221.avif
+eonjena-dajeong-jukjip:
+- tcg_id: lor14-234
+  name: Mulan - Martial Arts Master
+  name_ko: 뮬란
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_b8b6cab2a6ff45d987bbe6d2389547a4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b8b6cab2a6ff45d987bbe6d2389547a4.avif
+- tcg_id: lor11-108
+  name: Mulan - Ready for Battle
+  name_ko: 뮬란
+  set: Winterspell
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_96a789fd5e1943adbb12361ff791aec9.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_96a789fd5e1943adbb12361ff791aec9.avif
+bimirui-muge:
+- tcg_id: lor13-208
+  name: Jasmine - Vine Expert
+  name_ko: 자스민
+  set: Attack of the Vine!
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_c6b467dc278f49959393348e55a5c991.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c6b467dc278f49959393348e55a5c991.avif
+- tcg_id: lor9-178
+  name: Jasmine - Fearless Princess
+  name_ko: 자스민
+  set: Fabled
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_70f818f3196e4178a8bd5735332d8f06.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_70f818f3196e4178a8bd5735332d8f06.avif
+oneureun-yongdon-batneun-nal:
+- tcg_id: lor9-206
+  name: Aurora - Holding Court
+  name_ko: 오로라
+  set: Fabled
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_d292fcaa144d4f739bda2c14948da2ce.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d292fcaa144d4f739bda2c14948da2ce.avif
+- tcg_id: lor1-138
+  name: Aurora - Briar Rose
+  name_ko: 오로라
+  set: The First Chapter
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_ce469941c08b425484af9a8c69eb8ce1.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_ce469941c08b425484af9a8c69eb8ce1.avif
+ribowa-aen:
+- tcg_id: lor14-230
+  name: Belle - Exceptional Writer
+  name_ko: 벨
+  set: Hyperia City
+  rarity_label: 인챈티드
+  image: https://cards.lorcast.io/card/digital/large/crd_df6bdad57f7747a1a41b27b296ba8465.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_df6bdad57f7747a1a41b27b296ba8465.avif
+- tcg_id: lor9-156
+  name: Belle - Inventive Engineer
+  name_ko: 벨
+  set: Fabled
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_b77ec6c391cd4ccaa1b1e01ca897502d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b77ec6c391cd4ccaa1b1e01ca897502d.avif
+susanghan-gichayeok:
+- tcg_id: lor11-205
+  name: Tiana - Warm and Happy
+  name_ko: 티아나
+  set: Winterspell
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_801cd6ba9a3048499af41d6186fa4100.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_801cd6ba9a3048499af41d6186fa4100.avif
+- tcg_id: lor14-220
+  name: Tiana - Restauranteur
+  name_ko: 티아나
+  set: Hyperia City
+  rarity_label: 에픽
+  image: https://cards.lorcast.io/card/digital/large/crd_1432d5de11a9480182827a63ab2be74d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1432d5de11a9480182827a63ab2be74d.avif
+gyeongtaeui-byeongari:
+- tcg_id: lor4-139
+  name: Ariel - Treasure Collector
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_268651d4999a481faa22b6598a4dea0c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_268651d4999a481faa22b6598a4dea0c.avif
+- tcg_id: lor9-15
+  name: Ariel - Singing Mermaid
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_4b656001901d4c34829cfe124d5c166b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4b656001901d4c34829cfe124d5c166b.avif
+mok-jjalbeun-girin-jipi:
+- tcg_id: lor1-14
+  name: Moana - Of Motunui
+  name_ko: 모아나
+  set: The First Chapter
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6c18714222c749b8b16800630a5d26cf.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6c18714222c749b8b16800630a5d26cf.avif
+- tcg_id: lor7-134
+  name: Moana - Island Explorer
+  name_ko: 모아나
+  set: Archazia's Island
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_da7a7db2845c4262be680a8a5b03c027.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_da7a7db2845c4262be680a8a5b03c027.avif
+maeum-sohwaje-ppeongppeongsu:
+- tcg_id: lor2-16
+  name: Mulan - Reflecting
+  name_ko: 뮬란
+  set: Rise of the Floodborn
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_f04fa097a7234ecb95ea7eeea70c9c39.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_f04fa097a7234ecb95ea7eeea70c9c39.avif
+- tcg_id: lor4-189
+  name: Mulan - Armored Fighter
+  name_ko: 뮬란
+  set: Ursula's Return
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_029ec16d7f294ef0a9e2b924ae6819ce.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_029ec16d7f294ef0a9e2b924ae6819ce.avif
+balpyohagi-museowoyo:
+- tcg_id: lor7-173
+  name: Jasmine - Inspired Researcher
+  name_ko: 자스민
+  set: Archazia's Island
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_62c3a4d3b2234f26b7d63be72faf93a4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_62c3a4d3b2234f26b7d63be72faf93a4.avif
+- tcg_id: lor10-149
+  name: Jasmine - Soothing Princess
+  name_ko: 자스민
+  set: Whispers in the Well
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_19f087c81e534ceda53b510446d75965.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_19f087c81e534ceda53b510446d75965.avif
+bungbung-doseogwaneul-jikyeo-juseyo:
+- tcg_id: lor4-140
+  name: Aurora - Lore Guardian
+  name_ko: 오로라
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_f6e236483db94d5cbd74ec3d0c69f685.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_f6e236483db94d5cbd74ec3d0c69f685.avif
+- tcg_id: lor9-6
+  name: Aurora - Holding Court
+  name_ko: 오로라
+  set: Fabled
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_d67f356f55914781ae98fc85dcadfd57.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d67f356f55914781ae98fc85dcadfd57.avif
+akpeul-supeul-talchulhara:
+- tcg_id: lor1-137
+  name: Ariel - Whoseit Collector
+  name_ko: 아리엘
+  set: The First Chapter
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_a23c99ed9f3243969466fb000bd139dc.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_a23c99ed9f3243969466fb000bd139dc.avif
+- tcg_id: lor9-195
+  name: Ariel - Sonic Warrior
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_8744600f576e484fa2e93cec672eba2f.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_8744600f576e484fa2e93cec672eba2f.avif
+byeoljeom-banjang-nauju:
+- tcg_id: lor12-89
+  name: Merida - Gifted Archer
+  name_ko: 메리다
+  set: Wilds Unknown
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_2ba24a02308b4a9196bbe2cef9546e6b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2ba24a02308b4a9196bbe2cef9546e6b.avif
+- tcg_id: lor1-1
+  name: Ariel - On Human Legs
+  name_ko: 아리엘
+  set: The First Chapter
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_d9f3b86af85f48579ed9d0d7ce0de129.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d9f3b86af85f48579ed9d0d7ce0de129.avif
+siganeul-moeuneun-saengjwi:
+- tcg_id: lor2-3
+  name: Cinderella - Ballroom Sensation
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_853c5c99d28f4304ba79004c91379057.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_853c5c99d28f4304ba79004c91379057.avif
+- tcg_id: lor9-19
+  name: Cinderella - Gentle and Kind
+  name_ko: 신데렐라
+  set: Fabled
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_0ae012bfcad54631949412a2947a8f7d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_0ae012bfcad54631949412a2947a8f7d.avif
+naega-manyak-ramyeoniramyeon:
+- tcg_id: lor13-95
+  name: Rapunzel - Escaping the Tower
+  name_ko: 라푼젤
+  set: Attack of the Vine!
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6afa057b946845d1b46725c7603c50bf.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6afa057b946845d1b46725c7603c50bf.avif
+- tcg_id: lor1-121
+  name: Rapunzel - Letting Down Her Hair
+  name_ko: 라푼젤
+  set: The First Chapter
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_3be63bf0c46342acb7d08759788757b6.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_3be63bf0c46342acb7d08759788757b6.avif
+eommaui-reonninggu:
+- tcg_id: lor4-175
+  name: Ariel - Sonic Warrior
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_fd34f98e6230426fb411e1fd8528a7dc.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_fd34f98e6230426fb411e1fd8528a7dc.avif
+- tcg_id: lor9-196
+  name: Ariel - Determined Mermaid
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_8e9017b673fa48039cb919188a8dae7a.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_8e9017b673fa48039cb919188a8dae7a.avif
+rotewa-ruije:
+- tcg_id: lor9-142
+  name: Mulan - Considerate Diplomat
+  name_ko: 뮬란
+  set: Fabled
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1a90e72da27d4638ad9aed26776feee5.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1a90e72da27d4638ad9aed26776feee5.avif
+- tcg_id: lor13-192
+  name: Mulan - Created by the Vine
+  name_ko: 뮬란
+  set: Attack of the Vine!
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_b029096c38df417993f00fb29603c9ff.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_b029096c38df417993f00fb29603c9ff.avif
+kkot-piuneun-ai-tiseutu:
+- tcg_id: lor1-149
+  name: Jasmine - Queen of Agrabah
+  name_ko: 자스민
+  set: The First Chapter
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6b26bc2dda6e49bba695529a039dcaee.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6b26bc2dda6e49bba695529a039dcaee.avif
+- tcg_id: lor6-106
+  name: Jasmine - Rebellious Princess
+  name_ko: 자스민
+  set: Azurite Sea
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_e093d909d79f4dd5baaccae93139c95b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_e093d909d79f4dd5baaccae93139c95b.avif
+neoguri-pansa-pongpongi:
+- tcg_id: lor14-90
+  name: Belle - Exceptional Writer
+  name_ko: 벨
+  set: Hyperia City
+  rarity_label: 레전더리
+  image: https://cards.lorcast.io/card/digital/large/crd_d61e937489bc4d479704f570a72b6f90.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_d61e937489bc4d479704f570a72b6f90.avif
+- tcg_id: lor13-148
+  name: Belle - Always Reading
+  name_ko: 벨
+  set: Attack of the Vine!
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_8f0fc8f569f84d628af731a571bc62b1.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_8f0fc8f569f84d628af731a571bc62b1.avif
+wae-yumyeonghan-geoya-i-geurim:
+- tcg_id: lor4-193
+  name: Raya - Unstoppable Force
+  name_ko: 라야
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_498044d6e5da4eb3868df6a6d0c058d4.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_498044d6e5da4eb3868df6a6d0c058d4.avif
+- tcg_id: lor2-122
+  name: Raya - Headstrong
+  name_ko: 라야
+  set: Rise of the Floodborn
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_2aef4896a5194dd69fccf9581d20e735.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_2aef4896a5194dd69fccf9581d20e735.avif
+hunminjeongeum-guchul-jakjeon:
+- tcg_id: lor11-171
+  name: Rapunzel - Ethereal Protector
+  name_ko: 라푼젤
+  set: Winterspell
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_1416db548e594c8baff2fab420ae3c59.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_1416db548e594c8baff2fab420ae3c59.avif
+- tcg_id: lor2-19
+  name: Rapunzel - Gifted Artist
+  name_ko: 라푼젤
+  set: Rise of the Floodborn
+  rarity_label: 언커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_a324c0fddfab4d7681efcf47adae3c6d.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_a324c0fddfab4d7681efcf47adae3c6d.avif
+ssiaseul-butakhae:
+- tcg_id: lor13-12
+  name: Pocahontas - Guiding the Tribe
+  name_ko: 포카혼타스
+  set: Attack of the Vine!
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_cc621d8465484cf8a35ac05f444d3f50.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_cc621d8465484cf8a35ac05f444d3f50.avif
+- tcg_id: lor1-148
+  name: Jasmine - Disguised
+  name_ko: 자스민
+  set: The First Chapter
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_c401f199cd7046b4838589db368f2391.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_c401f199cd7046b4838589db368f2391.avif
+geomunoreumui-dongguldeul:
+- tcg_id: lor9-15
+  name: Ariel - Singing Mermaid
+  name_ko: 아리엘
+  set: Fabled
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_4b656001901d4c34829cfe124d5c166b.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4b656001901d4c34829cfe124d5c166b.avif
+- tcg_id: lor4-174
+  name: Ariel - Determined Mermaid
+  name_ko: 아리엘
+  set: Ursula's Return
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_4bf96e5f5d6146ed8ccc1b2021393803.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_4bf96e5f5d6146ed8ccc1b2021393803.avif
+jibungi-deulryeojuneun-geonchuk-iyagi:
+- tcg_id: lor14-157
+  name: Cinderella - Unintentional Icon
+  name_ko: 신데렐라
+  set: Hyperia City
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_6a6e3f2df2d448bc99d1492d3d6585e6.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_6a6e3f2df2d448bc99d1492d3d6585e6.avif
+- tcg_id: lor2-176
+  name: Cinderella - Knight in Training
+  name_ko: 신데렐라
+  set: Rise of the Floodborn
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_be028c8d6e9144f4ac4f03b17462db1c.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_be028c8d6e9144f4ac4f03b17462db1c.avif
+bamti-maeul-keundorine-jip:
+- tcg_id: lor4-36
+  name: Belle - Accomplished Mystic
+  name_ko: 벨
+  set: Ursula's Return
+  rarity_label: 슈퍼 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_28b38ef0a82544318f15540b4351041e.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_28b38ef0a82544318f15540b4351041e.avif
+- tcg_id: lor7-159
+  name: Belle - Apprentice Inventor
+  name_ko: 벨
+  set: Archazia's Island
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_13859ddeec154d23a532a94835179144.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_13859ddeec154d23a532a94835179144.avif
+isanghan-mom-bakmulgwan:
+- tcg_id: lor9-178
+  name: Jasmine - Fearless Princess
+  name_ko: 자스민
+  set: Fabled
+  rarity_label: 레어
+  image: https://cards.lorcast.io/card/digital/large/crd_70f818f3196e4178a8bd5735332d8f06.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_70f818f3196e4178a8bd5735332d8f06.avif
+- tcg_id: lor13-20
+  name: Jasmine - Vine Expert
+  name_ko: 자스민
+  set: Attack of the Vine!
+  rarity_label: 커먼
+  image: https://cards.lorcast.io/card/digital/large/crd_63fc4a03298a41bab40f9ce6546bf972.avif
+  image_small: https://cards.lorcast.io/card/digital/normal/crd_63fc4a03298a41bab40f9ce6546bf972.avif

@@ -4,13 +4,17 @@
 (function () {
   'use strict';
 
-  var BACK = 'https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg';
-  var LABEL = { C: '커먼', U: '언커먼', R: '레어', RR: '더블 레어', UR: '울트라 레어', IR: '일러스트 레어', SIR: '스페셜 일러스트 레어', HR: '하이퍼 레어', ACE: '에이스 스펙' };
-  var RANK = { C: 0, U: 1, R: 2, ACE: 3, RR: 4, UR: 5, IR: 6, HR: 7, SIR: 8 };
-  var HITS = { RR: 1, UR: 1, IR: 1, SIR: 1, HR: 1, ACE: 1 };
-  // 9번 칸이 좋은 카드로 바뀌는 확률. 실제 스칼렛&바이올렛 팩에서 알려진 대략적인 확률이에요.
+  // 카드 뒷면: 시몬은 pokemon.com의 공식 뒷면, 소피아는 Google Flow로 그린 뒷면(_kids/sophia/_config.yml의 card_back).
+  var BACK = (window.KID && window.KID.card_back) || 'https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg';
+  // 포켓몬: C U R RR UR IR SIR HR ACE. 디즈니 로카나: C U R SR(슈퍼 레어) L(레전더리) EP(에픽) E(인챈티드) IC(아이코닉).
+  var LABEL = { C: '커먼', U: '언커먼', R: '레어', RR: '더블 레어', UR: '울트라 레어', IR: '일러스트 레어', SIR: '스페셜 일러스트 레어', HR: '하이퍼 레어', ACE: '에이스 스펙',
+    SR: '슈퍼 레어', L: '레전더리', EP: '에픽', E: '인챈티드', IC: '아이코닉' };
+  var RANK = { C: 0, U: 1, R: 2, ACE: 3, RR: 4, UR: 5, IR: 6, HR: 7, SIR: 8, SR: 4, L: 5, EP: 6, E: 7, IC: 8 };
+  var HITS = { RR: 1, UR: 1, IR: 1, SIR: 1, HR: 1, ACE: 1, SR: 1, L: 1, EP: 1, E: 1, IC: 1 };
+  // 9번 칸이 좋은 카드로 바뀌는 확률. 실제 팩에서 알려진 대략적인 확률이에요.
   // 다 더하면 약 36%라서, 좋은 카드가 나올 때도 있고 안 나올 때도 있어요.
   var ODDS = [['SIR', 1 / 32], ['HR', 1 / 55], ['IR', 1 / 13], ['UR', 1 / 15], ['RR', 1 / 6]];
+  var ODDS_LORCANA = [['IC', 1 / 400], ['E', 1 / 96], ['EP', 1 / 48], ['L', 1 / 14], ['SR', 1 / 5]];
 
   function rnd() {
     try { var a = new Uint32Array(1); window.crypto.getRandomValues(a); return a[0] / 4294967296; } catch (e) { return Math.random(); }
@@ -20,6 +24,11 @@
   function codeOf(card) {
     var l = (card && card.rarity_label) || '';
     if (/스페셜/.test(l)) return 'SIR';
+    if (/인챈티드/.test(l)) return 'E';
+    if (/아이코닉/.test(l)) return 'IC';
+    if (/에픽/.test(l)) return 'EP';
+    if (/레전더리/.test(l)) return 'L';
+    if (/슈퍼/.test(l)) return 'SR';
     if (/하이퍼|골드/.test(l)) return 'HR';
     if (/일러스트/.test(l)) return 'IR';
     if (/울트라/.test(l)) return 'UR';
@@ -28,12 +37,18 @@
   }
 
   // pool: {set, img, cards: [[number, name, code, kind], ...]}; card: the book's card from _data/weekly.yml.
+  // A Lorcana pool ({game: "lorcana"}) adds each card's picture id as a fifth value: pictures are at img + size + "/" + id + ".avif".
   function draw(pool, card) {
-    var book = { id: card.tcg_id, name: card.name, code: codeOf(card), img: card.image_small || card.image, big: card.image || card.image_small, book: true, label: card.rarity_label };
+    var game = pool && pool.game || 'pokemon';
+    var book = { id: card.tcg_id, name: card.name, code: codeOf(card), img: card.image_small || card.image, big: card.image || card.image_small, book: true, label: card.rarity_label, game: game };
     if (!pool || !pool.cards || !pool.cards.length) return [book];
     var used = {}; used[card.tcg_id] = 1;
     function id(row) { return pool.set + '-' + row[0]; }
-    function entry(row, rev) { used[id(row)] = 1; return { id: id(row), name: row[1], code: row[2], rev: !!rev, img: pool.img + row[0] + '.png', big: pool.img + row[0] + '_hires.png' }; }
+    function entry(row, rev) {
+      used[id(row)] = 1;
+      var pic = row[4] ? { img: pool.img + 'normal/' + row[4] + '.avif', big: pool.img + 'large/' + row[4] + '.avif' } : { img: pool.img + row[0] + '.png', big: pool.img + row[0] + '_hires.png' };
+      return { id: id(row), name: row[1], code: row[2], rev: !!rev, img: pic.img, big: pic.big, game: game };
+    }
     function take(codes, rev) {
       var all = pool.cards.filter(function (r) { return codes.indexOf(r[2]) >= 0; });
       var fresh = all.filter(function (r) { return !used[id(r)]; });
@@ -45,8 +60,8 @@
     for (i = 0; i < 4; i++) out.push(take(['C']));
     for (i = 0; i < 3; i++) out.push(take(['U']));
     out.push(reverse());
-    var r = rnd(), acc = 0, hit = null;
-    for (i = 0; i < ODDS.length; i++) { acc += ODDS[i][1]; if (r < acc) { hit = take([ODDS[i][0]]); break; } }
+    var odds = game === 'lorcana' ? ODDS_LORCANA : ODDS, r = rnd(), acc = 0, hit = null;
+    for (i = 0; i < odds.length; i++) { acc += odds[i][1]; if (r < acc) { hit = take([odds[i][0]]); break; } }
     out.push(hit || reverse());
     out = out.filter(Boolean);
     out.push(book);
@@ -54,9 +69,9 @@
   }
 
   function isHit(e) { return !!(e && (e.book || HITS[e.code])); }
-  function label(e) { return e.label || (e.rev ? '리버스 홀로' + (e.code === 'R' ? ' 레어' : '') : LABEL[e.code] || '카드'); }
+  function label(e) { return e.label || (e.rev ? (e.game === 'lorcana' ? '포일 ' + (LABEL[e.code] || '') : '리버스 홀로' + (e.code === 'R' ? ' 레어' : '')) : LABEL[e.code] || '카드'); }
   function rank(e) { return (e.book ? 20 : 0) + (RANK[e.code] || 0) + (e.rev ? 0.5 : 0); }
-  function classes(e) { return 'code-' + e.code + (e.rev ? ' is-rev' : '') + (isHit(e) ? ' is-hit' : '') + (e.book ? ' is-book' : ''); }
+  function classes(e) { return 'code-' + e.code + ' g-' + (e.game || 'pokemon') + (e.rev ? ' is-rev' : '') + (isHit(e) ? ' is-hit' : '') + (e.book ? ' is-book' : ''); }
 
   // A 3D card with the official front and back, a thin core for its edge, and foil by rarity.
   function make(e, big) {

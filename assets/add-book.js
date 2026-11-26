@@ -440,7 +440,7 @@
   function renderSave() {
     var md = markdown();
     $('#md-preview').textContent = md;
-    var url = 'https://github.com/' + DATA.repo + '/new/main/_books?filename=' + encodeURIComponent(book.slug + '.md') + '&value=' + encodeURIComponent(md);
+    var url = 'https://github.com/' + DATA.repo + '/new/main/' + (DATA.booksDir || '_books') + '?filename=' + encodeURIComponent(book.slug + '.md') + '&value=' + encodeURIComponent(md);
     $('#github-save').href = url;
     var shelf = DATA.shelves.filter(function (s) { return s.key === book.status; })[0] || {};
     var box = $('#save-book');

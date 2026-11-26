@@ -1,0 +1,45 @@
+# Sophia's reading site: the same pages and code as Simon's, with her own books, list and cards.
+# scripts/build_sophia.sh builds the site with this file on top of _config.yml and copies the reading pages
+# into the sophia-blog repository (sophia.itdo.work/reading/).
+title: 소피아의 책 읽기
+description: 소피아가 읽은 책을 모으고, 다 읽으면 디즈니 프린세스 카드를 받는 책장
+url: https://sophia.itdo.work
+write_url: https://github.com/estherrunstrict/simon-reading-books/new/main/_kids/sophia/_books
+# Her lists live here instead of _data, and her finished books here instead of _books.
+data_dir: _kids/sophia/_data
+collections_dir: _kids/sophia
+kid:
+  key: sophia
+  name: 소피아
+  ni: 소피아가
+  en: Sophia
+  theme: "#7c4de8"
+  theme_2: "#5a2fc4"
+  glow: "#b49bff"
+  img: /assets/img/sophia/
+  card_back: /assets/img/sophia/card-back.webp
+  cards: 진짜 디즈니 프린세스 카드
+  books_dir: _kids/sophia/_books
+  young: true
+  ahead: 1
+  icon: /assets/blog/art/sophia-icon-180.png
+# Simon's blog pages, hidden card page and Simon-only pictures stay out of Sophia's build.
+exclude:
+  - README.md
+  - kids-blog
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tests
+  - scripts
+  - .gitignore
+  - media
+  - docs
+  - index.html
+  - diary
+  - schedule
+  - cards
+  - CNAME
+  - 404.html
+  - assets/blog
+  - assets/weekly

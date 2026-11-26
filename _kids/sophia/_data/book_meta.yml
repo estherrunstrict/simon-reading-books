@@ -1,0 +1,1197 @@
+# _data/roadmap.yml 책마다 알라딘에서 찾은 표지·ISBN·쪽수·크기예요. scripts/roadmap_books.rb가 써요.
+gangajittong:
+  aladin: 4855
+  aladin_title: 강아지똥
+  isbn: '9788986621136'
+  pages: 30
+  size_mm:
+  - 235
+  - 246
+  - 6
+  cover: "/assets/covers/sophia/gangajittong.webp"
+alsatang:
+  aladin: 336511319
+  aladin_title: 알사탕
+  isbn: '9791198610614'
+  pages: 48
+  size_mm:
+  - 250
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/alsatang.webp"
+subak-suyeongjang:
+  aladin: 63653893
+  aladin_title: 수박 수영장
+  isbn: '9788936446819'
+  pages: 60
+  size_mm:
+  - 197
+  - 268
+  - 6
+  cover: "/assets/covers/sophia/subak-suyeongjang.webp"
+jangsutang-seonnyeonim:
+  aladin: 337434620
+  aladin_title: 장수탕 선녀님
+  isbn: '9791198610621'
+  pages: 44
+  size_mm:
+  - 203
+  - 280
+  - 6
+  cover: "/assets/covers/sophia/jangsutang-seonnyeonim.webp"
+noran-usan:
+  aladin: 975793
+  aladin_title: 노란 우산 (양장)
+  isbn: '9788943306915'
+  pages: 26
+  size_mm:
+  - 228
+  - 274
+  - 6
+  cover: "/assets/covers/sophia/noran-usan.webp"
+gamjakkot:
+  aladin: 4570
+  aladin_title: 감자꽃
+  isbn: '9788936441449'
+  pages: 144
+  size_mm:
+  - 148
+  - 210
+  - 10
+  cover: "/assets/covers/sophia/gamjakkot.webp"
+daedanhan-chamoessi:
+  aladin: 193681478
+  aladin_title: 대단한 참외씨
+  isbn: '9791187517900'
+  pages: 40
+  size_mm:
+  - 220
+  - 240
+  - 6
+  cover: "/assets/covers/sophia/daedanhan-chamoessi.webp"
+naneun-annaegyeoniya:
+  aladin: 300778252
+  aladin_title: 나는 안내견이야
+  isbn: '9791191973099'
+  pages: 40
+  size_mm:
+  - 210
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/naneun-annaegyeoniya.webp"
+beurokolrijiman-sarangbatgo-sipeo:
+  aladin: 285011341
+  aladin_title: 브로콜리지만 사랑받고 싶어
+  isbn: '9791157855506'
+  pages: 44
+  size_mm:
+  - 240
+  - 220
+  - 6
+  cover: "/assets/covers/sophia/beurokolrijiman-sarangbatgo-sipeo.webp"
+gwaenchanha-ajeossi:
+  aladin: 100943567
+  aladin_title: 괜찮아 아저씨
+  isbn: '9788949105048'
+  pages: 36
+  size_mm:
+  - 202
+  - 203
+  - 6
+  cover: "/assets/covers/sophia/gwaenchanha-ajeossi.webp"
+gwaenchanha-uri-modu-cheoeumiya:
+  aladin: 232463111
+  aladin_title: 괜찮아, 우리 모두 처음이야!
+  isbn: '9788968305696'
+  pages: 52
+  size_mm:
+  - 210
+  - 260
+  - 6
+  cover: "/assets/covers/sophia/gwaenchanha-uri-modu-cheoeumiya.webp"
+gogumaguma:
+  aladin: 103326541
+  aladin_title: 고구마구마
+  isbn: '9788956187372'
+  pages: 40
+  size_mm:
+  - 192
+  - 245
+  - 6
+  cover: "/assets/covers/sophia/gogumaguma.webp"
+100cheungjjari-jip:
+  aladin: 4116307
+  aladin_title: 100층짜리 집
+  isbn: '9788989863786'
+  pages: 32
+  size_mm:
+  - 212
+  - 304
+  - 6
+  cover: "/assets/covers/sophia/100cheungjjari-jip.webp"
+nunmulbada:
+  aladin: 4863781
+  aladin_title: 눈물바다
+  isbn: '9788958284055'
+  pages: 48
+  size_mm:
+  - 214
+  - 233
+  - 6
+  cover: "/assets/covers/sophia/nunmulbada.webp"
+dalsyabeteu:
+  aladin: 340730135
+  aladin_title: 달샤베트
+  isbn: '9791198610652'
+  pages: 36
+  size_mm:
+  - 250
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/dalsyabeteu.webp"
+jigakdaejang-jon:
+  aladin: 137178
+  aladin_title: 지각대장 존
+  isbn: '9788949110073'
+  pages: 32
+  size_mm:
+  - 250
+  - 257
+  - 6
+  cover: "/assets/covers/sophia/jigakdaejang-jon.webp"
+patjuk-halmeomgwa-horangi:
+  aladin: 662299
+  aladin_title: 팥죽 할멈과 호랑이
+  isbn: '9788952745798'
+  pages: 30
+  size_mm:
+  - 234
+  - 303
+  - 6
+  cover: "/assets/covers/sophia/patjuk-halmeomgwa-horangi.webp"
+jongi-bongji-gongju:
+  aladin: 133389
+  aladin_title: 종이 봉지 공주
+  isbn: '9788949110479'
+  pages: 32
+  size_mm:
+  - 188
+  - 257
+  - 6
+  cover: "/assets/covers/sophia/jongi-bongji-gongju.webp"
+doseogwane-gan-saja:
+  aladin: 893284
+  aladin_title: 도서관에 간 사자
+  isbn: '9788901060316'
+  pages: 40
+  size_mm:
+  - 255
+  - 295
+  - 6
+  cover: "/assets/covers/sophia/doseogwane-gan-saja.webp"
+doseogwan-goyangi:
+  aladin: 249749269
+  aladin_title: 도서관 고양이
+  isbn: '9791163930334'
+  pages: 40
+  size_mm:
+  - 215
+  - 260
+  - 6
+  cover: "/assets/covers/sophia/doseogwan-goyangi.webp"
+masitneun-geon-masisseo:
+  aladin: 220649006
+  aladin_title: 맛있는 건 맛있어
+  isbn: '9788952789884'
+  pages: 56
+  size_mm:
+  - 220
+  - 220
+  - 6
+  cover: "/assets/covers/sophia/masitneun-geon-masisseo.webp"
+choeseungho-siinui-malnori-dongsijip-1:
+  aladin: 552533
+  aladin_title: 최승호 시인의 말놀이 동시집 1
+  isbn: '9788949120232'
+  pages: 190
+  size_mm:
+  - 211
+  - 211
+  - 13
+  cover: "/assets/covers/sophia/choeseungho-siinui-malnori-dongsijip-1.webp"
+gasi-sonyeon:
+  aladin: 264047815
+  aladin_title: 가시 소년
+  isbn: '9791165731335'
+  pages: 40
+  size_mm:
+  - 210
+  - 297
+  - 6
+  cover: "/assets/covers/sophia/gasi-sonyeon.webp"
+maeumi-geuraesseo:
+  aladin: 171363928
+  aladin_title: 마음이 그랬어
+  isbn: '9791159950506'
+  pages: 36
+  size_mm:
+  - 190
+  - 260
+  - 6
+  cover: "/assets/covers/sophia/maeumi-geuraesseo.webp"
+jjak-bakkuneun-nal:
+  aladin: 107677870
+  aladin_title: 짝 바꾸는 날
+  isbn: '9791185934273'
+  pages: 124
+  size_mm:
+  - 148
+  - 208
+  - 8
+  cover: "/assets/covers/sophia/jjak-bakkuneun-nal.webp"
+soriui-chuseok-iyagi:
+  aladin: 83382
+  aladin_title: 솔이의 추석 이야기
+  isbn: '9788986621198'
+  pages: 38
+  size_mm:
+  - 292
+  - 234
+  - 6
+  cover: "/assets/covers/sophia/soriui-chuseok-iyagi.webp"
+peuredeurik:
+  aladin: 102335660
+  aladin_title: 프레드릭
+  isbn: '9788952783103'
+  pages: 34
+  size_mm:
+  - 210
+  - 297
+  - 6
+  cover: "/assets/covers/sophia/peuredeurik.webp"
+jireongiga-heuk-ttongeul-nueosseo:
+  aladin: 3452473
+  aladin_title: 지렁이가 흙 똥을 누었어
+  isbn: '9788974782573'
+  pages: 29
+  size_mm:
+  - 196
+  - 248
+  - 6
+  cover: "/assets/covers/sophia/jireongiga-heuk-ttongeul-nueosseo.webp"
+baechuhuinnabi-al-100gaeneun-eodiro-gasseulkka:
+  aladin: 53645228
+  aladin_title: 배추흰나비 알 100개는 어디로 갔을까?
+  isbn: '9788955823226'
+  pages: 30
+  size_mm:
+  - 220
+  - 254
+  - 6
+  cover: "/assets/covers/sophia/baechuhuinnabi-al-100gaeneun-eodiro-gasseulkka.webp"
+yeodeol-sarui-sigan-gwanri:
+  aladin: 333392528
+  aladin_title: 여덟 살의 시간 관리
+  isbn: '9791161726557'
+  pages: 84
+  size_mm:
+  - 190
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/yeodeol-sarui-sigan-gwanri.webp"
+gaeguriwa-dukkeobineun-chingu:
+  aladin: 5105
+  aladin_title: 개구리와 두꺼비는 친구
+  isbn: '9788949160016'
+  pages: 64
+  size_mm:
+  - 148
+  - 210
+  - 6
+  cover: "/assets/covers/sophia/gaeguriwa-dukkeobineun-chingu.webp"
+yonggireul-nae-biniljanggap:
+  aladin: 268446875
+  aladin_title: 용기를 내, 비닐장갑!
+  isbn: '9791158362249'
+  pages: 40
+  size_mm:
+  - 205
+  - 270
+  - 6
+  cover: "/assets/covers/sophia/yonggireul-nae-biniljanggap.webp"
+swineun-sigane-ttong-ssagi-silheo:
+  aladin: 111899737
+  aladin_title: 쉬는 시간에 똥 싸기 싫어
+  isbn: '9788964963371'
+  pages: 112
+  size_mm:
+  - 185
+  - 230
+  - 8
+  cover: "/assets/covers/sophia/swineun-sigane-ttong-ssagi-silheo.webp"
+ahop-sal-maeum-sajeon:
+  aladin: 105374930
+  aladin_title: 아홉 살 마음 사전
+  isbn: '9788936447014'
+  pages: 168
+  size_mm:
+  - 152
+  - 190
+  - 12
+  cover: "/assets/covers/sophia/ahop-sal-maeum-sajeon.webp"
+gieogui-pungseon:
+  aladin: 202390979
+  aladin_title: 기억의 풍선
+  isbn: '9791195747696'
+  pages: 42
+  size_mm:
+  - 235
+  - 285
+  - 6
+  cover: "/assets/covers/sophia/gieogui-pungseon.webp"
+eongttunghan-surijeom:
+  aladin: 337449283
+  aladin_title: 엉뚱한 수리점
+  isbn: '9791197519024'
+  pages: 50
+  size_mm:
+  - 237
+  - 247
+  - 6
+  cover: "/assets/covers/sophia/eongttunghan-surijeom.webp"
+kungpu-anigo-ttongpu:
+  aladin: 102154845
+  aladin_title: 쿵푸 아니고 똥푸
+  isbn: '9788954644310'
+  pages: 96
+  size_mm:
+  - 170
+  - 220
+  - 6
+  cover: "/assets/covers/sophia/kungpu-anigo-ttongpu.webp"
+tteugo-jigo:
+  aladin: 2620513
+  aladin_title: '뜨고 지고! : 자연'
+  isbn: '9788955820843'
+  pages: 56
+  size_mm:
+  - 190
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/tteugo-jigo.webp"
+hwayoirui-dukkeobi:
+  aladin: 173175
+  aladin_title: 화요일의 두꺼비
+  isbn: '9788971965559'
+  pages: 116
+  size_mm:
+  - 148
+  - 210
+  - 8
+  cover: "/assets/covers/sophia/hwayoirui-dukkeobi.webp"
+mabeobui-seoltang-du-jogak:
+  aladin: 277339
+  aladin_title: 마법의 설탕 두 조각
+  isbn: '9788935652792'
+  pages: 92
+  size_mm:
+  - 152
+  - 223
+  - 6
+  cover: "/assets/covers/sophia/mabeobui-seoltang-du-jogak.webp"
+napjagiga-doen-seutaenri:
+  aladin: 127712434
+  aladin_title: 납작이가 된 스탠리
+  isbn: '9788952786111'
+  pages: 80
+  size_mm:
+  - 148
+  - 210
+  - 6
+  cover: "/assets/covers/sophia/napjagiga-doen-seutaenri.webp"
+dareum:
+  aladin: 120276304
+  aladin_title: 다름
+  isbn: '9788961771535'
+  pages: 64
+  size_mm:
+  - 300
+  - 200
+  - 6
+  cover: "/assets/covers/sophia/dareum.webp"
+sangchussi:
+  aladin: 106433092
+  aladin_title: 상추씨
+  isbn: '9791160940169'
+  pages: 40
+  size_mm:
+  - 200
+  - 210
+  - 6
+  cover: "/assets/covers/sophia/sangchussi.webp"
+sagyejeol-mogyoktang:
+  aladin: 270455613
+  aladin_title: 사계절 목욕탕
+  isbn: '9788901250205'
+  pages: 48
+  size_mm:
+  - 235
+  - 240
+  - 6
+  cover: "/assets/covers/sophia/sagyejeol-mogyoktang.webp"
+halmeoniwa-hayan-jip:
+  aladin: 131781129
+  aladin_title: 할머니와 하얀 집
+  isbn: '9788949101910'
+  pages: 40
+  size_mm:
+  - 200
+  - 247
+  - 6
+  cover: "/assets/covers/sophia/halmeoniwa-hayan-jip.webp"
+geurineun-daero:
+  aladin: 120412164
+  aladin_title: 그리는 대로
+  isbn: '9791188574001'
+  pages: 36
+  size_mm:
+  - 235
+  - 218
+  - 6
+  cover: "/assets/covers/sophia/geurineun-daero.webp"
+nuga-nuga-jamjana:
+  aladin: 446383
+  aladin_title: 누가 누가 잠자나
+  isbn: '9788982817526'
+  pages: 16
+  size_mm:
+  - 150
+  - 180
+  - 6
+  cover: "/assets/covers/sophia/nuga-nuga-jamjana.webp"
+agi-tokkiwa-chaesonghwa-kkot:
+  aladin: 16599552
+  aladin_title: 아기 토끼와 채송화 꽃
+  isbn: '9788936451349'
+  pages: 80
+  size_mm:
+  - 170
+  - 220
+  - 6
+  cover: "/assets/covers/sophia/agi-tokkiwa-chaesonghwa-kkot.webp"
+nae-maeum:
+  aladin: 270737197
+  aladin_title: 내 마음 ㅅㅅㅎ
+  isbn: '9791160947250'
+  pages: 44
+  size_mm:
+  - 225
+  - 235
+  - 6
+  cover: "/assets/covers/sophia/nae-maeum.webp"
+hwaga-hororok-pulrineun-chaek:
+  aladin: 270550526
+  aladin_title: 화가 호로록 풀리는 책
+  isbn: '9791191583403'
+  pages: 40
+  size_mm:
+  - 205
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/hwaga-hororok-pulrineun-chaek.webp"
+batchimgujodae:
+  aladin: 308892165
+  aladin_title: 받침구조대
+  isbn: '9791189499525'
+  pages: 76
+  size_mm:
+  - 186
+  - 235
+  - 6
+  cover: "/assets/covers/sophia/batchimgujodae.webp"
+sejongdaewangeul-chajara:
+  aladin: 278170269
+  aladin_title: 세종대왕을 찾아라
+  isbn: '9791165731847'
+  pages: 40
+  size_mm:
+  - 270
+  - 270
+  - 6
+  cover: "/assets/covers/sophia/sejongdaewangeul-chajara.webp"
+nae-aneneun-sajaga-isseo-neoneun:
+  aladin: 238376624
+  aladin_title: 내 안에는 사자가 있어, 너는?
+  isbn: '9788955889444'
+  pages: 40
+  size_mm:
+  - 230
+  - 320
+  - 6
+  cover: "/assets/covers/sophia/nae-aneneun-sajaga-isseo-neoneun.webp"
+appareul-guhara:
+  aladin: 208614789
+  aladin_title: 아빠를 구하라!
+  isbn: '9791164132508'
+  pages: 140
+  size_mm:
+  - 165
+  - 225
+  - 10
+  cover: "/assets/covers/sophia/appareul-guhara.webp"
+bin-jibe-on-sonnim:
+  aladin: 75378197
+  aladin_title: 빈 집에 온 손님
+  isbn: '9788949140261'
+  pages: 32
+  size_mm:
+  - 192
+  - 243
+  - 6
+  cover: "/assets/covers/sophia/bin-jibe-on-sonnim.webp"
+geopbo-manbo:
+  aladin: 54556524
+  aladin_title: 겁보 만보
+  isbn: '9791185564333'
+  pages: 81
+  size_mm:
+  - 152
+  - 210
+  - 6
+  cover: "/assets/covers/sophia/geopbo-manbo.webp"
+goyangi-haegyeolsa-kkamnyang-1:
+  aladin: 236518019
+  aladin_title: 고양이 해결사 깜냥 1
+  isbn: '9788936447694'
+  pages: 80
+  size_mm:
+  - 152
+  - 220
+  - 6
+  cover: "/assets/covers/sophia/goyangi-haegyeolsa-kkamnyang-1.webp"
+oreunbal-oenbal:
+  aladin: 205389
+  aladin_title: 오른발, 왼발
+  isbn: '9788949110349'
+  pages: 48
+  size_mm:
+  - 197
+  - 197
+  - 6
+  cover: "/assets/covers/sophia/oreunbal-oenbal.webp"
+haprijeogin-uisim:
+  aladin: 360709893
+  aladin_title: 합리적인 의심
+  isbn: '9788958070603'
+  pages: 88
+  size_mm:
+  - 172
+  - 237
+  - 6
+  cover: "/assets/covers/sophia/haprijeogin-uisim.webp"
+sseuregineun-ujuedo-itda:
+  aladin: 350988248
+  aladin_title: 쓰레기는 우주에도 있다
+  isbn: '9788932376394'
+  pages: 44
+  size_mm:
+  - 224
+  - 224
+  - 6
+  cover: "/assets/covers/sophia/sseuregineun-ujuedo-itda.webp"
+gipeun-bam-piltong-aneseo:
+  aladin: 266133085
+  aladin_title: 깊은 밤 필통 안에서
+  isbn: '9788949162072'
+  pages: 88
+  size_mm:
+  - 148
+  - 215
+  - 6
+  cover: "/assets/covers/sophia/gipeun-bam-piltong-aneseo.webp"
+kkameogeodo-doelkkayo:
+  aladin: 301539008
+  aladin_title: 까먹어도 될까요
+  isbn: '9788936414160'
+  pages: 76
+  size_mm:
+  - 153
+  - 210
+  - 6
+  cover: "/assets/covers/sophia/kkameogeodo-doelkkayo.webp"
+papkon-gyosil:
+  aladin: 59956593
+  aladin_title: 팝콘 교실
+  isbn: '9788936446680'
+  pages: 116
+  size_mm:
+  - 151
+  - 207
+  - 8
+  cover: "/assets/covers/sophia/papkon-gyosil.webp"
+halmeoni-jibeseo:
+  aladin: 679496
+  aladin_title: 할머니 집에서
+  isbn: '9788943306120'
+  pages: 56
+  size_mm:
+  - 152
+  - 235
+  - 6
+  cover: "/assets/covers/sophia/halmeoni-jibeseo.webp"
+jageun-jip-iyagi:
+  aladin: 124890
+  aladin_title: 작은 집 이야기
+  isbn: '9788972590385'
+  pages: 50
+  cover: "/assets/covers/sophia/jageun-jip-iyagi.webp"
+dwaejichaek:
+  aladin: 95628582
+  aladin_title: 돼지책
+  isbn: '9788901033518'
+  pages: 32
+  size_mm:
+  - 210
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/dwaejichaek.webp"
+ilgwa-dogu:
+  aladin: 2373735
+  aladin_title: 일과 도구
+  isbn: '9788955820836'
+  pages: 40
+  size_mm:
+  - 270
+  - 233
+  - 6
+  cover: "/assets/covers/sophia/ilgwa-dogu.webp"
+geonjeonji-eomma:
+  aladin: 408143379
+  aladin_title: 건전지 엄마 (겨울 리커버 특별판)
+  isbn: '9788936429010'
+  pages: 48
+  size_mm:
+  - 210
+  - 275
+  - 6
+  cover: "/assets/covers/sophia/geonjeonji-eomma.webp"
+daewanggoraeui-majimak-norae:
+  aladin: 349957507
+  aladin_title: 대왕고래의 마지막 노래
+  isbn: '9791166340635'
+  pages: 48
+  size_mm:
+  - 275
+  - 225
+  - 6
+  cover: "/assets/covers/sophia/daewanggoraeui-majimak-norae.webp"
+nae-ireumeun-ppippi-rongseutaking:
+  aladin: 253082
+  aladin_title: 내 이름은 삐삐 롱스타킹
+  isbn: '9788952709486'
+  pages: 224
+  size_mm:
+  - 152
+  - 223
+  - 16
+  cover: "/assets/covers/sophia/nae-ireumeun-ppippi-rongseutaking.webp"
+assibang-ilgop-dongmu:
+  aladin: 145555450
+  aladin_title: 아씨방 일곱 동무 (20주년 기념 리커버 스페셜 에디션)
+  isbn: '9788949100203'
+  pages: 32
+  size_mm:
+  - 325
+  - 245
+  - 6
+  cover: "/assets/covers/sophia/assibang-ilgop-dongmu.webp"
+heoheo-harabeoji:
+  aladin: 26435604
+  aladin_title: 허허 할아버지
+  isbn: '9788958286707'
+  pages: 32
+  size_mm:
+  - 242
+  - 242
+  - 6
+  cover: "/assets/covers/sophia/heoheo-harabeoji.webp"
+bawinariwa-agibyeol:
+  aladin: 56701
+  aladin_title: 바위나리와 아기별
+  isbn: '9788986621402'
+  pages: 30
+  size_mm:
+  - 210
+  - 297
+  - 6
+  cover: "/assets/covers/sophia/bawinariwa-agibyeol.webp"
+guseulbi:
+  aladin: 441436
+  aladin_title: 구슬비
+  isbn: '9788982817519'
+  pages: 16
+  size_mm:
+  - 150
+  - 180
+  - 6
+  cover: "/assets/covers/sophia/guseulbi.webp"
+usan-sseun-jireongi:
+  aladin: 866080
+  aladin_title: 우산 쓴 지렁이
+  isbn: '9788932370613'
+  pages: 124
+  size_mm:
+  - 152
+  - 210
+  - 8
+  cover: "/assets/covers/sophia/usan-sseun-jireongi.webp"
+geureieom-harabeojikke:
+  aladin: 315190096
+  aladin_title: 그레이엄 할아버지께
+  isbn: '9791198046215'
+  pages: 40
+  size_mm:
+  - 210
+  - 270
+  - 6
+  cover: "/assets/covers/sophia/geureieom-harabeojikke.webp"
+susanghan-seongeulraseu:
+  aladin: 184672998
+  aladin_title: 수상한 선글라스
+  isbn: '9791188283798'
+  pages: 76
+  size_mm:
+  - 168
+  - 230
+  - 6
+  cover: "/assets/covers/sophia/susanghan-seongeulraseu.webp"
+nae-jjakkkungeuro-malhal-geot-gateumyeon:
+  aladin: 142393626
+  aladin_title: 내 짝꿍으로 말할 것 같으면,
+  isbn: '9788928315925'
+  pages: 64
+  size_mm:
+  - 190
+  - 260
+  - 6
+  cover: "/assets/covers/sophia/nae-jjakkkungeuro-malhal-geot-gateumyeon.webp"
+hwajangsire-saneun-dukkeobi:
+  aladin: 924065
+  aladin_title: 화장실에 사는 두꺼비
+  isbn: '9788954603218'
+  pages: 99
+  size_mm:
+  - 186
+  - 235
+  - 7
+  cover: "/assets/covers/sophia/hwajangsire-saneun-dukkeobi.webp"
+jinjja-doduk:
+  aladin: 330657
+  aladin_title: 진짜 도둑
+  isbn: '9788984881204'
+  pages: 96
+  size_mm:
+  - 175
+  - 235
+  - 6
+  cover: "/assets/covers/sophia/jinjja-doduk.webp"
+meotjin-yeou-ssi:
+  aladin: 887618
+  aladin_title: 멋진 여우 씨
+  isbn: '9788984140943'
+  pages: 128
+  size_mm:
+  - 172
+  - 224
+  - 9
+  cover: "/assets/covers/sophia/meotjin-yeou-ssi.webp"
+ireol-ttaen-eotteotge-malhalkka:
+  aladin: 126016905
+  aladin_title: 이럴 땐 어떻게 말할까?
+  isbn: '9788962478952'
+  pages: 48
+  size_mm:
+  - 186
+  - 240
+  - 6
+  cover: "/assets/covers/sophia/ireol-ttaen-eotteotge-malhalkka.webp"
+daetgeurwang-gomson-seonsaengnim:
+  aladin: 174117886
+  aladin_title: 댓글왕 곰손 선생님
+  isbn: '9791186531860'
+  pages: 124
+  size_mm:
+  - 173
+  - 220
+  - 8
+  cover: "/assets/covers/sophia/daetgeurwang-gomson-seonsaengnim.webp"
+dalbit-jogak:
+  aladin: 278536528
+  aladin_title: 달빛 조각
+  isbn: '9788936455699'
+  pages: 40
+  size_mm:
+  - 230
+  - 270
+  - 6
+  cover: "/assets/covers/sophia/dalbit-jogak.webp"
+natmareul-meokneun-ai:
+  aladin: 367546471
+  aladin_title: 낱말을 먹는 아이
+  isbn: '9788990828934'
+  pages: 32
+  size_mm:
+  - 258
+  - 188
+  - 6
+  cover: "/assets/covers/sophia/natmareul-meokneun-ai.webp"
+yeol-sarui-pawo:
+  aladin: 324440050
+  aladin_title: 열 살의 파워
+  isbn: '9791167390912'
+  pages: 144
+  size_mm:
+  - 165
+  - 225
+  - 10
+  cover: "/assets/covers/sophia/yeol-sarui-pawo.webp"
+suwon-hwaseong:
+  aladin: 17974616
+  aladin_title: 수원 화성
+  isbn: '9788901143347'
+  pages: 32
+  size_mm:
+  - 225
+  - 290
+  - 6
+  cover: "/assets/covers/sophia/suwon-hwaseong.webp"
+jongi-han-jangui-mabeop-jido:
+  aladin: 656496
+  aladin_title: 종이 한 장의 마법, 지도
+  isbn: '9788955820508'
+  pages: 159
+  size_mm:
+  - 175
+  - 225
+  - 11
+  cover: "/assets/covers/sophia/jongi-han-jangui-mabeop-jido.webp"
+uri-dongne-syupeomaen:
+  aladin: 38324904
+  aladin_title: 우리 동네 슈퍼맨
+  isbn: '9788936446420'
+  pages: 56
+  size_mm:
+  - 235
+  - 215
+  - 6
+  cover: "/assets/covers/sophia/uri-dongne-syupeomaen.webp"
+woneun-goemuriya:
+  aladin: 168712246
+  aladin_title: 원은 괴물이야!
+  isbn: '9791189499006'
+  pages: 56
+  size_mm:
+  - 198
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/woneun-goemuriya.webp"
+heeomi:
+  aladin: 179237925
+  aladin_title: 헤엄이
+  isbn: '9788952788726'
+  pages: 44
+  size_mm:
+  - 222
+  - 273
+  - 6
+  cover: "/assets/covers/sophia/heeomi.webp"
+dangnagwi-silbeseuteowa-yosul-joyakdol:
+  aladin: 35861
+  aladin_title: 당나귀 실베스터와 요술 조약돌
+  isbn: '9788979380057'
+  pages: 56
+  size_mm:
+  - 148
+  - 210
+  - 6
+  cover: "/assets/covers/sophia/dangnagwi-silbeseuteowa-yosul-joyakdol.webp"
+sintongbangtong-homsyoping:
+  aladin: 185992534
+  aladin_title: 신통방통 홈쇼핑
+  isbn: '9788949121840'
+  pages: 232
+  size_mm:
+  - 148
+  - 210
+  - 16
+  cover: "/assets/covers/sophia/sintongbangtong-homsyoping.webp"
+gajeong-tongsinmun-si-sseugi-sodong:
+  aladin: 317850712
+  aladin_title: 가정 통신문 시 쓰기 소동
+  isbn: '9791192655314'
+  pages: 132
+  size_mm:
+  - 167
+  - 212
+  - 9
+  cover: "/assets/covers/sophia/gajeong-tongsinmun-si-sseugi-sodong.webp"
+rangrangbyeol-ttaettaerong:
+  aladin: 2107674
+  aladin_title: 랑랑별 때때롱 (양장)
+  isbn: '9788984285422'
+  pages: 200
+  size_mm:
+  - 180
+  - 243
+  - 14
+  cover: "/assets/covers/sophia/rangrangbyeol-ttaettaerong.webp"
+eonjena-dajeong-jukjip:
+  aladin: 345761075
+  aladin_title: 언제나 다정 죽집
+  isbn: '9788949122076'
+  pages: 148
+  size_mm:
+  - 148
+  - 210
+  - 10
+  cover: "/assets/covers/sophia/eonjena-dajeong-jukjip.webp"
+bimirui-muge:
+  aladin: 267441411
+  aladin_title: 비밀의 무게
+  isbn: '9788936451608'
+  pages: 120
+  size_mm:
+  - 168
+  - 220
+  - 8
+  cover: "/assets/covers/sophia/bimirui-muge.webp"
+oneureun-yongdon-batneun-nal:
+  aladin: 279594100
+  aladin_title: 오늘은 용돈 받는 날
+  isbn: '9791161724065'
+  pages: 96
+  size_mm:
+  - 190
+  - 245
+  - 6
+  cover: "/assets/covers/sophia/oneureun-yongdon-batneun-nal.webp"
+ribowa-aen:
+  aladin: 309868530
+  aladin_title: 리보와 앤
+  isbn: '9788954690690'
+  pages: 120
+  size_mm:
+  - 153
+  - 220
+  - 8
+  cover: "/assets/covers/sophia/ribowa-aen.webp"
+susanghan-gichayeok:
+  aladin: 266817123
+  aladin_title: 수상한 기차역
+  isbn: '9788963194073'
+  pages: 204
+  size_mm:
+  - 152
+  - 210
+  - 14
+  cover: "/assets/covers/sophia/susanghan-gichayeok.webp"
+gyeongtaeui-byeongari:
+  aladin: 258622200
+  aladin_title: 경태의 병아리
+  isbn: '9791187903482'
+  pages: 124
+  size_mm:
+  - 165
+  - 222
+  - 8
+  cover: "/assets/covers/sophia/gyeongtaeui-byeongari.webp"
+mok-jjalbeun-girin-jipi:
+  aladin: 19097613
+  aladin_title: 목 짧은 기린 지피
+  isbn: '9788994198170'
+  pages: 50
+  size_mm:
+  - 228
+  - 265
+  - 6
+  cover: "/assets/covers/sophia/mok-jjalbeun-girin-jipi.webp"
+maeum-sohwaje-ppeongppeongsu:
+  aladin: 283546764
+  aladin_title: 마음 소화제 뻥뻥수
+  isbn: '9788911128730'
+  pages: 188
+  size_mm:
+  - 153
+  - 215
+  - 13
+  cover: "/assets/covers/sophia/maeum-sohwaje-ppeongppeongsu.webp"
+balpyohagi-museowoyo:
+  aladin: 108385016
+  aladin_title: 발표하기 무서워요!
+  isbn: '9788991550810'
+  pages: 44
+  size_mm:
+  - 198
+  - 243
+  - 6
+  cover: "/assets/covers/sophia/balpyohagi-museowoyo.webp"
+bungbung-doseogwaneul-jikyeo-juseyo:
+  aladin: 217661511
+  aladin_title: 붕붕 도서관을 지켜 주세요
+  isbn: '9788997798742'
+  pages: 166
+  size_mm:
+  - 152
+  - 220
+  - 11
+  cover: "/assets/covers/sophia/bungbung-doseogwaneul-jikyeo-juseyo.webp"
+akpeul-supeul-talchulhara:
+  aladin: 298961217
+  aladin_title: 악플 숲을 탈출하라!
+  isbn: '9788977469853'
+  pages: 112
+  size_mm:
+  - 152
+  - 215
+  - 8
+  cover: "/assets/covers/sophia/akpeul-supeul-talchulhara.webp"
+byeoljeom-banjang-nauju:
+  aladin: 350857913
+  aladin_title: 별점 반장 나우주
+  isbn: '9791167552952'
+  pages: 128
+  size_mm:
+  - 168
+  - 288
+  - 9
+  cover: "/assets/covers/sophia/byeoljeom-banjang-nauju.webp"
+siganeul-moeuneun-saengjwi:
+  aladin: 362026783
+  aladin_title: 시간을 모으는 생쥐
+  isbn: '9788961555753'
+  pages: 196
+  size_mm:
+  - 148
+  - 210
+  - 14
+  cover: "/assets/covers/sophia/siganeul-moeuneun-saengjwi.webp"
+naega-manyak-ramyeoniramyeon:
+  aladin: 279226570
+  aladin_title: 내가 만약 라면이라면
+  isbn: '9788936448073'
+  pages: 136
+  size_mm:
+  - 151
+  - 207
+  - 9
+  cover: "/assets/covers/sophia/naega-manyak-ramyeoniramyeon.webp"
+eommaui-reonninggu:
+  aladin: 100136
+  aladin_title: 엄마의 런닝구
+  isbn: '9788985494212'
+  pages: 206
+  size_mm:
+  - 148
+  - 210
+  - 14
+  cover: "/assets/covers/sophia/eommaui-reonninggu.webp"
+rotewa-ruije:
+  aladin: 225500
+  aladin_title: 로테와 루이제
+  isbn: '9788952709097'
+  pages: 232
+  size_mm:
+  - 148
+  - 210
+  - 16
+  cover: "/assets/covers/sophia/rotewa-ruije.webp"
+kkot-piuneun-ai-tiseutu:
+  aladin: 196942
+  aladin_title: 꽃 피우는 아이 티스투
+  isbn: '9788955820331'
+  pages: 178
+  size_mm:
+  - 148
+  - 210
+  - 12
+  cover: "/assets/covers/sophia/kkot-piuneun-ai-tiseutu.webp"
+neoguri-pansa-pongpongi:
+  aladin: 32738834
+  aladin_title: 너구리 판사 퐁퐁이
+  isbn: '9788936446376'
+  pages: 148
+  size_mm:
+  - 175
+  - 215
+  - 10
+  cover: "/assets/covers/sophia/neoguri-pansa-pongpongi.webp"
+wae-yumyeonghan-geoya-i-geurim:
+  aladin: 301769572
+  aladin_title: 왜 유명한 거야, 이 그림?
+  isbn: '9791167550712'
+  pages: 160
+  size_mm:
+  - 168
+  - 228
+  - 11
+  cover: "/assets/covers/sophia/wae-yumyeonghan-geoya-i-geurim.webp"
+hunminjeongeum-guchul-jakjeon:
+  aladin: 982633
+  aladin_title: 훈민정음 구출 작전
+  isbn: '9788953540248'
+  pages: 140
+  size_mm:
+  - 186
+  - 240
+  - 10
+  cover: "/assets/covers/sophia/hunminjeongeum-guchul-jakjeon.webp"
+ssiaseul-butakhae:
+  aladin: 274714442
+  aladin_title: 씨앗을 부탁해
+  isbn: '9791188717224'
+  pages: 160
+  size_mm:
+  - 152
+  - 225
+  - 11
+  cover: "/assets/covers/sophia/ssiaseul-butakhae.webp"
+geomunoreumui-dongguldeul:
+  aladin: 22703231
+  aladin_title: 거문오름의 동굴들
+  isbn: '9788901151458'
+  pages: 36
+  size_mm:
+  - 230
+  - 250
+  - 6
+  cover: "/assets/covers/sophia/geomunoreumui-dongguldeul.webp"
+jibungi-deulryeojuneun-geonchuk-iyagi:
+  aladin: 78488390
+  aladin_title: 지붕이 들려주는 건축 이야기
+  isbn: '9788932374093'
+  pages: 120
+  size_mm:
+  - 188
+  - 257
+  - 8
+  cover: "/assets/covers/sophia/jibungi-deulryeojuneun-geonchuk-iyagi.webp"
+bamti-maeul-keundorine-jip:
+  aladin: 336432508
+  aladin_title: 밤티 마을 큰돌이네 집
+  isbn: '9791191826340'
+  pages: 164
+  size_mm:
+  - 150
+  - 220
+  - 11
+  cover: "/assets/covers/sophia/bamti-maeul-keundorine-jip.webp"
+isanghan-mom-bakmulgwan:
+  aladin: 321585657
+  aladin_title: 이상한 몸 박물관
+  isbn: '9788972970965'
+  pages: 88
+  size_mm:
+  - 203
+  - 254
+  - 6
+  cover: "/assets/covers/sophia/isanghan-mom-bakmulgwan.webp"
