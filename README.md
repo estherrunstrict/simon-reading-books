@@ -234,3 +234,15 @@ Drive 사본의 md5가 Mac의 파일과 같을 때만 지우고, 다르면 `KEPT
 - 표지·ISBN·쪽수·크기는 `ruby scripts/roadmap_books.rb`가 알라딘에서 찾아 `assets/covers/`와 `_data/book_meta.yml`에 써요. 로드맵에 책을 더하면 다시 돌려요.
 - 예약한 책이 없으면 예전처럼 `_data/weekly.yml`의 두 권이 나와요.
 - 그림(`assets/img/next-books.webp`, `next-slot.webp`)은 Google Flow로 만들었어요.
+
+## 소피아의 책 읽기 (sophia.itdo.work/reading/)
+
+소피아의 책 읽기 화면은 시몬과 **같은 코드**(이 저장소의 페이지와 assets)를 쓰고, **이번 책**과 **책 추가** 목록만 따로 가져요.
+
+- 설정: `_kids/sophia/_config.yml`이 `_config.yml` 위에 덮여요. 이름(`kid`), 보라색 띠, 1학년용 그림 독후감 문구, 데이터 폴더를 바꿔요.
+- 목록: `docs/reading-roadmap-sophia.md` = `_kids/sophia/_data/roadmap.yml`. 초1~초4, 학년마다 Must 10권 + Better 20권, 모두 120권이에요.
+- 카드: 포켓몬 대신 **진짜 디즈니 로카나 카드**(디즈니 프린세스)예요. `ruby scripts/lorcana_cards.rb`가 세트별 팩(`packs.yml`), 팩 뜯기용 카드 목록(`card_pools/`), 책마다 카드 두 장(`book_packs.yml`)을 써요. 카드 뒷면과 토끼 그림은 Google Flow로 그렸어요(`assets/img/sophia/`).
+- 표지: `KID=sophia ruby scripts/roadmap_books.rb` → `assets/covers/sophia/`, `_kids/sophia/_data/book_meta.yml`.
+- 다 읽은 책: `_kids/sophia/_books/` (보호자의 GitHub 기록 링크가 여기에 파일을 만들어요).
+- 배포: `scripts/build_sophia.sh`가 소피아용으로 빌드해 `/Volumes/ORICO/sophia-blog`의 `reading/`과 `assets/`에 복사해요. 그 폴더를 커밋하고 푸시하면 sophia.itdo.work에 올라가요. 공용 코드를 고친 뒤에도 이 스크립트를 다시 돌려야 소피아 화면에 반영돼요.
+- kids-blog의 소피아 사이트는 시몬처럼 `overlay` 방식이라, 블로그 자동 게시가 `reading/`을 지우지 않아요.

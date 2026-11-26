@@ -1,0 +1,44 @@
+# 소피아의 책마다 짝지어 주는 진짜 디즈니 로카나 부스터 팩이에요(scripts/lorcana_cards.rb가 써요).
+# product는 TCGplayer 상품 번호예요. 팩 사진은 저장소에 복사하지 않고 바로 불러와요.
+- id: lor1
+  name: The First Chapter
+  product: 482406
+- id: lor2
+  name: Rise of the Floodborn
+  product: 516297
+- id: lor3
+  name: Into the Inklands
+  product: 531523
+- id: lor4
+  name: Ursula's Return
+  product: 543860
+- id: lor5
+  name: Shimmering Skies
+  product: 555142
+- id: lor6
+  name: Azurite Sea
+  product: 578095
+- id: lor7
+  name: Archazia's Island
+  product: 607760
+- id: lor8
+  name: Reign of Jafar
+  product: 623063
+- id: lor9
+  name: Fabled
+  product: 649927
+- id: lor10
+  name: Whispers in the Well
+  product: 652701
+- id: lor11
+  name: Winterspell
+  product: 664821
+- id: lor12
+  name: Wilds Unknown
+  product: 678167
+- id: lor13
+  name: Attack of the Vine!
+  product: 690386
+- id: lor14
+  name: Hyperia City
+  product: 706241

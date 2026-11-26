@@ -737,6 +737,13 @@ nav .nav-cta{color:rgba(255,255,255,.85)}
 .pack-stage.is-real.is-out .pack-deck{transform:translate(-50%,-14%)}
 .pack-stage.is-real.is-out{height:calc(var(--cw)*1.62);transition:height .6s .3s}
 .rcard.code-SIR .rc-glitter{opacity:calc(.22 + var(--hyp)*.6)}
+/* Disney Lorcana (Sophia): a foil card shines all over; super rare and up shine like the Pokémon rares */
+.rcard.g-lorcana.is-rev .rc-foil,.rcard.g-lorcana.is-rev .rc-glitter{clip-path:none}
+.rcard.code-SR .rc-foil,.rcard.code-L .rc-foil,.rcard.code-EP .rc-foil,.rcard.code-E .rc-foil,.rcard.code-IC .rc-foil{display:block;clip-path:none}
+.rcard.code-L .rc-foil,.rcard.code-EP .rc-foil,.rcard.code-E .rc-foil,.rcard.code-IC .rc-foil{-webkit-mask:url(fx/etch.webp) 0 0/62% auto;mask:url(fx/etch.webp) 0 0/62% auto;opacity:calc(.3 + var(--hyp)*.6)}
+.rcard.code-EP .rc-glitter,.rcard.code-E .rc-glitter,.rcard.code-IC .rc-glitter{display:block;clip-path:none;opacity:calc(.22 + var(--hyp)*.6)}
+.rcard.code-IC .rc-foil{background-image:repeating-linear-gradient(115deg,#fff3b0 0%,#e2b247 7%,#fff7d6 14%,#b4852b 21%,#fff3b0 28%)}
+.rc-back img{object-fit:cover}
 .pack-tray{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:min(680px,94vw);margin:6px auto 0;min-height:calc(clamp(44px,8vw,62px)*1.4)}
 .pack-tray:empty{min-height:0}
 .rmini{position:relative;display:inline-block;width:clamp(44px,8vw,62px);aspect-ratio:63/88;border-radius:4px;overflow:hidden;background:#dfe3ec;box-shadow:0 2px 6px rgba(10,20,50,.25);animation:pop .35s ease-out}
@@ -863,7 +870,7 @@ nav .nav-cta{color:rgba(255,255,255,.85)}
 
 /* ---------- Top band: the same poster band as the blog's Diary and Schedule pages (assets/blog/blog.css), prefixed sb- ---------- */
 body{background:#f3f2ef}
-.sband{--brand:#2747f5;--brand-2:#1430c4;--glow:#6b86ff;--hair:rgba(255,255,255,.2);position:relative;overflow:hidden;isolation:isolate;height:clamp(15rem,34vh,21rem);margin:clamp(.5rem,1.6vw,1.25rem);border-radius:clamp(1.25rem,2.2vw,2rem);color:#fff;background:radial-gradient(120% 80% at 70% 30%,var(--glow) 0%,transparent 55%),linear-gradient(160deg,var(--brand) 0%,var(--brand-2) 100%);font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Pretendard Variable",Pretendard,sans-serif;line-height:1.5}
+.sband{--brand:var(--kid,#2747f5);--brand-2:var(--kid-2,#1430c4);--glow:var(--kid-glow,#6b86ff);--hair:rgba(255,255,255,.2);position:relative;overflow:hidden;isolation:isolate;height:clamp(15rem,34vh,21rem);margin:clamp(.5rem,1.6vw,1.25rem);border-radius:clamp(1.25rem,2.2vw,2rem);color:#fff;background:radial-gradient(120% 80% at 70% 30%,var(--glow) 0%,transparent 55%),linear-gradient(160deg,var(--brand) 0%,var(--brand-2) 100%);font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Pretendard Variable",Pretendard,sans-serif;line-height:1.5}
 .sb-grid{position:absolute;inset:0;z-index:0;pointer-events:none}
 .sb-grid .gv,.sb-grid .gh{position:absolute;background:var(--hair)}.sb-grid .gv{top:0;bottom:0;width:1px}.sb-grid .gh{left:0;right:0;height:1px}
 .sb-grid .plus{position:absolute;width:13px;height:13px;margin:-6px 0 0 -6px}.sb-grid .plus::before,.sb-grid .plus::after{content:"";position:absolute;background:rgba(255,255,255,.75)}.sb-grid .plus::before{left:6px;top:0;width:1px;height:13px}.sb-grid .plus::after{top:6px;left:0;height:1px;width:13px}
@@ -885,8 +892,8 @@ body{background:#f3f2ef}
 /* the reading pages' own menu, under the band */
 .sb-tabs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;max-width:1120px;margin:4px auto 8px;padding:0 28px}
 .sb-tabs a{min-height:44px;display:inline-flex;align-items:center;padding:0 18px;border-radius:999px;background:#fff;color:#111114;font-weight:700;font-size:15px;box-shadow:inset 0 0 0 1px #0000001a}
-.sb-tabs a:hover{text-decoration:none;background:#fff;box-shadow:inset 0 0 0 1.5px #2747f5}
-.sb-tabs a[aria-current=page]{background:#2747f5;color:#fff;box-shadow:none}
+.sb-tabs a:hover{text-decoration:none;background:#fff;box-shadow:inset 0 0 0 1.5px var(--kid,#2747f5)}
+.sb-tabs a[aria-current=page]{background:var(--kid,#2747f5);color:#fff;box-shadow:none}
 .sb-tabs .trainer{margin:0 0 0 auto}
 @media(max-width:52rem){
   .sb-nav{gap:.75rem;flex-wrap:wrap}.sb-nav nav{order:3;flex-basis:100%;justify-content:flex-start;gap:1.25rem;font-size:.9rem}.sb-lock{margin-left:auto}

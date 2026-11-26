@@ -203,20 +203,36 @@
     return reserved.filter(function (b) { return b.slug === slug; })[0] || books.filter(function (b) { return b.slug === slug; })[0];
   }
 
+  var KID = window.KID || { name: '시몬', ni: '시몬이' };
   function promptFor(b) {
-    return [
-      '너는 ' + gradeLabel(weekly.grade) + ' 시몬의 독서 친구야. 시몬이 ' + b.author + '의 「' + b.title + '」' + (hasFinal(b.title) ? '을' : '를') + ' 다 읽고 종이에 손으로 독후감을 썼어. 사진을 함께 올릴게.',
+    var who = KID.name, whoI = KID.ni || iga(KID.name);
+    if (KID.young) return [
+      '너는 ' + gradeLabel(weekly.grade) + ' ' + who + '의 독서 친구야. ' + whoI + ' ' + b.author + '의 「' + b.title + '」' + (hasFinal(b.title) ? '을' : '를') + ' 다 읽고 종이에 그림 독후감을 그렸어. 사진을 함께 올릴게. 보호자가 옆에서 읽어 줄 거야.',
       '책 소개: ' + (b.about || ''),
       '',
-      '먼저 사진 속 독후감을 그대로 옮겨 적어 줘. 글씨를 읽기 어려운 곳은 [?]로 두고 시몬에게 물어봐.',
-      '그다음 아래 순서로 대화해 줘. 한 번에 질문은 하나만 하고, 시몬이 대답하면 다음으로 넘어가.',
-      '1. 독후감에서 시몬이 가장 하고 싶은 말을 한 문장으로 다시 말해 보게 해 줘.',
+      '먼저 그림에 무엇이 있는지 다정하게 말해 주고, 쓴 글자가 있으면 그대로 옮겨 적어 줘.',
+      '그다음 아래 순서로 이야기해 줘. 한 번에 질문은 하나만 하고, ' + whoI + ' 대답하면 다음으로 넘어가.',
+      '1. 이 장면을 왜 골랐는지 물어봐 줘.',
+      '2. 그때 주인공의 마음이 어땠을지 물어봐 줘.',
+      '3. 이야기에서 맨 처음, 그다음, 마지막에 무슨 일이 있었는지 차례대로 말해 보게 해 줘.',
+      '4. 나라면 어떻게 했을지 물어봐 줘.',
+      '5. 마지막으로 그림 독후감에서 멋진 점 두 가지를 칭찬해 줘.',
+      '',
+      '1학년도 알아듣는 아주 쉬운 말로, 짧게, 다정하게 이야기해 줘. 답을 먼저 알려 주지 말고 스스로 생각하게 해 줘.'
+    ].join('\n');
+    return [
+      '너는 ' + gradeLabel(weekly.grade) + ' ' + who + '의 독서 친구야. ' + whoI + ' ' + b.author + '의 「' + b.title + '」' + (hasFinal(b.title) ? '을' : '를') + ' 다 읽고 종이에 손으로 독후감을 썼어. 사진을 함께 올릴게.',
+      '책 소개: ' + (b.about || ''),
+      '',
+      '먼저 사진 속 독후감을 그대로 옮겨 적어 줘. 글씨를 읽기 어려운 곳은 [?]로 두고 ' + who + '에게 물어봐.',
+      '그다음 아래 순서로 대화해 줘. 한 번에 질문은 하나만 하고, ' + whoI + ' 대답하면 다음으로 넘어가.',
+      '1. 독후감에서 ' + whoI + ' 가장 하고 싶은 말을 한 문장으로 다시 말해 보게 해 줘.',
       '2. 그렇게 생각한 까닭을 책 속 장면이나 문장에서 찾게 해 줘.',
-      '3. 다른 사람이라면 어떻게 생각할지 반대 의견을 하나 들려주고, 시몬이 어떻게 대답할지 물어봐 줘.',
-      '4. 이야기의 처음, 가운데, 끝이 어떻게 이어지는지 시몬의 말로 정리하게 해 줘.',
+      '3. 다른 사람이라면 어떻게 생각할지 반대 의견을 하나 들려주고, ' + whoI + ' 어떻게 대답할지 물어봐 줘.',
+      '4. 이야기의 처음, 가운데, 끝이 어떻게 이어지는지 ' + who + '의 말로 정리하게 해 줘.',
       '5. 마지막으로 독후감에서 잘한 점 두 가지와 다음에 해 볼 점 한 가지를 알려 줘.',
       '',
-      '답을 먼저 알려 주지 말고, 시몬이 스스로 생각하도록 물어봐 줘. 쉬운 말로, 다정하게 이야기해 줘.'
+      '답을 먼저 알려 주지 말고, ' + whoI + ' 스스로 생각하도록 물어봐 줘. 쉬운 말로, 다정하게 이야기해 줘.'
     ].join('\n');
   }
 
@@ -331,7 +347,7 @@
     var onServer = (DATA.shelf || []).some(function (s) { return s.slug === last.slug || s.title === last.title; });
     $('[data-guardian]').hidden = onServer;
     var md = markdownFor(last, last.pickedAt, last.doneAt);
-    $('[data-github]').href = 'https://github.com/' + DATA.repo + '/new/main/_books?filename=' + encodeURIComponent(last.slug + '.md') + '&value=' + encodeURIComponent(md);
+    $('[data-github]').href = 'https://github.com/' + DATA.repo + '/new/main/' + (DATA.booksDir || '_books') + '?filename=' + encodeURIComponent(last.slug + '.md') + '&value=' + encodeURIComponent(md);
   }
 
   // ---------- the card pack: tear the top strip, the card slides out face down, tap to flip ----------
@@ -746,7 +762,7 @@
         (lh.pulls || []).forEach(function (e) {
           state.binder = state.binder || {};
           var k = e.id + (e.rev ? ':r' : '');
-          var b = state.binder[k] || (state.binder[k] = { id: e.id, name: e.name, code: e.code, rev: !!e.rev, book: !!e.book, label: e.label, img: e.img, n: 0 });
+          var b = state.binder[k] || (state.binder[k] = { id: e.id, name: e.name, code: e.code, rev: !!e.rev, book: !!e.book, label: e.label, img: e.img, game: e.game, n: 0 });
           b.n++;
         });
       }

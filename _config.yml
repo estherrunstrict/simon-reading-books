@@ -16,6 +16,20 @@ google_books_key: ""
 data4library_key: ""
 readcheck:
   pass_percent: 80
+# Whose reading site this build is. Sophia's build adds _kids/sophia/_config.yml on top of this file
+# (scripts/build_sophia.sh), which swaps this block, the data folder and the books folder.
+kid:
+  key: simon
+  name: 시몬
+  ni: 시몬이
+  en: Simon
+  theme: "#2747f5"
+  theme_2: "#1430c4"
+  glow: "#6b86ff"
+  img: /assets/img/
+  card_back: https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg
+  cards: 진짜 포켓몬 카드
+  young: false
 collections:
   books:
     output: true

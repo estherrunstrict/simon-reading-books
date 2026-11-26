@@ -9,7 +9,9 @@
   var shelf = addData ? (JSON.parse(addData.textContent).books || []).map(function (b) { return b.title; }) : [];
   var base = cfg.base || '';
   var $ = function (s, r) { return (r || document).querySelector(s); };
-  var GRADES = ['초5', '초6', '중1', '중2', '중3', '고1', '고2'];
+  // The grades the list covers, in order (초5–고2 for Simon, 초1–초4 for Sophia).
+  var GRADES = NB.catalog.reduce(function (a, b) { if (a.indexOf(b.grade) === -1) a.push(b.grade); return a; }, []);
+  var KID = window.KID || {};
 
   function h(tag, props) {
     var el = document.createElement(tag);
@@ -29,7 +31,7 @@
 
   // This year's grade: the grade in _data/weekly.yml moves up one each March.
   var now = new Date(), schoolYear = now.getMonth() >= 2 ? now.getFullYear() : now.getFullYear() - 1;
-  var gi = Math.max(0, Math.min(GRADES.length - 1, GRADES.indexOf(cfg.grade || '초5') + (schoolYear - (cfg.gradeYear || schoolYear))));
+  var gi = Math.max(0, Math.min(GRADES.length - 1, Math.max(0, GRADES.indexOf(cfg.grade || GRADES[0])) + (schoolYear - (cfg.gradeYear || schoolYear))));
   var grade = GRADES[gi];
   var shown = grade;
   var pending = null; // a book waiting for a slot when both are full
@@ -39,16 +41,18 @@
     return h('span', { class: cls + ' drawn-cover cover-' + (b.title.length % 5), 'aria-hidden': 'true' }, h('b', {}, b.title), h('i', {}, b.author));
   }
   function packView(card, big) {
-    var sid = String(card.tcg_id).split('-'), small = 'https://images.pokemontcg.io/' + sid[0] + '/' + sid[1] + '.png';
+    var sid = String(card.tcg_id).split('-'), small = card.image_small || 'https://images.pokemontcg.io/' + sid[0] + '/' + sid[1] + '.png';
     return h('div', { class: 'np' + (big ? ' np-big' : '') },
       h('img', { class: 'np-pack', src: big ? card.pack : card.pack.replace('_in_1000x1000', '_in_200x200'), alt: card.set + ' 부스터 팩', loading: 'lazy' }),
       h('img', { class: 'np-card', src: small, alt: card.name_ko + ' 카드', loading: 'lazy' }));
   }
 
-  // Reading order for this grade: own Must, the next two grades' Must, then own Better.
+  // Reading order for this grade: own Must, the next grades' Must (two for Simon, one for Sophia: kid.ahead), then own Better.
   function queue() {
     var q = [];
-    [0, 1, 2].forEach(function (k) { var g = GRADES[gi + k]; if (g) q = q.concat(NB.catalog.filter(function (b) { return b.tier === g + ' Must'; })); });
+    var ahead = KID.ahead == null ? 2 : KID.ahead, ks = [];
+    for (var k0 = 0; k0 <= ahead; k0++) ks.push(k0);
+    ks.forEach(function (k) { var g = GRADES[gi + k]; if (g) q = q.concat(NB.catalog.filter(function (b) { return b.tier === g + ' Must'; })); });
     return q.concat(NB.catalog.filter(function (b) { return b.tier === grade + ' Better'; }));
   }
 
@@ -79,7 +83,7 @@
       li.className = 'next-slot' + (b ? '' : ' is-empty') + (pending ? ' is-target' : '');
       var label = h('span', { class: 'slot-no' }, (i + 1) + '번 책');
       if (!b) {
-        li.append(label, h('img', { class: 'slot-art', src: base + '/assets/img/next-slot.webp', alt: '', width: 160, height: 149 }),
+        li.append(label, h('img', { class: 'slot-art', src: base + (KID.img || '/assets/img/') + 'next-slot.webp', alt: '', width: 160, height: 149 }),
           h('p', { class: 'slot-empty' }, pending ? '여기에 넣을까요?' : '아래 목록에서 ‘골라 두기’를 눌러요'));
       } else {
         var card = NB.card(slug);

@@ -1,0 +1,56 @@
+# 이번 주에 소피아에게 제안하는 두 권이에요. 시몬의 _data/weekly.yml과 같은 모양이에요.
+# grade, grade_year: 그 해 3월 기준 학년. 2027년 3월에 초등학교 1학년이 되니, 그때까지는 초1 목록에서 골라요.
+# card: 책을 다 읽으면 팩을 뜯어 받는 진짜 디즈니 로카나 카드(디즈니 프린세스). image는 lorcast.com, pack은 그 세트의
+#   부스터 팩 사진(TCGplayer)을 바로 불러와요. 저장소에는 그림을 복사하지 않아요. number는 roadmap.yml 전체 순서(1부터).
+proposed: 2026-11-26
+grade: 초1
+grade_year: 2027
+books:
+  - slug: gangajittong
+    title: "강아지똥"
+    author: "권정생 글, 정승각 그림"
+    publisher: "길벗어린이"
+    isbn: "9788986621136"
+    pages: 30
+    size_mm: [235, 246, 6]
+    cover: "/assets/covers/sophia/gangajittong.webp"
+    book_type: 이야기
+    genre: "그림책"
+    tier: "초1 Must"
+    power: "쓸모없어 보이던 강아지똥의 마음이 어떻게 바뀌는지 따라가요"
+    about: "길가에 버려진 강아지똥이 민들레 꽃을 피우는 거름이 되기까지의 이야기예요."
+    card:
+      tcg_id: "lor10-241"
+      name: "Ariel - Ethereal Voice"
+      name_ko: "아리엘"
+      rarity_label: "아이코닉"
+      set: "Whispers in the Well"
+      image: "https://cards.lorcast.io/card/digital/large/crd_5b53a4c5b3854ab0ba71dd388aaa0d9f.avif"
+      image_small: "https://cards.lorcast.io/card/digital/normal/crd_5b53a4c5b3854ab0ba71dd388aaa0d9f.avif"
+      pack: "https://tcgplayer-cdn.tcgplayer.com/product/652701_in_1000x1000.jpg"
+      number: 1
+      rarity: SR
+  - slug: alsatang
+    title: "알사탕"
+    author: "백희나"
+    publisher: "Storybowl(스토리보울)"
+    isbn: "9791198610614"
+    pages: 48
+    size_mm: [250, 250, 6]
+    cover: "/assets/covers/sophia/alsatang.webp"
+    book_type: 이야기
+    genre: "그림책"
+    tier: "초1 Must"
+    power: "사탕마다 들리는 속마음을 듣고 동동이가 어떻게 달라지는지 찾아봐요"
+    about: "혼자 놀던 동동이가 신기한 알사탕을 먹고 주변의 속마음을 듣게 돼요."
+    card:
+      tcg_id: "lor11-241"
+      name: "Pocahontas - Peacekeeper"
+      name_ko: "포카혼타스"
+      rarity_label: "아이코닉"
+      set: "Winterspell"
+      image: "https://cards.lorcast.io/card/digital/large/crd_40a3f6d8de604ff085fa5629597780a3.avif"
+      image_small: "https://cards.lorcast.io/card/digital/normal/crd_40a3f6d8de604ff085fa5629597780a3.avif"
+      pack: "https://tcgplayer-cdn.tcgplayer.com/product/664821_in_1000x1000.jpg"
+      number: 2
+      rarity: SR
