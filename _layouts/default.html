@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="{{ page.summary | default: site.description | escape }}">
-  <meta name="theme-color" content="#3d5bd9">
+  <meta name="theme-color" content="#2747f5">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="시몬의 책">
   <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
@@ -20,19 +20,20 @@
 </head>
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
-  <header class="mast">
-    <div class="mast-inner">
-      <a class="brand" href="{{ '/reading/' | relative_url }}"><span class="mark" aria-hidden="true"></span>{{ site.title | escape }}</a>
-      <nav aria-label="주 메뉴">
-        <span class="trainer" data-trainer hidden></span>
-        <a href="{{ '/' | relative_url }}">시몬 블로그</a>
-        <a href="{{ '/reading/' | relative_url }}#shelf"{% if page.url == '/reading/' %} aria-current="page"{% endif %}>내 책장</a>
-        <a class="nav-cta" href="{{ '/reading/add/' | relative_url }}"{% if page.url == '/reading/add/' %} aria-current="page"{% endif %}>책 추가</a>
-      </nav>
-    </div>
-  </header>
+  {% if page.url == '/reading/add/' %}{% assign kicker = '다음 책 고르기' %}{% elsif page.url == '/reading/' %}{% assign kicker = '책 읽기' %}{% elsif page.collection == 'books' %}{% assign kicker = '내 책장' %}{% else %}{% assign kicker = page.title %}{% endif %}
+  <section class="sband"><div class="sb-grid" aria-hidden="true"><i class="gv" style="left:16.66%"></i><i class="gv" style="left:33.33%"></i><i class="gv" style="left:50%"></i><i class="gv" style="left:66.66%"></i><i class="gv" style="left:83.33%"></i><i class="gh" style="top:14%"></i><i class="gh" style="top:42%"></i><i class="gh" style="top:70%"></i><b class="plus" style="left:0%;top:14%"></b><b class="plus" style="left:33.33%;top:14%"></b><b class="plus" style="left:66.66%;top:14%"></b><b class="plus" style="left:100%;top:14%"></b><b class="plus" style="left:0%;top:70%"></b><b class="plus" style="left:50%;top:42%"></b><b class="plus" style="left:100%;top:70%"></b><b class="plus" style="left:83.33%;top:42%"></b></div><header class="sb-nav"><a class="sb-mark" href="/">Simon<sup>®</sup></a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/diary/">Diary</a><a href="{{ '/reading/' | relative_url }}" aria-current="page">Reading</a><a href="/schedule/">Schedule</a><span class="sb-soon">Soon<sup>(04)</sup></span></nav>
+    <button type="button" class="sb-lock" data-lock-reading aria-label="Lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Lock</span></button></header>
+    <p class="sb-back" aria-hidden="true">READING</p><div class="sb-copy"><p class="sb-year">Simon · {{ kicker | escape }}</p><p class="sb-name">READING</p></div></section>
+  <nav class="sb-tabs" aria-label="책 읽기 메뉴">
+    <a href="{{ '/reading/' | relative_url }}"{% if page.url == '/reading/' %} aria-current="page"{% endif %}>이번 책</a>
+    <a href="{{ '/reading/' | relative_url }}#shelf">내 책장</a>
+    <a href="{{ '/reading/add/' | relative_url }}"{% if page.url == '/reading/add/' %} aria-current="page"{% endif %}>책 추가</a>
+    <span class="trainer" data-trainer hidden></span>
+  </nav>
   <main id="main">{{ content }}</main>
-  <footer class="foot"><span>한 주에 한 권, 시몬의 책</span></footer>
+  <footer class="foot"><span>© {{ site.time | date: '%Y' }} Simon · <a href="/">Home</a> · 한 주에 한 권, 시몬의 책</span></footer>
+  <script>document.addEventListener('click',function(e){if(!e.target.closest('[data-lock-reading]'))return;try{localStorage.removeItem('blog-key')}catch(x){}location.href='/';});</script>
   <script src="{{ '/assets/readcheck.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   <script src="{{ '/assets/structure.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   <script src="{{ '/assets/card.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
