@@ -11,9 +11,11 @@ permalink: /reading/
   "base": {{ site.baseurl | jsonify }},
   "cardTotal": {{ card_total }},
   "weekly": {{ weekly | jsonify | replace: "</", "<\/" }},
-  "pools": { {% for b in weekly.books %}{% assign sid = b.card.tcg_id | split: "-" | first %}{{ sid | jsonify }}: {{ site.data.card_pools[sid] | jsonify | replace: "</", "<\/" }}{% unless forloop.last %}, {% endunless %}{% endfor %} },
+  "pools": {{ site.data.card_pools | jsonify | replace: "</", "<\/" }},
   "shelf": [{% for b in finished_books %}{"slug": {{ b.slug | jsonify }}, "title": {{ b.title | jsonify }}, "finished": {{ b.finished | date: "%Y-%m-%d" | jsonify }}, "card": {% if b.card %}true{% else %}false{% endif %}}{% unless forloop.last %},{% endunless %}{% endfor %}]
 }</script>
+{% capture catalog %}{% include catalog-json.html %}{% endcapture %}
+<script id="catalog-data" type="application/json">{{ catalog | replace: "</", "<\/" }}</script>
 
 <section class="quest" id="quest" aria-live="polite">
   <div class="q-choose" data-view="choose">
@@ -103,7 +105,9 @@ permalink: /reading/
     <img class="buddy-big" data-done-buddy alt="">
     <h1 data-done-title></h1>
     <p class="q-sub" data-done-sub></p>
-    <p class="guardian" data-guardian>보호자 확인: <a class="linkish" data-github target="_blank" rel="noopener">GitHub에 기록하기</a>를 눌러 저장해 주세요. 저장해야 다음 토요일에 새 책 두 권이 준비돼요.</p>
+    <div class="row-actions center next-cta" data-next-cta hidden><button type="button" class="action spark big" data-next-choose>골라 둔 책 중에서 다음 책 고르기</button></div>
+    <p class="next-hint" data-next-hint hidden><a class="linkish" href="{{ '/reading/add/' | relative_url }}">책 추가</a>에서 다음에 읽을 책 두 권을 미리 골라 두면, 다 읽자마자 바로 골라 시작할 수 있어요.</p>
+    <p class="guardian" data-guardian>보호자 확인: <a class="linkish" data-github target="_blank" rel="noopener">GitHub에 기록하기</a>를 눌러 저장해 주세요.<span data-guardian-tail> 저장해야 다음 토요일에 새 책 두 권이 준비돼요.</span></p>
   </div>
 </section>
 

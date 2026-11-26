@@ -37,7 +37,9 @@
   <script src="{{ '/assets/structure.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   <script src="{{ '/assets/card.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   <script src="{{ '/assets/pack.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  {% if page.url == '/reading/' or page.url == '/reading/add/' %}<script src="{{ '/assets/nextbooks.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
   {% if page.url == '/reading/' %}<script src="{{ '/assets/quest.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
-  {% if page.url == '/reading/add/' %}<script src="{{ '/assets/add-book.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
+  {% if page.url == '/reading/add/' %}<script src="{{ '/assets/add-book.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  <script src="{{ '/assets/add-next.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endif %}
 </body>
 </html>

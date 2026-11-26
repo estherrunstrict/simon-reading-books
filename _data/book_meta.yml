@@ -1,0 +1,1251 @@
+# _data/roadmap.yml 책마다 알라딘에서 찾은 표지·ISBN·쪽수·크기예요. scripts/roadmap_books.rb가 써요.
+madangeul-naon-amtal:
+  aladin: 349172
+  aladin_title: 마당을 나온 암탉 (반양장)
+  isbn: '9788971968710'
+  pages: 200
+  size_mm:
+  - 152
+  - 223
+  - 14
+  cover: "/assets/covers/madangeul-naon-amtal.webp"
+suhak-gwisin:
+  aladin: 84654
+  aladin_title: 수학 귀신
+  isbn: '9788949190013'
+  pages: 296
+  size_mm:
+  - 148
+  - 210
+  - 21
+  cover: "/assets/covers/suhak-gwisin.webp"
+eorin-wangja:
+  aladin: 68534943
+  aladin_title: 어린 왕자
+  isbn: '9788932917245'
+  pages: 136
+  size_mm:
+  - 157
+  - 220
+  - 9
+  cover: "/assets/covers/eorin-wangja.webp"
+dongmulnongjang:
+  aladin: 40674
+  aladin_title: 동물농장
+  isbn: '9788937460050'
+  pages: 184
+  size_mm:
+  - 132
+  - 225
+  - 13
+  cover: "/assets/covers/dongmulnongjang.webp"
+nonriya-nolja:
+  aladin: 314773568
+  aladin_title: 논리야, 놀자
+  isbn: '9791169811149'
+  pages: 168
+  size_mm:
+  - 163
+  - 225
+  - 12
+  cover: "/assets/covers/nonriya-nolja.webp"
+syalrotui-geomijul:
+  aladin: 258605
+  aladin_title: 샬롯의 거미줄
+  isbn: '9788952709530'
+  pages: 240
+  size_mm:
+  - 152
+  - 223
+  - 17
+  cover: "/assets/covers/syalrotui-geomijul.webp"
+chaekgwa-nonineun-jip:
+  aladin: 3050621
+  aladin_title: 책과 노니는 집
+  isbn: '9788954607346'
+  pages: 192
+  size_mm:
+  - 152
+  - 223
+  - 13
+  cover: "/assets/covers/chaekgwa-nonineun-jip.webp"
+haenguni-gureuneun-sokdo:
+  aladin: 346462909
+  aladin_title: 행운이 구르는 속도
+  isbn: '9791169813341'
+  pages: 148
+  size_mm:
+  - 147
+  - 210
+  - 10
+  cover: "/assets/covers/haenguni-gureuneun-sokdo.webp"
+matilda:
+  aladin: 168433923
+  aladin_title: 마틸다 (반양장)
+  isbn: '9788952787330'
+  pages: 320
+  size_mm:
+  - 152
+  - 223
+  - 22
+  cover: "/assets/covers/matilda.webp"
+yeoldu-sale-bujaga-doen-kira:
+  aladin: 290711
+  aladin_title: 열두 살에 부자가 된 키라
+  isbn: '9788950990015'
+  pages: 250
+  size_mm:
+  - 152
+  - 223
+  - 17
+  cover: "/assets/covers/yeoldu-sale-bujaga-doen-kira.webp"
+chojeongri-pyeonji:
+  aladin: 402733313
+  aladin_title: 초정리 편지 (리커버 한정판)
+  isbn: '9788936442293'
+  pages: 214
+  size_mm:
+  - 152
+  - 225
+  - 15
+  cover: "/assets/covers/chojeongri-pyeonji.webp"
+maeumui-ondoneun-myeot-doilkkayo:
+  aladin: 88949693
+  aladin_title: 마음의 온도는 몇 도일까요?
+  isbn: '9788934993537'
+  pages: 108
+  size_mm:
+  - 168
+  - 234
+  - 7
+  cover: "/assets/covers/maeumui-ondoneun-myeot-doilkkayo.webp"
+dongmuldeului-ginagin-yeohaeng:
+  aladin: 242267370
+  aladin_title: 동물들의 기나긴 여행
+  isbn: '9788943312992'
+  pages: 48
+  size_mm:
+  - 240
+  - 300
+  - 6
+  cover: "/assets/covers/dongmuldeului-ginagin-yeohaeng.webp"
+ppalgan-byeok:
+  aladin: 171815286
+  aladin_title: 빨간 벽
+  isbn: '9791188909094'
+  pages: 40
+  size_mm:
+  - 245
+  - 245
+  - 6
+  cover: "/assets/covers/ppalgan-byeok.webp"
+pureun-saja-wanini:
+  aladin: 62323112
+  aladin_title: 푸른 사자 와니니
+  isbn: '9788936442804'
+  pages: 216
+  size_mm:
+  - 152
+  - 223
+  - 15
+  cover: "/assets/covers/pureun-saja-wanini.webp"
+sigan-gage:
+  aladin: 22477272
+  aladin_title: 시간 가게
+  isbn: '9788954620260'
+  pages: 204
+  size_mm:
+  - 153
+  - 220
+  - 14
+  cover: "/assets/covers/sigan-gage.webp"
+hanbamjung-dalbit-sikdang:
+  aladin: 137181445
+  aladin_title: 한밤중 달빛 식당
+  isbn: '9788949161969'
+  pages: 84
+  size_mm:
+  - 155
+  - 223
+  - 6
+  cover: "/assets/covers/hanbamjung-dalbit-sikdang.webp"
+eorini-gwahak-hyeongsadae-csi:
+  aladin: 2426528
+  aladin_title: 어린이 과학 형사대 CSI 2
+  isbn: '9788957364475'
+  pages: 180
+  size_mm:
+  - 188
+  - 240
+  - 12
+  cover: "/assets/covers/eorini-gwahak-hyeongsadae-csi.webp"
+namureul-simeun-saram:
+  aladin: 568043
+  aladin_title: 나무를 심은 사람
+  isbn: '9788974430702'
+  pages: 149
+  size_mm:
+  - 135
+  - 195
+  - 10
+  cover: "/assets/covers/namureul-simeun-saram.webp"
+uri-ban-geokjeong-tamjeong-chawonhui:
+  aladin: 385427979
+  aladin_title: 우리 반 걱정 탐정 차원희
+  isbn: '9791163144496'
+  pages: 164
+  size_mm:
+  - 152
+  - 215
+  - 11
+  cover: "/assets/covers/uri-ban-geokjeong-tamjeong-chawonhui.webp"
+naui-raim-orenjinamu:
+  aladin: 6946832
+  aladin_title: 나의 라임 오렌지나무
+  isbn: '9788972976196'
+  pages: 301
+  size_mm:
+  - 128
+  - 188
+  - 21
+  cover: "/assets/covers/naui-raim-orenjinamu.webp"
+5beon-rein:
+  aladin: 251511443
+  aladin_title: 5번 레인
+  isbn: '9788954674638'
+  pages: 240
+  size_mm:
+  - 154
+  - 220
+  - 17
+  cover: "/assets/covers/5beon-rein.webp"
+chaek-kkakneun-sonyeon:
+  aladin: 131669420
+  aladin_title: 책 깎는 소년
+  isbn: '9791188609031'
+  pages: 186
+  size_mm:
+  - 153
+  - 215
+  - 13
+  cover: "/assets/covers/chaek-kkakneun-sonyeon.webp"
+bangapda-nonriya:
+  aladin: 267522
+  aladin_title: 반갑다, 논리야
+  isbn: '9788971967676'
+  pages: 188
+  size_mm:
+  - 152
+  - 223
+  - 13
+  cover: "/assets/covers/bangapda-nonriya.webp"
+saenggakhandaneun-geot:
+  aladin: 6734392
+  aladin_title: 생각한다는 것
+  isbn: '9788994407005'
+  pages: 136
+  size_mm:
+  - 165
+  - 210
+  - 9
+  cover: "/assets/covers/saenggakhandaneun-geot.webp"
+hanguksa-pyeonji:
+  aladin: 3233324
+  aladin_title: 한국사 편지 1
+  isbn: '9788991221444'
+  pages: 216
+  size_mm:
+  - 188
+  - 230
+  - 15
+  cover: "/assets/covers/hanguksa-pyeonji.webp"
+galmaegiege-naneun-beopeul-gareuchyeo-jun-goyangi:
+  aladin: 282188288
+  aladin_title: 갈매기에게 나는 법을 가르쳐준 고양이
+  isbn: '9791166890475'
+  pages: 164
+  size_mm:
+  - 153
+  - 210
+  - 11
+  cover: "/assets/covers/galmaegiege-naneun-beopeul-gareuchyeo-jun-goyangi.webp"
+momo:
+  aladin: 191015
+  aladin_title: 모모
+  isbn: '9788949190020'
+  pages: 368
+  size_mm:
+  - 148
+  - 210
+  - 26
+  cover: "/assets/covers/momo.webp"
+geuraetdamyeon-eottaeteulkka:
+  aladin: 292863631
+  aladin_title: 그랬다면 어땠을까
+  isbn: '9791191131338'
+  pages: 32
+  size_mm:
+  - 200
+  - 280
+  - 6
+  cover: "/assets/covers/geuraetdamyeon-eottaeteulkka.webp"
+uibyeongjang-yunhuisun:
+  aladin: 208306620
+  aladin_title: 의병장 윤희순
+  isbn: '9791170284628'
+  pages: 61
+  size_mm:
+  - 178
+  - 230
+  - 6
+  cover: "/assets/covers/uibyeongjang-yunhuisun.webp"
+modeun-sungani-byeol:
+  aladin: 307691554
+  aladin_title: 모든 순간이 별
+  isbn: '9791191197358'
+  pages: 112
+  size_mm:
+  - 150
+  - 200
+  - 8
+  cover: "/assets/covers/modeun-sungani-byeol.webp"
+dangyeonhan-geoteun-eopeo:
+  aladin: 392513312
+  aladin_title: 당연한 것은 없어
+  isbn: '9788936453343'
+  pages: 184
+  size_mm:
+  - 134
+  - 195
+  - 13
+  cover: "/assets/covers/dangyeonhan-geoteun-eopeo.webp"
+jigu-jeongbokeul-wihan-goronggorong-ingan-gwanchal:
+  aladin: 383272250
+  aladin_title: 지구 정복을 위한 고롱고롱 인간 관찰기
+  isbn: '9788961773621'
+  pages: 136
+  size_mm:
+  - 181
+  - 241
+  - 9
+  cover: "/assets/covers/jigu-jeongbokeul-wihan-goronggorong-ingan-gwanchal.webp"
+hyumeon-2-0:
+  aladin: 379516177
+  aladin_title: 휴먼 2.0
+  isbn: '9791194028659'
+  pages: 116
+  size_mm:
+  - 153
+  - 215
+  - 8
+  cover: "/assets/covers/hyumeon-2-0.webp"
+peurindeul-juseyo:
+  aladin: 308267
+  aladin_title: 프린들 주세요
+  isbn: '9788971968345'
+  pages: 154
+  size_mm:
+  - 154
+  - 210
+  - 11
+  cover: "/assets/covers/peurindeul-juseyo.webp"
+mongsil-eonni:
+  aladin: 16345414
+  aladin_title: 몽실 언니
+  isbn: '9788936433895'
+  pages: 300
+  size_mm:
+  - 152
+  - 223
+  - 21
+  cover: "/assets/covers/mongsil-eonni.webp"
+kkotdeulege-huimangeul:
+  aladin: 205657
+  aladin_title: 꽃들에게 희망을 (반양장)
+  isbn: '9788972598435'
+  pages: 144
+  size_mm:
+  - 172
+  - 227
+  - 10
+  cover: "/assets/covers/kkotdeulege-huimangeul.webp"
+eorinireul-wihan-yeoksaui-sseulmo:
+  aladin: 298813712
+  aladin_title: 어린이를 위한 역사의 쓸모 1
+  isbn: '9791130692661'
+  pages: 208
+  size_mm:
+  - 145
+  - 217
+  - 14
+  cover: "/assets/covers/eorinireul-wihan-yeoksaui-sseulmo.webp"
+amondeu:
+  aladin: 106366621
+  aladin_title: 아몬드 (무선)
+  isbn: '9788936456788'
+  pages: 236
+  size_mm:
+  - 152
+  - 210
+  - 16
+  cover: "/assets/covers/amondeu.webp"
+gieok-jeondalja:
+  aladin: 337103419
+  aladin_title: 기억 전달자
+  isbn: '9788949123554'
+  pages: 340
+  size_mm:
+  - 133
+  - 203
+  - 24
+  cover: "/assets/covers/gieok-jeondalja.webp"
+uahan-geojitmal:
+  aladin: 350999446
+  aladin_title: 우아한 거짓말 (어나더커버)
+  isbn: '9788936456221'
+  pages: 228
+  size_mm:
+  - 152
+  - 210
+  - 16
+  cover: "/assets/covers/uahan-geojitmal.webp"
+sopiui-segye:
+  aladin: 73429011
+  aladin_title: 소피의 세계 (합본)
+  isbn: '9788932317663'
+  pages: 748
+  size_mm:
+  - 152
+  - 218
+  - 40
+  cover: "/assets/covers/sopiui-segye.webp"
+gombeurichi-segyesa:
+  aladin: 194421842
+  aladin_title: 곰브리치 세계사 (예일대 특별판)
+  isbn: '9788949189536'
+  pages: 440
+  size_mm:
+  - 180
+  - 228
+  - 31
+  cover: "/assets/covers/gombeurichi-segyesa.webp"
+gomapda-nonriya:
+  aladin: 260018
+  aladin_title: 고맙다 논리야
+  isbn: '9788971967379'
+  pages: 188
+  size_mm:
+  - 148
+  - 210
+  - 13
+  cover: "/assets/covers/gomapda-nonriya.webp"
+hariharaui-gwahakbeulrogeu:
+  aladin: 589826
+  aladin_title: 하리하라의 과학블로그
+  isbn: '9788952204318'
+  pages: 220
+  size_mm:
+  - 160
+  - 223
+  - 15
+  cover: "/assets/covers/hariharaui-gwahakbeulrogeu.webp"
+wandeuki:
+  aladin: 1935594
+  aladin_title: 완득이
+  isbn: '9788936456085'
+  pages: 211
+  size_mm:
+  - 148
+  - 210
+  - 15
+  cover: "/assets/covers/wandeuki.webp"
+yujingwa-yujin:
+  aladin: 500398
+  aladin_title: 유진과 유진
+  isbn: '9788957980132'
+  pages: 285
+  size_mm:
+  - 127
+  - 188
+  - 20
+  cover: "/assets/covers/yujingwa-yujin.webp"
+cherisaeu-bimilgeulipnida:
+  aladin: 179700075
+  aladin_title: '체리새우 : 비밀글입니다'
+  isbn: '9788954654753'
+  pages: 200
+  size_mm:
+  - 140
+  - 205
+  - 14
+  cover: "/assets/covers/cherisaeu-bimilgeulipnida.webp"
+nae-ireumeun-manggo:
+  aladin: 11863784
+  aladin_title: 내 이름은 망고
+  isbn: '9788936456368'
+  pages: 260
+  size_mm:
+  - 148
+  - 210
+  - 18
+  cover: "/assets/covers/nae-ireumeun-manggo.webp"
+10daereul-wihan-jeonguiran-mueotinga:
+  aladin: 49477879
+  aladin_title: 10대를 위한 정의란 무엇인가
+  isbn: '9788937886966'
+  pages: 216
+  size_mm:
+  - 152
+  - 225
+  - 15
+  cover: "/assets/covers/10daereul-wihan-jeonguiran-mueotinga.webp"
+dodeokeul-wihan-cheolhak-tongjorim:
+  aladin: 93052053
+  aladin_title: '도덕을 위한 철학통조림 : 매콤한 맛'
+  isbn: '9788934993612'
+  pages: 288
+  size_mm:
+  - 150
+  - 210
+  - 20
+  cover: "/assets/covers/dodeokeul-wihan-cheolhak-tongjorim.webp"
+eorinireul-wihan-sapienseu:
+  aladin: 240521636
+  aladin_title: 어린이를 위한 사피엔스
+  isbn: '9791160403800'
+  pages: 72
+  size_mm:
+  - 210
+  - 295
+  - 6
+  cover: "/assets/covers/eorinireul-wihan-sapienseu.webp"
+galmaegiui-kkum:
+  aladin: 978993
+  aladin_title: 갈매기의 꿈
+  isbn: '9788992751193'
+  pages: 119
+  size_mm:
+  - 154
+  - 194
+  - 8
+  cover: "/assets/covers/galmaegiui-kkum.webp"
+honggildongjeon:
+  aladin: 3103872
+  aladin_title: 홍길동전
+  isbn: '9788937462009'
+  pages: 244
+  size_mm:
+  - 132
+  - 225
+  - 17
+  cover: "/assets/covers/honggildongjeon.webp"
+siganeul-paneun-sangjeom:
+  aladin: 16166340
+  aladin_title: 시간을 파는 상점
+  isbn: '9788954427173'
+  pages: 268
+  size_mm:
+  - 140
+  - 205
+  - 19
+  cover: "/assets/covers/siganeul-paneun-sangjeom.webp"
+aengmusae-jukigi:
+  aladin: 62135003
+  aladin_title: 앵무새 죽이기
+  isbn: '9788932917207'
+  pages: 544
+  size_mm:
+  - 120
+  - 188
+  - 38
+  cover: "/assets/covers/aengmusae-jukigi.webp"
+peinteu:
+  aladin: 189589576
+  aladin_title: 페인트 (무선)
+  isbn: '9788936456894'
+  pages: 204
+  size_mm:
+  - 152
+  - 210
+  - 14
+  cover: "/assets/covers/peinteu.webp"
+demian:
+  aladin: 260084
+  aladin_title: 데미안
+  isbn: '9788937460449'
+  pages: 248
+  size_mm:
+  - 132
+  - 225
+  - 17
+  cover: "/assets/covers/demian.webp"
+jeongjaeseungui-gwahakkonseoteu:
+  aladin: 12141866
+  aladin_title: 정재승의 과학 콘서트
+  isbn: '9788996588733'
+  pages: 360
+  size_mm:
+  - 152
+  - 223
+  - 25
+  cover: "/assets/covers/jeongjaeseungui-gwahakkonseoteu.webp"
+nanjungilgi:
+  aladin: 516146
+  aladin_title: 난중일기
+  isbn: '9788989192398'
+  pages: 173
+  size_mm:
+  - 188
+  - 257
+  - 12
+  cover: "/assets/covers/nanjungilgi.webp"
+choejaecheonui-gongbu:
+  aladin: 294454038
+  aladin_title: 최재천의 공부
+  isbn: '9788934943457'
+  pages: 304
+  size_mm:
+  - 148
+  - 210
+  - 21
+  cover: "/assets/covers/choejaecheonui-gongbu.webp"
+junieo-saenggakui-tansaeng:
+  aladin: 1983548
+  aladin_title: 주니어 생각의 탄생
+  isbn: '9788992717090'
+  pages: 227
+  size_mm:
+  - 170
+  - 250
+  - 16
+  cover: "/assets/covers/junieo-saenggakui-tansaeng.webp"
+homilbatui-pasukkun:
+  aladin: 308822243
+  aladin_title: 호밀밭의 파수꾼
+  isbn: '9788937460470'
+  pages: 320
+  size_mm:
+  - 132
+  - 225
+  - 22
+  cover: "/assets/covers/homilbatui-pasukkun.webp"
+unsu-joteun-nal:
+  aladin: 254221
+  aladin_title: 운수 좋은 날
+  isbn: '9788955720778'
+  pages: 239
+  size_mm:
+  - 188
+  - 257
+  - 17
+  cover: "/assets/covers/unsu-joteun-nal.webp"
+sonagi:
+  aladin: 187276
+  aladin_title: 소나기
+  isbn: '9788987721118'
+  pages: 176
+  size_mm:
+  - 148
+  - 210
+  - 12
+  cover: "/assets/covers/sonagi.webp"
+gwahakjaui-seojae:
+  aladin: 12677078
+  aladin_title: 과학자의 서재
+  isbn: '9788976776747'
+  pages: 316
+  size_mm:
+  - 152
+  - 223
+  - 22
+  cover: "/assets/covers/gwahakjaui-seojae.webp"
+noingwa-bada:
+  aladin: 14522431
+  aladin_title: 노인과 바다
+  isbn: '9788937462788'
+  pages: 204
+  size_mm:
+  - 132
+  - 225
+  - 14
+  cover: "/assets/covers/noingwa-bada.webp"
+wonmidong-saramdeul:
+  aladin: 21874073
+  aladin_title: 원미동 사람들
+  isbn: '9788998441005'
+  pages: 428
+  size_mm:
+  - 140
+  - 210
+  - 30
+  cover: "/assets/covers/wonmidong-saramdeul.webp"
+wijeodeu-beikeori:
+  aladin: 3460099
+  aladin_title: 위저드 베이커리
+  isbn: '9788936433697'
+  pages: 252
+  size_mm:
+  - 132
+  - 195
+  - 18
+  cover: "/assets/covers/wijeodeu-beikeori.webp"
+du-dosi-iyagi:
+  aladin: 378060489
+  aladin_title: 두 도시 이야기
+  isbn: '9791139728583'
+  pages: 640
+  size_mm:
+  - 150
+  - 225
+  - 40
+  cover: "/assets/covers/du-dosi-iyagi.webp"
+1984:
+  aladin: 418906
+  aladin_title: '1984'
+  isbn: '9788937460777'
+  pages: 452
+  size_mm:
+  - 132
+  - 225
+  - 32
+  cover: "/assets/covers/1984.webp"
+cheolhakkapeeseo-munhak-ilgi:
+  aladin: 855952
+  aladin_title: 철학카페에서 문학읽기
+  isbn: '9788901061252'
+  pages: 334
+  size_mm:
+  - 152
+  - 223
+  - 23
+  cover: "/assets/covers/cheolhakkapeeseo-munhak-ilgi.webp"
+yeoldu-baljaguk:
+  aladin: 150722838
+  aladin_title: 열두 발자국
+  isbn: '9791160560510'
+  pages: 400
+  size_mm:
+  - 145
+  - 217
+  - 28
+  cover: "/assets/covers/yeoldu-baljaguk.webp"
+chimmukui-bom:
+  aladin: 14461351
+  aladin_title: 침묵의 봄
+  isbn: '9788962630619'
+  pages: 400
+  size_mm:
+  - 148
+  - 215
+  - 28
+  cover: "/assets/covers/chimmukui-bom.webp"
+nanjangiga-ssoaolrin-jakeun-gong:
+  aladin: 334157624
+  aladin_title: 난장이가 쏘아올린 작은 공
+  isbn: '9788995151228'
+  pages: 416
+  size_mm:
+  - 140
+  - 210
+  - 29
+  cover: "/assets/covers/nanjangiga-ssoaolrin-jakeun-gong.webp"
+yusiminui-geulsseugi-teukgang:
+  aladin: 54916390
+  aladin_title: 유시민의 글쓰기 특강
+  isbn: '9788965133520'
+  pages: 292
+  size_mm:
+  - 148
+  - 225
+  - 20
+  cover: "/assets/covers/yusiminui-geulsseugi-teukgang.webp"
+pereumaui-majimak-jeongri:
+  aladin: 153339
+  aladin_title: 페르마의 마지막 정리
+  isbn: '9788985055970'
+  pages: 400
+  size_mm:
+  - 176
+  - 248
+  - 28
+  cover: "/assets/covers/pereumaui-majimak-jeongri.webp"
+byeonsin:
+  aladin: 577204
+  aladin_title: 변신
+  isbn: '9788954600200'
+  pages: 140
+  size_mm:
+  - 188
+  - 222
+  - 10
+  cover: "/assets/covers/byeonsin.webp"
+widaehan-gaecheubi:
+  aladin: 417997
+  aladin_title: 위대한 개츠비
+  isbn: '9788937460753'
+  pages: 308
+  size_mm:
+  - 132
+  - 225
+  - 22
+  cover: "/assets/covers/widaehan-gaecheubi.webp"
+haiking-geoljeu:
+  aladin: 2213904
+  aladin_title: 하이킹 걸즈
+  isbn: '9788949120805'
+  pages: 296
+  size_mm:
+  - 152
+  - 223
+  - 21
+  cover: "/assets/covers/haiking-geoljeu.webp"
+oettanbang:
+  aladin: 214605
+  aladin_title: 외딴방
+  isbn: '9788982812460'
+  pages: 454
+  size_mm:
+  - 148
+  - 210
+  - 32
+  cover: "/assets/covers/oettanbang.webp"
+urineun-eonjenga-mannanda:
+  aladin: 178708776
+  aladin_title: 우리는 언젠가 만난다
+  isbn: '9791188248124'
+  pages: 256
+  size_mm:
+  - 140
+  - 205
+  - 18
+  cover: "/assets/covers/urineun-eonjenga-mannanda.webp"
+jijeok-daehwareul-wihan-neolgo-yateun-jisik:
+  aladin: 49481412
+  aladin_title: '지적 대화를 위한 넓고 얕은 지식 : 현실 세계 편 (반양장)'
+  isbn: '9788994120966'
+  pages: 376
+  size_mm:
+  - 153
+  - 210
+  - 26
+  cover: "/assets/covers/jijeok-daehwareul-wihan-neolgo-yateun-jisik.webp"
+koseumoseu:
+  aladin: 870950
+  aladin_title: 코스모스
+  isbn: '9788983711892'
+  pages: 719
+  size_mm:
+  - 152
+  - 223
+  - 40
+  cover: "/assets/covers/koseumoseu.webp"
+gukgaran-mueotinga:
+  aladin: 101158454
+  aladin_title: 국가란 무엇인가
+  isbn: '9788971998014'
+  pages: 334
+  size_mm:
+  - 152
+  - 223
+  - 23
+  cover: "/assets/covers/gukgaran-mueotinga.webp"
+saenggakui-tansaeng:
+  aladin: 905727
+  aladin_title: 생각의 탄생
+  isbn: '9788995688991'
+  pages: 452
+  size_mm:
+  - 165
+  - 235
+  - 32
+  cover: "/assets/covers/saenggakui-tansaeng.webp"
+suhakui-sseulmo:
+  aladin: 235965035
+  aladin_title: 수학의 쓸모
+  isbn: '9791165210991'
+  pages: 384
+  size_mm:
+  - 158
+  - 230
+  - 27
+  cover: "/assets/covers/suhakui-sseulmo.webp"
+paekteupulniseu:
+  aladin: 345384332
+  aladin_title: 팩트풀니스 (50만 부 뉴에디션)
+  isbn: '9788934933878'
+  pages: 484
+  size_mm:
+  - 135
+  - 209
+  - 34
+  cover: "/assets/covers/paekteupulniseu.webp"
+ibangin:
+  aladin: 212246612
+  aladin_title: 이방인
+  isbn: '9788937443848'
+  pages: 280
+  size_mm:
+  - 132
+  - 225
+  - 20
+  cover: "/assets/covers/ibangin.webp"
+meotjin-sinsegye:
+  aladin: 48758
+  aladin_title: 멋진 신세계
+  isbn: '9788931003581'
+  pages: 332
+  size_mm:
+  - 148
+  - 210
+  - 23
+  cover: "/assets/covers/meotjin-sinsegye.webp"
+jeonguiran-mueotinga:
+  aladin: 48988418
+  aladin_title: 정의란 무엇인가
+  isbn: '9788937834790'
+  pages: 444
+  size_mm:
+  - 152
+  - 223
+  - 31
+  cover: "/assets/covers/jeonguiran-mueotinga.webp"
+sapienseu:
+  aladin: 314240466
+  aladin_title: 사피엔스
+  isbn: '9788934972464'
+  pages: 648
+  size_mm:
+  - 152
+  - 215
+  - 40
+  cover: "/assets/covers/sapienseu.webp"
+gwangjang:
+  aladin: 2814706
+  aladin_title: 광장 / 구운몽
+  isbn: '9788932019154'
+  pages: 426
+  size_mm:
+  - 132
+  - 210
+  - 30
+  cover: "/assets/covers/gwangjang.webp"
+igijeok-yujeonja:
+  aladin: 170482558
+  aladin_title: 이기적 유전자
+  isbn: '9788932473901'
+  pages: 632
+  size_mm:
+  - 145
+  - 210
+  - 40
+  cover: "/assets/covers/igijeok-yujeonja.webp"
+saenggake-gwanhan-saenggak:
+  aladin: 140135544
+  aladin_title: 생각에 관한 생각
+  isbn: '9788934981213'
+  pages: 728
+  size_mm:
+  - 152
+  - 225
+  - 40
+  cover: "/assets/covers/saenggake-gwanhan-saenggak.webp"
+noneo:
+  aladin: 211697613
+  aladin_title: 논어
+  isbn: '9791160800319'
+  pages: 512
+  size_mm:
+  - 140
+  - 210
+  - 36
+  cover: "/assets/covers/noneo.webp"
+samdae:
+  aladin: 530331
+  aladin_title: 삼대
+  isbn: '9788932015552'
+  pages: 711
+  size_mm:
+  - 135
+  - 207
+  - 40
+  cover: "/assets/covers/samdae.webp"
+cheonbyeonpunggyeong:
+  aladin: 539775
+  aladin_title: 천변풍경
+  isbn: '9788932015705'
+  pages: 468
+  size_mm:
+  - 135
+  - 207
+  - 33
+  cover: "/assets/covers/cheonbyeonpunggyeong.webp"
+kainui-huye:
+  aladin: 621361
+  aladin_title: 카인의 후예
+  isbn: '9788932016696'
+  pages: 593
+  size_mm:
+  - 135
+  - 207
+  - 40
+  cover: "/assets/covers/kainui-huye.webp"
+heokeulberi-pinui-moheom:
+  aladin: 169092
+  aladin_title: 허클베리 핀의 모험
+  isbn: '9788937460067'
+  pages: 672
+  size_mm:
+  - 132
+  - 225
+  - 40
+  cover: "/assets/covers/heokeulberi-pinui-moheom.webp"
+neotji:
+  aladin: 296614068
+  aladin_title: '넛지 : 파이널 에디션'
+  isbn: '9788901260679'
+  pages: 488
+  size_mm:
+  - 145
+  - 212
+  - 34
+  cover: "/assets/covers/neotji.webp"
+chong-gyun-soe:
+  aladin: 615014
+  aladin_title: 총 균 쇠 (무선 제작)
+  isbn: '9788970127248'
+  pages: 752
+  size_mm:
+  - 152
+  - 225
+  - 40
+  cover: "/assets/covers/chong-gyun-soe.webp"
+bubungwa-jeonche:
+  aladin: 318172944
+  aladin_title: 부분과 전체
+  isbn: '9791187295686'
+  pages: 504
+  size_mm:
+  - 128
+  - 190
+  - 36
+  cover: "/assets/covers/bubungwa-jeonche.webp"
+sonyeoni-onda:
+  aladin: 239400216
+  aladin_title: 소년이 온다 (특별한정판, 양장)
+  isbn: '9788936434410'
+  pages: 216
+  size_mm:
+  - 145
+  - 210
+  - 15
+  cover: "/assets/covers/sonyeoni-onda.webp"
+gongjeonghadaneun-chakgak:
+  aladin: 254700620
+  aladin_title: 공정하다는 착각
+  isbn: '9791164136452'
+  pages: 420
+  size_mm:
+  - 153
+  - 224
+  - 30
+  cover: "/assets/covers/gongjeonghadaneun-chakgak.webp"
+enteuropi:
+  aladin: 55666667
+  aladin_title: 엔트로피
+  isbn: '9788986698824'
+  pages: 352
+  size_mm:
+  - 152
+  - 225
+  - 25
+  cover: "/assets/covers/enteuropi.webp"
+yubaejieseo-bonaen-pyeonji:
+  aladin: 4815007
+  aladin_title: 유배지에서 보낸 편지
+  isbn: '9788936471712'
+  pages: 330
+  size_mm:
+  - 158
+  - 220
+  - 23
+  cover: "/assets/covers/yubaejieseo-bonaen-pyeonji.webp"
+yeoksaran-mueotinga:
+  aladin: 54882836
+  aladin_title: 역사란 무엇인가
+  isbn: '9788972915812'
+  pages: 264
+  size_mm:
+  - 152
+  - 223
+  - 18
+  cover: "/assets/covers/yeoksaran-mueotinga.webp"
+jayuron:
+  aladin: 359375700
+  aladin_title: 자유론
+  isbn: '9791171311606'
+  pages: 284
+  size_mm:
+  - 128
+  - 188
+  - 20
+  cover: "/assets/covers/jayuron.webp"
+gunjuron:
+  aladin: 389431456
+  aladin_title: 군주론
+  isbn: '9788972915782'
+  pages: 376
+  size_mm:
+  - 128
+  - 188
+  - 26
+  cover: "/assets/covers/gunjuron.webp"
+gwahakhyeokmyeongui-gujo:
+  aladin: 31586132
+  aladin_title: 과학혁명의 구조
+  isbn: '9788972915546'
+  pages: 360
+  size_mm:
+  - 152
+  - 223
+  - 25
+  cover: "/assets/covers/gwahakhyeokmyeongui-gujo.webp"
+bangbeopseoseol:
+  aladin: 58051
+  aladin_title: 방법서설
+  isbn: '9788931003277'
+  pages: 342
+  size_mm:
+  - 148
+  - 210
+  - 24
+  cover: "/assets/covers/bangbeopseoseol.webp"
+sagiyeoljeon:
+  aladin: 985738
+  aladin_title: 사기열전 1
+  isbn: '9788937425967'
+  pages: 876
+  size_mm:
+  - 136
+  - 210
+  - 40
+  cover: "/assets/covers/sagiyeoljeon.webp"
+guunmong:
+  aladin: 398093
+  aladin_title: 구운몽
+  isbn: '9788937460722'
+  pages: 284
+  size_mm:
+  - 132
+  - 225
+  - 20
+  cover: "/assets/covers/guunmong.webp"
+gukga:
+  aladin: 388327542
+  aladin_title: 국가
+  isbn: '9791175590182'
+  pages: 896
+  size_mm:
+  - 152
+  - 224
+  - 40
+  cover: "/assets/covers/gukga.webp"
+maeum:
+  aladin: 86469018
+  aladin_title: 마음
+  isbn: '9788932317960'
+  pages: 296
+  size_mm:
+  - 147
+  - 205
+  - 21
+  cover: "/assets/covers/maeum.webp"
+toji:
+  aladin: 18898138
+  aladin_title: 토지 1
+  isbn: '9788960532410'
+  pages: 440
+  size_mm:
+  - 135
+  - 195
+  - 31
+  cover: "/assets/covers/toji.webp"
+karamajopeu-gaui-hyeongjedeul:
+  aladin: 20908390
+  aladin_title: 카라마조프 가의 형제들 세트 - 전3권
+  isbn: '9788937486067'
+  pages: 1653
+  size_mm:
+  - 132
+  - 225
+  - 40
+  cover: "/assets/covers/karamajopeu-gaui-hyeongjedeul.webp"
+gamsiwa-cheobeol:
+  aladin: 201965
+  aladin_title: 감시와 처벌
+  isbn: '9788930032483'
+  pages: 464
+  size_mm:
+  - 152
+  - 223
+  - 33
+  cover: "/assets/covers/gamsiwa-cheobeol.webp"
+peuroteseutantijeumui-yunriwa-jabonjuui-jeongsin:
+  aladin: 155436
+  aladin_title: 프로테스탄티즘의 윤리와 자본주의 정신
+  isbn: '9788931000443'
+  pages: 340
+  size_mm:
+  - 152
+  - 223
+  - 24
+  cover: "/assets/covers/peuroteseutantijeumui-yunriwa-jabonjuui-jeongsin.webp"
+jongui-giwon:
+  aladin: 198419735
+  aladin_title: 종의 기원
+  isbn: '9791189198862'
+  pages: 656
+  size_mm:
+  - 128
+  - 188
+  - 40
+  cover: "/assets/covers/jongui-giwon.webp"
+goedel-esyeo-baheu:
+  aladin: 113285054
+  aladin_title: 괴델, 에셔, 바흐
+  isbn: '9788972916383'
+  pages: 1128
+  size_mm:
+  - 155
+  - 225
+  - 40
+  cover: "/assets/covers/goedel-esyeo-baheu.webp"
+segye-choegoui-yeohaenggi-yeolhailgi:
+  aladin: 31776364
+  aladin_title: 세계 최고의 여행기 열하일기 - 상
+  isbn: '9788997969265'
+  pages: 312
+  size_mm:
+  - 160
+  - 230
+  - 22
+  cover: "/assets/covers/segye-choegoui-yeohaenggi-yeolhailgi.webp"
+nikomakoseu-yunrihak:
+  aladin: 31685631
+  aladin_title: 니코마코스 윤리학
+  isbn: '9788991290525'
+  pages: 412
+  size_mm:
+  - 158
+  - 230
+  - 29
+  cover: "/assets/covers/nikomakoseu-yunrihak.webp"
+cheongsonyeoneul-wihan-gukburon:
+  aladin: 6700530
+  aladin_title: 청소년을 위한 국부론
+  isbn: '9788977152144'
+  pages: 288
+  size_mm:
+  - 176
+  - 248
+  - 20
+  cover: "/assets/covers/cheongsonyeoneul-wihan-gukburon.webp"
