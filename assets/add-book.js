@@ -297,6 +297,7 @@
   var level = '';
   function renderRecs() {
     var list = $('#rec-list');
+    if (!list) return; // the 책 추가 page now shows the roadmap list (assets/add-next.js) instead
     list.textContent = '';
     DATA.recommendations.filter(function (r) { return !onShelf(r.title) && (!level || r.level === level); }).forEach(function (r, i) {
       list.append(h('li', { class: 'rec-card' },
@@ -315,6 +316,7 @@
   }
 
   function personalRecs() {
+    if (!$('#rec-personal')) return;
     var liked = DATA.books.filter(function (b) { return b.rating >= 4 && b.author; })
       .sort(function (a, b) { return b.rating - a.rating; });
     var authors = [];
@@ -507,5 +509,5 @@
   renderRecs();
   personalRecs();
   showStep(location.hash === '#recommend' ? 1 : step, false);
-  if (location.hash === '#recommend') $('#recommend').scrollIntoView();
+  if (location.hash === '#recommend' && $('#recommend')) $('#recommend').scrollIntoView();
 })();

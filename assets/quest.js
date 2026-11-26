@@ -10,6 +10,10 @@
   var DATA = JSON.parse(dataEl.textContent);
   var weekly = DATA.weekly || {};
   var books = weekly.books || [];
+  // The two books picked ahead on the 책 추가 page (assets/nextbooks.js). When there are any, Simon chooses
+  // between them instead of this week's pair.
+  var NB = window.NextBooks;
+  var reserved = NB ? NB.pair() : [];
   var KEY = 'readcheck:quest:v1';
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
@@ -48,7 +52,7 @@
     var m = location.search.match(/[?&]try=([^&]+)/);
     if (!m) return null;
     var slug = decodeURIComponent(m[1]);
-    return books.filter(function (b) { return b.slug === slug; })[0] || null;
+    return books.filter(function (b) { return b.slug === slug; })[0] || (NB && NB.book(slug)) || null;
   })();
   if (TRIAL) {
     var tb = TRIAL;
@@ -195,7 +199,9 @@
     $('[data-lock]', zone).textContent = name === 'pack' ? '카드를 받으면 책장이 열려요' : '독후감을 넣으면 책장이 열려요';
   }
 
-  function bookBy(slug) { return books.filter(function (b) { return b.slug === slug; })[0]; }
+  function bookBy(slug) {
+    return reserved.filter(function (b) { return b.slug === slug; })[0] || books.filter(function (b) { return b.slug === slug; })[0];
+  }
 
   function promptFor(b) {
     return [
@@ -315,7 +321,13 @@
       if (last.buddy_art) { img.src = DATA.base + last.buddy_art; img.alt = last.buddy || ''; img.hidden = false; } else img.hidden = true;
     }
     $('[data-done-title]').textContent = last.card ? iga(BookCard.cardName(last)) + ' 카드 도감에 들어갔어요!' : iga(last.buddy || '책콩') + ' 책장에 왔어요!';
-    $('[data-done-sub]').textContent = '다음 책 두 권은 ' + korDate(nextDay) + '에 와요.';
+    reserved = NB ? NB.pair() : [];
+    $('[data-next-cta]').hidden = !reserved.length;
+    $('[data-next-hint]').hidden = !!reserved.length || !NB;
+    if ($('[data-guardian-tail]')) $('[data-guardian-tail]').hidden = !!reserved.length;
+    $('[data-done-sub]').textContent = reserved.length
+      ? '골라 둔 ' + (reserved.length === 2 ? '두 권' : '책') + ' 중에서 다음 책을 골라 바로 시작해요.'
+      : '다음 책 두 권은 ' + korDate(nextDay) + '에 와요.';
     var onServer = (DATA.shelf || []).some(function (s) { return s.slug === last.slug || s.title === last.title; });
     $('[data-guardian]').hidden = onServer;
     var md = markdownFor(last, last.pickedAt, last.doneAt);
@@ -603,6 +615,7 @@
     if (state.pick && !state.doneAt && state.pickBook) { show('read'); renderRead(); return; }
     var last = state.history[state.history.length - 1];
     if (last && last.card && !last.opened && window.BookCard) { show('pack'); renderPack(); return; }
+    if (reserved.length && !TRIAL) { showNext(); return; }
     var waiting = last && (!weekly.proposed || last.week === weekly.proposed || today < weekly.proposed);
     if (waiting) { show('done'); renderDone(); return; }
     if (!books.length) { quest.hidden = true; return; }
@@ -610,8 +623,51 @@
     show('choose');
   }
 
+  // ---------- the reserved books on the choose screen (same markup as reading.html's weekly pair) ----------
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function pickHTML(b) {
+    var sz = b.size_mm || [150, 215, 14], c = b.card || {};
+    var front = b.cover ? '<img src="' + esc(DATA.base + b.cover) + '" alt="" draggable="false">'
+      : '<span class="drawn-cover cover-' + (b.title.length % 5) + '"><b>' + esc(b.title) + '</b><i>' + esc(b.author) + '</i></span>';
+    return '<article class="pick" data-slug="' + esc(b.slug) + '"><div class="arena">' +
+      '<div class="pack-slot" data-pack-for="' + esc(b.slug) + '"></div>' +
+      '<div class="stage" style="--w:' + sz[0] + ';--h:' + sz[1] + ';--d:' + Math.max(6, sz[2]) + '">' +
+      '<div class="book3d drop" tabindex="0" role="button" aria-pressed="false" aria-label="' + esc(b.title) + ' 뒤집어 보기"><div class="b3">' +
+      '<div class="face front">' + front + '</div>' +
+      '<div class="face back"><p class="back-power">' + esc(b.power) + '</p><p>' + esc(b.author) + (b.publisher ? ' · ' + esc(b.publisher) : '') + '</p></div>' +
+      '<div class="face spine"><span>' + esc(b.title) + '</span></div><div class="face edge"></div><div class="face top"></div><div class="face bottom"></div>' +
+      '</div></div></div></div>' +
+      '<span class="type">' + esc(b.tier) + '</span>' +
+      '<h2>' + esc(b.title) + '</h2>' +
+      '<p class="pick-meta"><span>' + esc(b.author) + '</span>' + (b.pages ? '<span>' + b.pages + '쪽</span>' : '') + (b.size_mm ? '<span>' + sz[0] / 10 + ' × ' + sz[1] / 10 + ' cm</span>' : '') + '</p>' +
+      '<p class="pick-reward">10장 중 확정 <b>' + esc(c.name_ko) + '</b> 카드 <span class="rare-tag rarity-SR">' + esc(c.rarity_label) + '</span></p>' +
+      '<p class="pick-set">' + esc(c.set) + ' 팩</p>' +
+      '<button type="button" class="action spark big" data-choose="' + esc(b.slug) + '">이 책 읽을래요</button></article>';
+  }
+  function showNext() {
+    reserved = NB ? NB.pair() : [];
+    if (!reserved.length) return false;
+    var duel = $('.duel', views.choose);
+    duel.classList.remove('is-decided');
+    duel.innerHTML = reserved.map(pickHTML).join(reserved.length === 2 ? '<div class="vs" aria-hidden="true"><span>VS</span></div>' : '');
+    $('.q-kicker', views.choose).textContent = '골라 둔 다음 책';
+    $('.q-title', views.choose).textContent = reserved.length === 2 ? '다음엔 어떤 팩을 뜯을까?' : '다음 책은 이거예요!';
+    $('.q-sub', views.choose).textContent = '책 추가에서 미리 골라 둔 책이에요. 한 권을 골라 다 읽으면, 그 책의 진짜 팩을 뜯어 카드 10장을 받아요. 팩을 톡 눌러 보세요!';
+    wirePicks();
+    show('choose');
+    return true;
+  }
+
   // ---------- actions ----------
-  $$('.pick .stage').forEach(wireBook);
+  function wirePicks() {
+    $$('.pick .stage').forEach(wireBook);
+    $$('.pick .pack-slot[data-pack-for]').forEach(function (slot) {
+      var b = bookBy(slot.getAttribute('data-pack-for'));
+      if (!b || !b.card) return;
+      var nm = BookCard.cardName(b);
+      fillPack(slot, b, [(b.card.rarity_label || (b.card.rarity === 'SR' ? '슈퍼 레어' : '레어')) + ' 확정!', '다 읽으면 열 수 있어요!', iga(nm) + ' 기다려요!']);
+    });
+  }
 
   // ---------- the choose screen: each book's own series pack, with its card peeking out ----------
   function sparkle(host) {
@@ -652,12 +708,7 @@
     p.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); } });
     p.addEventListener('animationend', function (e) { if (e.animationName === 'peek') p.classList.remove('is-peek'); });
   }
-  $$('.pick .pack-slot[data-pack-for]').forEach(function (slot) {
-    var b = bookBy(slot.getAttribute('data-pack-for'));
-    if (!b || !b.card) return;
-    var nm = BookCard.cardName(b);
-    fillPack(slot, b, [(b.card.rarity_label || (b.card.rarity === 'SR' ? '슈퍼 레어' : '레어')) + ' 확정!', '다 읽으면 열 수 있어요!', iga(nm) + ' 기다려요!']);
-  });
+  if (!(reserved.length && !TRIAL)) wirePicks();
 
   function trainer() {
     var el = $('[data-trainer]');
@@ -680,6 +731,7 @@
       if (!b) return;
       state = { history: state.history, week: weekly.proposed, pick: b.slug, pickBook: b, pickedAt: today };
       save();
+      if (b.fromNext && NB) NB.take(b.slug);
       var card = t.closest('.pick');
       card.classList.add('is-chosen');
       card.parentNode.classList.add('is-decided');
@@ -703,8 +755,15 @@
       window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
       return;
     }
+    if (t.hasAttribute('data-next-choose')) {
+      if (showNext()) window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      return;
+    }
     if (t.hasAttribute('data-mark-written')) { state.written = true; save(); syncSteps(); }
     if (t.hasAttribute('data-repick')) {
+      // A reserved book goes back to its place in the list.
+      var back = state.pickBook;
+      if (back && back.fromNext && NB) { var sl = NB.slots(), fi = sl.indexOf(null); if (fi !== -1 && sl.indexOf(back.slug) === -1) NB.put(fi, back.slug); }
       state = { history: state.history, week: weekly.proposed }; save();
       location.reload();
     }

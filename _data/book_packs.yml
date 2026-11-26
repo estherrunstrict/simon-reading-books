@@ -1,0 +1,1136 @@
+# 책마다 짝지은 카드와 팩 두 가지예요(scripts/book_packs.rb가 써요). 첫째를 쓰고, 다음 책으로 같이 고른 책이
+# 같은 팩이면 둘째를 써요. 카드는 모두 그 팩 세트의 스페셜 일러스트 레어예요.
+madangeul-naon-amtal:
+- tcg_id: sv1-244
+  name: Miraidon ex
+  name_ko: 미라이돈 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-245
+  name: Garchomp ex
+  name_ko: 한카리아스 ex
+  set: Paradox Rift
+nonriya-nolja:
+- tcg_id: sv3pt5-201
+  name: Alakazam ex
+  name_ko: 후딘 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-167
+  name: Hydrapple ex
+  name_ko: 과미드라 ex
+  set: Stellar Crown
+suhak-gwisin:
+- tcg_id: sv3-222
+  name: Eiscue ex
+  name_ko: 빙큐보 ex
+  set: Obsidian Flames
+- tcg_id: sv6-210
+  name: Sinistcha ex
+  name_ko: 그우린차 ex
+  set: Twilight Masquerade
+syalrotui-geomijul:
+- tcg_id: sv1-243
+  name: Spidops ex
+  name_ko: 트래피더 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-246
+  name: Golisopod ex
+  name_ko: 갑주무사 ex
+  set: Paradox Rift
+chaekgwa-nonineun-jip:
+- tcg_id: sv4-247
+  name: Tapu Koko ex
+  name_ko: 카푸꼬꼬꼭 ex
+  set: Paradox Rift
+- tcg_id: sv8-236
+  name: Durant ex
+  name_ko: 아이앤트 ex
+  set: Surging Sparks
+haenguni-gureuneun-sokdo:
+- tcg_id: sv5-203
+  name: Iron Leaves ex
+  name_ko: 무쇠잎새 ex
+  set: Temporal Forces
+- tcg_id: sv9-182
+  name: Volcanion ex
+  name_ko: 볼케니온 ex
+  set: Journey Together
+matilda:
+- tcg_id: sv6-211
+  name: Teal Mask Ogerpon ex
+  name_ko: 오거폰 벽록의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-228
+  name: Yanmega ex
+  name_ko: 메가자리 ex
+  set: Destined Rivals
+yeoldu-sale-bujaga-doen-kira:
+- tcg_id: sv7-168
+  name: Galvantula ex
+  name_ko: 전툴라 ex
+  set: Stellar Crown
+- tcg_id: sv1-245
+  name: Gardevoir ex
+  name_ko: 가디안 ex
+  set: Scarlet & Violet
+chojeongri-pyeonji:
+- tcg_id: sv8-237
+  name: Milotic ex
+  name_ko: 밀로틱 ex
+  set: Surging Sparks
+- tcg_id: sv2-256
+  name: Meowscarada ex
+  name_ko: 마스카나 ex
+  set: Paldea Evolved
+maeumui-ondoneun-myeot-doilkkayo:
+- tcg_id: sv9-183
+  name: Iono's Bellibolt ex
+  name_ko: 모야모의 찌리배리 ex
+  set: Journey Together
+- tcg_id: sv3-223
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Obsidian Flames
+dongmuldeului-ginagin-yeohaeng:
+- tcg_id: sv10-229
+  name: Team Rocket's Moltres ex
+  name_ko: 로켓단의 파이어 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-198
+  name: Venusaur ex
+  name_ko: 이상해꽃 ex
+  set: Scarlet & Violet—151
+ppalgan-byeok:
+- tcg_id: sv1-246
+  name: Great Tusk ex
+  name_ko: 위대한엄니 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-248
+  name: Iron Hands ex
+  name_ko: 무쇠손 ex
+  set: Paradox Rift
+pureun-saja-wanini:
+- tcg_id: sv2-257
+  name: Wo-Chien ex
+  name_ko: 총지엔 ex
+  set: Paldea Evolved
+- tcg_id: sv5-204
+  name: Gouging Fire ex
+  name_ko: 꿰뚫는화염 ex
+  set: Temporal Forces
+sigan-gage:
+- tcg_id: sv3-224
+  name: Revavroom ex
+  name_ko: 부르르룸 ex
+  set: Obsidian Flames
+- tcg_id: sv6-212
+  name: Hearthflame Mask Ogerpon ex
+  name_ko: 오거폰 화덕의가면 ex
+  set: Twilight Masquerade
+hanbamjung-dalbit-sikdang:
+- tcg_id: sv3pt5-199
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-169
+  name: Dachsbun ex
+  name_ko: 바우첼 ex
+  set: Stellar Crown
+eorini-gwahak-hyeongsadae-csi:
+- tcg_id: sv4-249
+  name: Iron Valiant ex
+  name_ko: 무쇠무인 ex
+  set: Paradox Rift
+- tcg_id: sv8-238
+  name: Pikachu ex
+  name_ko: 피카츄 ex
+  set: Surging Sparks
+namureul-simeun-saram:
+- tcg_id: sv5-205
+  name: Walking Wake ex
+  name_ko: 굽이치는물결 ex
+  set: Temporal Forces
+- tcg_id: sv9-184
+  name: Lillie's Clefairy ex
+  name_ko: 릴리에의 삐삐 ex
+  set: Journey Together
+uri-ban-geokjeong-tamjeong-chawonhui:
+- tcg_id: sv6-213
+  name: Wellspring Mask Ogerpon ex
+  name_ko: 오거폰 우물의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-230
+  name: Ethan's Ho-Oh ex
+  name_ko: 히비키의 칠색조 ex
+  set: Destined Rivals
+eorin-wangja:
+- tcg_id: sv7-170
+  name: Terapagos ex
+  name_ko: 테라파고스 ex
+  set: Stellar Crown
+- tcg_id: sv1-247
+  name: Koraidon ex
+  name_ko: 코라이돈 ex
+  set: Scarlet & Violet
+naui-raim-orenjinamu:
+- tcg_id: sv8-239
+  name: Latias ex
+  name_ko: 라티아스 ex
+  set: Surging Sparks
+- tcg_id: sv2-258
+  name: Skeledirge ex
+  name_ko: 라우드본 ex
+  set: Paldea Evolved
+5beon-rein:
+- tcg_id: sv9-185
+  name: N's Zoroark ex
+  name_ko: N의 조로아크 ex
+  set: Journey Together
+- tcg_id: sv3-225
+  name: Pidgeot ex
+  name_ko: 피죤투 ex
+  set: Obsidian Flames
+chaek-kkakneun-sonyeon:
+- tcg_id: sv10-231
+  name: Team Rocket's Mewtwo ex
+  name_ko: 로켓단의 뮤츠 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-200
+  name: Blastoise ex
+  name_ko: 거북왕 ex
+  set: Scarlet & Violet—151
+bangapda-nonriya:
+- tcg_id: sv1-248
+  name: Iron Treads ex
+  name_ko: 무쇠바퀴 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-250
+  name: Sandy Shocks ex
+  name_ko: 모래털가죽 ex
+  set: Paradox Rift
+saenggakhandaneun-geot:
+- tcg_id: sv2-259
+  name: Chi-Yu ex
+  name_ko: 위유이 ex
+  set: Paldea Evolved
+- tcg_id: sv5-206
+  name: Iron Crown ex
+  name_ko: 무쇠감투 ex
+  set: Temporal Forces
+hanguksa-pyeonji:
+- tcg_id: sv3-222
+  name: Eiscue ex
+  name_ko: 빙큐보 ex
+  set: Obsidian Flames
+- tcg_id: sv6-214
+  name: Greninja ex
+  name_ko: 개굴닌자 ex
+  set: Twilight Masquerade
+galmaegiege-naneun-beopeul-gareuchyeo-jun-goyangi:
+- tcg_id: sv3pt5-202
+  name: Zapdos ex
+  name_ko: 썬더 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-167
+  name: Hydrapple ex
+  name_ko: 과미드라 ex
+  set: Stellar Crown
+momo:
+- tcg_id: sv4-251
+  name: Roaring Moon ex
+  name_ko: 고동치는달 ex
+  set: Paradox Rift
+- tcg_id: sv8-240
+  name: Hydreigon ex
+  name_ko: 삼삼드래 ex
+  set: Surging Sparks
+geuraetdamyeon-eottaeteulkka:
+- tcg_id: sv5-207
+  name: Iron Boulder ex
+  name_ko: 무쇠암석 ex
+  set: Temporal Forces
+- tcg_id: sv9-186
+  name: Hop's Zacian ex
+  name_ko: 호브의 자시안 ex
+  set: Journey Together
+uibyeongjang-yunhuisun:
+- tcg_id: sv6-215
+  name: Cornerstone Mask Ogerpon ex
+  name_ko: 오거폰 주춧돌의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-232
+  name: Cynthia's Garchomp ex
+  name_ko: 난천의 한카리아스 ex
+  set: Destined Rivals
+modeun-sungani-byeol:
+- tcg_id: sv7-168
+  name: Galvantula ex
+  name_ko: 전툴라 ex
+  set: Stellar Crown
+- tcg_id: sv1-244
+  name: Miraidon ex
+  name_ko: 미라이돈 ex
+  set: Scarlet & Violet
+dangyeonhan-geoteun-eopeo:
+- tcg_id: sv8-241
+  name: Archaludon ex
+  name_ko: 브리두라스 ex
+  set: Surging Sparks
+- tcg_id: sv2-260
+  name: Quaquaval ex
+  name_ko: 웨이니발 ex
+  set: Paldea Evolved
+jigu-jeongbokeul-wihan-goronggorong-ingan-gwanchal:
+- tcg_id: sv9-187
+  name: Salamence ex
+  name_ko: 보만다 ex
+  set: Journey Together
+- tcg_id: sv3-223
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Obsidian Flames
+hyumeon-2-0:
+- tcg_id: sv10-233
+  name: Team Rocket's Nidoking ex
+  name_ko: 로켓단의 니드킹 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-198
+  name: Venusaur ex
+  name_ko: 이상해꽃 ex
+  set: Scarlet & Violet—151
+peurindeul-juseyo:
+- tcg_id: sv1-245
+  name: Gardevoir ex
+  name_ko: 가디안 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-252
+  name: Gholdengo ex
+  name_ko: 타부자고 ex
+  set: Paradox Rift
+mongsil-eonni:
+- tcg_id: sv2-261
+  name: Chien-Pao ex
+  name_ko: 파오젠 ex
+  set: Paldea Evolved
+- tcg_id: sv5-208
+  name: Raging Bolt ex
+  name_ko: 날뛰는우레 ex
+  set: Temporal Forces
+kkotdeulege-huimangeul:
+- tcg_id: sv3-224
+  name: Revavroom ex
+  name_ko: 부르르룸 ex
+  set: Obsidian Flames
+- tcg_id: sv6-216
+  name: Bloodmoon Ursaluna ex
+  name_ko: 붉은달 다투곰 ex
+  set: Twilight Masquerade
+eorinireul-wihan-yeoksaui-sseulmo:
+- tcg_id: sv3pt5-199
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-169
+  name: Dachsbun ex
+  name_ko: 바우첼 ex
+  set: Stellar Crown
+amondeu:
+- tcg_id: sv4-253
+  name: Altaria ex
+  name_ko: 파비코리 ex
+  set: Paradox Rift
+- tcg_id: sv8-242
+  name: Alolan Exeggutor ex
+  name_ko: 알로라 나시 ex
+  set: Surging Sparks
+gieok-jeondalja:
+- tcg_id: sv5-203
+  name: Iron Leaves ex
+  name_ko: 무쇠잎새 ex
+  set: Temporal Forces
+- tcg_id: sv9-182
+  name: Volcanion ex
+  name_ko: 볼케니온 ex
+  set: Journey Together
+dongmulnongjang:
+- tcg_id: sv6-210
+  name: Sinistcha ex
+  name_ko: 그우린차 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-234
+  name: Team Rocket's Crobat ex
+  name_ko: 로켓단의 크로뱃 ex
+  set: Destined Rivals
+uahan-geojitmal:
+- tcg_id: sv7-170
+  name: Terapagos ex
+  name_ko: 테라파고스 ex
+  set: Stellar Crown
+- tcg_id: sv1-246
+  name: Great Tusk ex
+  name_ko: 위대한엄니 ex
+  set: Scarlet & Violet
+sopiui-segye:
+- tcg_id: sv8-236
+  name: Durant ex
+  name_ko: 아이앤트 ex
+  set: Surging Sparks
+- tcg_id: sv2-262
+  name: Tinkaton ex
+  name_ko: 두드리짱 ex
+  set: Paldea Evolved
+gombeurichi-segyesa:
+- tcg_id: sv9-183
+  name: Iono's Bellibolt ex
+  name_ko: 모야모의 찌리배리 ex
+  set: Journey Together
+- tcg_id: sv3-225
+  name: Pidgeot ex
+  name_ko: 피죤투 ex
+  set: Obsidian Flames
+gomapda-nonriya:
+- tcg_id: sv10-235
+  name: Arven's Mabosstiff ex
+  name_ko: 페퍼의 마피티프 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-200
+  name: Blastoise ex
+  name_ko: 거북왕 ex
+  set: Scarlet & Violet—151
+hariharaui-gwahakbeulrogeu:
+- tcg_id: sv1-247
+  name: Koraidon ex
+  name_ko: 코라이돈 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-245
+  name: Garchomp ex
+  name_ko: 한카리아스 ex
+  set: Paradox Rift
+wandeuki:
+- tcg_id: sv2-263
+  name: Ting-Lu ex
+  name_ko: 딩루 ex
+  set: Paldea Evolved
+- tcg_id: sv5-204
+  name: Gouging Fire ex
+  name_ko: 꿰뚫는화염 ex
+  set: Temporal Forces
+yujingwa-yujin:
+- tcg_id: sv3-222
+  name: Eiscue ex
+  name_ko: 빙큐보 ex
+  set: Obsidian Flames
+- tcg_id: sv6-211
+  name: Teal Mask Ogerpon ex
+  name_ko: 오거폰 벽록의가면 ex
+  set: Twilight Masquerade
+cherisaeu-bimilgeulipnida:
+- tcg_id: sv3pt5-202
+  name: Zapdos ex
+  name_ko: 썬더 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-167
+  name: Hydrapple ex
+  name_ko: 과미드라 ex
+  set: Stellar Crown
+nae-ireumeun-manggo:
+- tcg_id: sv4-246
+  name: Golisopod ex
+  name_ko: 갑주무사 ex
+  set: Paradox Rift
+- tcg_id: sv8-237
+  name: Milotic ex
+  name_ko: 밀로틱 ex
+  set: Surging Sparks
+10daereul-wihan-jeonguiran-mueotinga:
+- tcg_id: sv5-205
+  name: Walking Wake ex
+  name_ko: 굽이치는물결 ex
+  set: Temporal Forces
+- tcg_id: sv9-184
+  name: Lillie's Clefairy ex
+  name_ko: 릴리에의 삐삐 ex
+  set: Journey Together
+dodeokeul-wihan-cheolhak-tongjorim:
+- tcg_id: sv6-212
+  name: Hearthflame Mask Ogerpon ex
+  name_ko: 오거폰 화덕의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-228
+  name: Yanmega ex
+  name_ko: 메가자리 ex
+  set: Destined Rivals
+eorinireul-wihan-sapienseu:
+- tcg_id: sv7-168
+  name: Galvantula ex
+  name_ko: 전툴라 ex
+  set: Stellar Crown
+- tcg_id: sv1-248
+  name: Iron Treads ex
+  name_ko: 무쇠바퀴 ex
+  set: Scarlet & Violet
+galmaegiui-kkum:
+- tcg_id: sv8-238
+  name: Pikachu ex
+  name_ko: 피카츄 ex
+  set: Surging Sparks
+- tcg_id: sv2-264
+  name: Squawkabilly ex
+  name_ko: 시비꼬 ex
+  set: Paldea Evolved
+honggildongjeon:
+- tcg_id: sv9-185
+  name: N's Zoroark ex
+  name_ko: N의 조로아크 ex
+  set: Journey Together
+- tcg_id: sv3-223
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Obsidian Flames
+siganeul-paneun-sangjeom:
+- tcg_id: sv10-229
+  name: Team Rocket's Moltres ex
+  name_ko: 로켓단의 파이어 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-198
+  name: Venusaur ex
+  name_ko: 이상해꽃 ex
+  set: Scarlet & Violet—151
+aengmusae-jukigi:
+- tcg_id: sv1-244
+  name: Miraidon ex
+  name_ko: 미라이돈 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-247
+  name: Tapu Koko ex
+  name_ko: 카푸꼬꼬꼭 ex
+  set: Paradox Rift
+peinteu:
+- tcg_id: sv2-256
+  name: Meowscarada ex
+  name_ko: 마스카나 ex
+  set: Paldea Evolved
+- tcg_id: sv5-206
+  name: Iron Crown ex
+  name_ko: 무쇠감투 ex
+  set: Temporal Forces
+demian:
+- tcg_id: sv3-224
+  name: Revavroom ex
+  name_ko: 부르르룸 ex
+  set: Obsidian Flames
+- tcg_id: sv6-213
+  name: Wellspring Mask Ogerpon ex
+  name_ko: 오거폰 우물의가면 ex
+  set: Twilight Masquerade
+jeongjaeseungui-gwahakkonseoteu:
+- tcg_id: sv3pt5-199
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-169
+  name: Dachsbun ex
+  name_ko: 바우첼 ex
+  set: Stellar Crown
+bakgyeongmiui-suhakbitamin-peulreoseu:
+- tcg_id: sv4-248
+  name: Iron Hands ex
+  name_ko: 무쇠손 ex
+  set: Paradox Rift
+- tcg_id: sv8-239
+  name: Latias ex
+  name_ko: 라티아스 ex
+  set: Surging Sparks
+nanjungilgi:
+- tcg_id: sv5-207
+  name: Iron Boulder ex
+  name_ko: 무쇠암석 ex
+  set: Temporal Forces
+- tcg_id: sv9-186
+  name: Hop's Zacian ex
+  name_ko: 호브의 자시안 ex
+  set: Journey Together
+choejaecheonui-gongbu:
+- tcg_id: sv6-214
+  name: Greninja ex
+  name_ko: 개굴닌자 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-230
+  name: Ethan's Ho-Oh ex
+  name_ko: 히비키의 칠색조 ex
+  set: Destined Rivals
+junieo-saenggakui-tansaeng:
+- tcg_id: sv7-170
+  name: Terapagos ex
+  name_ko: 테라파고스 ex
+  set: Stellar Crown
+- tcg_id: sv1-245
+  name: Gardevoir ex
+  name_ko: 가디안 ex
+  set: Scarlet & Violet
+homilbatui-pasukkun:
+- tcg_id: sv8-240
+  name: Hydreigon ex
+  name_ko: 삼삼드래 ex
+  set: Surging Sparks
+- tcg_id: sv2-257
+  name: Wo-Chien ex
+  name_ko: 총지엔 ex
+  set: Paldea Evolved
+unsu-joteun-nal:
+- tcg_id: sv9-187
+  name: Salamence ex
+  name_ko: 보만다 ex
+  set: Journey Together
+- tcg_id: sv3-225
+  name: Pidgeot ex
+  name_ko: 피죤투 ex
+  set: Obsidian Flames
+sonagi:
+- tcg_id: sv10-231
+  name: Team Rocket's Mewtwo ex
+  name_ko: 로켓단의 뮤츠 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-200
+  name: Blastoise ex
+  name_ko: 거북왕 ex
+  set: Scarlet & Violet—151
+gwahakjaui-seojae:
+- tcg_id: sv1-246
+  name: Great Tusk ex
+  name_ko: 위대한엄니 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-249
+  name: Iron Valiant ex
+  name_ko: 무쇠무인 ex
+  set: Paradox Rift
+noingwa-bada:
+- tcg_id: sv2-258
+  name: Skeledirge ex
+  name_ko: 라우드본 ex
+  set: Paldea Evolved
+- tcg_id: sv5-208
+  name: Raging Bolt ex
+  name_ko: 날뛰는우레 ex
+  set: Temporal Forces
+wonmidong-saramdeul:
+- tcg_id: sv3-222
+  name: Eiscue ex
+  name_ko: 빙큐보 ex
+  set: Obsidian Flames
+- tcg_id: sv6-215
+  name: Cornerstone Mask Ogerpon ex
+  name_ko: 오거폰 주춧돌의가면 ex
+  set: Twilight Masquerade
+wijeodeu-beikeori:
+- tcg_id: sv3pt5-202
+  name: Zapdos ex
+  name_ko: 썬더 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-167
+  name: Hydrapple ex
+  name_ko: 과미드라 ex
+  set: Stellar Crown
+du-dosi-iyagi:
+- tcg_id: sv4-250
+  name: Sandy Shocks ex
+  name_ko: 모래털가죽 ex
+  set: Paradox Rift
+- tcg_id: sv8-241
+  name: Archaludon ex
+  name_ko: 브리두라스 ex
+  set: Surging Sparks
+1984:
+- tcg_id: sv5-203
+  name: Iron Leaves ex
+  name_ko: 무쇠잎새 ex
+  set: Temporal Forces
+- tcg_id: sv9-182
+  name: Volcanion ex
+  name_ko: 볼케니온 ex
+  set: Journey Together
+cheolhakkapeeseo-munhak-ilgi:
+- tcg_id: sv6-216
+  name: Bloodmoon Ursaluna ex
+  name_ko: 붉은달 다투곰 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-232
+  name: Cynthia's Garchomp ex
+  name_ko: 난천의 한카리아스 ex
+  set: Destined Rivals
+yeoldu-baljaguk:
+- tcg_id: sv7-168
+  name: Galvantula ex
+  name_ko: 전툴라 ex
+  set: Stellar Crown
+- tcg_id: sv1-247
+  name: Koraidon ex
+  name_ko: 코라이돈 ex
+  set: Scarlet & Violet
+chimmukui-bom:
+- tcg_id: sv8-242
+  name: Alolan Exeggutor ex
+  name_ko: 알로라 나시 ex
+  set: Surging Sparks
+- tcg_id: sv2-259
+  name: Chi-Yu ex
+  name_ko: 위유이 ex
+  set: Paldea Evolved
+nanjangiga-ssoaolrin-jakeun-gong:
+- tcg_id: sv9-183
+  name: Iono's Bellibolt ex
+  name_ko: 모야모의 찌리배리 ex
+  set: Journey Together
+- tcg_id: sv3-223
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Obsidian Flames
+yusiminui-geulsseugi-teukgang:
+- tcg_id: sv10-233
+  name: Team Rocket's Nidoking ex
+  name_ko: 로켓단의 니드킹 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-198
+  name: Venusaur ex
+  name_ko: 이상해꽃 ex
+  set: Scarlet & Violet—151
+pereumaui-majimak-jeongri:
+- tcg_id: sv1-248
+  name: Iron Treads ex
+  name_ko: 무쇠바퀴 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-251
+  name: Roaring Moon ex
+  name_ko: 고동치는달 ex
+  set: Paradox Rift
+byeonsin:
+- tcg_id: sv2-260
+  name: Quaquaval ex
+  name_ko: 웨이니발 ex
+  set: Paldea Evolved
+- tcg_id: sv5-204
+  name: Gouging Fire ex
+  name_ko: 꿰뚫는화염 ex
+  set: Temporal Forces
+widaehan-gaecheubi:
+- tcg_id: sv3-224
+  name: Revavroom ex
+  name_ko: 부르르룸 ex
+  set: Obsidian Flames
+- tcg_id: sv6-210
+  name: Sinistcha ex
+  name_ko: 그우린차 ex
+  set: Twilight Masquerade
+haiking-geoljeu:
+- tcg_id: sv3pt5-199
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-169
+  name: Dachsbun ex
+  name_ko: 바우첼 ex
+  set: Stellar Crown
+oettanbang:
+- tcg_id: sv4-252
+  name: Gholdengo ex
+  name_ko: 타부자고 ex
+  set: Paradox Rift
+- tcg_id: sv8-236
+  name: Durant ex
+  name_ko: 아이앤트 ex
+  set: Surging Sparks
+urineun-eonjenga-mannanda:
+- tcg_id: sv5-205
+  name: Walking Wake ex
+  name_ko: 굽이치는물결 ex
+  set: Temporal Forces
+- tcg_id: sv9-184
+  name: Lillie's Clefairy ex
+  name_ko: 릴리에의 삐삐 ex
+  set: Journey Together
+jijeok-daehwareul-wihan-neolgo-yateun-jisik:
+- tcg_id: sv6-211
+  name: Teal Mask Ogerpon ex
+  name_ko: 오거폰 벽록의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-234
+  name: Team Rocket's Crobat ex
+  name_ko: 로켓단의 크로뱃 ex
+  set: Destined Rivals
+koseumoseu:
+- tcg_id: sv7-170
+  name: Terapagos ex
+  name_ko: 테라파고스 ex
+  set: Stellar Crown
+- tcg_id: sv1-244
+  name: Miraidon ex
+  name_ko: 미라이돈 ex
+  set: Scarlet & Violet
+gukgaran-mueotinga:
+- tcg_id: sv8-237
+  name: Milotic ex
+  name_ko: 밀로틱 ex
+  set: Surging Sparks
+- tcg_id: sv2-261
+  name: Chien-Pao ex
+  name_ko: 파오젠 ex
+  set: Paldea Evolved
+saenggakui-tansaeng:
+- tcg_id: sv9-185
+  name: N's Zoroark ex
+  name_ko: N의 조로아크 ex
+  set: Journey Together
+- tcg_id: sv3-225
+  name: Pidgeot ex
+  name_ko: 피죤투 ex
+  set: Obsidian Flames
+suhakui-sseulmo:
+- tcg_id: sv10-235
+  name: Arven's Mabosstiff ex
+  name_ko: 페퍼의 마피티프 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-200
+  name: Blastoise ex
+  name_ko: 거북왕 ex
+  set: Scarlet & Violet—151
+paekteupulniseu:
+- tcg_id: sv1-245
+  name: Gardevoir ex
+  name_ko: 가디안 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-253
+  name: Altaria ex
+  name_ko: 파비코리 ex
+  set: Paradox Rift
+ibangin:
+- tcg_id: sv2-262
+  name: Tinkaton ex
+  name_ko: 두드리짱 ex
+  set: Paldea Evolved
+- tcg_id: sv5-206
+  name: Iron Crown ex
+  name_ko: 무쇠감투 ex
+  set: Temporal Forces
+meotjin-sinsegye:
+- tcg_id: sv3-222
+  name: Eiscue ex
+  name_ko: 빙큐보 ex
+  set: Obsidian Flames
+- tcg_id: sv6-212
+  name: Hearthflame Mask Ogerpon ex
+  name_ko: 오거폰 화덕의가면 ex
+  set: Twilight Masquerade
+jeonguiran-mueotinga:
+- tcg_id: sv3pt5-202
+  name: Zapdos ex
+  name_ko: 썬더 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-167
+  name: Hydrapple ex
+  name_ko: 과미드라 ex
+  set: Stellar Crown
+sapienseu:
+- tcg_id: sv4-245
+  name: Garchomp ex
+  name_ko: 한카리아스 ex
+  set: Paradox Rift
+- tcg_id: sv8-238
+  name: Pikachu ex
+  name_ko: 피카츄 ex
+  set: Surging Sparks
+gwangjang:
+- tcg_id: sv5-207
+  name: Iron Boulder ex
+  name_ko: 무쇠암석 ex
+  set: Temporal Forces
+- tcg_id: sv9-186
+  name: Hop's Zacian ex
+  name_ko: 호브의 자시안 ex
+  set: Journey Together
+igijeok-yujeonja:
+- tcg_id: sv6-213
+  name: Wellspring Mask Ogerpon ex
+  name_ko: 오거폰 우물의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-228
+  name: Yanmega ex
+  name_ko: 메가자리 ex
+  set: Destined Rivals
+saenggake-gwanhan-saenggak:
+- tcg_id: sv7-168
+  name: Galvantula ex
+  name_ko: 전툴라 ex
+  set: Stellar Crown
+- tcg_id: sv1-246
+  name: Great Tusk ex
+  name_ko: 위대한엄니 ex
+  set: Scarlet & Violet
+noneo:
+- tcg_id: sv8-239
+  name: Latias ex
+  name_ko: 라티아스 ex
+  set: Surging Sparks
+- tcg_id: sv2-263
+  name: Ting-Lu ex
+  name_ko: 딩루 ex
+  set: Paldea Evolved
+samdae:
+- tcg_id: sv9-187
+  name: Salamence ex
+  name_ko: 보만다 ex
+  set: Journey Together
+- tcg_id: sv3-223
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Obsidian Flames
+cheonbyeonpunggyeong:
+- tcg_id: sv10-229
+  name: Team Rocket's Moltres ex
+  name_ko: 로켓단의 파이어 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-198
+  name: Venusaur ex
+  name_ko: 이상해꽃 ex
+  set: Scarlet & Violet—151
+kainui-huye:
+- tcg_id: sv1-247
+  name: Koraidon ex
+  name_ko: 코라이돈 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-246
+  name: Golisopod ex
+  name_ko: 갑주무사 ex
+  set: Paradox Rift
+heokeulberi-pinui-moheom:
+- tcg_id: sv2-264
+  name: Squawkabilly ex
+  name_ko: 시비꼬 ex
+  set: Paldea Evolved
+- tcg_id: sv5-208
+  name: Raging Bolt ex
+  name_ko: 날뛰는우레 ex
+  set: Temporal Forces
+neotji:
+- tcg_id: sv3-224
+  name: Revavroom ex
+  name_ko: 부르르룸 ex
+  set: Obsidian Flames
+- tcg_id: sv6-214
+  name: Greninja ex
+  name_ko: 개굴닌자 ex
+  set: Twilight Masquerade
+chong-gyun-soe:
+- tcg_id: sv3pt5-199
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-169
+  name: Dachsbun ex
+  name_ko: 바우첼 ex
+  set: Stellar Crown
+bubungwa-jeonche:
+- tcg_id: sv4-247
+  name: Tapu Koko ex
+  name_ko: 카푸꼬꼬꼭 ex
+  set: Paradox Rift
+- tcg_id: sv8-240
+  name: Hydreigon ex
+  name_ko: 삼삼드래 ex
+  set: Surging Sparks
+sonyeoni-onda:
+- tcg_id: sv5-203
+  name: Iron Leaves ex
+  name_ko: 무쇠잎새 ex
+  set: Temporal Forces
+- tcg_id: sv9-182
+  name: Volcanion ex
+  name_ko: 볼케니온 ex
+  set: Journey Together
+gongjeonghadaneun-chakgak:
+- tcg_id: sv6-215
+  name: Cornerstone Mask Ogerpon ex
+  name_ko: 오거폰 주춧돌의가면 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-230
+  name: Ethan's Ho-Oh ex
+  name_ko: 히비키의 칠색조 ex
+  set: Destined Rivals
+enteuropi:
+- tcg_id: sv7-170
+  name: Terapagos ex
+  name_ko: 테라파고스 ex
+  set: Stellar Crown
+- tcg_id: sv1-248
+  name: Iron Treads ex
+  name_ko: 무쇠바퀴 ex
+  set: Scarlet & Violet
+yubaejieseo-bonaen-pyeonji:
+- tcg_id: sv8-241
+  name: Archaludon ex
+  name_ko: 브리두라스 ex
+  set: Surging Sparks
+- tcg_id: sv2-256
+  name: Meowscarada ex
+  name_ko: 마스카나 ex
+  set: Paldea Evolved
+yeoksaran-mueotinga:
+- tcg_id: sv9-183
+  name: Iono's Bellibolt ex
+  name_ko: 모야모의 찌리배리 ex
+  set: Journey Together
+- tcg_id: sv3-225
+  name: Pidgeot ex
+  name_ko: 피죤투 ex
+  set: Obsidian Flames
+jayuron:
+- tcg_id: sv10-231
+  name: Team Rocket's Mewtwo ex
+  name_ko: 로켓단의 뮤츠 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-200
+  name: Blastoise ex
+  name_ko: 거북왕 ex
+  set: Scarlet & Violet—151
+gunjuron:
+- tcg_id: sv1-244
+  name: Miraidon ex
+  name_ko: 미라이돈 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-248
+  name: Iron Hands ex
+  name_ko: 무쇠손 ex
+  set: Paradox Rift
+gwahakhyeokmyeongui-gujo:
+- tcg_id: sv2-257
+  name: Wo-Chien ex
+  name_ko: 총지엔 ex
+  set: Paldea Evolved
+- tcg_id: sv5-204
+  name: Gouging Fire ex
+  name_ko: 꿰뚫는화염 ex
+  set: Temporal Forces
+bangbeopseoseol:
+- tcg_id: sv3-222
+  name: Eiscue ex
+  name_ko: 빙큐보 ex
+  set: Obsidian Flames
+- tcg_id: sv6-216
+  name: Bloodmoon Ursaluna ex
+  name_ko: 붉은달 다투곰 ex
+  set: Twilight Masquerade
+sagiyeoljeon:
+- tcg_id: sv3pt5-202
+  name: Zapdos ex
+  name_ko: 썬더 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-167
+  name: Hydrapple ex
+  name_ko: 과미드라 ex
+  set: Stellar Crown
+guunmong:
+- tcg_id: sv4-249
+  name: Iron Valiant ex
+  name_ko: 무쇠무인 ex
+  set: Paradox Rift
+- tcg_id: sv8-242
+  name: Alolan Exeggutor ex
+  name_ko: 알로라 나시 ex
+  set: Surging Sparks
+gukga:
+- tcg_id: sv5-205
+  name: Walking Wake ex
+  name_ko: 굽이치는물결 ex
+  set: Temporal Forces
+- tcg_id: sv9-184
+  name: Lillie's Clefairy ex
+  name_ko: 릴리에의 삐삐 ex
+  set: Journey Together
+maeum:
+- tcg_id: sv6-210
+  name: Sinistcha ex
+  name_ko: 그우린차 ex
+  set: Twilight Masquerade
+- tcg_id: sv10-232
+  name: Cynthia's Garchomp ex
+  name_ko: 난천의 한카리아스 ex
+  set: Destined Rivals
+toji:
+- tcg_id: sv7-168
+  name: Galvantula ex
+  name_ko: 전툴라 ex
+  set: Stellar Crown
+- tcg_id: sv1-245
+  name: Gardevoir ex
+  name_ko: 가디안 ex
+  set: Scarlet & Violet
+karamajopeu-gaui-hyeongjedeul:
+- tcg_id: sv8-236
+  name: Durant ex
+  name_ko: 아이앤트 ex
+  set: Surging Sparks
+- tcg_id: sv2-258
+  name: Skeledirge ex
+  name_ko: 라우드본 ex
+  set: Paldea Evolved
+gamsiwa-cheobeol:
+- tcg_id: sv9-185
+  name: N's Zoroark ex
+  name_ko: N의 조로아크 ex
+  set: Journey Together
+- tcg_id: sv3-223
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Obsidian Flames
+peuroteseutantijeumui-yunriwa-jabonjuui-jeongsin:
+- tcg_id: sv10-233
+  name: Team Rocket's Nidoking ex
+  name_ko: 로켓단의 니드킹 ex
+  set: Destined Rivals
+- tcg_id: sv3pt5-198
+  name: Venusaur ex
+  name_ko: 이상해꽃 ex
+  set: Scarlet & Violet—151
+jongui-giwon:
+- tcg_id: sv1-246
+  name: Great Tusk ex
+  name_ko: 위대한엄니 ex
+  set: Scarlet & Violet
+- tcg_id: sv4-250
+  name: Sandy Shocks ex
+  name_ko: 모래털가죽 ex
+  set: Paradox Rift
+goedel-esyeo-baheu:
+- tcg_id: sv2-259
+  name: Chi-Yu ex
+  name_ko: 위유이 ex
+  set: Paldea Evolved
+- tcg_id: sv5-206
+  name: Iron Crown ex
+  name_ko: 무쇠감투 ex
+  set: Temporal Forces
+segye-choegoui-yeohaenggi-yeolhailgi:
+- tcg_id: sv3-224
+  name: Revavroom ex
+  name_ko: 부르르룸 ex
+  set: Obsidian Flames
+- tcg_id: sv6-211
+  name: Teal Mask Ogerpon ex
+  name_ko: 오거폰 벽록의가면 ex
+  set: Twilight Masquerade
+nikomakoseu-yunrihak:
+- tcg_id: sv3pt5-199
+  name: Charizard ex
+  name_ko: 리자몽 ex
+  set: Scarlet & Violet—151
+- tcg_id: sv7-169
+  name: Dachsbun ex
+  name_ko: 바우첼 ex
+  set: Stellar Crown
+cheongsonyeoneul-wihan-gukburon:
+- tcg_id: sv4-251
+  name: Roaring Moon ex
+  name_ko: 고동치는달 ex
+  set: Paradox Rift
+- tcg_id: sv8-237
+  name: Milotic ex
+  name_ko: 밀로틱 ex
+  set: Surging Sparks

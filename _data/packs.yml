@@ -1,0 +1,14 @@
+# 책마다 짝지어 주는 진짜 포켓몬 부스터 팩이에요. 카드 목록은 _data/card_pools/<id>.json (scripts/card_pool.rb),
+# 팩 사진은 TCGplayer 상품 사진을 바로 불러와요(product = TCGplayer 상품 번호). 저장소에는 그림을 복사하지 않아요.
+# 팩을 더하면 scripts/card_pool.rb <id>와 scripts/book_packs.rb를 다시 돌려요.
+- {id: sv1, name: "Scarlet & Violet", product: 476451}
+- {id: sv2, name: "Paldea Evolved", product: 493976}
+- {id: sv3, name: "Obsidian Flames", product: 501256}
+- {id: sv3pt5, name: "Scarlet & Violet—151", product: 504467}
+- {id: sv4, name: "Paradox Rift", product: 512822}
+- {id: sv5, name: "Temporal Forces", product: 532841}
+- {id: sv6, name: "Twilight Masquerade", product: 543843}
+- {id: sv7, name: "Stellar Crown", product: 557331}
+- {id: sv8, name: "Surging Sparks", product: 565604}
+- {id: sv9, name: "Journey Together", product: 610935}
+- {id: sv10, name: "Destined Rivals", product: 624683}

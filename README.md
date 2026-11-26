@@ -223,3 +223,14 @@ Drive 사본의 md5가 Mac의 파일과 같을 때만 지우고, 다르면 `KEPT
 - 저장소 이름을 바꾸면 `_config.yml`의 `repository`와 `write_url`도 고칩니다.
 
 참고: [GitHub의 Jekyll 글 작성 안내](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll).
+
+## 다음 책 예약 (책 추가 메뉴)
+
+`/reading/add/`에서 다음에 읽을 책 두 권을 미리 골라 둬요. 목록은 `_data/roadmap.yml`(= `docs/reading-roadmap.md`)의 126권이고, 고른 두 권은 이 iPad에만 저장돼요(`localStorage`의 `readcheck:next:v1`).
+
+- 지금 책을 읽는 동안에는 두 권을 언제든 바꿀 수 있어요. 다 읽으면 바꿀 수 없고, 팩을 뜯은 뒤 읽기 화면에서 둘 중 하나를 골라요. 고르지 않은 책은 자리에 남아요.
+- 책마다 진짜 부스터 팩과 그 팩의 스페셜 일러스트 레어 카드가 두 가지씩 짝지어져 있어요(`_data/book_packs.yml`). 두 권이 같은 팩이면 나중에 고른 책이 둘째 팩을 써서, 두 권의 팩은 언제나 달라요.
+- 팩 목록은 `_data/packs.yml`(TCGplayer 팩 사진), 카드 목록은 `_data/card_pools/`예요. 팩을 더하면 `ruby scripts/card_pool.rb <set>`, `ruby scripts/book_packs.rb` 순서로 돌려요.
+- 표지·ISBN·쪽수·크기는 `ruby scripts/roadmap_books.rb`가 알라딘에서 찾아 `assets/covers/`와 `_data/book_meta.yml`에 써요. 로드맵에 책을 더하면 다시 돌려요.
+- 예약한 책이 없으면 예전처럼 `_data/weekly.yml`의 두 권이 나와요.
+- 그림(`assets/img/next-books.webp`, `next-slot.webp`)은 Google Flow로 만들었어요.

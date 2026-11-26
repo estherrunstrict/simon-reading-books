@@ -13,15 +13,47 @@ permalink: /reading/add/
   "books": [{% for b in site.books %}{"title": {{ b.title | jsonify }}, "author": {{ b.author | jsonify }}, "rating": {{ b.rating | default: 0 | jsonify }}, "genre": {{ b.genre | jsonify }}, "slug": {{ b.slug | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
   "recommendations": {{ site.data.recommendations | jsonify | replace: "</", "<\/" }}
 }</script>
-<section class="page-head">
+{% capture catalog %}{% include catalog-json.html %}{% endcapture %}
+<script id="catalog-data" type="application/json">{{ catalog | replace: "</", "<\/" }}</script>
+<script id="next-data" type="application/json">{
+  "grade": {{ site.data.weekly.grade | jsonify }},
+  "gradeYear": {{ site.data.weekly.grade_year | jsonify }},
+  "base": {{ site.baseurl | jsonify }}
+}</script>
+
+<section class="next-head">
   <div>
-    <p class="eyebrow">새 책 등록</p>
-    <h1>책장에 새 책을 꽂아요</h1>
-    <p class="lede">제목으로 찾거나 추천 책에서 고르면 나머지는 거의 채워져요. 마지막에 GitHub에 저장하면 1분 안에 책장에 나와요.</p>
+    <p class="eyebrow">다음 책 예약</p>
+    <h1>다음에 읽을 책 두 권을 골라 둬요</h1>
+    <p class="lede">추천 목록에서 두 권을 골라 두면, 지금 책을 다 읽었을 때 둘 중 하나를 골라 시작해요. 두 권에는 서로 다른 진짜 포켓몬 카드 팩이 하나씩 붙어요.</p>
   </div>
-  <img class="page-head-art" src="{{ '/assets/img/add-book.webp' | relative_url }}" width="480" height="358" alt="" fetchpriority="high">
+  <img class="next-head-art" src="{{ '/assets/img/next-books.webp' | relative_url }}" width="480" height="360" alt="" fetchpriority="high">
 </section>
 
+<section class="next-board" aria-labelledby="next-title">
+  <h2 id="next-title" class="sr-only">골라 둔 두 권</h2>
+  <p class="next-status" data-next-status></p>
+  <ol class="next-slots" data-next-slots>
+    <li class="next-slot is-empty" data-slot="0"></li>
+    <li class="next-slot is-empty" data-slot="1"></li>
+  </ol>
+  <noscript><p class="notice">이 화면은 자바스크립트가 필요해요.</p></noscript>
+</section>
+
+<section class="road" id="roadmap" aria-labelledby="road-title">
+  <div class="road-head">
+    <div>
+      <h2 id="road-title">추천 책 목록</h2>
+      <p class="muted">학년별 추천 도서예요. Must는 꼭 읽을 책, Better는 더 읽을 책이에요. 책마다 붙은 팩은 그 책을 다 읽으면 뜯는 팩이에요.</p>
+    </div>
+    <div class="filters" role="group" aria-label="학년 고르기" data-grade-tabs></div>
+  </div>
+  <div data-road-list></div>
+</section>
+
+<details class="manual-add" id="manual-add">
+  <summary><span>목록에 없는 책을 책장에 직접 꽂기</span> <small>보호자용 · 검색해서 GitHub에 저장</small></summary>
+  <img class="page-head-art manual-art" src="{{ '/assets/img/add-book.webp' | relative_url }}" width="480" height="358" alt="" loading="lazy">
 <ol class="stepper" aria-label="책 추가 단계">
   <li data-step-tab="1" aria-current="step"><span>1</span>책 고르기</li>
   <li data-step-tab="2"><span>2</span>정보 확인</li>
@@ -44,23 +76,7 @@ permalink: /reading/add/
     <div id="search-status" class="muted" aria-live="polite"></div>
     <ul id="search-results" class="results"></ul>
 
-    <section id="recommend" class="recommend" aria-labelledby="rec-title">
-      <div class="rec-head">
-        <h2 id="rec-title">추천 책</h2>
-        <div class="filters" role="group" aria-label="추천 책 골라 보기">
-          <button type="button" class="filter" aria-pressed="true" data-level="">전체</button>
-          <button type="button" class="filter" aria-pressed="false" data-level="그림책">그림책</button>
-          <button type="button" class="filter" aria-pressed="false" data-level="저학년">저학년</button>
-          <button type="button" class="filter" aria-pressed="false" data-level="중학년">중학년</button>
-        </div>
-      </div>
-      <div id="rec-personal" class="rec-personal" hidden>
-        <h3 id="rec-personal-title">좋아한 책의 지은이가 쓴 다른 책</h3>
-        <ul class="results compact" id="rec-personal-list"></ul>
-      </div>
-      <ul id="rec-list" class="rec-grid"></ul>
-      <p class="muted">추천 목록은 저장소의 <code>_data/recommendations.yml</code>에서 고쳐요. 이미 책장에 있는 책은 빼고 보여줘요.</p>
-    </section>
+
   </section>
 
   <section class="step" data-step="2" aria-labelledby="step2-title" hidden>
@@ -152,4 +168,5 @@ permalink: /reading/add/
     <p class="muted">작성 중인 내용은 이 기기에 임시로 남아요. <button type="button" class="linkish" data-action="reset">처음부터 다시 쓰기</button></p>
   </section>
 </form>
+</details>
 <p class="sr-only" id="add-live" aria-live="polite"></p>

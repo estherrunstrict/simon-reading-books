@@ -1,0 +1,8 @@
+{%- comment -%}
+All books of _data/roadmap.yml as a JSON array, with what _data/book_meta.yml (cover, size) and
+_data/book_packs.yml (two cards in two different packs) know about them. Used by the 책 추가 page and the reading page.
+{%- endcomment -%}
+{%- assign n = 0 -%}{%- assign tiers = "must,better" | split: "," -%}
+[{%- for g in site.data.roadmap -%}{%- for tier in tiers -%}{%- assign list = g[1][tier] -%}{%- for b in list -%}{%- assign n = n | plus: 1 -%}{%- if n > 1 -%},{%- endif -%}{%- assign m = site.data.book_meta[b.slug] -%}{%- assign cards = site.data.book_packs[b.slug] -%}
+{"slug": {{ b.slug | jsonify }}, "title": {{ b.title | jsonify }}, "author": {{ b.author | jsonify }}, "publisher": {{ b.publisher | jsonify }}, "power": {{ b.power | jsonify }}, "grade": {{ g[0] | jsonify }}, "tier": {{ g[0] | append: " " | append: tier | replace: "must", "Must" | replace: "better", "Better" | jsonify }}, "n": {{ n }}, "cover": {{ m.cover | jsonify }}, "isbn": {{ m.isbn | jsonify }}, "pages": {{ m.pages | jsonify }}, "size": {{ m.size_mm | jsonify }}, "cards": [{%- for c in cards -%}{%- assign sid = c.tcg_id | split: "-" | first -%}{%- assign pk = site.data.packs | where: "id", sid | first -%}{"tcg_id": {{ c.tcg_id | jsonify }}, "name": {{ c.name | jsonify }}, "name_ko": {{ c.name_ko | jsonify }}, "set": {{ c.set | jsonify }}, "pack": "https://tcgplayer-cdn.tcgplayer.com/product/{{ pk.product }}_in_1000x1000.jpg"}{% unless forloop.last %},{% endunless %}{%- endfor -%}]}
+{%- endfor -%}{%- endfor -%}{%- endfor -%}]

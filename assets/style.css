@@ -772,6 +772,95 @@ nav .nav-cta{color:rgba(255,255,255,.85)}
 .sc-empty{margin-top:32px;opacity:.75}
 .trial-note{max-width:640px;margin:0 auto 12px;padding:.6em 1em;border-radius:14px;background:#fff6d6;border:2px dashed #e0a800;text-align:center;font-size:15px;line-height:1.5}
 .sc-try{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+/* ---------- 책 추가: the next two books (assets/add-next.js) ---------- */
+.next-head{display:grid;grid-template-columns:minmax(0,1fr) 300px;align-items:center;gap:28px;margin:12px 0 8px;padding:20px 0 0}
+.next-head h1{font-size:clamp(30px,3.6vw,44px);margin:0 0 10px}
+.next-head-art{width:100%;border-radius:24px}
+.next-board{margin:0 0 44px}
+.next-status{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 18px;padding:14px 20px;border-radius:var(--r-sm);background:var(--blue-50);font-size:16px}
+.next-status.phase-choose,.next-status.phase-opening{background:var(--yellow-50)}
+.next-status .action{min-height:44px;font-size:17px}
+.next-lock{flex-basis:100%;color:var(--muted)}
+.next-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none;counter-reset:none}
+.next-slot{position:relative;display:flex;flex-direction:column;gap:14px;min-height:300px;padding:22px 20px 20px;border-radius:var(--r);background:#fff;box-shadow:inset 0 0 0 2px var(--line),var(--shadow);transition:box-shadow .2s,transform .2s}
+.next-slot.is-empty{align-items:center;justify-content:center;text-align:center;background:#fffdf6;box-shadow:inset 0 0 0 2px #efe6cc}
+.next-slot.is-target{box-shadow:inset 0 0 0 3px var(--spark),0 10px 30px rgba(242,179,0,.25)}
+.next-slot.is-new{animation:slotpop .6s ease}
+@keyframes slotpop{0%{transform:scale(.96)}60%{transform:scale(1.02)}100%{transform:none}}
+.slot-no{position:absolute;top:-12px;left:18px;padding:2px 12px;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--round);font-size:15px}
+.slot-art{width:150px;height:auto}
+.slot-empty{margin:0;color:var(--muted)}
+.slot-body{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:start}
+.slot-cover{width:96px;aspect-ratio:2/3;object-fit:cover;border-radius:3px 8px 8px 3px;box-shadow:inset 3px 0 0 rgba(0,0,0,.12),0 8px 20px rgba(31,42,92,.18)}
+.slot-text h3{margin:6px 0 2px;font-family:var(--round);font-size:22px;font-weight:400;line-height:1.25}
+.slot-text .muted{margin:0;font-size:14px}
+.slot-power{margin:8px 0 0;font-size:15px;line-height:1.5}
+.slot-pack{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;margin-top:auto;padding:12px 14px;border-radius:var(--r-sm);background:var(--soft)}
+.slot-pack p{margin:0;font-size:14px;line-height:1.5}
+.slot-pack .rare-tag{font-size:12px;margin:4px 0 0;display:inline-block}
+.slot-put,.slot-out{align-self:flex-end}
+.next-slot.is-empty .slot-put{align-self:center}
+.pending-note{margin:12px 0 0;text-align:center;font-weight:700}
+/* the pack with its card peeking out */
+.np{position:relative;width:64px;height:92px;flex:none}
+.np-big{width:96px;height:132px}
+.np-pack{position:absolute;left:0;top:0;width:78%;height:100%;object-fit:contain;filter:drop-shadow(0 4px 6px rgba(31,42,92,.25));transform:rotate(-5deg);z-index:1}
+.np-card{position:absolute;right:0;bottom:2px;width:58%;border-radius:4px;box-shadow:0 3px 8px rgba(31,42,92,.3);transform:rotate(7deg);z-index:2}
+/* the roadmap list */
+.road{margin:0 0 48px}
+.road-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:8px}
+.road-head h2{margin:0}
+.road-head .muted{margin:4px 0 0;font-size:15px;max-width:640px}
+.road-tier{display:flex;align-items:baseline;gap:8px;margin:28px 0 12px;font-family:var(--round);font-size:22px;font-weight:400}
+.road-tier small{font-family:var(--font);font-size:14px;color:var(--muted)}
+.road-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.road-book{display:grid;grid-template-columns:78px minmax(0,1fr);gap:14px;padding:14px;border-radius:var(--r);background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.road-book.is-picked{box-shadow:inset 0 0 0 2.5px var(--spark);background:#fffdf3}
+.road-book.is-read{opacity:.62}
+.road-cover{width:78px;aspect-ratio:2/3;object-fit:cover;border-radius:2px 6px 6px 2px;box-shadow:inset 3px 0 0 rgba(0,0,0,.12),0 6px 14px rgba(31,42,92,.16)}
+.road-text{display:flex;flex-direction:column;min-width:0}
+.road-text h4{margin:2px 0 0;font-family:var(--round);font-size:19px;font-weight:400;line-height:1.25}
+.road-text .muted{margin:0;font-size:13px}
+.road-power{margin:6px 0 10px;font-size:14px;line-height:1.45}
+.road-foot{display:flex;align-items:center;gap:10px;margin-top:auto}
+.road-set{flex:1;min-width:0;font-size:12px;line-height:1.35;color:var(--muted)}
+.road-set b{color:var(--ink)}
+.road-foot .action{min-height:44px;padding:8px 16px;font-size:16px}
+.chip.next{align-self:flex-start;background:var(--yellow-50);color:#8a5d00}
+.chip.on{background:var(--blue-50)}
+.chip.done{background:var(--green-50);color:var(--green)}
+.chip.picked{background:var(--spark);color:var(--ink)}
+.chip.tier{background:var(--blue-50)}
+/* a drawn cover for a book without a cover picture */
+.drawn-cover{display:flex;flex-direction:column;justify-content:space-between;padding:10% 8% 8% 14%;color:#fff;font-family:var(--round);line-height:1.2;overflow:hidden}
+.drawn-cover b{font-weight:400;font-size:clamp(11px,1.4em,22px)}
+.road-cover.drawn-cover b,.slot-cover.drawn-cover b{font-size:14px}
+.road-cover.drawn-cover i,.slot-cover.drawn-cover i{font-size:10px}
+.drawn-cover i{font-style:normal;font-size:.7em;opacity:.85}
+.b3 .front .drawn-cover{width:100%;height:100%;font-size:calc(var(--mm)*12)}
+/* the manual add flow, folded away */
+.manual-add{margin:0 0 40px;border-radius:var(--r);background:var(--soft)}
+.manual-add>summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:18px 22px;cursor:pointer;font-family:var(--round);font-size:20px;list-style:none}
+.manual-add>summary::-webkit-details-marker{display:none}
+.manual-add>summary::before{content:"+";display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-size:20px;line-height:1}
+.manual-add[open]>summary::before{content:"–"}
+.manual-add>summary small{font-family:var(--font);font-size:14px;color:var(--muted)}
+.manual-add[open]{padding-bottom:20px}
+.manual-add .manual-art{display:none}
+.manual-add .stepper,.manual-add .add-flow{margin-left:16px;margin-right:16px}
+/* the done screen: go on to the picked books */
+.next-cta{margin:18px 0 6px}
+.next-hint{margin:12px auto 0;max-width:520px;text-align:center;color:var(--muted);font-size:15px}
+@media (max-width:900px){
+  .next-head{grid-template-columns:minmax(0,1fr) 220px}
+  .next-slot{min-height:280px}
+}
+@media (max-width:760px){
+  .next-head{grid-template-columns:1fr}
+  .next-head-art{max-width:300px}
+  .next-slots{grid-template-columns:1fr}
+}
+
 @media print{
 @page{size:A4;margin:20mm 18mm}
 html,body{background:#fff;color:#000}

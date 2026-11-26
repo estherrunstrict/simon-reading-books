@@ -17,7 +17,7 @@ CODES = {
 }.freeze
 
 def get(url)
-  6.times do |i|
+  10.times do |i|
     res = Net::HTTP.get_response(URI(url)) rescue nil
     if res.is_a?(Net::HTTPSuccess) && !res.body.to_s.empty?
       begin
@@ -35,7 +35,7 @@ ARGV.each do |set|
   cards = []
   page = 1
   loop do
-    q = URI.encode_www_form(q: "set.id:#{set}", page: page, pageSize: 250, select: 'number,name,rarity,supertype')
+    q = URI.encode_www_form(q: "set.id:#{set}", page: page, pageSize: 100, select: 'number,name,rarity,supertype')
     data = get("https://api.pokemontcg.io/v2/cards?#{q}")
     cards.concat(data['data'])
     break if cards.size >= data['totalCount'].to_i || data['data'].empty?
